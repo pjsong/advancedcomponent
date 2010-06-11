@@ -8,7 +8,7 @@
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>advancedComponent.html</welcome-file>
+    <welcome-file>topmenu.html</welcome-file>
   </welcome-file-list>
 
 </web-app>
