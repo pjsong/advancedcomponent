@@ -1,0 +1,19 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+<g:SimplePanel>
+
+<g:MenuBar ui:field='topBar'>
+   <g:MenuItem ui:field='peopleBusiness' >
+     <g:MenuBar vertical='true' ui:field='peopleBusinessBar'>
+        <g:MenuItem ui:field='sell' >
+             <g:MenuBar vertical='true' ui:field='sellBar'>
+                <g:MenuItem ui:field='cleanSell' />
+                <g:MenuItem ui:field='sentHome' />
+             </g:MenuBar>
+        </g:MenuItem>
+     </g:MenuBar>
+   </g:MenuItem>
+</g:MenuBar>
+</g:SimplePanel>
+
+</ui:UiBinder>
