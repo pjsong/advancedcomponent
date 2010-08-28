@@ -2,7 +2,7 @@
 <module rename-to='gwt_ext'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
-	<inherits name='com.gwtext.GwtExt' />
+  <inherits name='com.gwtext.GwtExt' />
 
   <!-- Inherit the default GWT style sheet.  You can change       -->
   <!-- the theme of your GWT application by uncommenting          -->
@@ -14,11 +14,10 @@
   <!-- Other module inherits                                      -->
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='test.client.Gwt_ext'/>
+  <entry-point class='test.client.Gwt_ext' />
 
   <!-- Specify the paths for translatable code                    -->
-  <source path='client'/>
-  <source path='shared'/>
+  <source path='client' />
 	<stylesheet src="ext/resources/css/ext-all.css" />
 	<script src="ext/adapter/ext/ext-base.js" />
 	<script src="ext/ext-all.js" />
