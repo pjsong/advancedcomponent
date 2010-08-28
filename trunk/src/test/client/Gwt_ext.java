@@ -26,15 +26,15 @@ public class Gwt_ext implements EntryPoint {
 		   Button showPanel=new Button("showPanel");
 		   showPanel.addClickHandler(new ClickHandler(){
 			public void onClick(ClickEvent event) {
-				   RootPanel.get("select").clear();
+				   RootPanel.get("main").clear();
 				   RootPanel.get("main").add(showPanel());
 			}
 		   });
 		   Button showBasicBorderLayout=new Button("showBasicBorderLayout");
 		   showBasicBorderLayout.addClickHandler(new ClickHandler(){
 			public void onClick(ClickEvent event) {
-				   RootPanel.get("select").clear();
-				   RootPanel.get("main").add(showBasicBorderLayout());
+				   RootPanel.get("main").clear();
+				   new Viewport(showBasicBorderLayout());
 			}
 		   });
 		   
