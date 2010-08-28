@@ -3,17 +3,13 @@ import test.client.imageResource.StartMenu;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.core.client.RunAsyncCallback;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 
-import com.gwtext.client.core.EventObject;
 import com.gwtext.client.core.Margins;
 import com.gwtext.client.core.RegionPosition;
 import com.gwtext.client.widgets.Button;
-import com.gwtext.client.widgets.Component;
 import com.gwtext.client.widgets.Panel;
 import com.gwtext.client.widgets.Viewport;
 import com.gwtext.client.widgets.layout.BorderLayout;
@@ -28,8 +24,11 @@ import com.gwtext.client.widgets.menu.MenuItem;
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class Gwt_ext implements EntryPoint {
-	
+	   UServiceGet u= new UServiceGet();
+	   String a;
 	   public void onModuleLoad() {
+		    a=u.getGoogleLoginURL();
+		    Window.alert(a);
 			new Viewport(showBasicBorderLayout());
 	   }
 	   
@@ -43,6 +42,26 @@ public class Gwt_ext implements EntryPoint {
 			 Menu menu = new Menu();  
 
 			 Item wordItem = new Item("GOOGLE LOGIN");  
+			 wordItem.setHref(a);	
+//			 Window.alert(wordItem.getHref());
+			 UServiceAsync uservice = GWT.create(UService.class);
+			 uservice.getGoogleUserLoginURL(new AsyncCallback<String>(){
+				public void onFailure(Throwable caught) {
+				}
+				public void onSuccess(final String result) {
+//					GWT.runAsync(new RunAsyncCallback(){
+//						public void onFailure(Throwable reason) {
+//						}
+//						public void onSuccess() {
+//							wordItem.setHref("fdsfdsfsdf");	
+//							Window.alert(wordItem.getHref());
+
+						}
+				});
+//			 }
+//			 }
+//		 );
+			 wordItem.setHrefTarget("blank");
 			 wordItem.setIcon(INSTANCE.page_find().getURL());  
 			 menu.addItem(wordItem);  
 
@@ -53,8 +72,10 @@ public class Gwt_ext implements EntryPoint {
 
 			 //create a sub menu  
 			 Menu subMenu = new Menu();  
-			 Item cItem = new Item("C");
-			 cItem.setIconCls("c-icon"); 
+			 Item cItem = new Item("GOOGLE");  		
+			 cItem.setHref("http://www.google.com.hk");
+			 wordItem.setHrefTarget("blank");
+			 cItem.setIconCls(INSTANCE.page_find().getURL()); 
 
 			 Item cppItem = new Item("C++");  
 			 cppItem.setIconCls("cpp-icon");  
