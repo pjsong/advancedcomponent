@@ -44,21 +44,12 @@ public class Gwt_ext implements EntryPoint {
     final Panel centerPanel = new Panel(); 
     Panel eastPanel = new Panel();  
     Panel westPanel = new Panel();  
-    
+    FormPanel formPanel = new FormPanel();  
     private FormPanel showSiteLogin(){
-      final FormPanel formPanel = new FormPanel();  
-//	  formPanel.setFrame(true);  
 	  formPanel.setTitle("Simple Form");  
 
 	  formPanel.setWidth(350);  
 	  formPanel.setLabelWidth(75);  
-//	  formPanel.setUrl("save-form.php");  
-
-//	  Label label = new Label();  
-//	  label.setHtml("<p>This is an example of a Form Label. This can have any <b>HTML</b> content.</p>");  
-//	  label.setCls("simple-form-label");  
-//	  label.setWidth(350);  
-//	  label.setHeight(20);  
 
 	  TextField firstName = new TextField("First Name", "first", 230);  
 	  firstName.setAllowBlank(false);  
@@ -86,29 +77,20 @@ public class Gwt_ext implements EntryPoint {
 	  formPanel.addButton(cancel);  
 	  cancel.addListener(new ButtonListenerAdapter(){
 		  public void onClick(Button button, EventObject e) {
-			  formPanel.hide();
+			  formPanel.setVisible(false);
 		  }
 	  });
 	  formPanel.setVisible(true);
-	  
       return formPanel;
-
     }
 	  final BaseItemListenerAdapter listener = new BaseItemListenerAdapter() {  
 	      public void onClick(BaseItem item, EventObject e){
-	    	  FormPanel fp=showSiteLogin();
-//	    	  centerPanel.removeAll();
-	    	  centerPanel.add(fp);
-	    	  fp.setVisible(true);
-	    	  Window.alert(new Boolean(fp.isVisible()).toString());
-//	    	  centerPanel.setHtml("fsfsdfsd");
-//	          Window.alert(((Item)item).getText());
+	    	  formPanel.setVisible(true);
 	      }  
 	  };  
     
 	   public void onModuleLoad() {
 			new Viewport(showBasicBorderLayout());
-//		   RootPanel.get("main").add(showBasicBorderLayout());
 	   }
 	   
 		 private void setStartMenuButton(){
@@ -235,19 +217,17 @@ public class Gwt_ext implements EntryPoint {
 		     centerPanel.setBodyStyle("background-color:#C3D9FF");  
 //             centerPanel.setAutoScroll(true);
 //		     centerPanel.add(showSiteLogin());
-		     borderPanel.add(centerPanel, new BorderLayoutData(RegionPosition.CENTER));  
+		     borderPanel.add(showSiteLogin(), new BorderLayoutData(RegionPosition.CENTER));  
 	   }
 
 	   
 	   
 	   protected Panel showBasicBorderLayout(){
-		     Panel panel = new Panel();  
-		     panel.setBorder(false);  
-		     panel.setPaddings(15);  
-		     panel.setLayout(new FitLayout());  
 
 		     Panel borderPanel = new Panel();  
 		     borderPanel.setLayout(new BorderLayout());  
+		     borderPanel.setBorder(false);  
+		     borderPanel.setPaddings(15);  
 		     
 		     setNorthPanel(borderPanel);
 		     setSouthPanel(borderPanel);
@@ -255,8 +235,7 @@ public class Gwt_ext implements EntryPoint {
 		     setWestPanel(borderPanel);
 		     setCenterPanel(borderPanel);
 
-		     panel.add(borderPanel);  
-             return panel;
+             return borderPanel;
 	   }
 	  
 }
