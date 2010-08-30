@@ -1,7 +1,8 @@
-package test.client;
+package test.client.doubt;
 
 import java.util.ArrayList;
 
+import test.client.UServiceAsync;
 import test.client.shared.dto.UserSignupInfoDTO;
 
 import com.google.gwt.core.client.GWT;
@@ -25,8 +26,8 @@ public class UServiceGet {
 	private Boolean userExists;
 	private Boolean userLoggedin;
 	
-	public UServiceGet(){
-		uservice= GWT.create(UService.class);
+	public UServiceGet(UServiceAsync uservice){
+		this.uservice= uservice;
 	}
 
 	public String getGoogleName() {
@@ -68,7 +69,6 @@ public class UServiceGet {
 			
 					}});
 //			}});
-		Window.alert(googleLoginURL);
 		return googleLoginURL;
 	}
 

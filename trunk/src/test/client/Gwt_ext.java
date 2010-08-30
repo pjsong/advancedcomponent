@@ -6,69 +6,137 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.RunAsyncCallback;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.RootPanel;
 
+import com.gwtext.client.core.EventObject;
 import com.gwtext.client.core.Margins;
 import com.gwtext.client.core.RegionPosition;
 import com.gwtext.client.widgets.Button;
 import com.gwtext.client.widgets.Panel;
 import com.gwtext.client.widgets.Viewport;
+import com.gwtext.client.widgets.event.ButtonListener;
+import com.gwtext.client.widgets.event.ButtonListenerAdapter;
+import com.gwtext.client.widgets.form.FormPanel;
+import com.gwtext.client.widgets.form.Label;
+import com.gwtext.client.widgets.form.TextField;
+import com.gwtext.client.widgets.form.TimeField;
+import com.gwtext.client.widgets.form.VType;
 import com.gwtext.client.widgets.layout.BorderLayout;
 import com.gwtext.client.widgets.layout.BorderLayoutData;
 import com.gwtext.client.widgets.layout.FitLayout;
 import com.gwtext.client.widgets.layout.HorizontalLayout;
+import com.gwtext.client.widgets.menu.BaseItem;
+import com.gwtext.client.widgets.menu.CheckItem;
 import com.gwtext.client.widgets.menu.Item;
 import com.gwtext.client.widgets.menu.Menu;
 import com.gwtext.client.widgets.menu.MenuItem;
+import com.gwtext.client.widgets.menu.event.BaseItemListenerAdapter;
+import com.gwtext.client.widgets.menu.event.CheckItemListenerAdapter;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class Gwt_ext implements EntryPoint {
-	   UServiceGet u= new UServiceGet();
-	   String a;
+	 UServiceAsync uservice = GWT.create(UService.class);
+
+    Panel northPanel = new Panel();  
+    Panel southPanel = new Panel();  
+    final Panel centerPanel = new Panel(); 
+    Panel eastPanel = new Panel();  
+    Panel westPanel = new Panel();  
+    
+    private FormPanel showSiteLogin(){
+      final FormPanel formPanel = new FormPanel();  
+//	  formPanel.setFrame(true);  
+	  formPanel.setTitle("Simple Form");  
+
+	  formPanel.setWidth(350);  
+	  formPanel.setLabelWidth(75);  
+//	  formPanel.setUrl("save-form.php");  
+
+//	  Label label = new Label();  
+//	  label.setHtml("<p>This is an example of a Form Label. This can have any <b>HTML</b> content.</p>");  
+//	  label.setCls("simple-form-label");  
+//	  label.setWidth(350);  
+//	  label.setHeight(20);  
+
+	  TextField firstName = new TextField("First Name", "first", 230);  
+	  firstName.setAllowBlank(false);  
+	  formPanel.add(firstName);  
+
+	  TextField lastName = new TextField("Last Name", "last", 230);  
+	  formPanel.add(lastName);  
+
+	  TextField company = new TextField("Company", "company", 230);  
+	  formPanel.add(company);  
+
+	  TextField email = new TextField("Email", "email", 230);  
+	  email.setVtype(VType.EMAIL);  
+	  formPanel.add(email);  
+
+	  TimeField time = new TimeField("Time", "time", 230);  
+	  time.setMinValue("8:00am");  
+	  time.setMaxValue("6:00pm");  
+	  formPanel.add(time);  
+
+	  Button save = new Button("Save");  
+	  formPanel.addButton(save);  
+
+	  Button cancel = new Button("Cancel");  
+	  formPanel.addButton(cancel);  
+	  cancel.addListener(new ButtonListenerAdapter(){
+		  public void onClick(Button button, EventObject e) {
+			  formPanel.hide();
+		  }
+	  });
+	  formPanel.setVisible(true);
+	  
+      return formPanel;
+
+    }
+	  final BaseItemListenerAdapter listener = new BaseItemListenerAdapter() {  
+	      public void onClick(BaseItem item, EventObject e){
+	    	  FormPanel fp=showSiteLogin();
+//	    	  centerPanel.removeAll();
+	    	  centerPanel.add(fp);
+	    	  fp.setVisible(true);
+	    	  Window.alert(new Boolean(fp.isVisible()).toString());
+//	    	  centerPanel.setHtml("fsfsdfsd");
+//	          Window.alert(((Item)item).getText());
+	      }  
+	  };  
+    
 	   public void onModuleLoad() {
-		    a=u.getGoogleLoginURL();
-		    Window.alert(a);
 			new Viewport(showBasicBorderLayout());
+//		   RootPanel.get("main").add(showBasicBorderLayout());
 	   }
 	   
-		 private void setStartMenuButton(Panel panel){
-			 StartMenu INSTANCE = GWT.create(StartMenu.class);
+		 private void setStartMenuButton(){
+			 final StartMenu INSTANCE = GWT.create(StartMenu.class);
 			 final Button button = new Button();  
 			 button.setText("Start");  
              button.setIcon(INSTANCE.menu_parent().getURL());
 
-			 //create the menu we want to assign to the button  
-			 Menu menu = new Menu();  
+			 final Menu menu = new Menu();  
 
-			 Item wordItem = new Item("GOOGLE LOGIN");  
-			 wordItem.setHref(a);	
-//			 Window.alert(wordItem.getHref());
-			 UServiceAsync uservice = GWT.create(UService.class);
+			 final Item wordItem = new Item();  
 			 uservice.getGoogleUserLoginURL(new AsyncCallback<String>(){
 				public void onFailure(Throwable caught) {
 				}
-				public void onSuccess(final String result) {
-//					GWT.runAsync(new RunAsyncCallback(){
-//						public void onFailure(Throwable reason) {
-//						}
-//						public void onSuccess() {
-//							wordItem.setHref("fdsfdsfsdf");	
-//							Window.alert(wordItem.getHref());
-
-						}
+				public void onSuccess(String result) {
+					 wordItem.setText("GOOGLE LOGIN");
+					 wordItem.setHref(result.toString());
+					 wordItem.setHrefTarget("blank");
+					 wordItem.setIcon(INSTANCE.page_find().getURL());  
+					 menu.addItem(wordItem);  
+				}
 				});
-//			 }
-//			 }
-//		 );
-			 wordItem.setHrefTarget("blank");
-			 wordItem.setIcon(INSTANCE.page_find().getURL());  
-			 menu.addItem(wordItem);  
 
-			 Item excelItem = new Item("SITE LOGIN");  
-			 excelItem.setIcon(INSTANCE.user().getURL());  
-			 excelItem.disable();
-			 menu.addItem(excelItem);  
+
+			 Item siteLoginItem = new Item("SITE LOGIN");
+			 siteLoginItem.setIcon(INSTANCE.user().getURL());  
+             siteLoginItem.addListener(listener);
+			 menu.addItem(siteLoginItem);  
 
 			 //create a sub menu  
 			 Menu subMenu = new Menu();  
@@ -103,23 +171,21 @@ public class Gwt_ext implements EntryPoint {
 
 			 horizontalPanel.add(button);  
 
-			 panel.add(horizontalPanel);  
+			 northPanel.add(horizontalPanel);  
 		 }
 	   	   private void setNorthPanel(Panel borderPanel){
 		     //add north panel  
-		     Panel northPanel = new Panel();  
 		     northPanel.setHtml("<p center>north panel</p>");  
 		     northPanel.setHeight(100);  
 		     northPanel.setBodyStyle("background-color:#FFFF88");  
-//		     northPanel.setTitle("North");
-		     setStartMenuButton(northPanel);
+		     northPanel.setTitle("You have not Loggedin yet");
+		     setStartMenuButton();
 		     BorderLayoutData northData = new BorderLayoutData(RegionPosition.NORTH);  
 		     borderPanel.add(northPanel, northData);  
 	   }
 	   
 
 	   private void setSouthPanel(Panel borderPanel){
-		     Panel southPanel = new Panel();  
 		     southPanel.setHtml("<p>south panel</p>");  
 		     southPanel.setHeight(100);  
 		     southPanel.setBodyStyle("background-color:#CDEB8B");  
@@ -136,10 +202,10 @@ public class Gwt_ext implements EntryPoint {
 	   
 	   
 	   private void setEastPanel(Panel borderPanel){
-		     Panel eastPanel = new Panel();  
 		     eastPanel.setHtml("<p>east panel</p>");  
 		     eastPanel.setTitle("East Side");  
 		     eastPanel.setCollapsible(true);  
+//		     eastPanel.setCollapsed(true);
 		     eastPanel.setWidth(225);  
 
 		     BorderLayoutData eastData = new BorderLayoutData(RegionPosition.EAST);  
@@ -147,13 +213,10 @@ public class Gwt_ext implements EntryPoint {
 		     eastData.setMinSize(175);  
 		     eastData.setMaxSize(400);  
 		     eastData.setMargins(new Margins(0, 0, 5, 0));  
-
 		     borderPanel.add(eastPanel, eastData);  
 	   }
 
 	   private void setWestPanel(Panel borderPanel){
-		     Panel westPanel = new Panel();  
-		     westPanel.setHtml("<p>west panel</p>");  
 		     westPanel.setTitle("West");  
 		     westPanel.setBodyStyle("background-color:#EEEEEE");  
 		     westPanel.setCollapsible(true);  
@@ -168,10 +231,10 @@ public class Gwt_ext implements EntryPoint {
 		     borderPanel.add(westPanel, westData);  
 	   }
 	   private void setCenterPanel(Panel borderPanel){
-		     Panel centerPanel = new Panel();  
-		     centerPanel.setHtml("<p>center panel</p>");  
+//		     centerPanel.setEl("centerPanel");
 		     centerPanel.setBodyStyle("background-color:#C3D9FF");  
-
+//             centerPanel.setAutoScroll(true);
+//		     centerPanel.add(showSiteLogin());
 		     borderPanel.add(centerPanel, new BorderLayoutData(RegionPosition.CENTER));  
 	   }
 
@@ -195,6 +258,5 @@ public class Gwt_ext implements EntryPoint {
 		     panel.add(borderPanel);  
              return panel;
 	   }
-	   
 	  
 }
