@@ -27,7 +27,7 @@ public class Main
 	   WebAppContext wac = new WebAppContext();
 	   wac.setContextPath("/");
 	   wac.setWar("./war");    // this is path to .war OR TO expanded, existing webapp; WILL FIND web.xml and parse it
-	   wac.setDefaultsDescriptor("./libs/embededJetty/webdefault.xml");
+	   wac.setDefaultsDescriptor("./lib/webdefault.xml");
 	   server.addHandler(wac);
 
 	   // configure the request log
