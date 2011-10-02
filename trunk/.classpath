@@ -3,10 +3,33 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/google/appengine-java-sdk-1.4.2/appengine-java-sdk-1.4.2/lib/shared/servlet-api.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/D:/google/appengine-java-sdk-1.4.2/appengine-java-sdk-1.4.2/docs/javadoc/"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/gwt-servlet.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/antlr-3.0.1.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api-1.0-sdk-1.5.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api-labs-1.5.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-jsr107cache-1.5.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.aop-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.asm-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.aspects-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.beans-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.context-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.context.support-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.core-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.expression-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.instrument-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.instrument.classloading-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.integration-tests-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.jdbc-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.jms-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.orm-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.oxm-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.test-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.transaction-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.web-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.web.portlet-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.web.servlet-3.0.0.M3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-webmvc.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/velocity-1.6-dep.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
