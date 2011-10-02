@@ -5,6 +5,8 @@ import org.apache.velocity.VelocityContext;
 import org.springframework.web.servlet.mvc.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
+import velocity.VelocityParser;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,9 +15,9 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class HelloController extends BaseController {
-	public void process(HttpServletRequest request, HttpServletResponse response){
+	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         VelocityContext vc=new VelocityContext();
-        return;
+        VelocityParser.render("abc", vc, request, response);
 	}
 
 }

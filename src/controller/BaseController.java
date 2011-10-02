@@ -13,7 +13,7 @@ public class BaseController implements Controller {
 		return null;
 	}
 
-	public void process(HttpServletRequest req,HttpServletResponse res){
+	public void process(HttpServletRequest req,HttpServletResponse res) throws Exception{
 		
 	}
 }
