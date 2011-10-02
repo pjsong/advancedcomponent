@@ -3,11 +3,10 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/gwtext.jar">
+	<classpathentry kind="lib" path="D:/google/appengine-java-sdk-1.4.2/appengine-java-sdk-1.4.2/lib/shared/servlet-api.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="http://gwt-ext.com/docs/2.0.4/"/>
+			<attribute name="javadoc_location" value="file:/D:/google/appengine-java-sdk-1.4.2/appengine-java-sdk-1.4.2/docs/javadoc/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
