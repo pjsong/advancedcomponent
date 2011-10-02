@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+    <bean id="helloController"   class="controller.HelloController" ></bean>
+    <bean id="cookieController"   class="controller.CookieController" ></bean>
+
+<bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <property name="alwaysUseFullPath"><value>true</value></property>
+    <property name="mappings">
+    
+        <props>
+            <prop key="/*">helloController</prop>
+            <prop key="/index.html">helloController</prop>
+            <prop key="/cookie.html">cookieController</prop>
+        </props>
+    </property>
+    </bean>
+
+<bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+  <property name="resourceLoaderPath" value="/" />
+   <property name="velocityProperties">
+   <props>
+       <prop key="input.encoding">GB2312</prop>
+       <prop key="output.encoding">GB2312</prop>
+       <prop key="contentType">text/html;charset=GB2312</prop>
+   </props>
+   </property>
+</bean>
+
+<bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+  <property name="cache" value="true"/>
+  <property name="prefix" value="/template/" />
+  <property name="suffix" value=".vm"/>
+  <property name="contentType" value="text/html;charset=UTF-8" />
+  <!-- if you want to use the Spring Velocity macros, set this property to true -->
+  <property name="exposeSpringMacroHelpers" value="true"/>
+</bean>
+</beans>
