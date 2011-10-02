@@ -24,7 +24,7 @@ public class VelocityParser
 			ve.setProperty("input.encoding", "GB2312");
 			ve.setProperty("output.encoding", "GB2312");
 			// setting up file resource loader
-			ve.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, "static/velocity");
+			ve.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, "template");
 
 			// Jian: this is very important, otherwise, there will be out of memory error when a template
 			// with #foreach loop is called and the #foreach loop iterates through million of times
