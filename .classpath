@@ -4,10 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/gwt-servlet.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/antlr-3.0.1.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api-1.0-sdk-1.5.0.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api-labs-1.5.0.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-jsr107cache-1.5.0.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-logging.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.aop-3.0.0.M3.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.asm-3.0.0.M3.jar"/>
@@ -31,5 +27,6 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/org.springframework.web.servlet-3.0.0.M3.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/spring-webmvc.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/velocity-1.6-dep.jar"/>
+	<classpathentry kind="lib" path="E:/gwt/rujin/war/WEB-INF/lib/commons-collections-3.2.1.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
