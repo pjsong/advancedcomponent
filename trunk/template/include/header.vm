@@ -1,0 +1,21 @@
+<link type="text/css" rel="stylesheet" href="http://www.gwi.com.cn/css/text_zh.css">
+<table cellspacing="0" cellpadding="0" border="0" align="center">
+  <tbody><tr>
+    <td width="207"><img height="63" width="80" src="http://www.gwi.com.cn/logo.JPG"></td>
+    <td width="509"><img height="63" width="351" src="http://www.gwi.com.cn/pic/index_02.jpg"></td>
+    <td width="284" valign="bottom" align="right"><a href="/index"><img height="29" width="74" border="0" src="http://www.gwi.com.cn/pic/index_05.jpg"></a><a href="../english/index.asp"><img height="29" width="100" border="0" src="http://www.gwi.com.cn/pic/index_06.jpg"></a></td>
+  </tr>
+  <tr>
+    <td height="23" bgcolor="#b6dffb" colspan="3">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="3"><object height="180" width="900" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+      <param value="http://www.gwi.com.cn/index.swf" name="movie">
+      <param value="high" name="quality">
+      <embed height="180" width="800" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="http://www.gwi.com.cn/index.swf">
+    </object></td>
+  </tr>
+  <tr bgcolor="#ff0000">
+    <td height="29" background="http://www.gwi.com.cn/pic/ibg1.jpg" align="center" class="wz" colspan="3"><a class="wz" href="index.asp">首页 </a>| <a class="wz" href="aboutus.asp?title=公司简介">关于长城信息 </a>|<a class="wz" href="product.asp"> 业务与产品 </a>| <a class="wz" href="guestbook.asp">技术支持与服务</a> |<a class="wz" href="new.asp?title=新闻快递&amp;langmu2=2"> 新闻中心</a> |<a class="wz style5" href="investor.asp?title=公司概况"> 投资者关系 </a>|<a class="wz" href="intr.asp?title=使命与价值观"> 企业文化</a> |<a class="wz" href="aboutus1.asp?title=人才招聘"> 人才招聘</a> | <a class="wz" href="http://zt.rednet.cn/c/zt/22229/"><font color="red">长沙中电软件园开园</font></a></td>
+  </tr>
+</tbody></table>

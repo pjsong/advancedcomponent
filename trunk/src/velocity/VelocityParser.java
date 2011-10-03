@@ -21,8 +21,8 @@ public class VelocityParser
 		try
 		{
 			ve = new VelocityEngine();
-			ve.setProperty("input.encoding", "GB2312");
-			ve.setProperty("output.encoding", "GB2312");
+			ve.setProperty("input.encoding", "utf-8");
+			ve.setProperty("output.encoding", "utf-8");
 			// setting up file resource loader
 			ve.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, "template");
 
@@ -64,7 +64,7 @@ public class VelocityParser
 	public static void render(String viewName, Context ctx, HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
 		
-		response.setContentType("text/html; charset=GB2312");
+		response.setContentType("text/html; charset=utf-8");
 
           // set the no cache control header, HTTP 1.1 standard
           //resp.setHeader("Cache-Control", "no-cache");
@@ -79,8 +79,8 @@ public class VelocityParser
           // for user-agents that ignore the above settings
           response.setHeader("Expires", "Thu, 01 Jan 1970 00.00.00 GMT");
 
-        OutputStreamWriter out = new OutputStreamWriter(response.getOutputStream(), "GB2312");
-        ve.mergeTemplate(viewName + ".vm", "GB2312", ctx, out);
+        OutputStreamWriter out = new OutputStreamWriter(response.getOutputStream(), "utf-8");
+        ve.mergeTemplate(viewName + ".vm", "utf-8", ctx, out);
 		out.flush();
 	}	
 }

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         VelocityContext vc=new VelocityContext();
-        VelocityParser.render("abc", vc, request, response);
+        VelocityParser.render("index", vc, request, response);
 	}
 
 }
