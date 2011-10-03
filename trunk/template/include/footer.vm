@@ -6,22 +6,18 @@
     color: #666666;
     letter-spacing: 0;
     padding: 0;
+	font-size:12px;
 }
 .trt {
-    background-color: #FFFFFF;
+##    background-color: #FFFFFF;
     border-color: -moz-use-text-color #DCDCDC;
     border-style: none solid;
     border-width: 0;
     text-align: center;
-    width: 1005px;
+    width: 800px;
 }
-table {
-    color: #003B73;
-    font-size: 9pt;
-    line-height: 19px;
-    margin-left: auto;
-    margin-right: auto;
-}</style>
+</style>
+<hr style="width:800;align:center;">
 <table height="93" border="0" align="center" class="trt foot"><tbody><tr><td width="100%"><div align="left"><div align="center">公司地址：广东省东莞市万江区上甲社区书院路85号
   <br>
   电话：（0769）28639587　传真： 23151645 E-Mail:pjsong3101@163.com
