@@ -8,7 +8,7 @@
   </tr>
   <tr>
     <td rowspan="22"><img height="804" width="14" alt="" src="http://www.szslsb.cn/common/images/skins/maint_09.jpg"></td>
-    <td rowspan="3" colspan="3"><img alt="" src="/http://www.szslsb.cn/common/images/skins/maint_10.jpg"></td>
+    <td rowspan="3" colspan="3"><img alt="" src="http://www.szslsb.cn/common/images/skins/maint_10.jpg"></td>
     <td rowspan="11" colspan="2"><img height="325" width="16" alt="" src="http://www.szslsb.cn/common/images/skins/maint_11.jpg"></td>
     <td><img height="29" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
   </tr>
@@ -106,7 +106,7 @@
     <td><img height="80" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
   </tr>
   <tr>
-    <td rowspan="3" colspan="2"><img alt="" src="http://www.szslsb.cn//common/images/skins/maint_15.jpg"></td>
+    <td rowspan="3" colspan="2"><img alt="" src="http://www.szslsb.cn/common/images/skins/maint_15.jpg"></td>
     <td rowspan="3"><img height="48" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/maint_16.jpg"></td>
     <td><img height="13" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
   </tr>
@@ -418,7 +418,7 @@ menuFix();
     <td><img height="19" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
   </tr>
   <tr>
-    <td rowspan="2" colspan="3"><img alt="" src="/common/images/skins/maint_25.jpg"></td>
+    <td rowspan="2" colspan="3"><img alt="" src="http://www.szslsb.cn/common/images/skins/maint_25.jpg"></td>
     <td rowspan="11"><img height="479" width="15" alt="" src="http://www.szslsb.cn/common/images/skins/maint_26.jpg"></td>
     <td><img height="31" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
   </tr>
@@ -453,18 +453,15 @@ menuFix();
     <td><img height="65" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
   </tr>
   <tr>
-    <td><img alt="" src="/common/images/skins/maint_33.jpg"></td>
+    <td><img alt="" src="http://www.szslsb.cn/common/images/skins/maint_33.jpg"></td>
     <td rowspan="6"><img height="289" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/maint_34.jpg"></td>
     <td><img height="47" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
   </tr>
   <tr>
-    <td background="common/images/skins/maint_14.jpg" rowspan="5"><table cellspacing="4" cellpadding="4" border="0" align="center">
+    <td background="http://www.szslsb.cncommon/images/skins/maint_14.jpg" rowspan="5"><table cellspacing="4" cellpadding="4" border="0" align="center">
       <tbody><tr>
         <td><marquee height="118" width="170" onmouseout="xiaoqing.start()" onmouseover="xiaoqing.stop()" id="xiaoqing" direction="up" scrolldelay="70" scrollamount="1">
-          
-
-       我司决定对部分老产品停止生产，采用优化升级产品进行替代，有关事项，请咨询我司业务，现对部分停产机型公布如下：无铅焊台... 
-
+                 我司决定对部分老产品停止生产，采用优化升级产品进行替代，有关事项，请咨询我司业务，现对部分停产机型公布如下：无铅焊台... 
         </marquee></td>
       </tr>
     </tbody></table></td>
