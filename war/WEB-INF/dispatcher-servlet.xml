@@ -8,11 +8,9 @@
 <bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
     <property name="alwaysUseFullPath"><value>true</value></property>
     <property name="mappings">
-    
         <props>
-            <prop key="/*">helloController</prop>
-            <prop key="/index.html">helloController</prop>
-            <prop key="/cookie.html">cookieController</prop>
+            <prop key="/index.jhtml">helloController</prop>
+            <prop key="/cookie.jhtml">cookieController</prop>
         </props>
     </property>
     </bean>

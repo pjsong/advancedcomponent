@@ -1,25 +1,49 @@
-<link type="text/css" rel="stylesheet" href="http://www.gwi.com.cn/css/text_zh.css">
-<table cellspacing="0" cellpadding="0" border="0" align="center">
+<table width="800" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
   <tbody><tr>
-    <td width="107"><img height="63" width="80" src="http://www.gwi.com.cn/logo.JPG"></td>
-    <td width="509"><img height="63" width="351" src="http://www.gwi.com.cn/pic/index_02.jpg"></td>
-    <td width="384" valign="bottom" align="right"><a href="/index"><img height="29" width="74" border="0" src="http://www.gwi.com.cn/pic/index_05.jpg"></a><a href="../english/index.asp"><img height="29" width="100" border="0" src="http://www.gwi.com.cn/pic/index_06.jpg"></a></td>
+    <td height="65" width="200"><img alt="" src="http://www.szclou.com/images/i_03.jpg"></td>
+	<td valign="bottom">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
+          <tbody><tr>
+                <td valign="bottom"><a href="reg.asp">简体 </a> | <a href="reg.asp">繁體 </a> | <a href="reg.asp">ENGLISH</a></td>
+				<td align="right" ><a href="reg.asp">新用户注册</a> | <a href="searchpass.asp">忘记密码</a></td>
+          </tr>
+          <tr>
+            <td align="right" colspan=4 valign="bottom">
+				<table width="100%" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
+			  <form onsubmit="return checkformlogin()" name="formlogin" action="checklogin.asp" method="post"></form>
+                <tbody><tr>
+                  <td width="280" align="right">用户名：<input type="text" size="15" id="loginuserID" name="loginuserID"></td>
+                  <td width="30">密码：<input type="password" size="15" id="loginpassword" name="loginpassword"></td>
+                  <td width="50" align="right"><input type="image" src="http://www.szclou.com/images/ann.jpg" name="Submit"></td>
+                </tr>
+              </tbody></table>
+            </td>
+          </tr>
+        </tbody></table>
+    </td>
   </tr>
-  <tr>
-    <td height="23" bgcolor="#b6dffb" colspan="3">&nbsp;</td>
-  </tr>
-  <tr>
-<td colspan="3">
-	<object height="167" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/
-swflash.cab#version=6,0,29,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
-<param value="http://www.szslsb.cn/common/images/skins/top.swf" name="movie">
-<param value="high" name="quality">
-<param value="opaque" name="wmode">
-<embed height="167" width="1005" wmode="opaque" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="http://www.szslsb.cn/common/images/skins/top.swf">
-</object>
-	</td>
-  </tr>
-  <tr bgcolor="#ff0000">
-    <td height="29" background="http://www.gwi.com.cn/pic/ibg1.jpg" align="center" class="wz" colspan="3"><a class="wz" href="index.asp">首页 </a>| <a class="wz" href="aboutus.asp?title=公司简介">关于长城信息 </a>|<a class="wz" href="product.asp"> 业务与产品 </a>| <a class="wz" href="guestbook.asp">技术支持与服务</a> |<a class="wz" href="new.asp?title=新闻快递&amp;langmu2=2"> 新闻中心</a> |<a class="wz style5" href="investor.asp?title=公司概况"> 投资者关系 </a>|<a class="wz" href="intr.asp?title=使命与价值观"> 企业文化</a> |<a class="wz" href="aboutus1.asp?title=人才招聘"> 人才招聘</a> | <a class="wz" href="http://zt.rednet.cn/c/zt/22229/"><font color="red">长沙中电软件园开园</font></a></td>
+</tbody></table>
+	<table width="800" cellspacing="0" cellpadding="0" border="1">
+  <tbody><tr>
+    <td width="800" background="http://www.szclou.com/images/i_06.jpg">
+    <table width="750" cellspacing="0" cellpadding="0" border="0" align="left" id="menu">
+      <tbody><tr>
+        <td width="90"><a href="index.asp">首 页</a></td>
+        <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
+        <td><a href="aboutshow.asp">关于科陆</a></td>
+        <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
+        <td><a href="solutions.asp">产品与解决方案</a></td>
+        <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
+        <td><a href="service01.asp">客服中心</a></td>
+        <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
+        <td><a target="_blank" href="http://irm.p5w.net/ssgs/S002121/index.html">投资者关系</a></td>
+        <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
+        <td><a href="job.asp">招贤纳士</a></td>
+      </tr>
+    </tbody></table></td>
+</div></td>
+        </tr>
+      </tbody></table>
+    </td>
   </tr>
 </tbody></table>
