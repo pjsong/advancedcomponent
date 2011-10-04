@@ -9,6 +9,9 @@ import org.apache.velocity.exception.ResourceNotFoundException;
 import org.springframework.web.servlet.mvc.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
+import utils.Util;
+import velocity.VelocityParser;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,15 +22,14 @@ import java.io.StringWriter;
 import java.util.Date;
 import java.util.HashMap;
 
-public class CookieController implements Controller {
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-//    	request.setCharacterEncoding("ISO8859-1");
-//    	response.setContentType("text/html; charset=ISO8859-1");
-        String now = (new Date()).toString();
-        HashMap map=new HashMap<String,String>();
-        if(request.getCookies()!=null && request.getCookies().length>0)
-        	map.put("userName", request.getCookies()[0].getValue());
-        return new ModelAndView("index0",map);
-    }
+public class RegController extends BaseController {
+	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		VelocityContext vc=new VelocityContext();
+        String act=Util.getNoNull(request.getParameter("act"));
+		if(act.equals("regyes")){
+	        VelocityParser.render("registerYes", vc, request, response);
+	        return;
+		}
+        VelocityParser.render("register", vc, request, response);
+	}
 }

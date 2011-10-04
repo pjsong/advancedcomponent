@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class HelloController extends BaseController {
+public class IndexController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         VelocityContext vc=new VelocityContext();
         VelocityParser.render("index", vc, request, response);

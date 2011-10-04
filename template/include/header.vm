@@ -4,8 +4,8 @@
 	<td valign="bottom">
         <table width="100%" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
           <tbody><tr>
-                <td valign="bottom"><a href="reg.asp">简体 </a> | <a href="reg.asp">繁體 </a> | <a href="reg.asp">ENGLISH</a></td>
-				<td align="right" ><a href="reg.asp">新用户注册</a> | <a href="searchpass.asp">忘记密码</a></td>
+                <td valign="bottom"><a href="index.jhtml">简体 </a> | <a href="reg.asp">繁體 </a> | <a href="reg.asp">ENGLISH</a></td>
+				<td align="right" ><a href="reg.jhtml">新用户注册</a> | <a href="searchpass.asp">忘记密码</a></td>
           </tr>
           <tr>
             <td align="right" colspan=4 valign="bottom">
@@ -25,7 +25,8 @@
 </tbody></table>
 	<table width="800" cellspacing="0" cellpadding="0" border="1">
   <tbody><tr>
-    <td width="800" background="http://www.szclou.com/images/i_06.jpg">
+    <td width="800" style="background-color:#12328b;">
+<link href="static/css/header/header.css" type="text/css" rel="stylesheet">
     <table width="750" cellspacing="0" cellpadding="0" border="0" align="left" id="menu">
       <tbody><tr>
         <td width="90"><a href="index.asp">首 页</a></td>
