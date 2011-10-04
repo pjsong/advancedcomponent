@@ -2,15 +2,15 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
 
-    <bean id="helloController"   class="controller.HelloController" ></bean>
-    <bean id="cookieController"   class="controller.CookieController" ></bean>
+    <bean id="indexController"   class="controller.IndexController" ></bean>
+    <bean id="regController"   class="controller.RegController" ></bean>
 
 <bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
     <property name="alwaysUseFullPath"><value>true</value></property>
     <property name="mappings">
         <props>
-            <prop key="/index.jhtml">helloController</prop>
-            <prop key="/cookie.jhtml">cookieController</prop>
+            <prop key="/index.jhtml">indexController</prop>
+            <prop key="/reg.jhtml">regController</prop>
         </props>
     </property>
     </bean>
