@@ -21,40 +21,35 @@ public class VelocityParser
 		try
 		{
 			ve = new VelocityEngine();
-			ve.setProperty("input.encoding", "utf-8");
-			ve.setProperty("output.encoding", "utf-8");
-			// setting up file resource loader
-			ve.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, "template");
-
-			// Jian: this is very important, otherwise, there will be out of memory error when a template
-			// with #foreach loop is called and the #foreach loop iterates through million of times
-			ve.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_CACHE, "true");
-			// ve.setProperty("file.resource.loader.modificationCheckInterval", "5");
-		
-			// velocimacro configuration
-			ve.setProperty(RuntimeConstants.VM_LIBRARY, "spring.vm");
-			
-			// this setting is such that changing inline velocity macro will take effect
-			// WITHOUT restarting the web server!
-			ve.setProperty(RuntimeConstants.VM_PERM_ALLOW_INLINE_REPLACE_GLOBAL, "true");
-	
-			ve.setProperty(RuntimeConstants.VM_LIBRARY_AUTORELOAD, "true");
-	
-			ve.setProperty(RuntimeConstants.COUNTER_INITIAL_VALUE, "0");
-			ve.setProperty(RuntimeConstants.PARSER_POOL_SIZE, "1");
-	
-			// comment this out if we want to enable logging
-			ve.setProperty(RuntimeConstants.RUNTIME_LOG_LOGSYSTEM_CLASS, "org.apache.velocity.runtime.log.NullLogSystem");
-	
-			ve.setProperty(RuntimeConstants.RUNTIME_LOG_REFERENCE_LOG_INVALID, "true");
-	
-			ve.setProperty(RuntimeConstants.PARSE_DIRECTIVE_MAXDEPTH, "10");
-	
-			// Jian: this is very important, otherwise, there will be out of memory error when a template
-			// with #foreach loop is called and the #foreach loop iterates through million of times
-			ve.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_CACHE, "true");
-	
-			ve.init();
+//			ve.setProperty("input.encoding", "utf-8");
+//			ve.setProperty("output.encoding", "utf-8");
+//			// setting up file resource loader
+//			ve.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_PATH, "template");
+//
+//			// Jian: this is very important, otherwise, there will be out of memory error when a template
+//			// with #foreach loop is called and the #foreach loop iterates through million of times
+//			ve.setProperty(RuntimeConstants.FILE_RESOURCE_LOADER_CACHE, "true");
+//			// ve.setProperty("file.resource.loader.modificationCheckInterval", "5");
+//		
+//			// velocimacro configuration
+//			ve.setProperty(RuntimeConstants.VM_LIBRARY, "spring.vm");
+//			
+//			// this setting is such that changing inline velocity macro will take effect
+//			// WITHOUT restarting the web server!
+//			ve.setProperty(RuntimeConstants.VM_PERM_ALLOW_INLINE_REPLACE_GLOBAL, "true");
+//	
+//			ve.setProperty(RuntimeConstants.VM_LIBRARY_AUTORELOAD, "true");
+//	
+//			ve.setProperty(RuntimeConstants.COUNTER_INITIAL_VALUE, "0");
+//			ve.setProperty(RuntimeConstants.PARSER_POOL_SIZE, "1");
+//	
+//			// comment this out if we want to enable logging
+//			ve.setProperty(RuntimeConstants.RUNTIME_LOG_LOGSYSTEM_CLASS, "org.apache.velocity.runtime.log.NullLogSystem");
+//	
+//			ve.setProperty(RuntimeConstants.RUNTIME_LOG_REFERENCE_LOG_INVALID, "true");
+//	
+//			ve.setProperty(RuntimeConstants.PARSE_DIRECTIVE_MAXDEPTH, "10");
+			ve.init("ve.properties");
 		}
 		catch (Exception e)
 		{
