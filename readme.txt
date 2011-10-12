@@ -15,6 +15,9 @@ http://www.net.cn/service/Soft/ShowSoftDown.asp?UrlID=1&SoftID=7
 reset tomcat
 http://cp.hichina.com/ResetTomcat.aspx?tr=resettomcat#
 
+testpage:
+http://zkm0m1.chinaw3.com/index.jhtml
+
 绠＄悊璐﹀彿锛�zkm0m1 *姝ゅ笎鍙峰嵆涓绘満鍚嶅拰FTP鐢ㄦ埛鍚嶏紝涔熸槸鐧婚檰鈥滄帶鍒堕潰鏉库�鍜屸�寤虹珯鐧惧疂绠扁�鐨勭敤鎴峰悕
 绠＄悊瀵嗙爜锛� k7x8d7u9 鏇存敼涓绘満瀵嗙爜 鎺у埗闈㈡澘
 涓绘満鍩熷悕锛�zkm0m1.chinaw3.com  鏇存崲涓绘満鍩熷悕 (娉細鎿嶄綔瀹屾垚鍚庯紝闇�瀵逛慨鏀瑰悗鐨勫煙鍚嶉噸鏂板妗� 娴侀噺璐拱
