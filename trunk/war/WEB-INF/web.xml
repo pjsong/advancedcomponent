@@ -15,9 +15,12 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>*.jhtml</url-pattern>
+		<url-pattern>/*.jhtml</url-pattern>
 	</servlet-mapping>
-
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
   <welcome-file-list>
     <welcome-file>/index.jhtml</welcome-file>
   </welcome-file-list>
