@@ -1,0 +1,47 @@
+<project name="image-processing" default="build" basedir=".">
+	 
+	<target name="init-debug" unless="release">
+		<property name="build.debug" value="true"/>
+	    	<property name="build.debuglevel" value="lines,vars,source"/>
+	</target>
+	
+	<target name="init-release" if="release">
+		<property name="build.debug" value="false"/>
+	    	<property name="build.debuglevel" value=""/>
+	</target>
+
+	<target name="prepare" depends="init-debug, init-release">
+		<delete dir="build"/>
+		<mkdir dir="build"/>
+		<delete dir="dist"/>
+		<mkdir dir="dist"/>
+	</target>
+
+	<path id="class.path">
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="build" depends="prepare">
+		<mkdir dir="build/classes/" />
+
+
+		<javac srcdir="src/"
+				destdir="build/classes"
+				debug="${build.debug}" debuglevel="${build.debuglevel}"
+				deprecation="on"><classpath refid="class.path" />
+		</javac>
+
+		<!-- build the distribution files -->
+		<mkdir dir="dist/lib/" />		
+		<jar jarfile="dist/lib/image-processing.jar" includes="**/*.class" excludes="**/.svn/" basedir="build/classes/" />
+		<copy todir="dist/lib/"><fileset dir="lib/" includes="**/*.jar" /></copy>
+		<copy todir="dist/"><fileset dir="." includes="dl.properties,*.sh, OldandNewProductID.txt" excludes="**/.svn/" /></copy>
+	</target>
+
+	<target name="clean">
+		<delete dir="build"/>
+		<delete dir="dist"/>
+	</target>
+</project>
