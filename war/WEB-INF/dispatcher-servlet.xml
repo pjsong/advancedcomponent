@@ -9,6 +9,7 @@
     <property name="alwaysUseFullPath"><value>true</value></property>
     <property name="mappings">
         <props>
+        	<prop key="/">indexController</prop>
             <prop key="/index.jhtml">indexController</prop>
             <prop key="/reg.jhtml">regController</prop>
         </props>
