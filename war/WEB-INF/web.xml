@@ -9,13 +9,13 @@
   	<servlet>
 		<servlet-name>dispatcher</servlet-name>
 		<servlet-class>
-			servlet.TheDispatcherServlet
+			org.springframework.web.servlet.DispatcherServlet
         </servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/*.jhtml</url-pattern>
+		<url-pattern>*.jhtml</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
