@@ -16,7 +16,7 @@
     </property>
     </bean>
 
-<bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+<!--<bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
   <property name="resourceLoaderPath" value="/" />
    <property name="velocityProperties">
    <props>
@@ -27,7 +27,7 @@
    </property>
 </bean>
 
-<!-- bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+ bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
   <property name="cache" value="true"/>
   <property name="prefix" value="/template/" />
   <property name="suffix" value=".vm"/>
