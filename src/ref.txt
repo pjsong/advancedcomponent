@@ -1,2 +1,0 @@
-http://gwt-ext.com/demo
-http://www.sencha.com/helpcenter/index.jsp?topic=/com.extjs.gxt.help/html/reference/layouts/fitlayout.html
