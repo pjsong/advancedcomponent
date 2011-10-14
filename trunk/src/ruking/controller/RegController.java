@@ -1,4 +1,4 @@
-package controller;
+package ruking.controller;
 
 
 import org.apache.velocity.VelocityContext;
@@ -9,8 +9,9 @@ import org.apache.velocity.exception.ResourceNotFoundException;
 import org.springframework.web.servlet.mvc.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
-import utils.Util;
-import velocity.VelocityParser;
+import ruking.utils.Util;
+import ruking.velocity.VelocityParser;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
