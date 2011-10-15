@@ -1,0 +1,520 @@
+#parse("include/indexBody1.vm")
+
+##<table cellspacing="0" cellpadding="0" border="0" align="center" id="__01">
+##  <tbody><tr>
+##    <td rowspan="3"><img alt="" src="http://www.szslsb.cn/common/images/skins/maint_05.jpg"></td>
+##    <td rowspan="2"><a href="/shop/"><img height="48" width="581" border="0" alt="" src="http://www.szslsb.cn/common/images/skins/maint_06.jpg"></a></td>
+##    <td rowspan="6"><img height="160" width="13" alt="" src="http://www.szslsb.cn/common/images/skins/maint_07.jpg"></td>
+##    <td colspan="6"><img height="19" width="213" alt="" src="http://www.szslsb.cn/common/images/skins/maint_08.jpg"></td>
+##    <td><img height="19" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td rowspan="22"><img height="804" width="14" alt="" src="http://www.szslsb.cn/common/images/skins/maint_09.jpg"></td>
+##    <td rowspan="3" colspan="3"><img alt="" src="http://www.szslsb.cn/common/images/skins/maint_10.jpg"></td>
+##    <td rowspan="11" colspan="2"><img height="325" width="16" alt="" src="http://www.szslsb.cn/common/images/skins/maint_11.jpg"></td>
+##    <td><img height="29" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td rowspan="9"><table height="277" width="581" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+##      <tbody><tr>
+##        <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
+##  <tbody><tr>
+##    <td height="20" align="center"><table cellspacing="5" cellpadding="3" bordercolor="#ffffff" border="1" align="center">
+##      <tbody><tr>
+##        <td bordercolor="#CCCCCC"><a href="shop/?type=detail&amp;id=509"><img height="105" width="118" border="0" src="http://www.szslsb.cn/shop/common/upload/2010/4/6/151138JE.jpg"></a></td>
+##      </tr>
+##    </tbody></table>
+##    　SL-398多组烙铁全..</td>
+##    
+##    <td height="20" align="center"><table cellspacing="5" cellpadding="3" bordercolor="#ffffff" border="1" align="center">
+##      <tbody><tr>
+##        <td bordercolor="#CCCCCC"><a href="shop/?type=detail&amp;id=508"><img height="105" width="118" border="0" src="http://www.szslsb.cn/shop/common/upload/2010/4/6/151029up.jpg"></a></td>
+##      </tr>
+##    </tbody></table>
+##    　SL-368-D全自动..</td>
+##    
+##    <td height="20" align="center"><table cellspacing="5" cellpadding="3" bordercolor="#ffffff" border="1" align="center">
+##      <tbody><tr>
+##        <td bordercolor="#CCCCCC"><a href="shop/?type=detail&amp;id=507"><img height="105" width="118" border="0" src="http://www.szslsb.cn/shop/common/upload/2010/4/6/1597d8.jpg"></a></td>
+##      </tr>
+##    </tbody></table>
+##    　SL-368-S全自动..</td>
+##    
+##    <td height="20" align="center"><table cellspacing="5" cellpadding="3" bordercolor="#ffffff" border="1" align="center">
+##      <tbody><tr>
+##        <td bordercolor="#CCCCCC"><a href="shop/?type=detail&amp;id=506"><img height="105" width="118" border="0" src="http://www.szslsb.cn/shop/common/upload/2010/4/6/15646mh.jpg"></a></td>
+##      </tr>
+##    </tbody></table>
+##    　SL-318破锡送锡器..</td>
+##    
+##  </tr>
+##  <tr>
+##    <td height="20" align="center"><table cellspacing="5" cellpadding="3" bordercolor="#ffffff" border="1" align="center">
+##      <tbody><tr>
+##        <td bordercolor="#CCCCCC"><a href="shop/?type=detail&amp;id=505"><img height="105" width="118" border="0" src="http://www.szslsb.cn/shop/common/upload/2010/4/6/1553272.jpg"></a></td>
+##      </tr>
+##    </tbody></table>
+##    　SL-308全自动破锡..</td>
+##    
+##    <td height="20" align="center"><table cellspacing="5" cellpadding="3" bordercolor="#ffffff" border="1" align="center">
+##      <tbody><tr>
+##        <td bordercolor="#CCCCCC"><a href="http://www.szslsb.cn/shop/?type=detail&amp;id=502"><img height="105" width="118" border="0" src="http://www.szslsb.cn/shop/common/upload/2010/4/6/145717e9.jpg"></a></td>
+##      </tr>
+##    </tbody></table>
+##    　SL-338全自动攻牙..</td>
+##    
+##    <td height="20" align="center"><table cellspacing="5" cellpadding="3" bordercolor="#ffffff" border="1" align="center">
+##      <tbody><tr>
+##        <td bordercolor="#CCCCCC"><a href="shop/?type=detail&amp;id=501"><img height="105" width="118" border="0" src="http://www.szslsb.cn/shop/common/upload/2010/4/6/145529NI.jpg"></a></td>
+##      </tr>
+##    </tbody></table>
+##    　SL-328全自动高尔..</td>
+##    
+##    <td height="20" align="center"><table cellspacing="5" cellpadding="3" bordercolor="#ffffff" border="1" align="center">
+##      <tbody><tr>
+##        <td bordercolor="#CCCCCC"><a href="shop/?type=detail&amp;id=511"><img height="105" width="118" border="0" src="http://www.szslsb.cn/shop/common/upload/2010/4/6/153432up.jpg"></a></td>
+##      </tr>
+##    </tbody></table>
+##    　液晶组装线</td>
+##    
+##  </tr>
+##</tbody></table> </td>
+##      </tr>
+##    </tbody></table></td>
+##    <td><img height="9" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td background="http://www.szslsb.cn/common/images/skins/maint_13.jpg" rowspan="4"><table height="128" width="198" cellspacing="0" cellpadding="0" border="0">
+##      <tbody><tr>
+##        <td>&nbsp;</td>
+##      </tr>
+##    </tbody></table></td>
+##    <td><img height="10" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td background="http://www.szslsb.cn/common/images/skins/maint_14.jpg" colspan="3"><table height="80" width="183" cellspacing="0" cellpadding="0" border="0">
+##      <tbody><tr>
+##        <form action="/search" name="search" method="get"></form>
+##          <td height="29" align="center"><input type="text" class="input" size="15" name="keyword">
+##                <br>
+##                <br>
+##        <input type="hidden" value="shop" name="genre">
+##                <input type="hidden" value="topic" name="field">
+##                <input type="submit" value="Go" class="button" name="submit">
+##                                       </td>
+##        
+##      </tr>
+##    </tbody></table></td>
+##    <td><img height="80" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td rowspan="3" colspan="2"><img alt="" src="http://www.szslsb.cn/common/images/skins/maint_15.jpg"></td>
+##    <td rowspan="3"><img height="48" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/maint_16.jpg"></td>
+##    <td><img height="13" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td rowspan="17"><img height="663" width="13" alt="" src="http://www.szslsb.cn/common/images/skins/maint_17.jpg"></td>
+##    <td><img height="25" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td rowspan="2"><img height="28" width="198" alt="" src="http://www.szslsb.cn/common/images/skins/maint_18.jpg"></td>
+##    <td><img height="10" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td><img height="18" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/maint_19.jpg"></td>
+##    <td background="common/images/skins/maint_14.jpg" rowspan="4" colspan="2"><table cellspacing="4" cellpadding="4" border="0">
+##      <tbody><tr>
+##        <td><marquee height="118" width="170" onmouseout="xiaoqing.start()" onmouseover="xiaoqing.stop()" id="xiaoqing" direction="up" scrolldelay="70" scrollamount="1">
+##
+##     <p>尊敬的各界朋友们：</p>
+##<p>大家好！<br>　　感谢您对深圳三力设备有限公司的关注，在此，我谨代表深圳三力设备有限公司及全体员工向您致以最诚挚的感谢！<br><br>　　在国内外技术不断发展的今天，人才、资本、技术、市场、经营理念等构成了企业最基本的发展源动力。以人为本，资本为纽带，技术为基础，市场为先导，创造良好的内外部环境，最大限度地发挥员工的聪明才智和积极性，才能够使企业保持向上的活力。深圳三力设备有限公司成立于1996年，致力于企业中小型全自动电子设备、全自动非标焊锡机、非标焊锡机器人等系列电子设备的开发、生产、销售和服务，是一家集研发、生产、销售和售后服务于一体的高科技技术公司。随着社会经济的不断发展，很多企业面临依靠大量劳动力生产效率低、产品不良率高、用工和人员管理成本不断增加等问题，严重阻碍了企业的发展，而三力公司为这些企业提供实用新型的自动化设备和解决方案，使企业用人少、效率高、品质稳定，还大大的减少了用工和人员管理成本，所以企业的需要就是三力的发展动力。<br><br>　　抚今追昔，感慨万千，展望未来，任重道远。公司成立十多年来，我们有几经锤炼敢打敢拼的职工队伍，有多年积累形成的创新机制和体系，有不断完善的管理模式，有发展创新的技术成果，三力人将继续以昂扬的姿态和崭新的风貌，抢抓机遇，迎接挑战，加速发展，为自动化技术设备的发展更尽一份力！。在未来发展道路上，我们将坚持以用户满意为目标，全面贯彻“规范作业、精益求精、持续改善、追求卓越”的质量方针，严格依照ISO9001:2000质理管理体系和国家相关质量标准进行控制,确保三力公司品牌和产品质量达到更优。以达到用户满意、企业满意的共同目标。<br><br>　　三力公司的发展壮大，离不开广大社会各界朋友的理解与支持，更离不开广大新老客户多年来的支持与关照。在此再次致以衷心的感谢与崇高的敬意。三力人将在以后的工作中不断学习，紧跟客户的发展和需要，加大管理创新与技术创新，持续改进我们的工作方法和方式，为客户提供最优质的服务。我们坚信，只要有各界朋友们一如既往的支持和厚爱，深圳三力设备有限公司的明天一定会更美好！ <br><br>　　各位朋友，合作伙伴，友好供应商们，我们真诚期待你们的光临和指导 ！<br>　　最后，祝各位领导及各界朋友们身体健康，生活幸福美满！</p> 
+##</marquee></td>
+##      </tr>
+##   
+##    </tbody></table> </td>
+##    <td><img height="18" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td><img alt="" src="/common/images/skins/maint_21.jpg"></td>
+##    <td rowspan="14"><img height="610" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/maint_22.jpg"></td>
+##    <td><img height="43" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td background="common/images/skins/maint_23.jpg" rowspan="9">	   　<style type="text/css">
+##&lt;!--
+##*{margin:0;padding:0;}
+##body {
+## font-family: arial, 宋体, serif;
+## font-size:12px;
+##}
+###nav {
+## width:160px;
+##    line-height: 17px; 
+## list-style-type: none;
+## text-align:left;
+##    /*定义整个ul菜单的行高和背景色*/
+##}
+##/*==================一级目录===================*/
+###nav a {
+## width: 160px; 
+## display: block;
+## padding-left:20px;
+## /*Width(一定要)，否则下面的Li会变形*/
+##}
+###nav li {
+## /*一级目录的背景色*/
+## border-bottom:#cccccc 1px solid; /*下面的一条白边*/
+## float:left;
+## /*float：left,本不应该设置，但由于在Firefox不能正常显示
+## 继承Nav的width,限制宽度，li自动向下延伸*/
+##}
+###nav li a:hover{
+##/*一级目录onMouseOver显示的背景色*/
+##}
+###nav a:link  {
+## color:#003B73; text-decoration:none;
+##}
+###nav a:visited  {
+## color:#003B73;text-decoration:none;
+##}
+###nav a:hover  {
+## color:#666666;text-decoration:none;font-weight:bold;
+##}
+##/*==================二级目录===================*/
+###nav li ul {
+## list-style:none;
+## text-align:left;
+##}
+###nav li ul li{ 
+## background: #EBEBEB; /*二级目录的背景色*/
+##}
+###nav li ul a{
+##         padding-left:24px;
+##         width:160px;
+## /* padding-left二级目录中文字向右移动，但Width必须重新设置=(总宽度-padding-left)*/
+##}
+##/*下面是二级目录的链接样式*/
+###nav li ul a:link  {
+## color:#666; text-decoration:none;
+##}
+###nav li ul a:visited  {
+## color:#666;text-decoration:none;
+##}
+###nav li ul a:hover {
+## color:#F3F3F3;
+## text-decoration:none;
+## font-weight:normal;
+## background:#BDBDBD;
+## /* 二级onmouseover的字体颜色、背景色*/
+##}
+##/*==============================*/
+###nav li:hover ul {
+## left: auto;
+##}
+###nav li.sfhover ul {
+## left: auto;
+##}
+###content {
+## clear: left; 
+##}
+###nav ul.collapsed {
+## display: none;
+##}
+##--&gt;
+###PARENT{
+## width:160px;
+## padding-left:1px;
+##}
+##</style>   
+##
+##
+##
+##    　
+##              
+##              
+##             
+##                
+##
+##
+##
+##
+##
+##
+##
+##
+##
+##
+##
+##
+##
+## <script type="text/javascript">&lt;!--
+##var LastLeftID = "";
+##function menuFix() {
+## var obj = document.getElementById("nav").getElementsByTagName("li");
+## 
+## for (var i=0; i&lt;obj.length; i++) {
+##  obj[i].onmouseover=function() {
+##   this.className+=(this.className.length&gt;0? " ": "") + "sfhover";
+##  }
+##  obj[i].onMouseDown=function() {
+##   this.className+=(this.className.length&gt;0? " ": "") + "sfhover";
+##  }
+##  obj[i].onMouseUp=function() {
+##   this.className+=(this.className.length&gt;0? " ": "") + "sfhover";
+##  }
+##  obj[i].onmouseout=function() {
+##   this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"), "");
+##  }
+## }
+##}
+##function DoMenu(emid)
+##{
+## var obj = document.getElementById(emid); 
+## obj.className = (obj.className.toLowerCase() == "expanded"?"collapsed":"expanded");
+## if((LastLeftID!="")&amp;&amp;(emid!=LastLeftID)) //关闭上一个Menu
+## {
+##  document.getElementById(LastLeftID).className = "collapsed";
+## }
+## LastLeftID = emid;
+##}
+##function GetMenuID()
+##{
+## var MenuID="";
+## var _paramStr = new String(window.location.href);
+## var _sharpPos = _paramStr.indexOf("#");
+## 
+## if (_sharpPos &gt;= 0 &amp;&amp; _sharpPos &lt; _paramStr.length - 1)
+## {
+##  _paramStr = _paramStr.substring(_sharpPos + 1, _paramStr.length);
+## }
+## else
+## {
+##  _paramStr = "";
+## }
+## 
+## if (_paramStr.length &gt; 0)
+## {
+##  var _paramArr = _paramStr.split("&amp;");
+##  if (_paramArr.length&gt;0)
+##  {
+##   var _paramKeyVal = _paramArr[0].split("=");
+##   if (_paramKeyVal.length&gt;0)
+##   {
+##    MenuID = _paramKeyVal[1];
+##   }
+##  }
+##  /*
+##  if (_paramArr.length&gt;0)
+##  {
+##   var _arr = new Array(_paramArr.length);
+##  }
+##  
+##  //取所有#后面的，菜单只需用到Menu
+##  //for (var i = 0; i &lt; _paramArr.length; i++)
+##  {
+##   var _paramKeyVal = _paramArr[i].split('=');
+##   
+##   if (_paramKeyVal.length&gt;0)
+##   {
+##    _arr[_paramKeyVal[0]] = _paramKeyVal[1];
+##   }  
+##  }
+##  */
+## }
+## 
+## if(MenuID!="")
+## {
+##  DoMenu(MenuID)
+## }
+##}
+##GetMenuID(); //*这两个function的顺序要注意一下，不然在Firefox里GetMenuID()不起效果
+##menuFix();
+##--&gt;</script>
+##</td>
+##    <td><img height="69" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td rowspan="2"><a href="/aboutus/?type=detail&amp;id=6"><img height="50" width="581" border="0" alt="" src="http://www.szslsb.cn/common/images/skins/maint_24.jpg"></a></td>
+##    <td><img height="19" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td rowspan="2" colspan="3"><img alt="" src="http://www.szslsb.cn/common/images/skins/maint_25.jpg"></td>
+##    <td rowspan="11"><img height="479" width="15" alt="" src="http://www.szslsb.cn/common/images/skins/maint_26.jpg"></td>
+##    <td><img height="31" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td rowspan="6"><table height="226" width="581" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+##      <tbody><tr>
+##        <td>
+##
+##     <table width="100%" cellspacing="10" border="0">
+##<tbody>
+##<tr>
+##<td>
+##<p>　　深圳市三力电子设备有限公司成立以来，是致力于集规划、设计、研制和销售（整厂自动化设备）于一体的专业公司。2007年与日本松岛精密机械公司技术合作，共同开发全自动焊锡机（焊锡机器人）系列产品，主要有：点焊机系列；脱焊机系列；焊线机系列，通过中日双方研发人员的共同努力，产品的各项技术指标和总体质量达到日本同类产品的标准，并申请了多项国家技术专利。<br><br>　　主要产品有：自动焊锡机系列，脱焊机系列；焊线机系列，破锡机，自动送锡手工焊台，焊锡机器人，全自动高尔夫球批锋切除机；自动攻牙机系列；液晶电视自动组装线；节能灯组装线等组装线系列......</p></td></tr></tbody></table> 
+## </td>
+##      </tr>
+##    </tbody></table></td>
+##    <td><img height="17" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td rowspan="3" colspan="2"><object height="142" width="182" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+##      <param value="/ttt.swf" name="movie">
+##      <param value="high" name="quality">
+##      <embed height="142" width="182" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" quality="high" src="/ttt.swf">
+##    </object></td>
+##    <td rowspan="9"><img height="431" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/maint_30.jpg"></td>
+##    <td><img height="26" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td><img height="51" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td><img height="65" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td><img alt="" src="http://www.szslsb.cn/common/images/skins/maint_33.jpg"></td>
+##    <td rowspan="6"><img height="289" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/maint_34.jpg"></td>
+##    <td><img height="47" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td background="http://www.szslsb.cncommon/images/skins/maint_14.jpg" rowspan="5"><table cellspacing="4" cellpadding="4" border="0" align="center">
+##      <tbody><tr>
+##        <td><marquee height="118" width="170" onmouseout="xiaoqing.start()" onmouseover="xiaoqing.stop()" id="xiaoqing" direction="up" scrolldelay="70" scrollamount="1">
+##				我司决定对部分老产品停止生产，采用优化升级产品进行替代，有关事项，请咨询我司业务，现对部分停产机型公布如下：无铅焊台... 
+##        </marquee></td>
+##      </tr>
+##    </tbody></table></td>
+##    <td><img height="20" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td><img height="24" width="198" alt="" src="http://www.szslsb.cn/common/images/skins/maint_36.jpg"></td>
+##    <td rowspan="2"><img height="45" width="581" alt="" src="http://www.szslsb.cn/common/images/skins/maint_37.jpg"></td>
+##    <td><img height="24" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td rowspan="2"><img alt="" src="/common/images/skins/maint_38.jpg"></td>
+##    <td><img height="21" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td bgcolor="#ffffff" rowspan="2"><table height="177" width="581" cellspacing="5" cellpadding="5" border="0">
+##      <tbody><tr>
+##        <td valign="top"><table width="96%" cellspacing="0" cellpadding="0" border="0">
+##  <tbody><tr>
+##    <td height="25" background="common/images/skins/ba.gif"><img border="0" align="absmiddle" src="http://www.szslsb.cn/common/images/skins/mailnew_07.jpg"> <a target="_self" href="article/?type=detail&amp;id=73">三力欢度国庆</a></td>
+##  </tr>
+##  <tr>
+##    <td height="25" background="common/images/skins/ba.gif"><img border="0" align="absmiddle" src="http://www.szslsb.cn/common/images/skins/mailnew_07.jpg"> <a target="_self" href="article/?type=detail&amp;id=72">庆祝中华人民共和国成立61周..</a></td>
+##  </tr>
+##  <tr>
+##    <td height="25" background="common/images/skins/ba.gif"><img border="0" align="absmiddle" src="http://www.szslsb.cn/common/images/skins/mailnew_07.jpg"> <a target="_self" href="article/?type=detail&amp;id=70">使用全自动焊锡机的好处的有..</a></td>
+##  </tr>
+##  <tr>
+##    <td height="25" background="common/images/skins/ba.gif"><img border="0" align="absmiddle" src="http://www.szslsb.cn/common/images/skins/mailnew_07.jpg"> <a target="_self" href="article/?type=detail&amp;id=68">深圳三力电子设备有限公司相..</a></td>
+##  </tr>
+##  <tr>
+##    <td height="25" background="common/images/skins/ba.gif"><img border="0" align="absmiddle" src="http://www.szslsb.cn/common/images/skins/mailnew_07.jpg"> <a target="_self" href="article/?type=detail&amp;id=67">深圳三力电子设备现面向全国..</a></td>
+##  </tr>
+##  <tr>
+##    <td height="25" background="common/images/skins/ba.gif"><img border="0" align="absmiddle" src="http://www.szslsb.cn/common/images/skins/mailnew_07.jpg"> <a target="_self" href="article/?type=detail&amp;id=66">2010年深圳电子生产设备展</a></td>
+##  </tr>
+##</tbody></table>
+##</td>
+##        <td valign="top"><table width="96%" cellspacing="0" cellpadding="0" border="0">
+##  <tbody><tr>
+##    <td height="25" background="common/images/skins/ba.gif"><img border="0" align="absmiddle" src="http://www.szslsb.cn/common/images/skins/mailnew_07.jpg"> <a target="_self" href="article/?type=detail&amp;id=63">SL-318搭配焊台的适用范围..</a></td>
+##  </tr>
+##  <tr>
+##    <td height="25" background="common/images/skins/ba.gif"><img border="0" align="absmiddle" src="http://www.szslsb.cn/common/images/skins/mailnew_07.jpg"> <a target="_self" href="article/?type=detail&amp;id=62">剥线机可以配焊台工作吗？</a></td>
+##  </tr>
+##  <tr>
+##    <td height="25" background="common/images/skins/ba.gif"><img border="0" align="absmiddle" src="http://www.szslsb.cn/common/images/skins/mailnew_07.jpg"> <a target="_self" href="article/?type=detail&amp;id=61">防锡解锡送锡机适用哪些范围..</a></td>
+##  </tr>
+##  <tr>
+##    <td height="25" background="common/images/skins/ba.gif"><img border="0" align="absmiddle" src="http://www.szslsb.cn/common/images/skins/mailnew_07.jpg"> <a target="_self" href="article/?type=detail&amp;id=60">直流马达破锡机和步进马达破..</a></td>
+##  </tr>
+##  <tr>
+##    <td height="25" background="common/images/skins/ba.gif"><img border="0" align="absmiddle" src="http://www.szslsb.cn/common/images/skins/mailnew_07.jpg"> <a target="_self" href="article/?type=detail&amp;id=59">318破锡送锡器分哪几种？</a></td>
+##  </tr>
+##  <tr>
+##    <td height="25" background="common/images/skins/ba.gif"><img border="0" align="absmiddle" src="http://www.szslsb.cn/common/images/skins/mailnew_07.jpg"> <a target="_self" href="article/?type=detail&amp;id=58">什么是步进马达破锡送锡器？..</a></td>
+##  </tr>
+##</tbody></table>
+##</td>
+##      </tr>
+##    </tbody></table></td>
+##    <td><img height="23" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td background="common/images/skins/maint_23.jpg" rowspan="2"><table height="172" width="198" cellspacing="0" cellpadding="0" border="0">
+##      <tbody><tr>
+##        <td>
+##
+##     <p>
+##<table cellspacing="0" cellpadding="0" align="center" class="ML_Titlebg">
+##<tbody>
+##<tr valign="center">
+##<td align="middle" class="ML_Tdbg">
+##<p align="center"><a target="_blank" href="http://www.elec.cc/" title="国际电子网"><font color="#0000ff">国际电子网</font></a></p></td></tr>
+##<tr>
+##<td class="TdDotted">
+##<p align="center"><font color="#0000ff"><img height="1" width="3" src="http://www.bakon.cn/img/1x1_pix.gif"></font></p></td></tr>
+##<tr valign="center">
+##<td align="middle" class="ML_Tdbg">
+##<p align="center"><a target="_blank" href="http://www.seccw.com/" title="深圳电子商会"><font color="#0000ff">深圳电子商会</font></a></p></td></tr>
+##<tr>
+##<td class="TdDotted">
+##<p align="center"><font color="#0000ff"><img height="1" width="3" src="http://www.bakon.cn/img/1x1_pix.gif"></font></p></td></tr>
+##<tr>
+##<td class="TdDotted">
+##<p align="center"><font color="#0000ff"><img height="1" width="3" src="http://www.bakon.cn/img/1x1_pix.gif"></font></p></td></tr>
+##<tr>
+##<td class="TdDotted">
+##<p align="center"><font color="#0000ff"><img height="1" width="3" src="http://www.bakon.cn/img/1x1_pix.gif"></font></p></td></tr>
+##<tr valign="center">
+##<td align="middle" class="ML_Tdbg">
+##<p align="center"><a target="_blank" href="http://okvip.cn/" title="圈子有多大，生意有多大"><font color="#0000ff">中国商业圈</font></a></p></td></tr>
+##<tr>
+##<td class="TdDotted">
+##<p align="center"><font color="#0000ff"><img height="1" width="3" src="http://www.bakon.cn/img/1x1_pix.gif"></font></p></td></tr>
+##<tr valign="center">
+##<td align="middle" class="ML_Tdbg">
+##<p align="center"><a target="_blank" href="http://www.okvip.cn/" title="最权威的行业导航"><font color="#0000ff">中国商业网</font></a></p></td></tr>
+##<tr>
+##<td class="TdDotted">
+##<p align="center"><font color="#0000ff"><img height="1" width="3" src="http://www.bakon.cn/img/1x1_pix.gif"></font></p></td></tr>
+##<tr valign="center">
+##<td align="middle" class="ML_Tdbg">
+##<p align="center"><a target="_blank" href="http://www.ec960.com/sw/default.asp" title="企业供求信息"><font color="#0000ff">中国企业网</font></a></p></td></tr>
+##<tr>
+##<td class="TdDotted">
+##<p align="center"><font color="#0000ff"><img height="1" width="3" src="http://www.bakon.cn/img/1x1_pix.gif"></font></p></td></tr>
+##<tr valign="center">
+##<td align="middle" class="ML_Tdbg">
+##<p align="center"><a target="_blank" href="http://corporate.china.globalsources.com/" title="国际贸易，成功之源"><font color="#0000ff">环球资源</font></a></p></td></tr>
+##<tr>
+##<td class="TdDotted">
+##<p align="center"><font color="#0000ff"><img height="1" width="3" src="http://www.bakon.cn/img/1x1_pix.gif"></font></p></td></tr>
+##<tr valign="center">
+##<td align="middle" class="ML_Tdbg">
+##<p align="center"><a target="_blank" href="http://www.oneitcity.com/" title="开创电子市场新纪元"><font color="#0000ff">永一国际电子市场</font></a></p></td></tr>
+##<tr>
+##<td class="TdDotted">
+##<p align="center"><font color="#0000ff"><img height="1" width="3" src="http://www.bakon.cn/img/1x1_pix.gif"></font></p></td></tr>
+##<tr valign="center">
+##<td align="middle" class="ML_Tdbg">
+##<p align="center"><a target="_blank" href="http://www.china.alibaba.com/" title="全球领先的网上贸易市场"><font color="#0000ff">阿里巴巴-网上贸易</font></a></p></td></tr></tbody></table></p> 
+## </td>
+##      </tr>
+##    </tbody></table></td>
+##    <td><img height="154" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td rowspan="2" colspan="8"><img height="48" width="807" alt="" src="http://www.szslsb.cn/common/images/skins/maint_41.jpg"></td>
+##    <td><img height="18" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##  <tr>
+##    <td><img height="30" width="198" alt="" src="http://www.szslsb.cn/common/images/skins/maint_42.jpg"></td>
+##    <td><img height="30" width="1" alt="" src="http://www.szslsb.cn/common/images/skins/分隔符.gif"></td>
+##  </tr>
+##</tbody></table>
