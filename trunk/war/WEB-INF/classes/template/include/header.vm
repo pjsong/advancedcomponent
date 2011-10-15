@@ -23,7 +23,7 @@
     </td>
   </tr>
 </tbody></table>
-	<table width="800" cellspacing="0" cellpadding="0" border="1">
+	<table align="center" width="800" cellspacing="0" cellpadding="0" border="1">
   <tbody><tr>
     <td width="800" style="background-color:#12328b;">
 <link href="static/css/header/header.css" type="text/css" rel="stylesheet">
