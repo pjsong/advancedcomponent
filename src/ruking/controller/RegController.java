@@ -27,10 +27,10 @@ public class RegController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
         String act=Util.getNoNull(request.getParameter("act"));
-		if(act.equals("regyes")){
-	        VelocityParser.render("registerYes", vc, request, response);
-	        return;
-		}
-        VelocityParser.render("register", vc, request, response);
+//		if(act.equals("regyes")){
+//	        VelocityParser.render("registerYes", vc, request, response);
+//	        return;
+//		}
+//        VelocityParser.render("register", vc, request, response);
 	}
 }
