@@ -1,7 +1,7 @@
 <table border=0  style="font-size:12px;">
 	<tr align="left" >
 <td valign="top">
-<img src="/static/img/leftBar/leftbarsearchproducts.jpg" alt="搜索产品">
+<img src="$_url/static/img/leftBar/leftbarsearchproducts.jpg" alt="搜索产品">
 </td></tr>
 <tr align="left" >
 <td valign="top">
