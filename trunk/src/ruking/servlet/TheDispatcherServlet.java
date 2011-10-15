@@ -24,7 +24,6 @@ public class TheDispatcherServlet extends DispatcherServlet
 			{
 				return;
 			}			
-//			Logger.fatal(Util.getStackTraceAsString(e));
 			VelocityContext ctx = new VelocityContext();
 			response.setStatus(500);
 			VelocityParserFactory.getVP().render("err_500", ctx, request, response);

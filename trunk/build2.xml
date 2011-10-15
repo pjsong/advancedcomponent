@@ -23,11 +23,14 @@
 		<fileset dir="war/WEB-INF/lib">
 			<include name="**/*.jar"/>
 		</fileset>
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
 	</path>
 
 	<target name="build" depends="prepare">
 		<mkdir dir="WebRoot/WEB-INF/classes/" />
-
+		<!--
 		<javac srcdir="src/"
 				destdir="WebRoot/WEB-INF/classes"
 				includeantruntime="false"
@@ -35,42 +38,21 @@
 				deprecation="on"><classpath refid="class.path" />
 		</javac>
 		
-		<copy todir="build/">
-			<fileset dir="WebRoot/" excludes="**/.svn/" />
+
+		<copy todir="WebRoot/WEB-INF/lib">
+			<fileset dir="war/WEB-INF/lib/" excludes="**/.svn/" />
+		</copy>
+		<copy todir="WebRoot/WEB-INF/classes/template">
+			<fileset dir="war/WEB-INF/classes/template" excludes="**/.svn/" />
+		</copy>
+		-->
+		<copy file="war/WEB-INF/web.xml" tofile="WebRoot/WEB-INF/web.xml"/>
+		<copy todir="WebRoot/WEB-INF/classes/">
+			<fileset dir="war/WEB-INF/classes/" excludes="**/.svn/" />
+		</copy>
+		<copy todir="WebRoot/static/">
+			<fileset dir="war/static/" excludes="**/.svn/" />
 		</copy>
 
-		<!-- build the distribution files -->
-		<mkdir dir="dist/" />
-		
-		<jar jarfile="dist/template.zip" includes="template/**" excludes="**/.svn/" basedir="." />
-		<jar jarfile="dist/ROOT.war" basedir="build" />
-		<!--
-		<jar jarfile="dist/static.zip" includes="static/**" basedir="build" />
-		<copy todir="dist/"><fileset dir="sql" includes="database.sql" /></copy>
-		-->
-		<copy todir="dist/"><fileset dir="." includes="*.prp, LinkRedirect.csv" /></copy>
-		<copy todir="dist/"><fileset dir="static" /></copy>					
-
-	</target>
-
-	<target name="runtests" depends="build">
-		<junit printsummary="on" fork="false" haltonfailure="false">
-			<classpath>
-				<path refid="class.path" />
-				<path location="WebRoot/WEB-INF/classes" />
-			</classpath>
-		    <formatter type="plain"/>
-		    <batchtest fork="false" todir="WebRoot/WEB-INF/classes">
-		        <fileset dir="test/">
-		            <include name="**/Test*.java"/>
-		            <exclude name="**/AllTests.java"/>
-		        </fileset>
-		    </batchtest>
-        </junit>
-	</target>
-
-	<target name="clean">
-		<delete dir="build"/>
-		<delete dir="dist"/>
 	</target>
 </project>

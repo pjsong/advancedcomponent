@@ -51,7 +51,11 @@ public class GlobalVariablesBA {
 //		}
 //		
 //
-		ctx.put("_url", request.getRequestURL().toString().replace(request.getRequestURI().substring(0), request.getContextPath()));
+		String s1 = request.getRequestURL().toString();
+		String s2=request.getRequestURI().substring(0);
+		String s3=request.getContextPath();
+		String s4 = s1.substring(0,8)+s1.substring(8).replace(s2, s3);
+        ctx.put("_url", s4);
 //		ctx.put("_secureUrl", Util.getHttpsBaseUrl(request));
 //
 //		boolean isSecurePage = false;
