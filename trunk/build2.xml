@@ -1,4 +1,4 @@
-<project name="destination-lighting" default="build" basedir=".">
+<project name="Ru-King" default="build" basedir=".">
 
 	 <target name="deploy" description="copy file to server">
 	 	<scp file="dist/template.zip" todir="demo:ChinacaT@10.40.8.54:/home/demo/demo1-tomcat-6.0.10/bin" trust="true"/>	 	
@@ -23,9 +23,6 @@
 	</target>
 
 	<path id="class.path">
-		<fileset dir="lib">
-			<include name="**/*.jar"/>
-		</fileset>
 		<fileset dir="war/WEB-INF/lib">
 			<include name="**/*.jar"/>
 		</fileset>
