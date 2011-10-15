@@ -1,39 +1,38 @@
 package ruking.ba;
-//package ba;
-//
-//import java.text.SimpleDateFormat;
-//import java.util.Date;
-//import java.util.Formatter;
-//import java.util.HashMap;
-//import java.util.Map;
-//
-//import javax.servlet.http.HttpServletRequest;
-//
-//import org.apache.velocity.context.Context;
-//import org.springframework.web.servlet.support.RequestContext;
-//
-//import utils.RegExp;
-//import utils.SessionUtil;
-//import velocity.EscapeTool;
-//import velocity.MathTool;
-//import velocity.VelocityUtil;
-//
-//
-//public class GlobalVariablesBA {
-//	public void setCommonVariables(HttpServletRequest request, Context ctx) throws Exception
-//	{
-//        // regular expression class used for displaying price
-//        ctx.put("formatter", new Formatter());
-//        ctx.put("regExp", new RegExp());
-//        ctx.put("math", new MathTool());
-//        ctx.put("esc", new EscapeTool());
-//        ctx.put("velocityUtil", new VelocityUtil());
-//
-//        // image server
-//	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
-//	    String currYear = sdf.format(new Date());
-//        ctx.put("currYear", currYear);
-//
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Formatter;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.velocity.context.Context;
+import org.springframework.web.servlet.support.RequestContext;
+
+import ruking.utils.RegExp;
+import ruking.utils.Util;
+import ruking.velocity.EscapeTool;
+import ruking.velocity.MathTool;
+import ruking.velocity.VelocityUtil;
+
+
+
+public class GlobalVariablesBA {
+	public void setCommonVariables(HttpServletRequest request, Context ctx) throws Exception
+	{
+        // regular expression class used for displaying price
+        ctx.put("formatter", new Formatter());
+        ctx.put("regExp", new RegExp());
+        ctx.put("math", new MathTool());
+        ctx.put("esc", new EscapeTool());
+        ctx.put("velocityUtil", new VelocityUtil());
+
+        // image server
+	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+	    String currYear = sdf.format(new Date());
+        ctx.put("currYear", currYear);
+
 //		// get session
 //		SessionUtil sessUtil = new SessionUtil(RepDataSourceFactory.getMasterDataSource(), new MySQLRowMapper());
 //    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
@@ -52,7 +51,7 @@ package ruking.ba;
 //		}
 //		
 //
-//		ctx.put("_url", Util.getHttpBaseUrl(request));
+		ctx.put("_url", request.getRequestURL().toString().replace(request.getRequestURI().substring(1), request.getContextPath()));
 //		ctx.put("_secureUrl", Util.getHttpsBaseUrl(request));
 //
 //		boolean isSecurePage = false;
@@ -176,4 +175,5 @@ package ruking.ba;
 //    	
 //    	sessUtil.write(request, sessData);
 //	}
-//}
+	}
+}
