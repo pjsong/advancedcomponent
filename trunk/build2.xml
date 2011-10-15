@@ -1,9 +1,4 @@
 <project name="Ru-King" default="build" basedir=".">
-
-	 <target name="deploy" description="copy file to server">
-	 	<scp file="dist/template.zip" todir="demo:ChinacaT@10.40.8.54:/home/demo/demo1-tomcat-6.0.10/bin" trust="true"/>	 	
-	 	<scp file="dist/ROOT.war" todir="demo:ChinacaT@10.40.8.54:/home/demo/demo1-tomcat-6.0.10" trust="true"/>	 	
-	 </target>
 	
 	<target name="init-debug" unless="release">
 		<property name="build.debug" value="true"/>
@@ -16,10 +11,12 @@
 	</target>
 
 	<target name="prepare" depends="init-debug, init-release">
-		<delete dir="build"/>		
-		<mkdir dir="build"/>
-		<delete dir="dist"/>		
-		<mkdir dir="dist"/>		
+		<delete dir="webroot/WEB-INF"/>		
+		<mkdir dir="webroot/WEB-INF"/>
+		<delete dir="webroot/lib"/>		
+		<mkdir dir="webroot/lib"/>
+		<delete dir="webroot/static"/>		
+		<mkdir dir="webroot/static"/>		
 	</target>
 
 	<path id="class.path">
