@@ -23,7 +23,7 @@
     </td>
   </tr>
 </tbody></table>
-	<table align="center" width="800" cellspacing="0" cellpadding="0" border="1">
+<table align="center" width="800" cellspacing="0" cellpadding="0" border="1">
   <tbody><tr>
     <td width="800" style="background-color:#12328b;">
 <link href="static/css/header/header.css" type="text/css" rel="stylesheet">
@@ -31,13 +31,13 @@
       <tbody><tr>
         <td width="90"><a href="index.jhtml">首 页</a></td>
         <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
-        <td><a href="aboutshow.jhtml">关于科陆</a></td>
+        <td><a href="aboutshow.jhtml">关于如金</a></td>
         <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
         <td><a href="solutions.jhtml">产品与解决方案</a></td>
         <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
-        <td><a href="service01.jhtml">客服中心</a></td>
+        <td><a href="service01.jhtml">产业资讯</a></td>
         <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
-        <td><a target="_blank" href="http://irm.p5w.net/ssgs/S002121/index.html">投资者关系</a></td>
+        <td><a target="_blank" href="http://irm.p5w.net/ssgs/S002121/index.html">客服中心</a></td>
         <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
         <td><a href="job.jhtml">招贤纳士</a></td>
       </tr>
