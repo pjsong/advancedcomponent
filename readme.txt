@@ -1,10 +1,12 @@
+example program
 http://www.net.cn/service/faq/xuni/zjgl/200810/3516.html
 
+homepage of VM
 http://www.net.cn/client/host/Detail/4201110117899585
 
-虚拟主机业务管理手册
+handbook of VM
 http://www.net.cn/service/xssl/cjwt/201109/1531.html#%E4%B8%80  
-Java虚拟主机程序范例及使用说明
+
 http://www.net.cn/service/faq/xuni/zjgl/200810/3516.html
 
 zkm0m1.chinaw3.com
