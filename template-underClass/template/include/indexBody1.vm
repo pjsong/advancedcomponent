@@ -1,0 +1,9 @@
+<table align="center" border=0 cellpadding=5 style="border: 1px solid rgb(199, 214, 226); margin-top: 10px;">
+<tr valign="top"><td align=center>
+#parse("include/table_left.vm")
+</td>
+<td align=center>
+#parse("include/table_mid.vm")
+</td>
+</tr>
+</table>
