@@ -32,7 +32,7 @@
                 <tbody><tr>
                   <td width="280" align="right">用户名：<input type="text" size="15" id="loginuserID" name="loginuserID"></td>
                   <td width="30">密码：<input type="password" size="15" id="loginpassword" name="loginpassword"></td>
-                  <td width="50" align="right"><input type="image" src="$_url/static/img/login.jpg" name="Submit"></td>
+                  <td width="50" align="right"><input type="image" src="$_url/static/img/header/login.jpg" name="Submit"></td>
                 </tr>
               </tbody></table>
             </td>
