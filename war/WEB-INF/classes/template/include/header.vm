@@ -16,54 +16,34 @@
         });
       });
     </script>
-</head><body  style="background-color: #cccccc;">
+</head><body  style="background-color: #8a8a8a;/*h160,b120*/">
 <table align="center" width="800" cellspacing="0" cellpadding="0" border="0">
   <tbody><tr>
-    <td height="65" width="200"><a href="$_url/"><img height="65" width="200" alt="" src="$_url/static/img/logo1-1.jpg" style=""></a></td>
+    <td rowspan=2 height="120" width="200" valign=top align=left><a href="$_url/"><img height="90" width="160" alt="" src="$_url/static/img/logo1-1.jpg" style=""></a></td>
 	<td valign="bottom">
         <table width="100%" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
-          <tbody><tr>
-                <td valign="bottom"><a href="index.jhtml">简体 </a> | <a href="index.jhtml">繁體 </a> | <a href="index.jhtml">ENGLISH</a></td>
-				<td align="right" ><a href="reg.jhtml">新用户注册</a> | <a href="searchpass.jhtml">忘记密码</a></td>
-          </tr>
+          <tbody>
           <tr>
-            <td align="right" colspan=4 valign="bottom">
+			<td valign="bottom" style="padding-bottom:5px;width:180px"><span class="headerlanguage">
+			<a href="index.jhtml">简体 </a> | <a href="index.jhtml">繁體 </a> | <a href="index.jhtml">ENGLISH</a></span></td>
+            <td align="right" colspan=7 valign="bottom">
 				<table width="100%" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
 			  <form onsubmit="return checkformlogin()" name="formlogin" action="checklogin.jhtml" method="post"></form>
-                <tbody><tr>
-                  <td width="280" align="right">用户名：<input type="text" size="15" id="loginuserID" name="loginuserID"></td>
-                  <td width="30">密码：<input type="password" size="15" id="loginpassword" name="loginpassword"></td>
-                  <td width="50" align="right"><input type="image" src="$_url/static/img/header/login.jpg" name="Submit"></td>
+				<tr>
+				<td  colspan=3 align="right" ><a href="reg.jhtml">新用户注册</a> | <a href="searchpass.jhtml">忘记密码</a></td>
+				</tr>
+                <tbody><tr style="padding-bottom:10px;">
+                  <td width="140" align="left"><span class="headerlabel">用户名：</span><input class="headerinputbox" type="text" size="15" id="loginuserID" name="loginuserID"></td>
+                  <td width="130" align="left"><span class="headerlabel">密码：</span><input class="headerinputbox" type="password" size="15" id="loginpassword" name="loginpassword"></td>
+                  <td width="30" align="center"><input type="image" src="$_url/static/img/header/login.jpg" name="Submit"></td>
                 </tr>
               </tbody></table>
             </td>
-          </tr>
-        </tbody></table>
-    </td>
-  </tr>
-</tbody></table>
-<table align="center" width="800" cellspacing="0" cellpadding="0" border="1">
-  <tbody><tr>
-    <td width="800" style="background-color:#12328b;">
-<link href="static/css/header/header.css" type="text/css" rel="stylesheet">
-    <table width="750" cellspacing="0" cellpadding="0" border="0" align="left" id="menu">
-      <tbody><tr>
-        <td width="90"><a href="index.jhtml">首 页</a></td>
-        <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
-        <td><a href="aboutshow.jhtml">关于如金</a></td>
-        <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
-        <td><a href="solutions.jhtml">产品与解决方案</a></td>
-        <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
-        <td><a href="service01.jhtml">产业资讯</a></td>
-        <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
-        <td><a target="_blank" href="http://irm.p5w.net/ssgs/S002121/index.html">客服中心</a></td>
-        <td width="1"><img height="28" width="1" alt="" src="http://www.szclou.com/images/i_11.jpg"></td>
-        <td><a href="job.jhtml">招贤纳士</a></td>
+          </tr><tr><td align=center colspan=8 style="padding-top:12px;"><div id="menu">
+		<a href="index.jhtml">&nbsp;首 页&nbsp;</a> <span class="seperator"> | </span><a href="aboutshow.jhtml">&nbsp;关于如金&nbsp;</a>&nbsp;<span class="seperator"> | </span><a href="solutions.jhtml">&nbsp;产品与解决方案&nbsp;</a>&nbsp;<span class="seperator"> | </span>
+		<a href="service01.jhtml">&nbsp;产业资讯</a>&nbsp;<span class="seperator"> | </span><a target="_blank" href="http://irm.p5w.net/ssgs/S002121/index.html">&nbsp;客服中心&nbsp;</a></div><td>
       </tr>
-    </tbody></table></td>
-</div></td>
-        </tr>
-      </tbody></table>
+        </tbody></table>
     </td>
   </tr>
 </tbody></table>
