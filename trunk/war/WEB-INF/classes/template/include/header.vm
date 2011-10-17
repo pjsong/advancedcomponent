@@ -1,3 +1,21 @@
+<html><head>
+	<link href="/static/css/rotation.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/jquery.cycle.all.2.72.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $('#slideshow').cycle({
+          fx:     'fade',//turnDown,fade,curtainX,scrollRight (click),zoom,shuffle
+          speed:  'fast',
+          timeout: 4000,
+          pager:  '#nav',
+          slideExpr: 'img',
+          pagerEvent: 'mouseover',
+          pauseOnPagerHover: true
+        });
+      });
+    </script>
+</head><body>
 <table align="center" width="800" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
   <tbody><tr>
     <td height="65" width="200"><a href="$_url/"><img height="65" width="200" alt="" src="$_url/static/img/logo.jpg"></a></td>
