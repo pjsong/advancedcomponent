@@ -1,4 +1,3 @@
-
 #slideshow { margin: 0px; width: 790px; height: 300px; border:1px solid #eeeeee;}
 #nav { z-index: 50; position: absolute; bottom: 10px; left: 5px }
 #nav a {outline:none; background-image: url('/static/img/rotation/rotattion-notshown.png'); background-repeat:no-repeat; color: #515151; font-weight: bold; margin:4px 6px; padding:0 10px; text-decoration: none;}
