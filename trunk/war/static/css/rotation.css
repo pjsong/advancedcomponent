@@ -1,29 +1,6 @@
-#slideshow {
-    border: 1px solid #EEEEEE;
-    height: 300px;
-    margin: 0;
-    width: 800px;
-}
-#nav {
-    bottom: 10px;
-    left: 5px;
-    position: absolute;
-    z-index: 50;
-}
-#nav a {
-    background-image: url("$_url/static/img/rotation/rotation-notshown.png");
-    background-repeat: no-repeat;
-    color: #515151;
-    font-weight: bold;
-    margin: 4px 6px;
-    outline: medium none;
-    padding: 0 10px;
-    text-decoration: none;
-}
-#nav a.activeSlide {
-    background-image: url("$_url/static/img/rotation/rotation-shown.png");
-    background-repeat: no-repeat;
-}
-#nav a:focus {
-    outline: medium none;
-}
+
+#slideshow { margin: 0px; width: 790px; height: 300px; border:1px solid #eeeeee;}
+#nav { z-index: 50; position: absolute; bottom: 10px; left: 5px }
+#nav a {outline:none; background-image: url('/static/img/rotation/rotattion-notshown.png'); background-repeat:no-repeat; color: #515151; font-weight: bold; margin:4px 6px; padding:0 10px; text-decoration: none;}
+#nav a.activeSlide {background-image: url('/static/img/rotation/rotation-shown.png'); background-repeat:no-repeat;}
+#nav a:focus { outline: none; }
