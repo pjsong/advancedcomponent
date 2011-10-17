@@ -24,8 +24,8 @@
         <table width="100%" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
           <tbody>
           <tr>
-			<td valign="bottom" style="padding-bottom:5px;width:180px"><span class="headerlanguage">
-			<a href="index.jhtml">简体 </a> | <a href="index.jhtml">繁體 </a> | <a href="index.jhtml">ENGLISH</a></span></td>
+			<td valign="bottom" style="padding-bottom:0px;width:180px"><span class="headerlanguage">
+			<a href="index.jhtml"> 简体 </a>|<a href="index.jhtml"> 繁體 </a>|<a href="index.jhtml"> ENGLISH </a></span></td>
             <td align="right" colspan=7 valign="bottom">
 				<table width="100%" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
 			  <form onsubmit="return checkformlogin()" name="formlogin" action="checklogin.jhtml" method="post"></form>
