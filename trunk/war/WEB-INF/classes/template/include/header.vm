@@ -16,12 +16,12 @@
         });
       });
     </script>
-</head><body  style="background-color: #8a8a8a;/*h160,b120*/">
-<table align="center" width="800" cellspacing="0" cellpadding="0" border="0">
+</head><body>
+<table style="background-color: #8a8a8a;/*h160,b120*/" align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
   <tbody><tr>
-    <td rowspan=2 height="120" width="200" valign=top align=left><a href="$_url/"><img height="90" width="160" alt="" src="$_url/static/img/logo1-1.jpg" style=""></a></td>
-	<td valign="bottom">
-        <table width="100%" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
+    <td rowspan=2 height="120" width="380" valign="top" align="right"><a href="$_url/"><img height="90" width="160" alt="" src="$_url/static/img/logo1-1.jpg" style=""></a></td>
+	<td valign="bottom" align="center" style="width:700px;">
+        <table width="600px" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
           <tbody>
           <tr>
 			<td valign="bottom" style="padding-bottom:0px;width:200px;"><span class="headerlanguage">
@@ -39,11 +39,12 @@
                 </tr>
               </tbody></table>
             </td>
-          </tr><tr><td align=center colspan=8 style="padding-top:12px;"><div id="menu">
-		<a href="index.jhtml">&nbsp;首 页&nbsp;</a> <span class="seperator"> | </span><a href="aboutshow.jhtml">&nbsp;关于如金&nbsp;</a>&nbsp;<span class="seperator"> | </span><a href="solutions.jhtml">&nbsp;产品与解决方案&nbsp;</a>&nbsp;<span class="seperator"> | </span>
-		<a href="service01.jhtml">&nbsp;产业资讯</a>&nbsp;<span class="seperator"> | </span><a target="_blank" href="http://irm.p5w.net/ssgs/S002121/index.html">&nbsp;客服中心&nbsp;</a></div><td>
+          </tr><tr><td align="left" colspan=8 style="padding-top:12px;"><div id="menu">
+		<a href="index.jhtml">&nbsp;&nbsp;首 页&nbsp;</a> <span class="seperator"> | </span><a href="aboutshow.jhtml">&nbsp;关于如金&nbsp;</a>&nbsp;<span class="seperator"> | </span><a href="solutions.jhtml">&nbsp;产品与解决方案&nbsp;</a>&nbsp;<span class="seperator"> | </span>
+		<a href="service01.jhtml">&nbsp;产业资讯</a>&nbsp;<span class="seperator"> | </span><a target="_blank" href="http://irm.p5w.net/ssgs/S002121/index.html">&nbsp;客服中心&nbsp;&nbsp;</a></div><td>
       </tr>
         </tbody></table>
     </td>
+	<td style="width:300px;"></td>
   </tr>
 </tbody></table>
