@@ -1,0 +1,27 @@
+<table width="800" cellspacing="0" cellpadding="0" border="0" align="center">
+              <tbody><tr>
+                <td><table width="80%" cellspacing="0" cellpadding="0" border="0" align="center">
+                    <tbody><tr>
+                      <td height="40" align="center"><font color="red"><strong>工作备忘</strong></font></td>
+					  
+                    </tr>
+                </tbody></table></td>
+              </tr>
+              <tr>
+                <td><table width="100%" cellspacing="1" cellpadding="10" border="0" bgcolor="#cccccc" align="center"  style="font-size:12px;">
+                    <tbody><tr bgcolor="#ffffff"><b>罗辉：</b>
+					<ul><li>
+					调整首页滚动图片尺寸到100k内</li><li>
+					添加首页下方文字部分三个标题图片</li><li>
+					设计菜单栏5个页面，以及产品详细信息页面的效果图</li><li>
+					</li><li></li><li></li><li></li></ul>
+					<b>彭劲松：</b>
+					<ul><li>
+					降低主页抬头高度，不需拉动滚动条即可看到页面下方文字</li><li>
+					完成用户注册，密码找回功能</li><li>
+					完成主页各种语言版本页面</li><li>
+					</li><li></li><li></li><li></li><li></li><li></li></ul>
+                      <td height="40">
+					  </td>
+              </tr>
+            </tbody></table>
