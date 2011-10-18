@@ -16,7 +16,7 @@
         });
       });
     </script>
-</head><body>
+</head><body  style="background-color: #fafafa;">
 <table style="background-color: #8a8a8a;/*h160,b120*/" align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
   <tbody><tr>
     <td rowspan=2 height="120" width="380" valign="top" align="right"><a href="$_url/"><img height="90" width="160" alt="" src="$_url/static/img/logo1-1.jpg" style=""></a></td>
