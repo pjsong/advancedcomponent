@@ -15,6 +15,7 @@ public class UserSignUpDTO {
 	private String postalcode;
 	private String phone;
 	private String fax;
+	private boolean newsLetter;
 	public String getLoginName() {
 		return loginName;
 	}
@@ -99,4 +100,12 @@ public class UserSignUpDTO {
 	public void setFax(String fax) {
 		this.fax = fax;
 	}
+	public boolean isNewsLetter() {
+		return newsLetter;
+	}
+	public void setNewsLetter(boolean newsLetter) {
+		this.newsLetter = newsLetter;
+	}
+	
+	
 }
