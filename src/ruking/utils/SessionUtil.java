@@ -251,7 +251,7 @@ public class SessionUtil
 	
 	public static void main(String[] args) throws Exception
 	{
-		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource(""), new MDTMySQLRowMapper());
+		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource("",""), new MDTMySQLRowMapper());
 //		Map<String, Object> map = sessUtil.internalRead("41030627");
 //		System.out.println(map);
 	}
