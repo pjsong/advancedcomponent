@@ -1,13 +1,24 @@
-﻿<table width="900px" align="center" border="0" cellpadding=5 style="border: 0px solid rgb(199, 214, 226); margin-top: 10px;">
-<tr valign="top"><td align="left" width="30%" style="font-size:12px;color:#606060;">
+﻿<table width="900px" align="center" border="0" cellpadding=5 style="margin-top: 10px;">
+<tr valign="top"><td align="left" width="34%" style="font-size:12px;color:#606060;padding-left:30px;padding-right:30px;">
 <div><img src="/static/img/footer/aboutus.gif"></div><br />
+<div>xx集团创立于xx年，创业xx年来，坚持创业和创新精神创世界名牌，已经从一家濒临倒闭的集体小厂发展成为全球拥有x万多名员工、xxxx年营业额xx亿元的全球化集团公司。xx已跃升为全球白色家电第一品牌，并被美国《新闻周刊》（Newsweek）网站评为全球十大创新公司。</td>
+</td>
+<td align="left" width="33%" style="font-size:12px;color:#606060;padding-left:30px;padding-right:30px;">
+<div><img src="/static/img/footer/industrytrend.gif"></div><br />
+<div id="xwgg">
+            <dl>
+                <dt><a title="2011年家电满意度报告出炉 用户对海尔厨电服务最满意" href="./about/article2.html">2011年家电满意度报告出炉 用户对...</a></dt>
+                <dt><a title="2011年家电满意度报告出炉 用户对海尔厨电服务最满意" href="./about/article2.html">2011年家电满意度报告出炉 用户对...</a></dt>
+                <dt><a title="2011年家电满意度报告出炉 用户对海尔厨电服务最满意" href="./about/article2.html">2011年家电满意度报告出炉 用户对...</a></dt>
+                <dt><a title="2011年家电满意度报告出炉 用户对海尔厨电服务最满意" href="./about/article2.html">2011年家电满意度报告出炉 用户对...</a></dt>
+            </dl>
+            <a class="all" href="./about/news/">[查看所有新闻]</a>
+        </div>
+</td>
+</td>
+<td align="left" width="33%" style="font-size:12px;color:#606060;padding-left:30px;padding-right:30px;">
+<div><img src="/static/img/footer/friends.gif"></div><br />
 <div>罗辉参考做三张图片,分别是"了解如金","行业动态","产品快讯",xx集团创立于xx年，创业xx年来，坚持创业和创新精神创世界名牌，已经从一家濒临倒闭的集体小厂发展成为全球拥有x万多名员工、xxxx年营业额xx亿元的全球化集团公司。xx已跃升为全球白色家电第一品牌，并被美国《新闻周刊》（Newsweek）网站评为全球十大创新公司。</td>
-</td>
-<td align=center>
-xxx
-</td>
-<td align=center>
-xxxx
 </td>
 </tr>
 </table>
