@@ -12,7 +12,8 @@ public class UserSignUpDTO {
 	private String companyname;
 	private String companyaddress;
 	private String name;
-	private String postalcode;
+	private String qqNumber;
+	private String msnNumber;
 	private String phone;
 	private String fax;
 	private boolean newsLetter;
@@ -82,11 +83,18 @@ public class UserSignUpDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getPostalcode() {
-		return postalcode;
+
+	public String getMsnNumber() {
+		return msnNumber;
 	}
-	public void setPostalcode(String postalcode) {
-		this.postalcode = postalcode;
+	public void setMsnNumber(String msnNumber) {
+		this.msnNumber = msnNumber;
+	}
+	public String getQqNumber() {
+		return qqNumber;
+	}
+	public void setQqNumber(String qqNumber) {
+		this.qqNumber = qqNumber;
 	}
 	public String getPhone() {
 		return phone;
