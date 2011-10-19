@@ -42,7 +42,7 @@
             </td>
           </tr><tr><td align="left" colspan=8 style="padding-top:12px;"><div id="menu">
 		<a href="index.jhtml">&nbsp;&nbsp;首 页&nbsp;</a> <span class="seperator"> | </span><a href="aboutshow.jhtml">&nbsp;关于如金&nbsp;</a>&nbsp;<span class="seperator"> | </span><a href="solutions.jhtml">&nbsp;产品与解决方案&nbsp;</a>&nbsp;<span class="seperator"> | </span>
-		<a href="service01.jhtml">&nbsp;产业资讯</a>&nbsp;<span class="seperator"> | </span><a target="_blank" href="http://irm.p5w.net/ssgs/S002121/index.html">&nbsp;客服中心&nbsp;&nbsp;</a></div><td>
+		<a href="service01.jhtml">&nbsp;产业资讯</a>&nbsp;<span class="seperator"> | </span><a href="customerservice.jhtml">&nbsp;客服中心&nbsp;&nbsp;</a></div><td>
       </tr>
         </tbody></table>
     </td>
