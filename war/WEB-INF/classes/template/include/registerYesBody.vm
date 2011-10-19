@@ -11,46 +11,46 @@
               </tr>
               <tr>
                 <td><table width="100%" cellspacing="1" cellpadding="3" border="0" align="center" bordercolordark="#cccccc" bordercolorlight="#ffffff">
-                        <form onsubmit="return checkform()" action="checkuser.asp" method="post" id="creator" name="creator"></form>
+                        <form name="form1" action="/reg.jhtml?act=regact" method="post"></form>
                           <tbody><tr align="center">
-                            <td height="25" bgcolor="#ffffff" colspan="2"><strong>新用户注册</strong></td>
+                            <td height="40" bgcolor="#ffffff" colspan="2" style="font-size:18px;"><strong>新用户注册<br /><br /></strong></td>
                           </tr>
                           <tr>
-                            <td height="25" width="45%" bgcolor="#ffffff" align="left"><strong>登陆名：</strong><br>最少3个字母，不能超过14个字符（7个汉字）
+                            <td height="25" width="45%" bgcolor="#ffffff" align="right"><strong>登陆名：</strong><br>最少3个字母，不能超过14个字符（7个汉字）
 </td>
                             <td width="75%" bgcolor="#ffffff"><input type="text" class="style" id="loginName" name="loginName" style="width: 280px;">
                                 <font color="#ff0000">* </font></td>
                           </tr>
                           
                           <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>密码(至少6位)：</strong><br>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>密码(至少6位)：</strong><br>
 请输入密码，区分大小写。 不要使用类似 '*'、' '的特殊字符
 </td>
                             <td bgcolor="#ffffff"><input type="password" class="style" id="password" name="password" style="width: 280px;">
                                 <font color="#ff0000">* </font></td>
                           </tr>
                           <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>确认密码(至少6位)：</strong><br>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>确认密码(至少6位)：</strong><br>
 请再输一遍确认</td>
                             <td bgcolor="#ffffff"><input type="password" class="style" id="passwordv" name="passwordv" style="width: 280px;">
                                 <font color="#ff0000">*</font></td>
                           </tr>
 						  <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>密码问题：</strong><br>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>密码问题：</strong><br>
 忘记密码的提示问题
 </td>
                             <td bgcolor="#ffffff"><input type="text" class="style" id="question" name="question" style="width: 280px;">
                                 <font color="#ff0000">*</font></td>
                           </tr>
                           <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>问题答案：</strong><br>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>问题答案：</strong><br>
 忘记密码的提示问题答案，用于取回密码
 </td>
                             <td bgcolor="#ffffff"><input type="text" class="style" id="answer" name="answer" style="width: 280px;">
                                 <font color="#ff0000">*</font></td>
                           </tr>
                           <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>性别：</strong><br>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>性别：</strong><br>
 请选择您的性别
 </td>
                             <td bgcolor="#ffffff" class="unnamed1"><input type="radio" checked="" value="1" name="sex">
@@ -59,7 +59,7 @@
               女</td>
                           </tr>
 						  <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>Email地址：</strong><br>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>Email地址：</strong><br>
 请输入有效的邮件地址
 </td>
                             <td bgcolor="#ffffff"><input type="text" class="style" id="email" name="email" style="width: 280px;">
@@ -67,20 +67,20 @@
                           </tr>
 
 						  <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>公司网址：</strong></td>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>公司网址：</strong></td>
                             <td bgcolor="#ffffff"><input type="text" class="style" id="companywebsite" value="http://" name="companywebsite" style="width: 280px;">
 							</td>
                           </tr>
                           
 						  <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>公司名称：</strong><br>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>公司名称：</strong><br>
 您的公司名称
 </td>
                             <td bgcolor="#ffffff"><input type="text" class="style" id="companyname" name="companyname" style="width: 280px;">
 							</td>
                           </tr>
 						  <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>地址：</strong><br>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>地址：</strong><br>
 您的公司地址或联系地址
 
 </td>
@@ -88,41 +88,45 @@
                                 <font color="#ff0000">*</font></td>
                           </tr>
 						  <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>真实姓名：</strong>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>真实姓名：</strong>
 </td>
                             <td bgcolor="#ffffff"><input type="text" class="style" id="name" name="name" style="width: 280px;">
 							</td>
                           </tr>
 						  <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>邮政编码：</strong></td>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>邮政编码：</strong></td>
                             <td bgcolor="#ffffff"><input type="text" class="style" id="postalcode" name="postalcode" style="width: 280px;">
 							<font color="#ff0000">*</font>
 							</td>
                           </tr>
                           <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>联系电话：</strong></td>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>联系电话：</strong></td>
                             <td bgcolor="#ffffff"><input type="text" class="style" id="phone" name="phone" style="width: 280px;">
 							<font color="#ff0000">*</font></td>
                           </tr>
 						   <tr>
-                            <td height="25" bgcolor="#ffffff" align="left"><strong>传 真：</strong></td>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>传 真：</strong></td>
                             <td bgcolor="#ffffff"><input type="text" class="style" id="fax" name="fax" style="width: 280px;">
+							</td>
+                          </tr>
+						  <tr>
+                            <td height="25" bgcolor="#ffffff" align="right"><strong>获取公司最新资讯：</strong><br>
+选中后系统将自动发送最新资讯到您的邮箱</td>
+                            <td bgcolor="#ffffff"><input type=checkbox id="newsletter" name="newsletter" checked="">##checked
 							</td>
                           </tr>
                        
 
                           <tr>
                             <td height="25" bgcolor="#ffffff" align="center" colspan="2">
-                              <input type="submit" class="style" value="注册" name="Submit4">
+                              <input type="submit" class="style" value="注册" onclick="javascript:form1.submit();">
                               <input type="hidden" value="save" id="act" name="act">
               　
-								<input type="reset" class="style" value="清除" onclick="javascript:clearRegisterForm()">
+							  <input type="reset" class="style" value="清除" onclick="javascript:clearRegisterForm()">
                             </td>
                           </tr>
                         
                     </tbody></table>
-                  <p>其中*为必填项</p>
-                  <p>&nbsp;</p></td>
               </tr>
             </tbody></table>
           
