@@ -39,8 +39,14 @@
                             <td height="25" bgcolor="#ffffff" align="right"><strong>密码问题：</strong><br>
 忘记密码的提示问题
 </td>
-                            <td bgcolor="#ffffff"><input type="text" class="style" id="question" name="question" style="width: 280px;">
-                                <font color="#ff0000">*</font></td>
+                            <td bgcolor="#ffffff"><select class="style" id="question" name="question" style="width: 280px;">
+								<option  style="width:280px;" value="-1">选择一个熟悉的问题</option>  
+								<option  style="width:280px;">妈妈的生日是哪一天(格式"yyyy-mm-dd")</option>
+								<option  style="width:280px;">爸爸的姓名是什么</option>
+								<option  style="width:280px;">身份证号码的最后6位数是什么</option>  		
+								<option  style="width:280px;">有几个兄弟姐妹</option>
+								</select> <font color="#ff0000">*</font>								
+							</td>
                           </tr>
                           <tr>
                             <td height="25" bgcolor="#ffffff" align="right"><strong>问题答案：</strong><br>
