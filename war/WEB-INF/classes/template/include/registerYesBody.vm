@@ -85,7 +85,7 @@
 
 						  <tr>
                             <td height="25" bgcolor="#ffffff" align="right"><strong>公司网址：</strong></td>
-                            <td bgcolor="#ffffff"><input type="text" class="style" id="companywebsite" name="companywebsite" value="#if($userSignUpDTO.companywebsite)$!userSignUpDTO.companywebsite #else http:// #end"  style="width: 280px;">
+                            <td bgcolor="#ffffff"><input type="text" class="style" id="companywebsite" name="companywebsite" value="#if($userSignUpDTO.companywebsite)$!userSignUpDTO.companywebsite #else http://#end"  style="width: 280px;">
 							</td>
                           </tr>
                           
