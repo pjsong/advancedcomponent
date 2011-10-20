@@ -1,21 +1,23 @@
 package ruking.dto;
 
-public class UserSignUpDTO {
-	private String loginName;
-	private String password;
-	private String passwordV;
-	private String question;
-	private String answer;
-	private String sex;
-	private String email;
-	private String companywebsite;
-	private String companyname;
-	private String companyaddress;
-	private String name;
-	private String qqNumber;
-	private String msnNumber;
-	private String phone;
-	private String fax;
+import java.io.Serializable;
+
+public class UserSignUpDTO  implements Serializable{
+	private String loginName="";
+	private String password="";;
+	private String passwordV="";;
+	private String question="";;
+	private String answer="";;
+	private String sex="";;
+	private String email="";;
+	private String companywebsite="";;
+	private String companyname="";;
+	private String companyaddress="";;
+	private String name="";;
+	private String qqNumber="";;
+	private String msnNumber="";;
+	private String mobile="";;
+	private String phoneFax="";;
 	private boolean newsLetter;
 	public String getLoginName() {
 		return loginName;
@@ -32,8 +34,8 @@ public class UserSignUpDTO {
 	public String getPasswordV() {
 		return passwordV;
 	}
-	public void setPasswordV(String passswordV) {
-		this.passwordV = passswordV;
+	public void setPasswordV(String passwordV) {
+		this.passwordV = passwordV;
 	}
 	public String getQuestion() {
 		return question;
@@ -83,37 +85,35 @@ public class UserSignUpDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getMsnNumber() {
-		return msnNumber;
-	}
-	public void setMsnNumber(String msnNumber) {
-		this.msnNumber = msnNumber;
-	}
 	public String getQqNumber() {
 		return qqNumber;
 	}
 	public void setQqNumber(String qqNumber) {
 		this.qqNumber = qqNumber;
 	}
-	public String getPhone() {
-		return phone;
+	public String getMsnNumber() {
+		return msnNumber;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setMsnNumber(String msnNumber) {
+		this.msnNumber = msnNumber;
 	}
-	public String getFax() {
-		return fax;
+	public String getMobile() {
+		return mobile;
 	}
-	public void setFax(String fax) {
-		this.fax = fax;
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
-	public boolean isNewsLetter() {
+	public String getPhoneFax() {
+		return phoneFax;
+	}
+	public void setPhoneFax(String phoneFax) {
+		this.phoneFax = phoneFax;
+	}
+	public boolean getNewsLetter() {
 		return newsLetter;
 	}
 	public void setNewsLetter(boolean newsLetter) {
 		this.newsLetter = newsLetter;
 	}
-	
-	
+
 }
