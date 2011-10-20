@@ -19,7 +19,8 @@
                             <td height="25" width="45%" bgcolor="#ffffff" align="right"><strong>登陆名：</strong><br>最少3个字母，不能超过14个字符（7个汉字）
 </td>
                             <td width="75%" bgcolor="#ffffff"><input type="text" class="style" value="$!userSignUpDTO.loginName" id="loginName" name="loginName" style="width: 280px;">
-                                <font color="#ff0000">* </font>#if($error.loginNameError)<br /> <font color="red"><b> !!! $error.loginNameError </b></font>#end</td>
+                                <font color="#ff0000">* </font>#if($error.loginNameError)<br /> <font color="red"><b> !!! $error.loginNameError </b></font>#end
+								#if($error.loginNameExistsError)<br /> <font color="red"><b> !!! $error.loginNameExistsError </b></font>#end</td>
                           </tr>
                           
                           <tr>
