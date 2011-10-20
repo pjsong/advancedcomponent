@@ -65,7 +65,7 @@ public class RegController extends BaseController {
 		if(Util.getNoNull(u.getEmail()).trim().equals(""))ret.put("emailEmptyError", "请填写邮箱");
 		if(!Util.getNoNull(u.getEmail()).trim().matches(RegExp.emailRegExp))ret.put("emailFormatError", "请填写邮箱正确格式");
 		if(Util.getNoNull(u.getCompanyaddress()).trim().equals(""))ret.put("companyAddressError", "请填写联系地址");
-		if(Util.getNoNull(u.getPhoneFax()).trim().equals(""))ret.put("phoneError", "请填写联系电话");
+		if(Util.getNoNull(u.getMobile()).trim().equals(""))ret.put("mobileError", "请填写联系电话");
 		return ret;
 	}
 }
