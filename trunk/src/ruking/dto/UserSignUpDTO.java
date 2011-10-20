@@ -3,7 +3,7 @@ package ruking.dto;
 public class UserSignUpDTO {
 	private String loginName;
 	private String password;
-	private String passswordV;
+	private String passwordV;
 	private String question;
 	private String answer;
 	private String sex;
@@ -30,10 +30,10 @@ public class UserSignUpDTO {
 		this.password = password;
 	}
 	public String getPassswordV() {
-		return passswordV;
+		return passwordV;
 	}
 	public void setPassswordV(String passswordV) {
-		this.passswordV = passswordV;
+		this.passwordV = passswordV;
 	}
 	public String getQuestion() {
 		return question;
