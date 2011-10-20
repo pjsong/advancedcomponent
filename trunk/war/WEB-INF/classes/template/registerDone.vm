@@ -1,0 +1,1 @@
+﻿#parse("include/headerregister.vm")<p font-size="14px" align="center" style="color:#Ffff00; background-color:#cccccc;"><b>注册成功，您目前已处于注册会员登录状态。</b></p>#parse("include/footer.vm")
