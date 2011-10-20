@@ -29,10 +29,10 @@ public class UserSignUpDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getPassswordV() {
+	public String getPasswordV() {
 		return passwordV;
 	}
-	public void setPassswordV(String passswordV) {
+	public void setPasswordV(String passswordV) {
 		this.passwordV = passswordV;
 	}
 	public String getQuestion() {
