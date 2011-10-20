@@ -12,10 +12,18 @@ import ruking.dto.UserSignUpDTO;
 import ruking.utils.Util;
 
 public class UserSignUpDAO {
-	public static String dbName = "zkm0m1_db";
-	public static UserSignUpDTO getUserByLoginName(String loginName) throws SQLException{
+	public String dbName ;//= "zkm0m1_db";
+	public String password ;//= "pjsong";
+	
+
+	public UserSignUpDAO(String dbName, String password) {
+		super();
+		this.dbName = dbName;
+		this.password = password;
+	}
+	public  UserSignUpDTO getUserByLoginName(String loginName) throws SQLException{
 		UserSignUpDTO u=new UserSignUpDTO();
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(dbName,"ChinacaT"), new MDTMySQLRowMapper());
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM users WHERE LoginName = " + DbUtil.escSql(loginName);
 		Map m=runner.queryForMap(sql);
 		if(m==null)return null;
@@ -34,23 +42,23 @@ public class UserSignUpDAO {
 		}
 		return u;
 	}
-	public static boolean loginNameExists(String loginName) throws SQLException{
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(dbName,"ChinacaT"), new MDTMySQLRowMapper());
+	public  boolean loginNameExists(String loginName) throws SQLException{
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM users WHERE LoginName = " + DbUtil.escSql(loginName);
 		Map m=runner.queryForMap(sql);
 		if(m==null)return false;
 		return true;
 	}
-	public static UserSignUpDTO forgetPassword(String email,String question,String answer) throws SQLException{
+	public  UserSignUpDTO forgetPassword(String email,String question,String answer) throws SQLException{
 		UserSignUpDTO u=new UserSignUpDTO();
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(dbName,"ChinacaT"), new MDTMySQLRowMapper());
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM users WHERE Email = " + DbUtil.escSql(email)+" and Question="+DbUtil.escSql(question)+" and Answer="+DbUtil.escSql(answer);
 		Map m=runner.queryForMap(sql);
 		if(m==null)return null;
 		return getUserByLoginName((String)m.get("LoginName"));
 	}
-	public static void insertUser(UserSignUpDTO u) throws SQLException{
-		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(dbName,"ChinacaT"), new MDTMySQLRowMapper());
+	public  void insertUser(UserSignUpDTO u) throws SQLException{
+		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
 		String sql="insert into users(LoginName,Password,Question,Sex,Answer,Email,CompanyAddress,Mobile,NewsLetter";
 		if(!Util.getNoNull(u.getCompanywebsite()).trim().equals(""))sql+=",CompanyWebSite";
 		if(!Util.getNoNull(u.getCompanyname()).trim().equals(""))sql+=",CompanyName";
@@ -58,13 +66,13 @@ public class UserSignUpDAO {
 		if(!Util.getNoNull(u.getQqNumber()).trim().equals(""))sql+=",QQNumber";
 		if(!Util.getNoNull(u.getMsnNumber()).trim().equals(""))sql+=",MsnNumber";
 		if(!Util.getNoNull(u.getPhoneFax()).trim().equals(""))sql+=",PhoneFax";
-		sql = sql+") values ("+u.getLoginName().trim()+","+u.getPassword().trim()+","+u.getQuestion()+","+u.getSex()+","+u.getAnswer()+","+u.getEmail()+","+u.getCompanyaddress()+","+u.getMobile()+","+u.getNewsLetter();
-		if(!Util.getNoNull(u.getCompanywebsite()).equals(""))sql+=","+u.getCompanywebsite().trim();
-		if(!Util.getNoNull(u.getCompanyname()).equals(""))sql+=","+u.getCompanyname().trim();
-		if(!Util.getNoNull(u.getName()).equals(""))sql+=","+u.getName().trim();
-		if(!Util.getNoNull(u.getQqNumber()).equals(""))sql+=","+u.getQqNumber().trim();
-		if(!Util.getNoNull(u.getMsnNumber()).equals(""))sql+=","+u.getMsnNumber().trim();
-		if(!Util.getNoNull(u.getPhoneFax()).equals(""))sql+=","+u.getPhoneFax().trim();
+		sql = sql+") values ("+DbUtil.escSql(u.getLoginName().trim())+","+DbUtil.escSql(u.getPassword().trim())+","+DbUtil.escSql(u.getQuestion())+","+DbUtil.escSql(u.getSex())+","+DbUtil.escSql(u.getAnswer())+","+DbUtil.escSql(u.getEmail())+","+DbUtil.escSql(u.getCompanyaddress())+","+DbUtil.escSql(u.getMobile())+","+DbUtil.escSql(u.getNewsLetter());
+		if(!Util.getNoNull(u.getCompanywebsite()).equals(""))sql+=","+DbUtil.escSql(u.getCompanywebsite().trim());
+		if(!Util.getNoNull(u.getCompanyname()).equals(""))sql+=","+DbUtil.escSql(u.getCompanyname().trim());
+		if(!Util.getNoNull(u.getName()).equals(""))sql+=","+DbUtil.escSql(u.getName().trim());
+		if(!Util.getNoNull(u.getQqNumber()).equals(""))sql+=","+DbUtil.escSql(u.getQqNumber().trim());
+		if(!Util.getNoNull(u.getMsnNumber()).equals(""))sql+=","+DbUtil.escSql(u.getMsnNumber().trim());
+		if(!Util.getNoNull(u.getPhoneFax()).equals(""))sql+=","+DbUtil.escSql(u.getPhoneFax().trim());
 		sql=sql+");";
 		runner.update(sql);
 	}

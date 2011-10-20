@@ -1,6 +1,7 @@
 package ruking.controller;
 
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,6 +9,7 @@ import org.apache.velocity.VelocityContext;
 import org.springframework.web.bind.ServletRequestDataBinder;
 
 import ruking.ba.GlobalVariablesBA;
+import ruking.dao.UserSignUpDAO;
 import ruking.dto.UserSignUpDTO;
 import ruking.utils.RegExp;
 import ruking.utils.Util;
@@ -41,20 +43,24 @@ public class RegController extends BaseController {
 		UserSignUpDTO userSignUpDTO = new UserSignUpDTO();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(userSignUpDTO, "userSignUpDTO");
 		binder.bind(request);
-		Map<String,String> error=check(userSignUpDTO);
+		UserSignUpDAO uDAO = new UserSignUpDAO("zkm0m1_db","pjsong");
+		Map<String,String> error=check(userSignUpDTO,uDAO);
 		vc.put("userSignUpDTO", userSignUpDTO);
 		if(error.size()>0){
 			vc.put("error", error);
 			VelocityParserFactory.getVP().render("registerYes", vc, request, response);
 			return;
 		}else{
+			uDAO.insertUser(userSignUpDTO);
 			VelocityParserFactory.getVP().render("registerDone", vc, request, response);
 		}
 	}
 	
-	private Map<String,String> check(UserSignUpDTO u){
+	private Map<String,String> check(UserSignUpDTO u,UserSignUpDAO uDAO) throws SQLException{
 		Map<String,String> ret = new HashMap<String,String>();
-		if(Util.getNoNull(u.getLoginName()).trim().equals(""))ret.put("loginNameError", "请填写登录名");
+		String loginName = Util.getNoNull(u.getLoginName()).trim();
+		if(loginName.equals(""))ret.put("loginNameError", "请填写登录名");
+		if(!loginName.equals("") && uDAO.loginNameExists(loginName))ret.put("loginNameExistsError", loginName+"已被占用，请另外填写登录名");
 		if(Util.getNoNull(u.getPassword()).trim().equals(""))ret.put("passwordError", "请填写密码");
 		if(Util.getNoNull(u.getPassword()).trim().length()<6)ret.put("passwordLenthError", "密码需要大于6位");
 		if(Util.getNoNull(u.getPasswordV()).trim().equals(""))ret.put("passwordVError", "请填写确认密码");
