@@ -1,4 +1,4 @@
-function clearRegisterForm(){
+ï»¿function clearRegisterForm(){
 	document.getElementById('loginName').value="";
 	document.getElementById('password').value="";
 	document.getElementById('passwordV').value="";
@@ -16,7 +16,7 @@ function clearRegisterForm(){
 	document.getElementById('phoneFax').value="";
 }
 function updateRegisterForm(){
-	if(document.getElementById('update').value=='¸üĞÂ'){
+	if(document.getElementById('update').value=='æ›´æ–°'){
 		form1.submit();
 	}
 	else{
@@ -36,16 +36,16 @@ function updateRegisterForm(){
 	document.getElementById('mobile').disabled=false;
 	document.getElementById('phoneFax').disabled=false;
 	document.getElementById('newsletter').disabled=false;
-	document.getElementById('update').value='¸üĞÂ';
+	document.getElementById('update').value='æ›´æ–°';
 	}
 }
 function checkformlogin(){
 	if(document.getElementById('loginName').value==''){
-		alert("ÇëÊäÈëÓÃ»§Ãû");
+		alert("è¯·è¾“å…¥ç”¨æˆ·å");
 		return;
 	}
 	if(document.getElementById('loginPassword').value==''){
-		alert("ÇëÊäÈëÃÜÂë");
+		alert("è¯·è¾“å…¥å¯†ç ");
 		return;
 	}
 	formlogin.submit();
