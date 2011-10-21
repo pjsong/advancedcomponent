@@ -2,14 +2,9 @@ package ruking.controller;
 
 
 import org.apache.velocity.VelocityContext;
-import org.apache.velocity.app.VelocityEngine;
-import org.apache.velocity.runtime.RuntimeConstants;
 
 import ruking.ba.GlobalVariablesBA;
-import ruking.velocity.VelocityParser;
 import ruking.velocity.VelocityParserFactory;
-
-//import ruking.velocity.VelocityParser;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
