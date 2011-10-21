@@ -36,7 +36,9 @@ public class SessionInterceptor extends HandlerInterceptorAdapter
 		boolean firstVisit = false;
 		Conf conf = new Conf();
 		// check session, if not available, create one
-		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource(conf.getDbName(),conf.getDbPassword()), new MDTMySQLRowMapper());
+		String dbName = conf.getDbName();
+		String dbPWD = conf.getDbPassword();
+		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource(dbName,dbPWD), new MDTMySQLRowMapper());
     	String sessId = sessUtil.getSessIdFromCookie(request);
     	
     	SessionDTO sessDTO = sessUtil.readSessDTO(sessId);

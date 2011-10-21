@@ -108,4 +108,8 @@ public class Util {
         }
         return ip;
 	}
+	
+	public static boolean isAdministrator(String loginName){
+		return loginName.equals("孙迪辉") || loginName.equals("彭劲松") || loginName.equals("欧老总");
+	}
 }

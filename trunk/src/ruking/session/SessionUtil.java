@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.zip.GZIPInputStream;
@@ -70,7 +71,7 @@ public class SessionUtil
 	{
 		TransRunner runner = new TransRunner(ds, rowMapper, false);
 		// update session last_updated field
-		String sql = "update sessions set last_updated=now() where id = " + DbUtil.escSql(sessId);
+		String sql = "update sessions set LastUpdated=now() where id = " + DbUtil.escSql(sessId);
 		runner.update(sql);		
 	}
 
@@ -84,7 +85,7 @@ public class SessionUtil
 		{
 			// generate a random number to insert into the sessions table
 			String sessId = sessionIdPrefixFormatter.format(new Date()) + random.nextInt(1000);
-			String sqlTmpl = "insert into sessions (id, last_updated, data) values (%s, now(), %s)";
+			String sqlTmpl = "insert into sessions (ID, LastUpdated, Data) values (%s, now(), %s)";
 			String sql = String.format(sqlTmpl, DbUtil.escSql(sessId), DbUtil.escSql(""));
 			try
 			{
@@ -152,16 +153,16 @@ public class SessionUtil
 	public SessionDTO readSessDTO(String sessId) throws Exception
 	{	
 		QueryRunner runner = new QueryRunner(ds, rowMapper, false);
-		String sqlTmpl = "select data, last_updated from sessions where id=%s";
+		String sqlTmpl = "select Data, LastUpdated from sessions where ID=%s";
 		String sql = String.format(sqlTmpl, DbUtil.escSql(sessId));
-		Map<String, Object> map = runner.queryForMap(sql);
-		if (map == null)
+		List<Map> lm = runner.query(sql);
+		if (lm == null || lm.size()==0)
 		{
 			// something bad happened, return null
 			return null;
 		}
-
-		String data = (String) map.get("data");
+		Map map = lm.get(0);
+		String data = (String) map.get("Data");
 		Map<String, Object> sessData;
 		if (data == null || data.equals(""))
 		{
@@ -187,7 +188,7 @@ public class SessionUtil
 				sessData = new HashMap<String, Object>();
 			}
 		}
-		return new SessionDTO(sessId, (Date) map.get("last_updated"), sessData);
+		return new SessionDTO(sessId, (Date) map.get("LastUpdated"), sessData);
 	}
 
 	public static Object base64ToObject(String data) throws Exception
@@ -234,7 +235,7 @@ public class SessionUtil
 		String data = nameBuf + ":" + valueBuf;
 		
 		TransRunner runner = new TransRunner(ds, rowMapper, false);
-		String sqlTmpl = "update sessions set last_updated=now(), data=%s where id=%s";
+		String sqlTmpl = "update sessions set LastUpdated=now(), data=%s where id=%s";
 		String sql = String.format(sqlTmpl, DbUtil.escSql(data), DbUtil.escSql(sessId));
 		runner.update(sql);
 	}
@@ -242,7 +243,7 @@ public class SessionUtil
 	private void clean() throws Exception
 	{
 		TransRunner runner = new TransRunner(ds, rowMapper, false);
-		String sqlTmpl = "delete from sessions where date_sub(now(), interval %s minute) > last_updated";
+		String sqlTmpl = "delete from sessions where date_sub(now(), interval %s minute) > LastUpdated";
 		String sql = String.format(sqlTmpl, MAX_INACTIVE_INTERVAL);
 		runner.update(sql);
 	}
