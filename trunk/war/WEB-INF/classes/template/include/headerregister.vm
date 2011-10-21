@@ -17,7 +17,12 @@
 				<table cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
 			  <form onsubmit="return checkformlogin()" name="formlogin" action="checklogin.jhtml" method="post"></form>
 				<tr>
-				<td  colspan=3 align="right" ><a href="reg.jhtml">新用户注册</a> | <a href="searchpass.jhtml">忘记密码</a></td>
+				<td  colspan=3 align="right" >
+				#if($customer)<a href="userinfo.jhtml">$!customer.loginName</a> | <a href="logout.jhtml">退出登录</a></td>
+				#else
+				<a href="reg.jhtml">新用户注册</a> | <a href="searchpass.jhtml">忘记密码</a>
+				#end
+				</td>
 				</tr>
                 <tbody><tr style="padding-bottom:5px;">
                   <td width="210" align="left"><span class="headerlabel">用户名：</span><input class="headerinputbox" type="text" size="15" id="loginuserID" name="loginuserID"></td>
