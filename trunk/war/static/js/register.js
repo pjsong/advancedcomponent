@@ -1,4 +1,4 @@
-function clearRegisterForm(){
+﻿function clearRegisterForm(){
 	document.getElementById('loginName').value="";
 	document.getElementById('password').value="";
 	document.getElementById('passwordV').value="";
@@ -16,6 +16,10 @@ function clearRegisterForm(){
 	document.getElementById('phoneFax').value="";
 }
 function updateRegisterForm(){
+	if(document.getElementById('update').value=='更新'){
+		form1.submit();
+	}
+	else{
 	document.getElementById('loginName').disabled=false;
 	document.getElementById('password').disabled=false;
 	document.getElementById('passwordV').disabled=false;
@@ -32,4 +36,7 @@ function updateRegisterForm(){
 	document.getElementById('mobile').disabled=false;
 	document.getElementById('phoneFax').disabled=false;
 	document.getElementById('newsletter').disabled=false;
+	document.getElementById('update').value='更新';
+	}
+
 }
