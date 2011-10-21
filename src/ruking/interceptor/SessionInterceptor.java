@@ -17,6 +17,7 @@ import ruking.dto.SessionDTO;
 import ruking.log.SessionLogger;
 import ruking.session.SessionName;
 import ruking.session.SessionUtil;
+import ruking.utils.Conf;
 import ruking.utils.Util;
 
 
@@ -33,9 +34,9 @@ public class SessionInterceptor extends HandlerInterceptorAdapter
 		}
 		
 		boolean firstVisit = false;
-		
+		Conf conf = new Conf();
 		// check session, if not available, create one
-		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource("",""), new MDTMySQLRowMapper());
+		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource(conf.getDbName(),conf.getDbPassword()), new MDTMySQLRowMapper());
     	String sessId = sessUtil.getSessIdFromCookie(request);
     	
     	SessionDTO sessDTO = sessUtil.readSessDTO(sessId);

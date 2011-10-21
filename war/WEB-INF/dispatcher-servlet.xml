@@ -5,7 +5,12 @@
     <bean id="indexController"   class="ruking.controller.IndexController" ></bean>
     <bean id="regController"   class="ruking.controller.RegController" ></bean>
     <bean id="customerServiceController"   class="ruking.controller.CustomerServiceController" ></bean>
-<bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+   	 <property name="interceptors">
+    	<list>
+          <ref bean="sessionInterceptor"/>
+    	</list>
+	 </property>
     <property name="alwaysUseFullPath"><value>true</value></property>
     <property name="mappings">
         <props>
@@ -16,5 +21,6 @@
         </props>
     </property>
     </bean>
+	<bean id="sessionInterceptor" class="com.dl.interceptors.SessionInterceptor"></bean>
 
 </beans>
