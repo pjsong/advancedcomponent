@@ -40,7 +40,7 @@ public class GlobalVariablesBA {
         
 		// get session
     	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
-
+    	if(sessData!=null){
 		UserSignUpDTO sessionCustomerDTO = (UserSignUpDTO) sessData.get(SessionName.customerDTO);
 		if(sessionCustomerDTO != null)
 		{
@@ -52,7 +52,7 @@ public class GlobalVariablesBA {
 	    		ctx.put("adminflag", "true");
 	    	}
 		}
-
+    	}
 		String s1 = request.getRequestURL().toString();
 		String s2=request.getRequestURI().substring(0);
 		String s3=request.getContextPath();
