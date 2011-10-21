@@ -8,6 +8,7 @@
     <bean id="loginController"   class="ruking.controller.LoginController" ></bean>
     <bean id="customerServiceController"   class="ruking.controller.CustomerServiceController" ></bean>
 	<bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<bean id="sessionInterceptor" class="ruking.interceptor.SessionInterceptor"></bean>
    	 <property name="interceptors">
     	<list>
           <ref bean="sessionInterceptor"/>
@@ -25,6 +26,5 @@
         </props>
     </property>
     </bean>
-	<bean id="sessionInterceptor" class="ruking.interceptor.SessionInterceptor"></bean>
 
 </beans>
