@@ -26,14 +26,17 @@ import javax.servlet.http.HttpServletResponse;
 
 public class RegController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		VelocityContext vc=new VelocityContext();
-		new GlobalVariablesBA().setCommonVariables(request, vc);
+
         String act=Util.getNoNull(request.getParameter("act"));
 		if(act.equals("")){
+			VelocityContext vc=new VelocityContext();
+			new GlobalVariablesBA().setCommonVariables(request, vc);
 			VelocityParserFactory.getVP().render("register", vc, request, response);
 			return;
 		}
 		if(act.equals("regyes")){
+			VelocityContext vc=new VelocityContext();
+			new GlobalVariablesBA().setCommonVariables(request, vc);
 	        VelocityParserFactory.getVP().render("registerYes", vc, request, response);
 	        return;
 		}
