@@ -57,13 +57,14 @@ public class RegController extends BaseController {
 		binder.bind(request);
 		UserSignUpDAO uDAO = new UserSignUpDAO((String)vc.get("dbName"),(String)vc.get("dbPWD"));
 		Map<String,String> error=check(userSignUpDTO,uDAO);
-		vc.put("userSignUpDTO", userSignUpDTO);
 		if(error.size()>0){
 			vc.put("error", error);
+			vc.put("userSignUpDTO", userSignUpDTO);
 			VelocityParserFactory.getVP().render("registerYes", vc, request, response);
 			return;
 		}else{
-			uDAO.insertUser(userSignUpDTO);
+//			userSignUpDTO = uDAO.insertUser(userSignUpDTO);
+			vc.put("userSignUpDTO", userSignUpDTO);
 			SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
 	    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
 	    	sessUtil.putAndWrite(request, sessData,SessionName.customerDTO, userSignUpDTO);
@@ -91,6 +92,7 @@ public class RegController extends BaseController {
 	    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
 	    	sessUtil.putAndWrite(request, sessData,SessionName.customerDTO, userSignUpDTO);
 	    	new GlobalVariablesBA().setCommonVariables(request, vc);
+	    	vc.put("updateNoError", true);
 			VelocityParserFactory.getVP().render("registerDone", vc, request, response);
 		}
 	}
