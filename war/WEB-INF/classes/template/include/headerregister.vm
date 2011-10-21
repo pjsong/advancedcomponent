@@ -18,7 +18,7 @@
 			  <form onsubmit="return checkformlogin()" name="formlogin" action="checklogin.jhtml" method="post"></form>
 				<tr>
 				<td  colspan=3 align="right" >
-				#if($customer)<a href="userinfo.jhtml">$!customer.loginName</a> | <a href="logout.jhtml">退出登录</a></td>
+				#if($customer)<a href="reg.jhtml?act=showact">$!customer.loginName</a> | <a href="logout.jhtml">退出登录</a></td>
 				#else
 				<a href="reg.jhtml">新用户注册</a> | <a href="searchpass.jhtml">忘记密码</a>
 				#end
