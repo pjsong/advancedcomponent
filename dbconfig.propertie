@@ -1,3 +1,4 @@
-url=jdbc:mysql://zkm0m1.chinaw3.com:3306/user?useUnicode=true&characterEncoding=utf8
+#url=jdbc:mysql://zkm0m1.chinaw3.com:3306/user?useUnicode=true&characterEncoding=utf8
+host=zkm0m1.chinaw3.com
 dbuser=zkm0m1
 dbpassword=k7x8d7u9
