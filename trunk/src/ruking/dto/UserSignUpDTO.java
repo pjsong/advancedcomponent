@@ -3,6 +3,7 @@ package ruking.dto;
 import java.io.Serializable;
 
 public class UserSignUpDTO  implements Serializable{
+	private Integer id;
 	private String loginName="";
 	private String password="";;
 	private String passwordV="";;
@@ -19,6 +20,14 @@ public class UserSignUpDTO  implements Serializable{
 	private String mobile="";;
 	private String phoneFax="";;
 	private boolean newsLetter;
+	
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getLoginName() {
 		return loginName;
 	}
