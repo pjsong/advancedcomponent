@@ -1,4 +1,4 @@
-锘縡unction clearRegisterForm(){
+function clearRegisterForm(){
 	document.getElementById('loginName').value="";
 	document.getElementById('password').value="";
 	document.getElementById('passwordV').value="";
@@ -16,7 +16,7 @@
 	document.getElementById('phoneFax').value="";
 }
 function updateRegisterForm(){
-	if(document.getElementById('update').value=='鏇存柊'){
+	if(document.getElementById('update').value=='更新'){
 		form1.submit();
 	}
 	else{
@@ -36,7 +36,17 @@ function updateRegisterForm(){
 	document.getElementById('mobile').disabled=false;
 	document.getElementById('phoneFax').disabled=false;
 	document.getElementById('newsletter').disabled=false;
-	document.getElementById('update').value='鏇存柊';
+	document.getElementById('update').value='更新';
 	}
-
+}
+function checkformlogin(){
+	if(document.getElementById('loginName').value==''){
+		alert("请输入用户名");
+		return;
+	}
+	if(document.getElementById('loginPassword').value==''){
+		alert("请输入密码");
+		return;
+	}
+	formlogin.submit();
 }
