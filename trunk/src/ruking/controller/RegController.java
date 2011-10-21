@@ -49,7 +49,6 @@ public class RegController extends BaseController {
 
 		VelocityContext vc=new VelocityContext();
 		new GlobalVariablesBA().setCommonVariables(request, vc);
-
 		UserSignUpDTO userSignUpDTO = new UserSignUpDTO();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(userSignUpDTO, "userSignUpDTO");
 		binder.bind(request);
@@ -65,6 +64,7 @@ public class RegController extends BaseController {
 			SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
 	    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
 	    	sessUtil.putAndWrite(request, sessData,SessionName.customerDTO, userSignUpDTO);
+	    	new GlobalVariablesBA().setCommonVariables(request, vc);
 			VelocityParserFactory.getVP().render("registerDone", vc, request, response);
 		}
 	}

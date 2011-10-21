@@ -218,10 +218,12 @@ public class SessionUtil
 	// name1,name2,name3,:value1,value2,value3,
 	private void internalWrite(String sessId, Map<String, Object> sessData) throws Exception
 	{
-		
+		TransRunner runner = new TransRunner(ds, rowMapper, false);		
 		if (sessData.size() == 0)
 		{
-			//Logger.warn("Session Data is Empty: " + sessId);
+			String sqlTmpl = "update sessions set LastUpdated=now(), Data=%s where ID=%s";
+			String sql = String.format(sqlTmpl, DbUtil.escSql(""), DbUtil.escSql(sessId));
+			runner.update(sql);
 			return;
 		}
 		StringBuilder nameBuf = new StringBuilder();
@@ -234,8 +236,7 @@ public class SessionUtil
 		}
 		String data = nameBuf + ":" + valueBuf;
 		
-		TransRunner runner = new TransRunner(ds, rowMapper, false);
-		String sqlTmpl = "update sessions set LastUpdated=now(), data=%s where id=%s";
+		String sqlTmpl = "update sessions set LastUpdated=now(), Data=%s where ID=%s";
 		String sql = String.format(sqlTmpl, DbUtil.escSql(data), DbUtil.escSql(sessId));
 		runner.update(sql);
 	}

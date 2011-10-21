@@ -10,6 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.velocity.context.Context;
 import org.springframework.web.servlet.support.RequestContext;
 
+import db.DataSourceFactory;
+import db.MDTMySQLRowMapper;
+
+import ruking.dto.UserSignUpDTO;
+import ruking.session.SessionName;
+import ruking.session.SessionUtil;
+import ruking.utils.Conf;
 import ruking.utils.RegExp;
 import ruking.utils.Util;
 import ruking.velocity.EscapeTool;
@@ -32,25 +39,25 @@ public class GlobalVariablesBA {
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
 	    String currYear = sdf.format(new Date());
         ctx.put("currYear", currYear);
+        Conf conf=new Conf();
+        ctx.put("dbName", conf.getDbName());
+        ctx.put("dbPWD", conf.getDbPassword());
+        
+		// get session
+    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
 
-//		// get session
-//		SessionUtil sessUtil = new SessionUtil(RepDataSourceFactory.getMasterDataSource(), new MySQLRowMapper());
-//    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
-//
-//		SessionCustomerDTO sessionCustomerDTO = (SessionCustomerDTO) sessData.get(SessionName.customerDTO);
-//		if(sessionCustomerDTO != null && sessionCustomerDTO.getClientId()>0)
-//		{
-//		    ctx.put("customer", sessionCustomerDTO);
-//		    ctx.put("clientId", sessionCustomerDTO.getClientId());
-//
-//		    String username = sessionCustomerDTO.getLoginName();
-//	    	if(Util.isAdministrator(username) == true)
-//	    	{
-//	    		ctx.put("adminflag", "true");
-//	    	}
-//		}
-//		
-//
+		UserSignUpDTO sessionCustomerDTO = (UserSignUpDTO) sessData.get(SessionName.customerDTO);
+		if(sessionCustomerDTO != null)
+		{
+		    ctx.put("customer", sessionCustomerDTO);
+
+		    String username = sessionCustomerDTO.getLoginName();
+	    	if(Util.isAdministrator(username))
+	    	{
+	    		ctx.put("adminflag", "true");
+	    	}
+		}
+
 		String s1 = request.getRequestURL().toString();
 		String s2=request.getRequestURI().substring(0);
 		String s3=request.getContextPath();
