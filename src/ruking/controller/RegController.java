@@ -65,6 +65,7 @@ public class RegController extends BaseController {
 	    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
 	    	sessUtil.putAndWrite(request, sessData,SessionName.customerDTO, userSignUpDTO);
 	    	new GlobalVariablesBA().setCommonVariables(request, vc);
+	    	vc.put("register", true);
 			VelocityParserFactory.getVP().render("registerDone", vc, request, response);
 		}
 	}
