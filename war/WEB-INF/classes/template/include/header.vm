@@ -4,6 +4,7 @@
 	<link href="/static/css/homepage.css" type="text/css" rel="stylesheet">
 	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery.cycle.all.2.72.js"></script>
+	<script type="text/javascript" src="/static/js/register.js"></script>
     <script type="text/javascript">
       $(function() {
         $('#slideshow').cycle({
