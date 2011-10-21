@@ -4,7 +4,8 @@
 
     <bean id="indexController"   class="ruking.controller.IndexController" ></bean>
     <bean id="regController"   class="ruking.controller.RegController" ></bean>
-     <bean id="logoutController"   class="ruking.controller.LogOutController" ></bean>
+    <bean id="logoutController"   class="ruking.controller.LogOutController" ></bean>
+    <bean id="loginController"   class="ruking.controller.LoginController" ></bean>
     <bean id="customerServiceController"   class="ruking.controller.CustomerServiceController" ></bean>
 	<bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
    	 <property name="interceptors">
@@ -19,6 +20,7 @@
             <prop key="/index.jhtml">indexController</prop>
             <prop key="/reg.jhtml">regController</prop>
             <prop key="/logout.jhtml">logoutController</prop>
+            <prop key="/login.jhtml">loginController</prop>
             <prop key="/customerservice.jhtml">customerServiceController</prop>
         </props>
     </property>
