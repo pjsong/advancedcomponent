@@ -57,7 +57,7 @@ public class UserSignUpDAO {
 		if(m==null)return null;
 		return getUserByLoginName((String)m.get("LoginName"));
 	}
-	public  void insertUser(UserSignUpDTO u) throws SQLException{
+	public  UserSignUpDTO insertUser(UserSignUpDTO u) throws SQLException{
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
 		String sql="insert into users(LoginName,Password,Question,Sex,Answer,Email,CompanyAddress,Mobile,NewsLetter";
 		if(!Util.getNoNull(u.getCompanywebsite()).trim().equals(""))sql+=",CompanyWebSite";
@@ -75,6 +75,21 @@ public class UserSignUpDAO {
 		if(!Util.getNoNull(u.getPhoneFax()).equals(""))sql+=","+DbUtil.escSql(u.getPhoneFax().trim());
 		sql=sql+");";
 		runner.update(sql);
+		Map m= runner.queryForMap("select ID from users where LoginName="+DbUtil.escSql(u.getLoginName()));
+		u.setId((Integer)m.get("ID"));
+		return u;
 	}
+	public  void updateUser(UserSignUpDTO u) throws SQLException{
+		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
+		String sql="update users set LoginName="+DbUtil.escSql(u.getLoginName())+",Password="+DbUtil.escSql(u.getPassword());
+		sql+=",Question="+DbUtil.escSql(u.getPassword())+",Sex="+DbUtil.escSql(u.getSex());
+		sql+=",Answer="+DbUtil.escSql(u.getAnswer())+",Email="+DbUtil.escSql(u.getEmail());
+		sql+=",CompanyAddress="+DbUtil.escSql(u.getCompanyaddress())+",Mobile="+DbUtil.escSql(u.getMobile());
+		sql+=",NewsLetter="+DbUtil.escSql(u.getNewsLetter())+",CompanyWebSite="+DbUtil.escSql(u.getCompanywebsite());
+		sql+=",CompanyName="+DbUtil.escSql(u.getCompanyname())+",RealName="+DbUtil.escSql(u.getName());
+		sql+=",QQNumber"+DbUtil.escSql(u.getQqNumber())+",MsnNumber="+DbUtil.escSql(u.getMsnNumber());
+		sql+=",PhoneFax="+DbUtil.escSql(u.getPhoneFax())+"where ID="+DbUtil.escSql(u.getId());
 
+		runner.update(sql);
+	}
 }
