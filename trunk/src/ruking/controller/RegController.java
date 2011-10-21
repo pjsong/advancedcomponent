@@ -8,9 +8,14 @@ import java.util.Map;
 import org.apache.velocity.VelocityContext;
 import org.springframework.web.bind.ServletRequestDataBinder;
 
+import db.DataSourceFactory;
+import db.MDTMySQLRowMapper;
+
 import ruking.ba.GlobalVariablesBA;
 import ruking.dao.UserSignUpDAO;
 import ruking.dto.UserSignUpDTO;
+import ruking.session.SessionUtil;
+import ruking.utils.Conf;
 import ruking.utils.RegExp;
 import ruking.utils.Util;
 import ruking.velocity.VelocityParserFactory;
@@ -38,12 +43,17 @@ public class RegController extends BaseController {
 		}
 	}
 	protected void registerUser(HttpServletRequest request, HttpServletResponse response) throws Exception{
+
 		VelocityContext vc=new VelocityContext();
 		new GlobalVariablesBA().setCommonVariables(request, vc);
+		Conf conf = new Conf();
+		SessionUtil sessUtil = new ruking.session.SessionUtil(DataSourceFactory.getDataSource(conf.getDbName(),conf.getDbPassword()), new MDTMySQLRowMapper());
+    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
+
 		UserSignUpDTO userSignUpDTO = new UserSignUpDTO();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(userSignUpDTO, "userSignUpDTO");
 		binder.bind(request);
-		UserSignUpDAO uDAO = new UserSignUpDAO("zkm0m1_db","pjsong");
+		UserSignUpDAO uDAO = new UserSignUpDAO(conf.getDbName(),conf.getDbPassword());
 		Map<String,String> error=check(userSignUpDTO,uDAO);
 		vc.put("userSignUpDTO", userSignUpDTO);
 		if(error.size()>0){
