@@ -21,6 +21,6 @@
         </props>
     </property>
     </bean>
-	<bean id="sessionInterceptor" class="com.dl.interceptors.SessionInterceptor"></bean>
+	<bean id="sessionInterceptor" class="ruking.interceptor.SessionInterceptor"></bean>
 
 </beans>
