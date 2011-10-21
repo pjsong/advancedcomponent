@@ -92,4 +92,12 @@ public class UserSignUpDAO {
 
 		runner.update(sql);
 	}
+	public UserSignUpDTO login(String username,String password) throws SQLException{
+		UserSignUpDTO u=new UserSignUpDTO();
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM users WHERE LoginName = " + DbUtil.escSql(username)+" and Password="+DbUtil.escSql(password);
+		Map m=runner.queryForMap(sql);
+		if(m==null)return null;
+		return getUserByLoginName((String)m.get("LoginName"));
+	}
 }
