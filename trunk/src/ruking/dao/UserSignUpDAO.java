@@ -87,8 +87,8 @@ public class UserSignUpDAO {
 		sql+=",CompanyAddress="+DbUtil.escSql(u.getCompanyaddress())+",Mobile="+DbUtil.escSql(u.getMobile());
 		sql+=",NewsLetter="+DbUtil.escSql(u.getNewsLetter())+",CompanyWebSite="+DbUtil.escSql(u.getCompanywebsite());
 		sql+=",CompanyName="+DbUtil.escSql(u.getCompanyname())+",RealName="+DbUtil.escSql(u.getName());
-		sql+=",QQNumber"+DbUtil.escSql(u.getQqNumber())+",MsnNumber="+DbUtil.escSql(u.getMsnNumber());
-		sql+=",PhoneFax="+DbUtil.escSql(u.getPhoneFax())+"where ID="+DbUtil.escSql(u.getId());
+		sql+=",QQNumber="+DbUtil.escSql(u.getQqNumber())+",MsnNumber="+DbUtil.escSql(u.getMsnNumber());
+		sql+=",PhoneFax="+DbUtil.escSql(u.getPhoneFax())+" where ID="+DbUtil.escSql(u.getId())+";";
 
 		runner.update(sql);
 	}

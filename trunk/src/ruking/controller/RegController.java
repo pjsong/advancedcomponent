@@ -91,11 +91,14 @@ public class RegController extends BaseController {
 	protected void updateUser(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
 		new GlobalVariablesBA().setCommonVariables(request, vc);
-		UserSignUpDTO userSignUpDTO = new UserSignUpDTO();
+		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
+    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
+    	UserSignUpDTO userSignUpDTO = ((UserSignUpDTO)sessData.get(SessionName.customerDTO));
+		String oldLoginName = userSignUpDTO.getLoginName();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(userSignUpDTO, "userSignUpDTO");
 		binder.bind(request);
 		UserSignUpDAO uDAO = new UserSignUpDAO((String)vc.get("dbName"),(String)vc.get("dbPWD"));
-		Map<String,String> error=check(userSignUpDTO,uDAO);
+		Map<String,String> error=updateCheck(userSignUpDTO,uDAO,oldLoginName);
 		vc.put("userSignUpDTO", userSignUpDTO);
 		if(error.size()>0){
 			vc.put("error", error);
@@ -103,8 +106,6 @@ public class RegController extends BaseController {
 			return;
 		}else{
 			uDAO.updateUser(userSignUpDTO);
-			SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
-	    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
 	    	sessUtil.putAndWrite(request, sessData,SessionName.customerDTO, userSignUpDTO);
 	    	new GlobalVariablesBA().setCommonVariables(request, vc);
 	    	vc.put("updateNoError", true);
@@ -118,6 +119,24 @@ public class RegController extends BaseController {
 		String loginName = Util.getNoNull(u.getLoginName()).trim();
 		if(loginName.equals(""))ret.put("loginNameError", "请填写登录名");
 		if(!loginName.equals("") && uDAO.loginNameExists(loginName))ret.put("loginNameExistsError", loginName+"已被占用，请另外填写登录名");
+		if(Util.getNoNull(u.getPassword()).trim().equals(""))ret.put("passwordError", "请填写密码");
+		if(Util.getNoNull(u.getPassword()).trim().length()<6)ret.put("passwordLenthError", "密码需要大于6位");
+		if(Util.getNoNull(u.getPasswordV()).trim().equals(""))ret.put("passwordVError", "请填写确认密码");
+		if(!Util.getNoNull(u.getPassword()).equals(Util.getNoNull(u.getPasswordV())))ret.put("passwordAndVError", "密码确认有误，请重新填写密码并确认");
+		if(Util.getNoNull(u.getQuestion()).trim().equals("-1"))ret.put("questionError", "请选择用于找回密码的提示问题");
+		if(Util.getNoNull(u.getLoginName()).trim().equals(""))ret.put("answerError", "请填写问题答案");
+		if(Util.getNoNull(u.getQuestion()).trim().equals("birthdayOfMom") && !Util.getNoNull(u.getAnswer()).matches("\\d\\d\\d\\d-\\d\\d-\\d\\d"))ret.put("birthdayError", "生日输入格式有误");
+		if(Util.getNoNull(u.getEmail()).trim().equals(""))ret.put("emailEmptyError", "请填写邮箱");
+		if(!Util.getNoNull(u.getEmail()).trim().matches(RegExp.emailRegExp))ret.put("emailFormatError", "请填写邮箱正确格式");
+		if(Util.getNoNull(u.getCompanyaddress()).trim().equals(""))ret.put("companyAddressError", "请填写联系地址");
+		if(Util.getNoNull(u.getMobile()).trim().equals(""))ret.put("mobileError", "请填写联系电话");
+		return ret;
+	}
+	private Map<String,String> updateCheck(UserSignUpDTO u,UserSignUpDAO uDAO,String oldLoginName) throws SQLException{
+		Map<String,String> ret = new HashMap<String,String>();
+		String loginName = Util.getNoNull(u.getLoginName()).trim();
+		if(loginName.equals(""))ret.put("loginNameError", "请填写登录名");
+		if(!loginName.equals(oldLoginName) && uDAO.loginNameExists(loginName))ret.put("loginNameExistsError", loginName+"已被占用，请另外填写登录名");
 		if(Util.getNoNull(u.getPassword()).trim().equals(""))ret.put("passwordError", "请填写密码");
 		if(Util.getNoNull(u.getPassword()).trim().length()<6)ret.put("passwordLenthError", "密码需要大于6位");
 		if(Util.getNoNull(u.getPasswordV()).trim().equals(""))ret.put("passwordVError", "请填写确认密码");
