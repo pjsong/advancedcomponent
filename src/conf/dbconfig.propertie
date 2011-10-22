@@ -1,3 +1,8 @@
-dbuser=zkm0m1_db
-dbpassword1=k7x8d7u9
-dbpassword=ChinacaT
+#host=zkm0m1.chinaw3.com
+#dbname=zkm0m1_db
+#dbuser=zkm0m1
+#dbpassword=k7x8d7u9
+host=localhost
+dbname=zkm0m1_db
+dbuser=root
+dbpassword=pjsong

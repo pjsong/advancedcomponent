@@ -19,15 +19,16 @@ public class Conf {
 	            is = getClass().getResourceAsStream(
                 "dbconfig.propertie");
 			}
-//		   File f = new File(getClass().getResource("dbconfig.properties").getPath());
-//	       if (!f.exists())
-//	       {
-//	    	   throw new IOException("dl.prp not found");
-//	       }
-//    	   prp = new Properties();
-//    	   prp.load(new FileInputStream(f));
 	   }
+	   public String getHostName() throws IOException{
+		   if(prp==null)checkAndLoadPrp();
+		   return prp.getProperty("host");
+		   }
 	   public String getDbName() throws IOException{
+		   if(prp==null)checkAndLoadPrp();
+		   return prp.getProperty("dbname");
+		   }
+	   public String getDbUser() throws IOException{
 		   if(prp==null)checkAndLoadPrp();
 		   return prp.getProperty("dbuser");
 		   }

@@ -21,14 +21,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
+import ruking.db.DataSourceFactory;
+import ruking.db.DbUtil;
+import ruking.db.MDTMySQLRowMapper;
+import ruking.db.QueryRunner;
+import ruking.db.RowMapper;
+import ruking.db.TransRunner;
 import ruking.dto.SessionDTO;
 
-import db.DataSourceFactory;
-import db.DbUtil;
-import db.MDTMySQLRowMapper;
-import db.QueryRunner;
-import db.RowMapper;
-import db.TransRunner;
 
 public class SessionUtil
 {	
@@ -153,7 +153,7 @@ public class SessionUtil
 	public SessionDTO readSessDTO(String sessId) throws Exception
 	{	
 		QueryRunner runner = new QueryRunner(ds, rowMapper, false);
-		String sqlTmpl = "select Data, LastUpdated from sessions where ID=%s";
+		String sqlTmpl = "select Data, LastUpdated from sessions where ID="+DbUtil.escSql(sessId);
 		String sql = String.format(sqlTmpl, DbUtil.escSql(sessId));
 		List<Map> lm = runner.query(sql);
 		if (lm == null || lm.size()==0)
@@ -253,7 +253,7 @@ public class SessionUtil
 	
 	public static void main(String[] args) throws Exception
 	{
-		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource("",""), new MDTMySQLRowMapper());
+		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource("","","",""), new MDTMySQLRowMapper());
 //		Map<String, Object> map = sessUtil.internalRead("41030627");
 //		System.out.println(map);
 	}

@@ -35,7 +35,9 @@ public class GlobalVariablesBA {
 	    String currYear = sdf.format(new Date());
         ctx.put("currYear", currYear);
         Conf conf=new Conf();
+        ctx.put("dbHost", conf.getHostName());
         ctx.put("dbName", conf.getDbName());
+        ctx.put("dbUser", conf.getDbUser());
         ctx.put("dbPWD", conf.getDbPassword());
         
 		// get session
