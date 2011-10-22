@@ -8,12 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.velocity.VelocityContext;
 
 import ruking.ba.GlobalVariablesBA;
+import ruking.db.DataSourceFactory;
+import ruking.db.MDTMySQLRowMapper;
 import ruking.session.SessionName;
 import ruking.session.SessionUtil;
-
-import db.DataSourceFactory;
-import db.MDTMySQLRowMapper;
-
 
 public class LogOutController extends BaseController {
 	    public void process(HttpServletRequest request, HttpServletResponse response) throws Exception
@@ -21,7 +19,7 @@ public class LogOutController extends BaseController {
 	    	VelocityContext vc = new VelocityContext();
 	    	new GlobalVariablesBA().setCommonVariables(request, vc);
 	        // get session
-	    	SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
+	    	SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
 	    	Map<String, Object> sessData =(Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
 	        sessData.remove(SessionName.customerDTO);
 	        sessUtil.write(request, sessData);

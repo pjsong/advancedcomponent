@@ -9,10 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import db.DataSourceFactory;
-import db.MDTMySQLRowMapper;
-import db.RowMapper;
-
+import ruking.db.DataSourceFactory;
+import ruking.db.MDTMySQLRowMapper;
 import ruking.dto.SessionDTO;
 import ruking.log.SessionLogger;
 import ruking.session.SessionName;
@@ -38,7 +36,9 @@ public class SessionInterceptor extends HandlerInterceptorAdapter
 		// check session, if not available, create one
 		String dbName = conf.getDbName();
 		String dbPWD = conf.getDbPassword();
-		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource(dbName,dbPWD), new MDTMySQLRowMapper());
+		String hostName = conf.getHostName();
+		String dbUser = conf.getDbUser();
+		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource(hostName,dbName,dbUser,dbPWD), new MDTMySQLRowMapper());
     	String sessId = sessUtil.getSessIdFromCookie(request);
     	
     	SessionDTO sessDTO = sessUtil.readSessDTO(sessId);

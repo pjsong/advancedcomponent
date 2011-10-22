@@ -3,27 +3,30 @@ package ruking.dao;
 import java.sql.SQLException;
 import java.util.Map;
 
-import db.DataSourceFactory;
-import db.DbUtil;
-import db.MDTMySQLRowMapper;
-import db.QueryRunner;
-import db.TransRunner;
+import ruking.db.DataSourceFactory;
+import ruking.db.DbUtil;
+import ruking.db.MDTMySQLRowMapper;
+import ruking.db.QueryRunner;
+import ruking.db.TransRunner;
 import ruking.dto.UserSignUpDTO;
 import ruking.utils.Util;
 
 public class UserSignUpDAO {
+	public String hostName;
 	public String dbName ;//= "zkm0m1_db";
 	public String password ;//= "pjsong";
-	
+	public String dbUser;
 
-	public UserSignUpDAO(String dbName, String password) {
+	public UserSignUpDAO(String hostName,String dbName,String dbUser, String password) {
 		super();
+		this.hostName = hostName;
 		this.dbName = dbName;
+		this.dbUser = dbUser;
 		this.password = password;
 	}
 	public  UserSignUpDTO getUserByLoginName(String loginName) throws SQLException{
 		UserSignUpDTO u=new UserSignUpDTO();
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM users WHERE LoginName = " + DbUtil.escSql(loginName);
 		Map m=runner.queryForMap(sql);
 		if(m==null)return null;
@@ -43,7 +46,7 @@ public class UserSignUpDAO {
 		return u;
 	}
 	public  boolean loginNameExists(String loginName) throws SQLException{
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM users WHERE LoginName = " + DbUtil.escSql(loginName);
 		Map m=runner.queryForMap(sql);
 		if(m==null)return false;
@@ -51,14 +54,14 @@ public class UserSignUpDAO {
 	}
 	public  UserSignUpDTO forgetPassword(String email,String question,String answer) throws SQLException{
 		UserSignUpDTO u=new UserSignUpDTO();
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM users WHERE Email = " + DbUtil.escSql(email)+" and Question="+DbUtil.escSql(question)+" and Answer="+DbUtil.escSql(answer);
 		Map m=runner.queryForMap(sql);
 		if(m==null)return null;
 		return getUserByLoginName((String)m.get("LoginName"));
 	}
 	public  UserSignUpDTO insertUser(UserSignUpDTO u) throws SQLException{
-		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
+		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql="insert into users(LoginName,Password,Question,Sex,Answer,Email,CompanyAddress,Mobile,NewsLetter";
 		if(!Util.getNoNull(u.getCompanywebsite()).trim().equals(""))sql+=",CompanyWebSite";
 		if(!Util.getNoNull(u.getCompanyname()).trim().equals(""))sql+=",CompanyName";
@@ -80,7 +83,7 @@ public class UserSignUpDAO {
 		return u;
 	}
 	public  void updateUser(UserSignUpDTO u) throws SQLException{
-		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
+		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql="update users set LoginName="+DbUtil.escSql(u.getLoginName())+",Password="+DbUtil.escSql(u.getPassword());
 		sql+=",Question="+DbUtil.escSql(u.getPassword())+",Sex="+DbUtil.escSql(u.getSex());
 		sql+=",Answer="+DbUtil.escSql(u.getAnswer())+",Email="+DbUtil.escSql(u.getEmail());
@@ -94,7 +97,7 @@ public class UserSignUpDAO {
 	}
 	public UserSignUpDTO login(String username,String password) throws SQLException{
 		UserSignUpDTO u=new UserSignUpDTO();
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(dbName,password), new MDTMySQLRowMapper());
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM users WHERE LoginName = " + DbUtil.escSql(username)+" and Password="+DbUtil.escSql(password);
 		Map m=runner.queryForMap(sql);
 		if(m==null)return null;

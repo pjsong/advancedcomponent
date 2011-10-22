@@ -8,11 +8,10 @@ import java.util.Map;
 import org.apache.velocity.VelocityContext;
 import org.springframework.web.bind.ServletRequestDataBinder;
 
-import db.DataSourceFactory;
-import db.MDTMySQLRowMapper;
-
 import ruking.ba.GlobalVariablesBA;
 import ruking.dao.UserSignUpDAO;
+import ruking.db.DataSourceFactory;
+import ruking.db.MDTMySQLRowMapper;
 import ruking.dto.UserSignUpDTO;
 import ruking.session.SessionName;
 import ruking.session.SessionUtil;
@@ -59,7 +58,7 @@ public class RegController extends BaseController {
 		UserSignUpDTO userSignUpDTO = new UserSignUpDTO();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(userSignUpDTO, "userSignUpDTO");
 		binder.bind(request);
-		UserSignUpDAO uDAO = new UserSignUpDAO((String)vc.get("dbName"),(String)vc.get("dbPWD"));
+		UserSignUpDAO uDAO = new UserSignUpDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
 		Map<String,String> error=check(userSignUpDTO,uDAO);
 		if(error.size()>0){
 			vc.put("error", error);
@@ -69,7 +68,7 @@ public class RegController extends BaseController {
 		}else{
 			userSignUpDTO = uDAO.insertUser(userSignUpDTO);
 			vc.put("userSignUpDTO", userSignUpDTO);
-			SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
+			SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
 	    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
 	    	sessUtil.putAndWrite(request, sessData,SessionName.customerDTO, userSignUpDTO);
 	    	new GlobalVariablesBA().setCommonVariables(request, vc);
@@ -80,7 +79,7 @@ public class RegController extends BaseController {
 	protected void showUser(HttpServletRequest request, HttpServletResponse response) throws Exception{
     	VelocityContext vc=new VelocityContext();
 		new GlobalVariablesBA().setCommonVariables(request, vc);
-		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
+		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
     	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
     	UserSignUpDTO userSignUpDTO = (UserSignUpDTO) sessData.get(SessionName.customerDTO);
 		vc.put("userSignUpDTO", userSignUpDTO);
@@ -91,13 +90,13 @@ public class RegController extends BaseController {
 	protected void updateUser(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
 		new GlobalVariablesBA().setCommonVariables(request, vc);
-		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
+		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
     	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
     	UserSignUpDTO userSignUpDTO = ((UserSignUpDTO)sessData.get(SessionName.customerDTO));
 		String oldLoginName = userSignUpDTO.getLoginName();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(userSignUpDTO, "userSignUpDTO");
 		binder.bind(request);
-		UserSignUpDAO uDAO = new UserSignUpDAO((String)vc.get("dbName"),(String)vc.get("dbPWD"));
+		UserSignUpDAO uDAO = new UserSignUpDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
 		Map<String,String> error=updateCheck(userSignUpDTO,uDAO,oldLoginName);
 		vc.put("userSignUpDTO", userSignUpDTO);
 		if(error.size()>0){
