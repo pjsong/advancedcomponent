@@ -98,12 +98,12 @@ public class RegController extends BaseController {
 		binder.bind(request);
 		UserSignUpDAO uDAO = new UserSignUpDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
 		Map<String,String> error=updateCheck(userSignUpDTO,uDAO,oldLoginName);
-		vc.put("userSignUpDTO", userSignUpDTO);
 		if(error.size()>0){
 			vc.put("error", error);
 			VelocityParserFactory.getVP().render("registerYes", vc, request, response);
 			return;
 		}else{
+			vc.put("userSignUpDTO", userSignUpDTO);
 			uDAO.updateUser(userSignUpDTO);
 	    	sessUtil.putAndWrite(request, sessData,SessionName.customerDTO, userSignUpDTO);
 	    	new GlobalVariablesBA().setCommonVariables(request, vc);
