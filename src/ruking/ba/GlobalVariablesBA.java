@@ -63,13 +63,16 @@ public class GlobalVariablesBA {
         
 		if(s2.length()>1 && !s2.equals("/index.jhtml"))
 			ctx.put("breadcrum", getBreadCrum(request));
-
-
 	}
+	
 	private String getBreadCrum(HttpServletRequest request){
 		String uri = request.getRequestURI().substring(1);
 		if("reg.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='reg.jhtml' > 注册</a>";
+		if("about/aboutus.jhtml".equals(uri))
+			return "<a href = '/about/about.jhtml'>首页</a> > <a href='/about/aboutus.jhtml' > 关于如金</a>";
+		if("about/customerservice.jhtml".equals(uri))
+			return "<a href = '/index.jhtml'>首页</a> > <a href='customerservice.jhtml' > 客服中心</a>";
 		return "<a href = '/index.jhtml'>首页</a>";
 	}
 }
