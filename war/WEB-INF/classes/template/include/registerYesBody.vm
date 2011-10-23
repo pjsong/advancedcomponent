@@ -1,6 +1,7 @@
 <link href="static/css/registeryes.css" type="text/css" rel="stylesheet">
 <script type="text/javacript" src="static/js/register.js"></script>
-<table align="center" width="800" cellspacing="0" cellpadding="0" border="0" style="border: 0px solid rgb(199, 214, 226); margin-top: 10px;">
+			#parse("include/breadcrum.vm")
+			<table align="center" width="800" cellspacing="0" cellpadding="0" border="0" style="border: 0px solid rgb(199, 214, 226); margin-top: 10px;">
                 <tr>
                   <td valign="top" style="padding: 10px;"><p></p><table height="149" width="100%" cellspacing="0" cellpadding="0" border="0">
       <tbody><tr>

@@ -29,11 +29,11 @@
 			<td valign="bottom" style="padding-bottom:0px;width:200px;"><span class="headerlanguage">
 			<a href="index.jhtml"> 简体 </a>|<a href="index.jhtml"> 繁體 </a>|<a href="index.jhtml"> ENGLISH </a></span></td>
             <td align="right" colspan=7 valign="bottom">
-				<table cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
-				#if($customer)<tr><td  colspan=3 align="right" >
+				<table cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;"><tr><td  colspan=3 align="right" >
+				#if($customer)
 				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="logout.jhtml">退出登录</a></td>
 				#else
-				<a href="reg.jhtml">新用户注册</a> | <a href="searchpass.jhtml">忘记密码</a>
+				<a href="$_url/reg.jhtml">新用户注册</a> | <a href="searchpass.jhtml">忘记密码</a>
 				
 				</td></tr>
                 <tbody>
@@ -46,8 +46,8 @@
               </tbody></table>
             </td>
           </tr><tr><td align="left" colspan=8 style="padding-top:12px;"><div id="menu">
-		<a href="index.jhtml">&nbsp;&nbsp;关于如金&nbsp;</a> <span class="seperator"> | </span><a href="aboutshow.jhtml">&nbsp;产品浏览&nbsp;</a>&nbsp;<span class="seperator"> | </span><a href="solutions.jhtml">&nbsp;解决方案&nbsp;</a>&nbsp;<span class="seperator"> | </span>
-		<a href="service01.jhtml">&nbsp;产业资讯</a>&nbsp;<span class="seperator"> | </span><a href="customerservice.jhtml">&nbsp;客服中心&nbsp;&nbsp;</a></div><td>      </tr>
+		<a href="$_url/about/aboutus.jhtml">&nbsp;&nbsp;关于如金&nbsp;</a> <span class="seperator"> | </span><a href="$_url/browse.jhtml">&nbsp;产品浏览&nbsp;</a>&nbsp;<span class="seperator"> | </span><a href="$_url/about/solutions.jhtml">&nbsp;解决方案&nbsp;</a>&nbsp;<span class="seperator"> | </span>
+		<a href="$_url/about/news.jhtml">&nbsp;产业资讯</a>&nbsp;<span class="seperator"> | </span><a href="$_url/about/customerservice.jhtml">&nbsp;客服中心&nbsp;&nbsp;</a></div><td>      </tr>
         </tbody></table>
     </td>
 	<td style="width:300px;"></td>
