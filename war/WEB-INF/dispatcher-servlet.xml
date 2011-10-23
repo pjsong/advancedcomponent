@@ -4,6 +4,7 @@
 
     <bean id="indexController"   class="ruking.controller.IndexController" ></bean>
     <bean id="regController"   class="ruking.controller.RegController" ></bean>
+    <bean id="manageController"   class="ruking.controller.ManageController" ></bean>
     <bean id="logoutController"   class="ruking.controller.LogOutController" ></bean>
     <bean id="loginController"   class="ruking.controller.LoginController" ></bean>
     <bean id="aboutController"   class="ruking.controller.AboutController" ></bean>
@@ -22,6 +23,7 @@
             <prop key="/reg.jhtml">regController</prop>
             <prop key="/logout.jhtml">logoutController</prop>
             <prop key="/login.jhtml">loginController</prop>
+            <prop key="/manage.jhtml">manageController</prop>
             <prop key="/about/*.jhtml">aboutController</prop>
         </props>
     </property>
