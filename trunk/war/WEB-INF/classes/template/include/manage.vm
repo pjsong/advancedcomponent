@@ -1,0 +1,1 @@
+﻿<table style="width:800px;" align="center" border="0px"><tr><td><a href="$_url/listuser.jhtml">用户</a> | <a href="$_url/listproduct.jhtml">产品</a> | <a href="$_url/listattribute.jhtml">属性</a> | <a href="$_url/articles.jhtml">资讯</a> | <a href="$_url/solution.jhtml">方案</a></td></tr></table>
