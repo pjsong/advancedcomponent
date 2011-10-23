@@ -27,17 +27,16 @@
           <tbody>
           <tr>
 			<td valign="bottom" style="padding-bottom:0px;width:200px;"><span class="headerlanguage">
-			<a href="index.jhtml"> 简体 </a>|<a href="index.jhtml"> 繁體 </a>|<a href="index.jhtml"> ENGLISH </a></span></td>
+			<a href="$_url/index.jhtml"> 简体 </a>|<a href="$_url/index.jhtml"> 繁體 </a>|<a href="$_url/index.jhtml"> ENGLISH </a></span></td>
             <td align="right" colspan=7 valign="bottom">
 				<table cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;"><tr><td  colspan=3 align="right" >
 				#if($customer)
-				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="logout.jhtml">退出登录</a></td>
+				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="$_url/logout.jhtml">退出登录</a> #if($administrator) | <a href="$_url/manage.jhtml">管理产品</a> #end</td>
 				#else
-				<a href="$_url/reg.jhtml">新用户注册</a> | <a href="searchpass.jhtml">忘记密码</a>
-				
+				<a href="$_url/reg.jhtml">新用户注册</a> | <a href="$_url/searchpass.jhtml">忘记密码</a>
 				</td></tr>
                 <tbody>
-				  <form onsubmit="return checkformlogin()" name="formlogin" id="formlogin" action="login.jhtml" method="post">
+				  <form onsubmit="return checkformlogin()" name="formlogin" id="formlogin" action="$_url/login.jhtml" method="post">
 				  <tr style="padding-bottom:5px;">
                   <td width="210" align="left"><span class="headerlabel">用户名：</span><input class="headerinputbox" type="text" size="15" id="loginName" name="loginName"></td>
                   <td width="190" align="left"><span class="headerlabel">密码：</span><input class="headerinputbox" type="password" size="15" id="loginPassword" name="loginPassword"></td>
