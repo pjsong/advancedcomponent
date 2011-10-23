@@ -60,6 +60,16 @@ public class GlobalVariablesBA {
 		String s3=request.getContextPath();
 		String s4 = s1.substring(0,8)+s1.substring(8).replace(s2, s3);
         ctx.put("_url", s4);
+        
+		if(s2.length()>1 && !s2.equals("/index.jhtml"))
+			ctx.put("breadcrum", getBreadCrum(request));
 
+
+	}
+	private String getBreadCrum(HttpServletRequest request){
+		String uri = request.getRequestURI().substring(1);
+		if("reg.jhtml".equals(uri))
+			return "<a href = '/index.jhtml'>首页</a> > <a href='reg.jhtml' > 注册</a>";
+		return "<a href = '/index.jhtml'>首页</a>";
 	}
 }
