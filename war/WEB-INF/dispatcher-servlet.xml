@@ -4,11 +4,21 @@
 
     <bean id="indexController"   class="ruking.controller.IndexController" ></bean>
     <bean id="regController"   class="ruking.controller.RegController" ></bean>
-    <bean id="manageController"   class="ruking.controller.ManageController" ></bean>
     <bean id="logoutController"   class="ruking.controller.LogOutController" ></bean>
     <bean id="loginController"   class="ruking.controller.LoginController" ></bean>
     <bean id="aboutController"   class="ruking.controller.AboutController" ></bean>
+
+    <bean id="manageController"   class="ruking.controller.manage.ManageController" ></bean>
+    <bean id="listUserController"   class="ruking.controller.manage.ListUserController" ></bean>
+    <bean id="listNewsController"   class="ruking.controller.manage.ListNewsController" ></bean>
+    <bean id="listProductsController"   class="ruking.controller.manage.ListProductsController" ></bean>
+    <bean id="editUserController"   class="ruking.controller.manage.EditUserController" ></bean>
+    <bean id="editNewsController"   class="ruking.controller.manage.EditNewsController" ></bean>
+    <bean id="editProductController"   class="ruking.controller.manage.EditProductController" ></bean>
+
 	<bean id="sessionInterceptor" class="ruking.interceptor.SessionInterceptor"></bean>
+	<bean id="manageInterceptor" class="ruking.interceptor.ManageInterceptor"></bean>
+
  	<bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
    	 <property name="interceptors">
     	<list>
@@ -23,10 +33,28 @@
             <prop key="/reg.jhtml">regController</prop>
             <prop key="/logout.jhtml">logoutController</prop>
             <prop key="/login.jhtml">loginController</prop>
-            <prop key="/manage.jhtml">manageController</prop>
             <prop key="/about/*.jhtml">aboutController</prop>
         </props>
     </property>
     </bean>
-
+ 	<bean id="manageUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+   	 <property name="interceptors">
+    	<list>
+          <ref bean="sessionInterceptor"/>
+          <ref bean="manageInterceptor"/>
+    	</list>
+	 </property>
+    <property name="alwaysUseFullPath"><value>true</value></property>
+    <property name="mappings">
+        <props>
+            <prop key="/manage.jhtml">manageController</prop>
+            <prop key="/listuser.jhtml">listUserController</prop>
+            <prop key="/listproducts.jhtml">listProductsController</prop>
+            <prop key="/edituser.jhtml">editUserController</prop>
+            <prop key="/editproduct.jhtml">editProductController</prop>
+            <prop key="/listnews.jhtml">listNewsController</prop>
+            <prop key="/editnews.jhtml">editNewsController</prop>
+        </props>
+    </property>
+    </bean>
 </beans>
