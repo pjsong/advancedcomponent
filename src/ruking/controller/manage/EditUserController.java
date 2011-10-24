@@ -1,5 +1,6 @@
 package ruking.controller.manage;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,9 +10,12 @@ import org.apache.velocity.VelocityContext;
 
 import ruking.ba.GlobalVariablesBA;
 import ruking.controller.BaseController;
+import ruking.dao.UserSignUpDAO;
 import ruking.db.DataSourceFactory;
 import ruking.db.MDTMySQLRowMapper;
+import ruking.dto.UserSignUpDTO;
 import ruking.session.SessionUtil;
+import ruking.utils.Util;
 import ruking.velocity.VelocityParserFactory;
 
 public class EditUserController extends BaseController {
@@ -23,7 +27,12 @@ public class EditUserController extends BaseController {
     	if(vc.get("administrator")==null){
     		VelocityParserFactory.getVP().render("index", vc, request, response);
     	}else{
-        VelocityParserFactory.getVP().render("manage", vc, request, response);
+    		vc.put("currentTab", "user");
+    		String loginName = Util.getNoNull(request.getParameter("name"));
+    		if("".equals(loginName))return;
+    		UserSignUpDTO user = new UserSignUpDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD")).getUserByLoginName(loginName);
+    		vc.put("user", user);
+    		VelocityParserFactory.getVP().render("edituser", vc, request, response);
         }
 	}
 }

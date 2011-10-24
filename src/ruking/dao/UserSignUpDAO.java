@@ -1,6 +1,8 @@
 package ruking.dao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import ruking.db.DataSourceFactory;
@@ -24,6 +26,12 @@ public class UserSignUpDAO {
 		this.dbUser = dbUser;
 		this.password = password;
 	}
+	
+	public List<Map> getAllUsers()throws SQLException{
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM users";
+		return runner.query(sql);
+	}
 	public  UserSignUpDTO getUserByLoginName(String loginName) throws SQLException{
 		UserSignUpDTO u=new UserSignUpDTO();
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
@@ -43,6 +51,7 @@ public class UserSignUpDAO {
 			u.setName((String)m.get("RealName"));
 			u.setMobile((String)m.get("Mobile"));
 			u.setId((Integer)m.get("ID"));
+			u.setAuthority((Integer)m.get("Authority"));
 		}
 		return u;
 	}

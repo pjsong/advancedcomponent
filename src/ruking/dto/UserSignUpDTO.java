@@ -20,8 +20,14 @@ public class UserSignUpDTO  implements Serializable{
 	private String mobile="";;
 	private String phoneFax="";;
 	private boolean newsLetter;
+	private Integer authority;
 	
-	
+	public Integer getAuthority() {
+		return authority;
+	}
+	public void setAuthority(Integer authority) {
+		this.authority = authority;
+	}
 	public Integer getId() {
 		return id;
 	}

@@ -1,5 +1,6 @@
 package ruking.controller.manage;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import org.apache.velocity.VelocityContext;
 
 import ruking.ba.GlobalVariablesBA;
 import ruking.controller.BaseController;
+import ruking.dao.UserSignUpDAO;
 import ruking.db.DataSourceFactory;
 import ruking.db.MDTMySQLRowMapper;
 import ruking.session.SessionUtil;
@@ -23,7 +25,10 @@ public class ListUsersController extends BaseController {
     	if(vc.get("administrator")==null){
     		VelocityParserFactory.getVP().render("index", vc, request, response);
     	}else{
-        VelocityParserFactory.getVP().render("manage", vc, request, response);
+    		vc.put("currentTab", "user");
+    		List<Map> users = new UserSignUpDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD")).getAllUsers();
+    		vc.put("users", users);
+    		VelocityParserFactory.getVP().render("listusers", vc, request, response);
         }
 	}
 }
