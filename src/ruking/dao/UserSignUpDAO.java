@@ -40,6 +40,7 @@ public class UserSignUpDAO {
 		if(m==null)return null;
 		else{
 			u.setAnswer((String)m.get("Answer"));
+			u.setQuestion((String)m.get("Question"));
 			u.setCompanyaddress((String)m.get("CompanyAddress"));
 			u.setCompanyname((String)m.get("CompanyName"));
 			u.setCompanywebsite((String)m.get("CompanyWebSite"));
@@ -95,7 +96,7 @@ public class UserSignUpDAO {
 	public  void updateUser(UserSignUpDTO u) throws SQLException{
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql="update users set LoginName="+DbUtil.escSql(u.getLoginName())+",Password="+DbUtil.escSql(u.getPassword());
-		sql+=",Question="+DbUtil.escSql(u.getPassword())+",Sex="+DbUtil.escSql(u.getSex());
+		sql+=",Question="+DbUtil.escSql(u.getQuestion())+",Sex="+DbUtil.escSql(u.getSex());
 		sql+=",Answer="+DbUtil.escSql(u.getAnswer())+",Email="+DbUtil.escSql(u.getEmail());
 		sql+=",CompanyAddress="+DbUtil.escSql(u.getCompanyaddress())+",Mobile="+DbUtil.escSql(u.getMobile());
 		sql+=",NewsLetter="+DbUtil.escSql(u.getNewsLetter())+",CompanyWebSite="+DbUtil.escSql(u.getCompanywebsite());
