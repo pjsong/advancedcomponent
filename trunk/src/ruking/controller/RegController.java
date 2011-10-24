@@ -100,6 +100,7 @@ public class RegController extends BaseController {
 		Map<String,String> error=updateCheck(userSignUpDTO,uDAO,oldLoginName);
 		if(error.size()>0){
 			vc.put("error", error);
+			userSignUpDTO.setLoginName(oldLoginName);
 			VelocityParserFactory.getVP().render("registerYes", vc, request, response);
 			return;
 		}else{

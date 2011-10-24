@@ -28,8 +28,7 @@ public class ManageInterceptor extends HandlerInterceptorAdapter {
 		String hostName = conf.getHostName();
 		String dbUser = conf.getDbUser();
 		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource(hostName,dbName,dbUser,dbPWD), new MDTMySQLRowMapper());
-    	String sessId = sessUtil.getSessIdFromCookie(request);
-		Map<String, Object> sessData = sessUtil.read(sessId);
+		Map<String, Object> sessData = sessUtil.read(request);
 		if (sessData == null || sessData.size() == 0)
 		{
 //			String url = request.getRequestURI();
@@ -49,6 +48,7 @@ public class ManageInterceptor extends HandlerInterceptorAdapter {
 		}
 		else
 		{
+	    	String sessId = sessUtil.getSessIdFromCookie(request);
 			sessUtil.updateLastUpdatedField(sessId);
 	    	request.setAttribute(SessionUtil.SESS_ID, sessId);
 	    	request.setAttribute(SessionUtil.SESS_DATA, sessData);

@@ -126,19 +126,19 @@ public class SessionUtil
 		}
 	}
 
-//	public Map<String, Object> read(HttpServletRequest request) throws Exception
-//	{
-//		String sessId = (String) request.getAttribute(SessionUtil.SESS_ID);
-//		SessionDTO sessDTO = readSessDTO(sessId);
-//		if (sessDTO == null)
-//		{
-//			return null;
-//		}
-//		else
-//		{
-//			return sessDTO.getSessData();
-//		}
-//	}
+	public Map<String, Object> read(HttpServletRequest request) throws Exception
+	{
+		String sessId = (String) request.getAttribute(SessionUtil.SESS_ID);
+		SessionDTO sessDTO = readSessDTO(sessId);
+		if (sessDTO == null)
+		{
+			return null;
+		}
+		else
+		{
+			return sessDTO.getSessData();
+		}
+	}
 
 	public void write(HttpServletRequest request, Map<String, Object> sessData) throws Exception
 	{
@@ -244,32 +244,32 @@ public class SessionUtil
 		String sql = String.format(sqlTmpl, DbUtil.escSql(data), DbUtil.escSql(sessId));
 		runner.update(sql);
 	}
-	public Map<String, Object> read(String sessId) throws Exception
-	{	
-		TransRunner runner = new TransRunner(ds, rowMapper, false);
-		String sqlTmpl = "select data from sessions where id=%s";
-		String sql = String.format(sqlTmpl, DbUtil.escSql(sessId));
-		Map<String, String> map = runner.queryForMap(sql);
-		if (map == null)
-		{
-			return new HashMap<String, Object>();
-		}
-		String data = map.get("data");
-		if (data == null || data.equals(""))
-		{
-			return new HashMap<String, Object>();
-		}
-
-		try
-		{
-			return (Map<String, Object>) xmlToObject(data);
-		}
-		catch (Exception e)
-		{
-			// data conversion error, so, session data got changed
-			return new HashMap<String, Object>();			
-		}
-	}
+//	public Map<String, Object> read(String sessId) throws Exception
+//	{	
+//		TransRunner runner = new TransRunner(ds, rowMapper, false);
+//		String sqlTmpl = "select Data from sessions where id=%s";
+//		String sql = String.format(sqlTmpl, DbUtil.escSql(sessId));
+//		Map<String, String> map = runner.queryForMap(sql);
+//		if (map == null)
+//		{
+//			return new HashMap<String, Object>();
+//		}
+//		String data = map.get("data");
+//		if (data == null || data.equals(""))
+//		{
+//			return new HashMap<String, Object>();
+//		}
+//
+//		try
+//		{
+//			return (Map<String, Object>) xmlToObject(data);
+//		}
+//		catch (Exception e)
+//		{
+//			// data conversion error, so, session data got changed
+//			return new HashMap<String, Object>();			
+//		}
+//	}
 
 	private static Object xmlToObject(String data) throws Exception
 	{
