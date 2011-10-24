@@ -3,7 +3,7 @@
 </tr>
 #foreach($user in $users)
 <tr>
-<td>$user.ID</td><td><a href="$_url/edituser.jhtml?loginname=$user.LoginName">$user.LoginName</a></td><td>$user.Password</td><td>$user.Question</td><td>$user.Answer</td><td>$user.Email</td><td>$user.Sex</td><td>$!user.CompanyWebSite</td><td>$!user.CompanyName</td><td>$!user.CompanyAddress</td><td>$!user.RealName</td><td>$!user.PhoneFax</td><td>$!user.Mobile</td><td>$!user.QQNumber</td><td>$!user.MsnNumber</td><td>$!user.NewsLetter</td><td>$!user.AuthorityID</td>
+<td>$user.ID</td><td><a href="$_url/edituser.jhtml?id=$user.ID">$user.LoginName</a></td><td>$user.Password</td><td>$user.Question</td><td>$user.Answer</td><td>$user.Email</td><td>$user.Sex</td><td>$!user.CompanyWebSite</td><td>$!user.CompanyName</td><td>$!user.CompanyAddress</td><td>$!user.RealName</td><td>$!user.PhoneFax</td><td>$!user.Mobile</td><td>$!user.QQNumber</td><td>$!user.MsnNumber</td><td>$!user.NewsLetter</td><td>$!user.AuthorityID</td>
 </tr>
 #end
 </table>
