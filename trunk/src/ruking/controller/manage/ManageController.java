@@ -27,7 +27,7 @@ public class ManageController extends BaseController {
     	if(vc.get("administrator")==null){
     		VelocityParserFactory.getVP().render("index", vc, request, response);
     	}else{
-        VelocityParserFactory.getVP().render("manage", vc, request, response);
+    		VelocityParserFactory.getVP().render("manage", vc, request, response);
         }
 	}
 }
