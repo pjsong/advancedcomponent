@@ -14,7 +14,7 @@ import ruking.db.MDTMySQLRowMapper;
 import ruking.session.SessionUtil;
 import ruking.velocity.VelocityParserFactory;
 
-public class ListNewsController extends BaseController {
+public class ListAttributesController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);

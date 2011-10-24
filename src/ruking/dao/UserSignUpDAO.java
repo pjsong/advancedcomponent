@@ -42,12 +42,13 @@ public class UserSignUpDAO {
 			u.setQqNumber((String)m.get("QQNumber"));
 			u.setName((String)m.get("RealName"));
 			u.setMobile((String)m.get("Mobile"));
+			u.setId((Integer)m.get("ID"));
 		}
 		return u;
 	}
 	public  boolean loginNameExists(String loginName) throws SQLException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM users WHERE LoginName = " + DbUtil.escSql(loginName);
+		String sql = "SELECT * FROM users WHERE LoginName = '" + loginName+"';";
 		Map m=runner.queryForMap(sql);
 		if(m==null)return false;
 		return true;
