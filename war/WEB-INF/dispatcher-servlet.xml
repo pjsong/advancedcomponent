@@ -9,7 +9,7 @@
     <bean id="aboutController"   class="ruking.controller.AboutController" ></bean>
 
     <bean id="manageController"   class="ruking.controller.manage.ManageController" ></bean>
-    <bean id="listUserController"   class="ruking.controller.manage.ListUserController" ></bean>
+    <bean id="listUsersController"   class="ruking.controller.manage.ListUsersController" ></bean>
     <bean id="listArticlesController"   class="ruking.controller.manage.ListArticlesController" ></bean>
     <bean id="listSolutionsController"   class="ruking.controller.manage.ListSolutionsController" ></bean>
     <bean id="listProductsController"   class="ruking.controller.manage.ListProductsController" ></bean>
