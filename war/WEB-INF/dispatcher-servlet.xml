@@ -52,7 +52,7 @@
     <property name="mappings">
         <props>
             <prop key="/manage.jhtml">manageController</prop>
-            <prop key="/listuser.jhtml">listUserController</prop>
+            <prop key="/listusers.jhtml">listUsersController</prop>
             <prop key="/listproducts.jhtml">listProductsController</prop>
             <prop key="/listattributes.jhtml">listAttributesController</prop>
             <prop key="/listarticles.jhtml">listArticlesController</prop>
