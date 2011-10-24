@@ -34,11 +34,11 @@ public class EditUserController extends BaseController {
 		else{
 			VelocityContext vc=new VelocityContext();
 			new GlobalVariablesBA().setCommonVariables(request, vc);
-			String loginName = request.getParameter("loginname");
-			if(Util.getNoNull(loginName).equals(""))
+			String id = request.getParameter("id");
+			if(Util.getNoNull(id).equals(""))
 				response.sendRedirect("/listusers.jhtml");
 	    	UserSignUpDAO uDAO = new UserSignUpDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
-	    	UserSignUpDTO userSignUpDTO = uDAO.getUserByLoginName(loginName);  
+	    	UserSignUpDTO userSignUpDTO = uDAO.getUserByID(id);  
 	    	vc.put("user", userSignUpDTO);
 	    	VelocityParserFactory.getVP().render("edituser", vc, request, response);
 	    	return;
@@ -48,9 +48,9 @@ public class EditUserController extends BaseController {
 	protected void updateUser(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
 		new GlobalVariablesBA().setCommonVariables(request, vc);
-		String loginName = request.getParameter("loginname");
+		String id = request.getParameter("id");
     	UserSignUpDAO uDAO = new UserSignUpDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
-    	UserSignUpDTO userSignUpDTO = uDAO.getUserByLoginName(loginName);  
+    	UserSignUpDTO userSignUpDTO = uDAO.getUserByID(id);  
 		String oldLoginName = userSignUpDTO.getLoginName();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(userSignUpDTO, "userSignUpDTO");
 		binder.bind(request);
