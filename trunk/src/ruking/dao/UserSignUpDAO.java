@@ -56,6 +56,32 @@ public class UserSignUpDAO {
 		}
 		return u;
 	}
+	
+	public  UserSignUpDTO getUserByID(String id) throws SQLException{
+		UserSignUpDTO u=new UserSignUpDTO();
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM users WHERE ID = " + DbUtil.escSql(id);
+		Map m=runner.queryForMap(sql);
+		if(m==null)return null;
+		else{
+			u.setAnswer((String)m.get("Answer"));
+			u.setQuestion((String)m.get("Question"));
+			u.setCompanyaddress((String)m.get("CompanyAddress"));
+			u.setCompanyname((String)m.get("CompanyName"));
+			u.setCompanywebsite((String)m.get("CompanyWebSite"));
+			u.setEmail((String)m.get("Email"));
+			u.setPhoneFax((String)m.get("PhoneFax"));
+			u.setLoginName((String)m.get("LoginName"));
+			u.setMsnNumber((String)m.get("MsnNumber"));
+			u.setQqNumber((String)m.get("QQNumber"));
+			u.setName((String)m.get("RealName"));
+			u.setMobile((String)m.get("Mobile"));
+			u.setId((Integer)m.get("ID"));
+			u.setAuthority((Integer)m.get("Authority"));
+		}
+		return u;
+	}
+	
 	public  boolean loginNameExists(String loginName) throws SQLException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM users WHERE LoginName = '" + loginName+"';";
