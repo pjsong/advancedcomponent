@@ -1,6 +1,7 @@
-package ruking.velocity;
+package ruking.utils;
 
 import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.net.URLEncoder;
 
 import org.apache.commons.lang.StringEscapeUtils;
@@ -70,13 +71,21 @@ public class EscapeTool
     }
 
     // use utf-8 to encode the str for the url
-    public static String url(String str) throws Exception
+    public String url(String str) throws Exception
     {
     	if (str == null)
     	{
     		return "";
     	}
     	return URLEncoder.encode(str, "UTF-8");
+    }
+    public String deUrl(String str) throws Exception
+    {
+    	if (str == null)
+    	{
+    		return "";
+    	}
+    	return URLDecoder.decode(str, "UTF-8");
     }
     
     /**
@@ -168,7 +177,30 @@ public class EscapeTool
         
         return sb.toString();
     }
-
+    public String decodeHtml(String str)
+    {
+    	if (str == null)
+    	{
+    		return "";
+    	}
+    	
+    	StringBuilder sb = new StringBuilder();
+    	int len = str.length();
+        for (int i = 0; i < len; i++)
+        {
+        	char c = str.charAt(i);
+        	if (c > 0xFF)
+        	{
+        		sb.append(c);
+        	}
+        	else
+        	{
+        		sb.append(StringEscapeUtils.unescapeHtml(c + ""));
+        	}
+        }
+        
+        return sb.toString();
+    }
     /**
      * Escapes the characters in a <code>String</code> using XML entities.
      * <br />
