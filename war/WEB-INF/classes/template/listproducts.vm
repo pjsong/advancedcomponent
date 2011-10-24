@@ -1,0 +1,4 @@
+			#parse("include/header.vm")
+			#parse("include/manage.vm")
+			#parse("include/listproducts.vm")
+			#parse("include/footer.vm")

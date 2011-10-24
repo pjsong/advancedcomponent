@@ -1,0 +1,4 @@
+<a href="$_url/editattribute.jhtml?act=add"> 添加产品属性 </a>
+<table><tr><th>ID</th><th>ProductID</th><th>AttrName</th><th>AttrValue</th></tr>
+
+</table>
