@@ -1,7 +1,11 @@
 package ruking.session;
 
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
 import java.io.ByteArrayInputStream;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -239,6 +243,52 @@ public class SessionUtil
 		String sqlTmpl = "update sessions set LastUpdated=now(), Data=%s where ID=%s";
 		String sql = String.format(sqlTmpl, DbUtil.escSql(data), DbUtil.escSql(sessId));
 		runner.update(sql);
+	}
+	public Map<String, Object> read(String sessId) throws Exception
+	{	
+		TransRunner runner = new TransRunner(ds, rowMapper, false);
+		String sqlTmpl = "select data from sessions where id=%s";
+		String sql = String.format(sqlTmpl, DbUtil.escSql(sessId));
+		Map<String, String> map = runner.queryForMap(sql);
+		if (map == null)
+		{
+			return new HashMap<String, Object>();
+		}
+		String data = map.get("data");
+		if (data == null || data.equals(""))
+		{
+			return new HashMap<String, Object>();
+		}
+
+		try
+		{
+			return (Map<String, Object>) xmlToObject(data);
+		}
+		catch (Exception e)
+		{
+			// data conversion error, so, session data got changed
+			return new HashMap<String, Object>();			
+		}
+	}
+
+	private static Object xmlToObject(String data) throws Exception
+	{
+		char[] base64Value = data.toCharArray();
+		byte[] bytes = Base64.decode(base64Value);
+		XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new GZIPInputStream(new ByteArrayInputStream(bytes))));
+		return decoder.readObject();
+	}
+	
+	private static String objectToXml(Object obj) throws IOException
+	{
+		ByteArrayOutputStream bao = new ByteArrayOutputStream();
+		XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(new GZIPOutputStream(bao)));
+		encoder.writeObject(obj);
+		encoder.flush();
+		encoder.close();
+
+		char[] base64Value = Base64.encode(bao.toByteArray());
+		return new String(base64Value);		
 	}
 
 	private void clean() throws Exception

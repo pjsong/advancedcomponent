@@ -3,13 +3,30 @@ package ruking.utils;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class Util {
 	public static String getNoNull(Object o){
 		return o==null?"":o.toString();
 	}
 	
+	public static void redirect302(HttpServletResponse response, String targetUrl) throws IOException
+	{
+        // set the no cache control header, HTTP 1.1 standard
+        //resp.setHeader("Cache-Control", "no-cache");
+        // this is to allow user to go back to previous page after a post operation in IE
+        // this fixes the error:
+        //  Error Message: Warning: Page Has Expired: The Page You Requested...
+        response.setHeader("Cache-Control", "public");
 
+        // set the no cache header, HTTP 1.0 standard
+        response.setHeader("Pragma", "no-cache");
+
+        // for user-agents that ignore the above settings
+        response.setHeader("Expires", "Thu, 01 Jan 1970 00.00.00 GMT");
+
+        response.sendRedirect(targetUrl);
+	}
 	// get relative url
 	// example: 
 	// original: http://localhost:8080/products/indoor_lighting_chandeliers

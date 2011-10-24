@@ -15,6 +15,7 @@ import ruking.log.SessionLogger;
 import ruking.session.SessionName;
 import ruking.session.SessionUtil;
 import ruking.utils.Conf;
+import ruking.utils.EscapeTool;
 import ruking.utils.Util;
 
 public class ManageInterceptor extends HandlerInterceptorAdapter {
@@ -28,11 +29,30 @@ public class ManageInterceptor extends HandlerInterceptorAdapter {
 		String dbUser = conf.getDbUser();
 		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource(hostName,dbName,dbUser,dbPWD), new MDTMySQLRowMapper());
     	String sessId = sessUtil.getSessIdFromCookie(request);
-    	SessionDTO sessDTO = sessUtil.readSessDTO(sessId);
-    	if (sessDTO == null)
-    	{
-    		return true;
-    	}
-		return true;
+		Map<String, Object> sessData = sessUtil.read(sessId);
+		if (sessData == null || sessData.size() == 0)
+		{
+//			String url = request.getRequestURI();
+//			Map<String,String> map = request.getParameterMap();
+//			if(map.size()>0){
+//				StringBuffer param = new StringBuffer("?");
+//				for(String key:map.keySet()){
+//					String value = Util.getNoNull(request.getParameter(key));
+//					param.append(key + (value.equals("")?"":("="+value))+"&");
+//				}
+//				param.deleteCharAt(param.lastIndexOf("&"));
+//				Util.redirect302(response,"login.jhtml?uri=" + new EscapeTool().url(url+param.toString()));
+//			}else{
+//				Util.redirect302(response,"login.jhtml?uri=" + new EscapeTool().url(url));
+//			}
+			return false;
+		}
+		else
+		{
+			sessUtil.updateLastUpdatedField(sessId);
+	    	request.setAttribute(SessionUtil.SESS_ID, sessId);
+	    	request.setAttribute(SessionUtil.SESS_DATA, sessData);
+			return true;
+		}
 	}
 }

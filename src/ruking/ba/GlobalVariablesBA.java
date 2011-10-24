@@ -12,9 +12,9 @@ import ruking.dto.UserSignUpDTO;
 import ruking.session.SessionName;
 import ruking.session.SessionUtil;
 import ruking.utils.Conf;
+import ruking.utils.EscapeTool;
 import ruking.utils.RegExp;
 import ruking.utils.Util;
-import ruking.velocity.EscapeTool;
 import ruking.velocity.MathTool;
 import ruking.velocity.VelocityUtil;
 
