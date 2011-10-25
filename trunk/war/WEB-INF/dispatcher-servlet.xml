@@ -11,12 +11,10 @@
     <bean id="manageController"   class="ruking.controller.manage.ManageController" ></bean>
     <bean id="listUsersController"   class="ruking.controller.manage.ListUsersController" ></bean>
     <bean id="listArticlesController"   class="ruking.controller.manage.ListArticlesController" ></bean>
-    <bean id="listSolutionsController"   class="ruking.controller.manage.ListSolutionsController" ></bean>
     <bean id="listProductsController"   class="ruking.controller.manage.ListProductsController" ></bean>
     <bean id="listAttributesController"   class="ruking.controller.manage.ListAttributesController" ></bean>
     <bean id="editUserController"   class="ruking.controller.manage.EditUserController" ></bean>
     <bean id="editArticleController"   class="ruking.controller.manage.EditArticleController" ></bean>
-    <bean id="editSolutionController"   class="ruking.controller.manage.EditSolutionController" ></bean>
     <bean id="editProductController"   class="ruking.controller.manage.EditProductController" ></bean>
     <bean id="editAttributeController"   class="ruking.controller.manage.EditAttributeController" ></bean>
 
@@ -56,12 +54,10 @@
             <prop key="/listproducts.jhtml">listProductsController</prop>
             <prop key="/listattributes.jhtml">listAttributesController</prop>
             <prop key="/listarticles.jhtml">listArticlesController</prop>
-            <prop key="/listsolutions.jhtml">listSolutionsController</prop>
             <prop key="/edituser.jhtml">editUserController</prop>
             <prop key="/editproduct.jhtml">editProductController</prop>
             <prop key="/editattribute.jhtml">editAttributeController</prop>
             <prop key="/editarticle.jhtml">editArticleController</prop>
-            <prop key="/editsolution.jhtml">editSolutionController</prop>
         </props>
     </property>
     </bean>
