@@ -1,4 +1,4 @@
-<a href="$_url/editattribute.jhtml?act=add"> Ìí¼Ó²úÆ·ÊôĞÔ </a>
-<table><tr><th>ID</th><th>ProductID</th><th>AttrName</th><th>AttrValue</th></tr>
-
-</table>
+ï»¿			#parse("include/header.vm")
+			#parse("include/manage.vm")
+			#parse("include/listattributes.vm")
+			#parse("include/footer.vm")

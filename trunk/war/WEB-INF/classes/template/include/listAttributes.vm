@@ -1,4 +1,8 @@
-﻿			#parse("include/header.vm")
-			#parse("include/manage.vm")
-			#parse("include/listattributes.vm")
-			#parse("include/footer.vm")
+﻿
+<table width="800" align="center" border="1">
+<tr><td colspan=8><a href="$_url/editattribute.jhtml"> 添加产品属性 </a></td></tr>
+<tr><th>动作</th><th>ID</th><th>ProductID</th><th>AttrName</th><th>AttrValue</th></tr>
+#foreach($attribute in $attributes)
+<tr><td><a href="$_url/listattributes.jhtml?act=del&id=$attribute.ID">删除</a></td><td>$attribute.ID</td><td><a href="$_url/editattribute.jhtml?act=edit&id=$attribute.ID">$attribute.ProductID</td><td>$attribute.AttrName</td><td>$attribute.AttrValue</td></tr>
+#end
+</table>
