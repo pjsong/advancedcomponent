@@ -30,3 +30,12 @@ zkm0m1_db
 zkm0m1
 k7x8d7u9
 
+CREATE TABLE `zkm0m1_db`.`articles` (
+`ID` INT( 10 ) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`Type` INT( 1 ) UNSIGNED NOT NULL ,
+`Header` VARCHAR( 100 ) NOT NULL ,
+`Content` TEXT NOT NULL ,
+`Author` VARCHAR( 20 ) NOT NULL ,
+`UpdatedTime` DATETIME NOT NULL ,
+`IsEmail` BOOL NOT NULL
+);
