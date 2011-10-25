@@ -62,7 +62,7 @@ public class EditProductController extends BaseController {
 			VelocityParserFactory.getVP().render("editproduct", vc, request, response);
 			return;
 		}else{
-	    	pDAO.insertProduct(product);
+			product = pDAO.insertProduct(product);
 	    	response.sendRedirect("/listproducts.jhtml");
 		}
 	}
@@ -72,9 +72,10 @@ public class EditProductController extends BaseController {
         String id= Util.getNoNull(request.getParameter("id"));
     	ProductDAO pDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
     	ProductDTO product = pDAO.getProductByID(id);
+    	String oldName = product.getTitle();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(product, "product");
 		binder.bind(request);
-		Map<String,String> error = check(product,pDAO);
+		Map<String,String> error = updateCheck(product,pDAO,oldName);
 		if(error.size()>0){
 			vc.put("error", error);
 			vc.put("act", "update");
@@ -91,6 +92,16 @@ public class EditProductController extends BaseController {
 		Map<String,String> error = new HashMap<String,String>();
 		if(Util.getNoNull(p.getTitle()).length()<1)error.put("titleEmptyError", "输入产品名称");
 		if(pDAO.productTitleExits(p.getTitle()))error.put("titleValueError", "产品名称已存在");
+		if(p.getTitle().length()>98)error.put("titleLengthError", "产品名称太长");
+		if(Util.getNoNull(p.getCategory()).length()<1)error.put("categoryLengthError", "输入类别名称");
+		if(p.getCategory().length()>98)error.put("categoryLengthError", "类别太长");
+		if(p.getSubcategory().length()>98)error.put("subcategoryLengthError", "子类太长");
+		return error;
+	}
+	private Map<String,String> updateCheck(ProductDTO p,ProductDAO pDAO,String oldName) throws SQLException{
+		Map<String,String> error = new HashMap<String,String>();
+		if(Util.getNoNull(p.getTitle()).length()<1)error.put("titleEmptyError", "输入产品名称");
+		if(!p.getTitle().equals(oldName) && pDAO.productTitleExits(p.getTitle()))error.put("titleValueError", "产品名称已存在");
 		if(p.getTitle().length()>98)error.put("titleLengthError", "产品名称太长");
 		if(Util.getNoNull(p.getCategory()).length()<1)error.put("categoryLengthError", "输入类别名称");
 		if(p.getCategory().length()>98)error.put("categoryLengthError", "类别太长");

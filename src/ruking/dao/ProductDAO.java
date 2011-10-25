@@ -53,8 +53,8 @@ public class ProductDAO {
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM product WHERE Title = " + DbUtil.escSql(title);
 		Map m=runner.queryForMap(sql);
-		if(m==null)return true;
-		return false;
+		if(m==null)return false;
+		return true;
 	}
 	public  ProductDTO getProductByID(String id) throws SQLException{
 		ProductDTO u=new ProductDTO();
@@ -80,13 +80,13 @@ public class ProductDAO {
 		sql=sql+");";
 		runner.update(sql);
 		Map m= runner.queryForMap("select ID from product where Title="+DbUtil.escSql(p.getTitle()));
-		p.setId((String)m.get("ID"));
+		p.setId(((Integer)m.get("ID")).toString());
 		return p;
 	}
 	public  void updateProduct(ProductDTO p) throws SQLException{
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql="update product set Title="+DbUtil.escSql(p.getTitle())+",Description="+DbUtil.escSql(p.getDescription());
-		sql+=",Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory())+";";
+		sql+=",Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory())+" where ID="+DbUtil.escSql(p.getId());
 		runner.update(sql);
 	}
 	public void deleteProduct(String id) throws SQLException{
