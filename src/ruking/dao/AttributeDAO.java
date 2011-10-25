@@ -55,7 +55,7 @@ public class AttributeDAO {
 		if (m == null)
 			return null;
 		else {
-			u.setId((String) m.get("ID"));
+			u.setId(((Integer) m.get("ID")).toString());
 			u.setProductId((String) m.get("ProductID"));
 			u.setAttrName((String) m.get("AttrName"));
 			u.setAttrValue((String) m.get("AttrValue"));
@@ -74,7 +74,7 @@ public class AttributeDAO {
 		runner.update(sql);
 		Map m = runner.queryForMap("select ID from attributes where ProductID="
 				+ DbUtil.escSql(p.getProductId()));
-		p.setId((String) m.get("ID"));
+		p.setId(((Integer) m.get("ID")).toString());
 		return p;
 	}
 
@@ -83,7 +83,7 @@ public class AttributeDAO {
 		String sql = "update attributes set ProductID="
 				+ DbUtil.escSql(p.getProductId()) + ",AttrName="
 				+ DbUtil.escSql(p.getAttrName());
-		sql += ",AttrValue=" + DbUtil.escSql(p.getAttrValue())+ ";";
+		sql += ",AttrValue=" + DbUtil.escSql(p.getAttrValue())+ " where ID="+DbUtil.escSql(p.getId());
 		runner.update(sql);
 	}
 

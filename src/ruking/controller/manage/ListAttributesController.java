@@ -1,29 +1,37 @@
 package ruking.controller.manage;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.math.NumberUtils;
 import org.apache.velocity.VelocityContext;
 
 import ruking.ba.GlobalVariablesBA;
 import ruking.controller.BaseController;
-import ruking.db.DataSourceFactory;
-import ruking.db.MDTMySQLRowMapper;
-import ruking.session.SessionUtil;
+import ruking.dao.AttributeDAO;
+import ruking.utils.Util;
 import ruking.velocity.VelocityParserFactory;
 
 public class ListAttributesController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
-        VelocityContext vc=new VelocityContext();
+		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
-    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
-    	if(vc.get("administrator")==null){
-    		VelocityParserFactory.getVP().render("index", vc, request, response);
-    	}else{
-        VelocityParserFactory.getVP().render("manage", vc, request, response);
-        }
+    	AttributeDAO aDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+		String act= Util.getNoNull(request.getParameter("act"));
+		if(act.equals("del")){
+			String id = Util.getNoNull(request.getParameter("id"));
+			if(NumberUtils.isDigits(id) && aDAO.getAttributeByID(id)!=null){
+				aDAO.deleteProduct(id);
+			}
+			response.sendRedirect("/listattributes.jhtml");
+			return;
+		}
+   		vc.put("currentTab", "attribute");
+   		List<Map> attributes = aDAO.getAllAttributes();
+   		vc.put("attributes", attributes);
+   		VelocityParserFactory.getVP().render("listattributes", vc, request, response);
 	}
 }
