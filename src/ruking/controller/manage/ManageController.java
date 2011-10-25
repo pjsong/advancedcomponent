@@ -22,12 +22,6 @@ public class ManageController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
-    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
-    	if(vc.get("administrator")==null){
-    		VelocityParserFactory.getVP().render("index", vc, request, response);
-    	}else{
-    		VelocityParserFactory.getVP().render("manage", vc, request, response);
+    	VelocityParserFactory.getVP().render("manage", vc, request, response);
         }
-	}
 }

@@ -48,7 +48,14 @@ public class ProductDAO {
 		}
 		return u;
 	}
-	
+	public  boolean productTitleExits(String title) throws SQLException{
+		ProductDTO u=new ProductDTO();
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM product WHERE Title = " + DbUtil.escSql(title);
+		Map m=runner.queryForMap(sql);
+		if(m==null)return true;
+		return false;
+	}
 	public  ProductDTO getProductByID(String id) throws SQLException{
 		ProductDTO u=new ProductDTO();
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
@@ -56,7 +63,7 @@ public class ProductDAO {
 		Map m=runner.queryForMap(sql);
 		if(m==null)return null;
 		else{
-			u.setId((String)m.get("ID"));
+			u.setId(((Integer)m.get("ID")).toString());
 			u.setTitle((String)m.get("Title"));
 			u.setDescription((String)m.get("Description"));
 			u.setCategory((String)m.get("Category"));
