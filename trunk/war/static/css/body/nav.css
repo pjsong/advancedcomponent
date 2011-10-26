@@ -1,0 +1,37 @@
+﻿.nav td{
+	align:center;
+	font-family:"Microsoft YaHei",微软雅黑,arial;
+	font-size:18;
+	font-weight:bold;
+	background-color:#ebebeb;
+	height:20px;
+	width:200px;
+	text-indent:40px;
+}
+.nav a{
+	color:#444444;
+	background-color:#ebebeb;
+	height:20px;
+	font-size:16px;
+}
+.nav a:hover{
+	background-color:#f8eb12;
+	height:20px;
+	width:200px;
+}
+.bodyheader{
+	background:url('/static/img/body/about_header.jpg'); 
+	valign:top;
+	align:left;
+	line-height: 26px;
+	text-indent: 10px;
+	border-bottom: 1px solid #C7D6E2;
+	font-size: 13px;
+    font-weight: bold;
+	width:100%;
+}
+.MsoNormal{
+margin: 5px 0px 0px 0px; 
+text-align: left;
+font-size:12px;
+}
