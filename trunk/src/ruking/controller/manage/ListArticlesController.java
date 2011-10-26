@@ -1,29 +1,37 @@
 package ruking.controller.manage;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.math.NumberUtils;
 import org.apache.velocity.VelocityContext;
 
 import ruking.ba.GlobalVariablesBA;
 import ruking.controller.BaseController;
-import ruking.db.DataSourceFactory;
-import ruking.db.MDTMySQLRowMapper;
-import ruking.session.SessionUtil;
+import ruking.dao.ArticleDAO;
+import ruking.utils.Util;
 import ruking.velocity.VelocityParserFactory;
 
 public class ListArticlesController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
-        VelocityContext vc=new VelocityContext();
+		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
-    	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
-    	if(vc.get("administrator")==null){
-    		VelocityParserFactory.getVP().render("index", vc, request, response);
-    	}else{
-        VelocityParserFactory.getVP().render("manage", vc, request, response);
-        }
+    	ArticleDAO aDAO = new ArticleDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+		String act= Util.getNoNull(request.getParameter("act"));
+		if(act.equals("del")){
+			String id = Util.getNoNull(request.getParameter("id"));
+			if(NumberUtils.isDigits(id) && aDAO.getArticleByID(id)!=null){
+				aDAO.deleteArticle(id);
+			}
+			response.sendRedirect("/listarticles.jhtml");
+			return;
+		}
+   		vc.put("currentTab", "article");
+   		List<Map> articles = aDAO.getAllArticles();
+   		vc.put("articles", articles);
+   		VelocityParserFactory.getVP().render("listarticles", vc, request, response);
 	}
 }

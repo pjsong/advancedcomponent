@@ -60,7 +60,7 @@ public class ArticleDAO {
 			u.setHeader((String) m.get("Header"));
 			u.setContent((String) m.get("Content"));
 			u.setAuthor((String) m.get("Author"));
-			u.setUpdatedTime((Date)m.get("UpdatedTime"));
+			u.setUpdatedTime(((Date)m.get("UpdatedTime")).toString());
 		}
 		return u;
 	}
@@ -71,15 +71,14 @@ public class ArticleDAO {
 		String sql = "insert into articles(Type,Header,Content,Author,UpdatedTime";
 		sql = sql + ") values (" + DbUtil.escSql(p.getType()) + ","
 				+ DbUtil.escSql(p.getHeader().trim()) + ","+ DbUtil.escSql(p.getContent().trim()) + ","
-				+ DbUtil.escSql(p.getAuthor() + ",now()");
-		sql = sql + ");";
+				+ DbUtil.escSql(p.getAuthor()) + ","+DbUtil.escSql(p.getUpdatedTime())+");";
 		runner.update(sql);
 		Map m = runner.queryForMap("select max(ID) from articles");
 		p.setId(((Integer) m.get("ID")));
 		return p;
 	}
 
-	public void updateAttribute(ArticleDTO p) throws SQLException {
+	public void updateArticle(ArticleDTO p) throws SQLException {
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
 		String sql = "update articles set Type="
 				+ DbUtil.escSql(p.getType()) + ",Header=" + DbUtil.escSql(p.getHeader());

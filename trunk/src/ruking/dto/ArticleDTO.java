@@ -8,7 +8,7 @@ public class ArticleDTO {
 	private String header;
 	private String content;
 	private String author;
-	private Date updatedTime;
+	private String updatedTime;
 	
 	public Integer getId() {
 		return id;
@@ -40,10 +40,10 @@ public class ArticleDTO {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public Date getUpdatedTime() {
+	public String getUpdatedTime() {
 		return updatedTime;
 	}
-	public void setUpdatedTime(Date updatedTime) {
+	public void setUpdatedTime(String updatedTime) {
 		this.updatedTime = updatedTime;
 	}
 }

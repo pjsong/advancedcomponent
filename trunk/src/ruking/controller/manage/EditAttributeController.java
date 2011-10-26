@@ -15,10 +15,7 @@ import ruking.ba.GlobalVariablesBA;
 import ruking.controller.BaseController;
 import ruking.dao.AttributeDAO;
 import ruking.dao.ProductDAO;
-import ruking.db.DataSourceFactory;
-import ruking.db.MDTMySQLRowMapper;
 import ruking.dto.AttributeDTO;
-import ruking.session.SessionUtil;
 import ruking.utils.Util;
 import ruking.velocity.VelocityParserFactory;
 
