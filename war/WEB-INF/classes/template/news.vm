@@ -1,0 +1,3 @@
+#parse("include/header.vm")
+#parse("include/news.vm")
+#parse("include/footer.vm")
