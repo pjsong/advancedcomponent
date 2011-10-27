@@ -1,4 +1,4 @@
-			#parse("include/header.vm")
-			#parse("include/manage.vm")
-			#parse("include/listusers.vm")
-			#parse("include/footer.vm")
+#parse("include/header.vm")
+#parse("include/manage/manage.vm")
+#parse("include/manage/listusers.vm")
+#parse("include/footer.vm")
