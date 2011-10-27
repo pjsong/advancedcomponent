@@ -5,6 +5,8 @@ public class AttributeDTO {
 	private String productId = "";
 	private String attrName = "";;
 	private String attrValue = "";
+	private String displayOrder;
+	
 	public String getId() {
 		return id;
 	}
@@ -28,6 +30,12 @@ public class AttributeDTO {
 	}
 	public void setAttrValue(String attrValue) {
 		this.attrValue = attrValue;
+	}
+	public String getDisplayOrder() {
+		return displayOrder;
+	}
+	public void setDisplayOrder(String displayOrder) {
+		this.displayOrder = displayOrder;
 	};
 
 

@@ -30,7 +30,13 @@ public class ListAttributesController extends BaseController {
 			return;
 		}
    		vc.put("currentTab", "attribute");
-   		List<Map> attributes = aDAO.getAllAttributes();
+   		List<Map> attributes = null;
+   		String pid = Util.getNoNull(request.getParameter("pid"));
+   		if(pid.equals("")){
+   			attributes = aDAO.getAllAttributes();
+   		}else{
+   			attributes = aDAO.getAttributesByProductId(pid);
+   		}
    		vc.put("attributes", attributes);
    		VelocityParserFactory.getVP().render("listattributes", vc, request, response);
 	}
