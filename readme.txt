@@ -21,21 +21,7 @@ http://cp.hichina.com/ResetTomcat.aspx?tr=resettomcat#
 testpage:
 http://zkm0m1.chinaw3.com/index.jhtml
 
-zkm0m1
-k7x8d7u9
-zkm0m1.chinaw3.com
-121.199.61.21
-zkm0m1.chinaw3.com 
-zkm0m1_db
-zkm0m1
-k7x8d7u9
-
-CREATE TABLE `zkm0m1_db`.`articles` (
-`ID` INT( 10 ) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`Type` INT( 1 ) UNSIGNED NOT NULL ,
-`Header` VARCHAR( 100 ) NOT NULL ,
-`Content` TEXT NOT NULL ,
-`Author` VARCHAR( 20 ) NOT NULL ,
-`UpdatedTime` DATETIME NOT NULL ,
-`IsEmail` BOOL NOT NULL
-);
+logo :fed802 on 888888
+header-menu #EBEBEB hoveron:f8eb12 font:444444 
+body:606060 background fefefe
+language:b8fefe
