@@ -7,7 +7,9 @@
     <bean id="logoutController"   class="ruking.controller.LogOutController" ></bean>
     <bean id="loginController"   class="ruking.controller.LoginController" ></bean>
     <bean id="aboutController"   class="ruking.controller.AboutController" ></bean>
-
+    <bean id="productsController"   class="ruking.controller.ProductsController" ></bean>  
+    <bean id="newsController"   class="ruking.controller.NewsController" ></bean>    
+    <bean id="solutionsController"   class="ruking.controller.SolutionsController" ></bean>
     <bean id="manageController"   class="ruking.controller.manage.ManageController" ></bean>
     <bean id="listUsersController"   class="ruking.controller.manage.ListUsersController" ></bean>
     <bean id="listArticlesController"   class="ruking.controller.manage.ListArticlesController" ></bean>
@@ -32,6 +34,9 @@
         <props>
         	<prop key="/">indexController</prop>
             <prop key="/index.jhtml">indexController</prop>
+            <prop key="/products.jhtml">productsController</prop>            
+            <prop key="/news.jhtml">newsController</prop>            
+            <prop key="/solutions.jhtml">solutionsController</prop>            
             <prop key="/reg.jhtml">regController</prop>
             <prop key="/logout.jhtml">logoutController</prop>
             <prop key="/login.jhtml">loginController</prop>
