@@ -58,6 +58,7 @@ public class AttributeDAO {
 			u.setProductId((String) m.get("ProductID"));
 			u.setAttrName((String) m.get("AttrName"));
 			u.setAttrValue((String) m.get("AttrValue"));
+			u.setDisplayOrder(((Integer)m.get("DisplayOrder")).toString());
 		}
 		return u;
 	}
@@ -65,10 +66,10 @@ public class AttributeDAO {
 	public AttributeDTO insertProduct(AttributeDTO p) throws SQLException {
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(
 				hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
-		String sql = "insert into attributes(ProductID,AttrName,AttrValue";
+		String sql = "insert into attributes(ProductID,AttrName,AttrValue,DisplayOrder";
 		sql = sql + ") values (" + DbUtil.escSql(p.getProductId().trim()) + ","
 				+ DbUtil.escSql(p.getAttrName().trim()) + ","
-				+ DbUtil.escSql(p.getAttrValue());
+				+ DbUtil.escSql(p.getAttrValue())+","+DbUtil.escSql(p.getDisplayOrder());
 		sql = sql + ");";
 		runner.update(sql);
 		Map m = runner.queryForMap("select ID from attributes where ProductID="
@@ -82,7 +83,7 @@ public class AttributeDAO {
 		String sql = "update attributes set ProductID="
 				+ DbUtil.escSql(p.getProductId()) + ",AttrName="
 				+ DbUtil.escSql(p.getAttrName());
-		sql += ",AttrValue=" + DbUtil.escSql(p.getAttrValue())+ " where ID="+DbUtil.escSql(p.getId());
+		sql += ",AttrValue=" + DbUtil.escSql(p.getAttrValue())+",DisplayOrder="+DbUtil.escSql(p.getDisplayOrder())+ " where ID="+DbUtil.escSql(p.getId());
 		runner.update(sql);
 	}
 

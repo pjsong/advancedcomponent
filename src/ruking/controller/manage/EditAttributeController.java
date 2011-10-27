@@ -98,6 +98,8 @@ public class EditAttributeController extends BaseController {
 		if(productDAO.getProductByID(p.getProductId())==null)error.put("productIdNotExitsError", "产品ID不存在");
 		if(Util.getNoNull(p.getAttrName()).length()<1)error.put("attrNameEmptyError", "输入属性名称");
 		if(p.getAttrValue().length()<1)error.put("attrValueEmptyError", "输入属性值");
+		if(p.getDisplayOrder().length()<1)error.put("attrDisplayOrderError", "输入属性值");
+		if(!NumberUtils.isDigits(Util.getNoNull(p.getDisplayOrder())))error.put("attrDisplayOrderError", "显示序值只能是数字");
 		return error;
 	}
 
