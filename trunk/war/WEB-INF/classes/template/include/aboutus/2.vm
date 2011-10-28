@@ -1,4 +1,8 @@
-﻿<link href="/static/css/body/nav.css" type="text/css" rel="stylesheet">
+﻿			#parse("include/header.vm")
+			<div style="background:url('/static/img/body/background.jpg') repeat-x fixed bottom center;">
+			#parse("include/breadcrum.vm")
+
+<link href="/static/css/body/nav.css" type="text/css" rel="stylesheet">
 <table width="100%" border="0"><tr><td valign="top" width="320px">
 	<table align="right" class="nav" border="0" width="180px">
 		<tr><td align=""><a href="$_url/about/aboutus.jhtml?id=1">&nbsp;&nbsp;如金愿景&nbsp;&nbsp;</a></td></tr>
@@ -12,7 +16,16 @@
 <td align=left>
 <h1 align="center" style ="font-size:32px;color: #606060;padding-bottom:0px;margin-bottom:15px">	如金公司简介</h1>
 <table width="800" border="0" align="center"><tr><td width="100%">
+
+
 <p style="text-indent: 2em; line-height: 20px;font-size:12px;margin-bottom: 12px;">
-	如金秉承“用心智造3E自动化”的企业使命，立足先进制造业，致力于自动化设备的研发生产，实现机器取代人手，电脑取代仪器和网络取代纸笔，推动低成本生产和高速检测，协助企业成功转型，提升中国制造业核心竞争力！ </p>
-</td></tr>
+	<b  style="font-size:14px;">如金使命</b> ----  用心智造3E自动化，推动中国企业低成本生产和高速检测！ </p> 
+	
+	</td></tr>
 </table>
+<br /><br /><br /><br />
+</td>
+</tr></table>
+
+			</div>
+			#parse("include/footer.vm")
