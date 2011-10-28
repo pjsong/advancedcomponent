@@ -6,7 +6,8 @@
 	background-color:#ebebeb;
 	height:20px;
 	width:200px;
-	text-indent:40px;
+	text-indent:20px;
+	align:center;
 }
 .nav a{
 	color:#444444;
@@ -16,8 +17,6 @@
 }
 .nav a:hover{
 	background-color:#f8eb12;
-	height:20px;
-	width:200px;
 }
 .bodyheader{
 	background:url('/static/img/body/about_header.jpg'); 
