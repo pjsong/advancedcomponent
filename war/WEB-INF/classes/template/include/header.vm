@@ -10,7 +10,7 @@
         $('#slideshow').cycle({
           fx:     'fade',//turnDown,fade,curtainX,scrollRight (click),zoom,shuffle
           speed:  'fast',
-          timeout: 4000,
+          timeout: 8000,
           pager:  '#nav',
           slideExpr: 'img',
           pagerEvent: 'mouseover',
