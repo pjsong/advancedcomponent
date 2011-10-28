@@ -1,14 +1,13 @@
 package ruking.controller;
 
-import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.velocity.VelocityContext;
-import org.springframework.web.servlet.ModelAndView;
 
 import ruking.ba.GlobalVariablesBA;
+import ruking.utils.Util;
 import ruking.velocity.VelocityParserFactory;
 
 public class AboutController extends BaseController{
@@ -17,13 +16,22 @@ public class AboutController extends BaseController{
 			throws Exception {
         VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-        String a = request.getRequestURI();
-        VelocityParserFactory.getVP().render(urlTemplate(a), vc, request, response);
+        VelocityParserFactory.getVP().render(urlTemplate(request), vc, request, response);
 		
 	}
-    private String urlTemplate(String relativeURL)
+    private String urlTemplate(HttpServletRequest request)
     {
-    	int startpos = relativeURL.lastIndexOf("about/")+6;
-    	return relativeURL.substring(startpos, relativeURL.length()-6);
+		String relativeURL = request.getRequestURI();
+    	String id =  request.getParameter("id");
+    	if(!Util.getNoNull(id).equals("") && relativeURL.indexOf("aboutus")!=-1){
+    		return "include/aboutus/"+id;
+    	}
+    	if(!Util.getNoNull(id).equals("") && relativeURL.indexOf("customerservice")!=-1){
+    		return "include/customerservice/"+id;
+    	}
+    	else{
+        	int startpos = relativeURL.lastIndexOf("about/")+6;
+        	return relativeURL.substring(startpos, relativeURL.length()-6);
+    	}
     }
 }
