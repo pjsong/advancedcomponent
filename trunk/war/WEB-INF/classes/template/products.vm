@@ -1,4 +1,6 @@
-	<link type="text/css" rel="stylesheet" href="category.css">
-    <script type="text/javascript" language="javascript" src="static/js/category.category/category.category.nocache.js"></script>
-	<div id="category"></div>
+#parse("include/header.vm")
+<div style="background:url('/static/img/body/background.jpg') repeat-x scroll bottom center;">
+#parse("include/products.vm")
+</div>
+#parse("include/footer.vm")
 
