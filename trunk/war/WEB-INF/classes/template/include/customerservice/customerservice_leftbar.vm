@@ -1,5 +1,5 @@
 ﻿<link href="/static/css/body/nav.css" type="text/css" rel="stylesheet">
-<table width="800px" align="center" border="0" style="margin-top:-10px;"><tr><td align="left" valign="top" width="500px">
+<table width="800px" align="center" border="0" style="margin-top:-20px;"><tr><td align="left" valign="top" width="500px">
 	<table class="nav" border="0">
 		<tr><td><a href="$_url/about/customerservice.jhtml">&nbsp;&nbsp;服务承诺&nbsp;&nbsp;</a></td></tr>
 		<tr><td><a href="$_url/about/promise.jhtml">&nbsp;&nbsp;产品手册&nbsp;&nbsp;</a></td></tr>

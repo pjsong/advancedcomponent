@@ -7,11 +7,11 @@ body {
 }
 
 a {	
-	color: darkblue;
+	color: black;
 }
 
 a:visited {	
-	color: darkblue; 
+	color: #111111; 
 }
 
 .gwt-DialogBox {
