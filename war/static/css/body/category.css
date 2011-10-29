@@ -15,7 +15,9 @@ body {
 .gwt-Anchor:visited {	
 	color: #111111; 
 }
-
+.gwt-Anchor-pageAnchorSelected{
+	text-decoration:none;
+}
 .gwt-DialogBox {
 	border: 2px solid #AAAAAA;
 	background-color: white;
