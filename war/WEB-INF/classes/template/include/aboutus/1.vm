@@ -1,10 +1,10 @@
 ﻿			#parse("include/header.vm")
-			<div style="background:url('/static/img/body/background.jpg') repeat-x fixed bottom center;">
+			<div style="background:url('/static/img/body/background.jpg') repeat-x scroll top center; height:600px;">
 			#parse("include/breadcrum.vm")
 			
 <link href="/static/css/body/nav.css" type="text/css" rel="stylesheet">
-<table width="100%" border="0"><tr><td valign="top" width="320px">
-	<table align="right" class="nav" border="0" width="180px">
+<table width="100%" border="0"><tr><td valign="top" width="420px">
+	<table align="right" class="nav" border="0" width="150px">
 		<tr><td align=""><a href="$_url/about/aboutus.jhtml?id=1">&nbsp;&nbsp;如金愿景&nbsp;&nbsp;</a></td></tr>
 		<tr><td><a href="$_url/about/aboutus.jhtml?id=2">&nbsp;&nbsp;如金使命&nbsp;&nbsp;</a></td></tr>
 		<tr><td><a href="$_url/about/aboutus.jhtml?id=3">&nbsp;&nbsp;如金价值观&nbsp;&nbsp;</a></td></tr>

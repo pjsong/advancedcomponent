@@ -1,6 +1,6 @@
 ﻿<link href="/static/css/body/nav.css" type="text/css" rel="stylesheet">
-<table width="100%" border="0"><tr><td valign="top" width="320px">
-	<table align="right" class="nav" border="0" width="180px">
+<table width="100%" border="0"><tr><td valign="top" width="420px">
+	<table align="right" class="nav" border="0" width="150px">
 		<tr><td align=""><a href="$_url/about/aboutus.jhtml?id=1">&nbsp;&nbsp;如金愿景&nbsp;&nbsp;</a></td></tr>
 		<tr><td><a href="$_url/about/aboutus.jhtml?id=2">&nbsp;&nbsp;如金使命&nbsp;&nbsp;</a></td></tr>
 		<tr><td><a href="$_url/about/aboutus.jhtml?id=3">&nbsp;&nbsp;如金价值观&nbsp;&nbsp;</a></td></tr>
@@ -16,3 +16,5 @@
 	如金秉承“用心智造3E自动化”的企业使命，立足先进制造业，致力于自动化设备的研发生产，实现机器取代人手，电脑取代仪器和网络取代纸笔，推动低成本生产和高速检测，协助企业成功转型，提升中国制造业核心竞争力！ </p>
 </td></tr>
 </table>
+</td>
+</tr></table>
