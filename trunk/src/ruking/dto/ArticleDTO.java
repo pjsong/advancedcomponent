@@ -1,7 +1,5 @@
 package ruking.dto;
 
-import java.util.Date;
-
 public class ArticleDTO {
 	private Integer id;
 	private Integer type;
