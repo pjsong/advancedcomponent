@@ -25,3 +25,5 @@ logo :fed802 on 888888
 header-menu #EBEBEB hoveron:f8eb12 font:444444 
 body:606060 background fefefe
 language:b8fefe
+
+http://www.sse.com.cn/sseportal/webapp/datapresent/SSEQueryFirstSSENewAct
