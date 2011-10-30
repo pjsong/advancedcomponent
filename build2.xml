@@ -48,7 +48,7 @@
 		-->
 		<copy file="war/WEB-INF/web.xml" tofile="WebRoot/WEB-INF/web.xml"/>
 		<copy todir="WebRoot/WEB-INF/classes/">
-			<fileset dir="war/WEB-INF/classes/" excludes="**/.svn/" />
+			<fileset dir="war/WEB-INF/classes/" excludes="**/.svn/, conf/" />
 		</copy>
 		<copy todir="WebRoot/static/">
 			<fileset dir="war/static/" excludes="**/.svn/" />
