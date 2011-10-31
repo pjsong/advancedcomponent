@@ -20,20 +20,20 @@
 	</servlet-mapping>
   <servlet>
   	<servlet-name>getDTOService</servlet-name>
-  	<servlet-class>category.server.GetDTOServiceImpl</servlet-class>
+  	<servlet-class>ruking.server.GetDTOServiceImpl</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>getDTOService</servlet-name>
-  	<url-pattern>/category.category/getDTOService</url-pattern>
+  	<url-pattern>static/js/category.category/getDTOService</url-pattern>
   </servlet-mapping>
   
     <servlet>
   	<servlet-name>getCategoryService</servlet-name>
-  	<servlet-class>category.server.GetCategoryServiceImpl</servlet-class>
+  	<servlet-class>ruking.server.GetCategoryServiceImpl</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>getCategoryService</servlet-name>
-  	<url-pattern>/category.category/getCategoryService</url-pattern>
+  	<url-pattern>static/js/category.category/getCategoryService</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>/index.html</welcome-file>
