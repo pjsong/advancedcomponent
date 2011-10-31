@@ -1,4 +1,0 @@
-#parse("include/header.vm")
-#parse("include/rotationImg.vm")
-#parse("include/indexBody.vm")
-#parse("include/footer.vm")
