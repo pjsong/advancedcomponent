@@ -5,9 +5,7 @@ body {
 	font-size: small;
 	margin: 5px;
 }
-.gwt-Anchor-pageAnchorSelected{
-	text-decoration:none;
-}
+
 .gwt-Anchor {	
 	color: black;
 	font-size:16px;
@@ -17,7 +15,31 @@ body {
 .gwt-Anchor:visited {	
 	color: #111111; 
 }
-
+.gwt-Anchor-pageAnchorSelected{
+	text-decoration:none;
+}
+.gwt-Grid-list{
+	cellspacing:5px;
+	cellpadding:10px;	
+	border:4px;
+}
+.gwt-VerticalPanel-page{
+}
+.categoryPanel{
+}
+#productlist{
+	width: 800px;
+}
+#productlist table{
+	cellspacing:5px;
+	cellpadding:10px;	
+	border:4px;
+}
+.gwt-Grid-cell{
+	cellspacing:5px;
+	cellpadding:10px;	
+	border:4px;
+}
 .gwt-DialogBox {
 	border: 2px solid #AAAAAA;
 	background-color: white;
