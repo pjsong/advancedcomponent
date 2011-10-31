@@ -2,6 +2,7 @@ package ruking.dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,6 +29,27 @@ public class ProductDAO {
 		this.password = password;
 	}
 	
+	public List<Map> getGlobalCatProducts(int id)throws SQLException{
+		List<Map> ret = new ArrayList<Map>();
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT ProductIDs FROM globalcat where ID="+DbUtil.escSql(id);
+		Map map = runner.queryForMap(sql);
+		if(map == null)return ret;
+		String str = (String)map.get("ProductIDs");
+		if(str==null || str.equals(""))return null;
+		String[] ids = str.split(",");
+		for(String pid:ids){
+			Map p = getMapByID(pid);
+			ret.add(p);
+		}
+		return ret;
+	}
+	public List<Map> getCatProducts(String cat)throws SQLException{
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM product where SubCategory ="+DbUtil.escSql(cat);
+		List<Map> ret = runner.query(sql);
+		return ret;
+	}
 	public List<Map> getAllProducts()throws SQLException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM product";
@@ -58,9 +80,7 @@ public class ProductDAO {
 	}
 	public  ProductDTO getProductByID(String id) throws SQLException{
 		ProductDTO u=new ProductDTO();
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM product WHERE ID = " + DbUtil.escSql(id);
-		Map m=runner.queryForMap(sql);
+		Map m=getMapByID(id);
 		if(m==null)return null;
 		else{
 			u.setId(((Integer)m.get("ID")).toString());
@@ -71,8 +91,36 @@ public class ProductDAO {
 		}
 		return u;
 	}
-	
-
+	public  Map getMapByID(String id) throws SQLException{
+		ProductDTO u=new ProductDTO();
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM product WHERE ID = " + DbUtil.escSql(id);
+		return runner.queryForMap(sql);
+	}
+	public Map<String,List<String>> getAllCats() throws SQLException{
+		Map<String,List<String>> ret = new HashMap<String,List<String>>();
+		List<Map> cats = getAllCategories();
+		for(Map m:cats){
+			String catName = (String)m.get("Category");
+			List<Map> subcats = getSubCategories(catName);
+			List<String> ob = new ArrayList<String>();
+			for(Map map:subcats){
+				ob.add((String)map.get("SubCategory"));
+			}
+			ret.put(catName, ob);
+		}
+		return ret;
+	}
+	private List<Map> getAllCategories()throws SQLException{
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT distinct Category FROM product";
+		return runner.query(sql);
+	}
+	private List<Map> getSubCategories(String category)throws SQLException{
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT distinct SubCategory FROM product where Category="+DbUtil.escSql(category);
+		return runner.query(sql);
+	}
 	public  ProductDTO insertProduct(ProductDTO p) throws SQLException{
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql="insert into product(Title,Description,Category,SubCategory";
