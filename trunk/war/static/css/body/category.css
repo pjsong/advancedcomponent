@@ -18,6 +18,36 @@ body {
 .gwt-Anchor-pageAnchorSelected{
 	text-decoration:none;
 }
+.gwt-Grid-list{
+	cellspacing:5px;
+	cellpadding:10px;	
+	border:4px;
+	height:250px;
+
+}
+.gwt-Grid-cell{
+	cellspacing:5px;
+	cellpadding:10px;	
+	border:4px;
+
+}
+
+.gwt-VerticalPanel-page{
+
+}
+.categoryPanel{
+		width:220px;
+}
+#productlist{
+	width: 800px;
+	background:#ccffff;
+}
+#productlist table tr td{
+	cellspacing:5px;
+	cellpadding:10px;	
+	border:4px;
+}
+
 .gwt-DialogBox {
 	border: 2px solid #AAAAAA;
 	background-color: white;
