@@ -24,7 +24,8 @@ import net.sf.json.JSONObject;
 public class GetDTOServiceImpl extends HttpServlet {
 	   @Override
 	    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	        String s = req.getParameter("category");
+	       req.setCharacterEncoding("utf-8"); 
+		   String s = req.getParameter("category");
 	        if(s == null || s.equals(""))
 	        	s="0";
 	        JSONArray ja = null;
