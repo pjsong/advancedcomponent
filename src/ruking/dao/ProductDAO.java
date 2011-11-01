@@ -50,6 +50,13 @@ public class ProductDAO {
 		List<Map> ret = runner.query(sql);
 		return ret;
 	}
+	public List<Map> getCatProductsByCatID(String id)throws SQLException{
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM product where CatID ="+DbUtil.escSql(id);
+		List<Map> ret = runner.query(sql);
+		return ret;
+	}
+	
 	public List<Map> getAllProducts()throws SQLException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM product";
@@ -97,6 +104,43 @@ public class ProductDAO {
 		String sql = "SELECT * FROM product WHERE ID = " + DbUtil.escSql(id);
 		return runner.queryForMap(sql);
 	}
+	
+	
+	public  ProductDTO insertProduct(ProductDTO p) throws SQLException{
+		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql="insert into product(Title,Description,Category,SubCategory,CatID";
+		sql = sql+") values ("+DbUtil.escSql(p.getTitle().trim())+","+DbUtil.escSql(p.getDescription().trim())+","+DbUtil.escSql(p.getCategory())+","+DbUtil.escSql(p.getSubcategory())+","+DbUtil.escSql(p.getCatID());
+		sql=sql+");";
+		runner.update(sql);
+		Map m= runner.queryForMap("select ID from product where Title="+DbUtil.escSql(p.getTitle()));
+		p.setId(((Integer)m.get("ID")).toString());
+		return p;
+	}
+	public  void updateProduct(ProductDTO p) throws SQLException{
+		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql="update product set Title="+DbUtil.escSql(p.getTitle())+",Description="+DbUtil.escSql(p.getDescription());
+		sql+=",Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory())+",CatID="+DbUtil.escSql(p.getCatID())+" where ID="+DbUtil.escSql(p.getId());
+		runner.update(sql);
+	}
+	public void deleteProduct(String id) throws SQLException{
+		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "delete FROM product WHERE ID = " + DbUtil.escSql(id);
+		runner.update(sql);
+	}
+	
+	
+	
+	private List<Map> getAllCategories()throws SQLException{
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT distinct Category FROM product";
+		return runner.query(sql);
+	}
+	
+	private List<Map> getSubCategories(String category)throws SQLException{
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT distinct SubCategory FROM product where Category="+DbUtil.escSql(category);
+		return runner.query(sql);
+	}
 	public Map<String,List<String>> getAllCats() throws SQLException{
 		Map<String,List<String>> ret = new HashMap<String,List<String>>();
 		List<Map> cats = getAllCategories();
@@ -111,35 +155,5 @@ public class ProductDAO {
 		}
 		return ret;
 	}
-	private List<Map> getAllCategories()throws SQLException{
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT distinct Category FROM product";
-		return runner.query(sql);
-	}
-	private List<Map> getSubCategories(String category)throws SQLException{
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT distinct SubCategory FROM product where Category="+DbUtil.escSql(category);
-		return runner.query(sql);
-	}
-	public  ProductDTO insertProduct(ProductDTO p) throws SQLException{
-		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql="insert into product(Title,Description,Category,SubCategory";
-		sql = sql+") values ("+DbUtil.escSql(p.getTitle().trim())+","+DbUtil.escSql(p.getDescription().trim())+","+DbUtil.escSql(p.getCategory())+","+DbUtil.escSql(p.getSubcategory());
-		sql=sql+");";
-		runner.update(sql);
-		Map m= runner.queryForMap("select ID from product where Title="+DbUtil.escSql(p.getTitle()));
-		p.setId(((Integer)m.get("ID")).toString());
-		return p;
-	}
-	public  void updateProduct(ProductDTO p) throws SQLException{
-		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql="update product set Title="+DbUtil.escSql(p.getTitle())+",Description="+DbUtil.escSql(p.getDescription());
-		sql+=",Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory())+" where ID="+DbUtil.escSql(p.getId());
-		runner.update(sql);
-	}
-	public void deleteProduct(String id) throws SQLException{
-		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "delete FROM product WHERE ID = " + DbUtil.escSql(id);
-		runner.update(sql);
-	}
+
 }
