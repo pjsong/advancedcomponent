@@ -41,6 +41,7 @@ body {
 #productlist{
 	width: 800px;
 	background:#ccffff;
+	height: 500px;
 }
 #productlist table tr td{
 	cellspacing:5px;
