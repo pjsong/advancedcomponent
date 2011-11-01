@@ -138,20 +138,16 @@ public class ProductDAO {
 	
 	private List<Map> getSubCategories(String category)throws SQLException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT distinct SubCategory FROM product where Category="+DbUtil.escSql(category);
+		String sql = "SELECT distinct CatID, SubCategory FROM product where Category="+DbUtil.escSql(category);
 		return runner.query(sql);
 	}
-	public Map<String,List<String>> getAllCats() throws SQLException{
-		Map<String,List<String>> ret = new HashMap<String,List<String>>();
+	public Map<String,List<Map>> getAllCats() throws SQLException{
+		Map<String,List<Map>> ret = new HashMap<String,List<Map>>();
 		List<Map> cats = getAllCategories();
 		for(Map m:cats){
 			String catName = (String)m.get("Category");
 			List<Map> subcats = getSubCategories(catName);
-			List<String> ob = new ArrayList<String>();
-			for(Map map:subcats){
-				ob.add((String)map.get("SubCategory"));
-			}
-			ret.put(catName, ob);
+			ret.put(catName, subcats);
 		}
 		return ret;
 	}
