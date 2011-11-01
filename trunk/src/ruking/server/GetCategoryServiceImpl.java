@@ -34,17 +34,20 @@ public class GetCategoryServiceImpl extends HttpServlet {
 	   private JSONArray getJA() throws SQLException, IOException{
 	        Conf conf=new Conf();
 	        ProductDAO paDAO = new ProductDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
+
 	       JSONArray ret = new JSONArray();
-	       Map<String,List<String>> result = paDAO.getAllCats();
+	       Map<String,List<Map>> result = paDAO.getAllCats();
 			if(result.size()>0){
 				int pos=0;
 				for(String m:result.keySet()){
 					JSONObject jo = new JSONObject();
 					jo.put("CatName", m);
-					List<String> arr = result.get(m);
+					List<Map> arr = result.get(m);
 					JSONArray catArray= new JSONArray();
-					for(int i=0;i<arr.size();i++){
-						catArray.add((String)(arr.get(i)));
+//					JSONObject joCat = new JSONObject();
+					for(Map map:arr){
+						JSONObject joCat = JSONObject.fromObject(map);
+						catArray.add(joCat);
 					}
 					jo.put("CatArray", catArray);
 					ret.add(jo); //ret.add(formatJO(jo,m));
