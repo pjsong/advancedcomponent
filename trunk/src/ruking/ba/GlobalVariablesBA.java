@@ -74,10 +74,8 @@ public class GlobalVariablesBA {
 			return "<a href = '/index.jhtml'>首页</a> > <a href='/about/aboutus.jhtml' > 关于如金</a>";
 		if("about/customerservice.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='customerservice.jhtml' > 客服中心</a>";
-		if("products.jhtml".equals(uri))
+		if("products.jhtml".equals(uri) || "item.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='products.jhtml' > 产品浏览</a>";
-		if("item.jhtml".equals(uri))
-			return "<a href = '/index.jhtml'>首页</a> > <a href='products.jhtml' > 产品浏览</a> > <a href='item.jhtml' > 产品详细</a>";
 		if("solution.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='solution.jhtml' > 解决方案</a>";
 		if("news.jhtml".equals(uri))
