@@ -39,7 +39,7 @@ public class AttributeDAO {
 			throws SQLException {
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(
 				hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM attributes WHERE productID = "+ DbUtil.escSql(id);
+		String sql = "SELECT * FROM attributes WHERE productID = "+ DbUtil.escSql(id) + " order by ProductID,DisplayOrder";
 		List<Map> m = runner.query(sql);
 		if (m == null || m.size() == 0)
 			return null;
