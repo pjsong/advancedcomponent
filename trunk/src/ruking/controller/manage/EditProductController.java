@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.math.NumberUtils;
 import org.apache.velocity.VelocityContext;
 import org.springframework.web.bind.ServletRequestDataBinder;
 
@@ -106,6 +107,8 @@ public class EditProductController extends BaseController {
 		if(Util.getNoNull(p.getCategory()).length()<1)error.put("categoryLengthError", "输入类别名称");
 		if(p.getCategory().length()>98)error.put("categoryLengthError", "类别太长");
 		if(p.getSubcategory().length()>98)error.put("subcategoryLengthError", "子类太长");
+		if("".equals(p.getCatID()))error.put("catIDEmptyError", "输入类别ID");
+		if(!NumberUtils.isDigits(p.getCatID()))error.put("catIDFormatError", "类别ID必须为数字");
 		return error;
 	}
 }
