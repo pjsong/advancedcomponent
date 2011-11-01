@@ -1,8 +1,8 @@
-<div align=center>
+ï»¿<div align=center>
 	<div id="slideshow" align=center class="pics" style="border: #ddd solid 1px;overflow: hidden;">
 	<div id="nav"></div>
-	<a href="$!_url/index.jhtml"> <img  alt="¶«Ý¸ÊÐÈç½ð×Ô¶¯»¯Éè±¸¿Æ¼¼ÓÐÏÞ¹«Ë¾" src="/static/img/rotation/sample1.jpg" border="0" width="100%" height="400px" /></a>
-	<a href="$!_url/index.jhtml"> <img  alt="¶«Ý¸ÊÐÈç½ð×Ô¶¯»¯Éè±¸¿Æ¼¼ÓÐÏÞ¹«Ë¾" src="/static/img/rotation/sample2.jpg" border="0" width="100%" height="400px"  /></a>
-	<a href="$!_url/index.jhtml"> <img  alt="¶«Ý¸ÊÐÈç½ð×Ô¶¯»¯Éè±¸¿Æ¼¼ÓÐÏÞ¹«Ë¾" src="/static/img/rotation/sample3.jpg" border="0" width="100%" height="400px"  /></a>
+	<a href="$!_url/index.jhtml"> <img  alt="ä¸œèŽžå¸‚å¦‚é‡‘è‡ªåŠ¨åŒ–è®¾å¤‡ç§‘æŠ€æœ‰é™å…¬å¸" src="/static/img/rotation/sample1.jpg" border="0" width="100%" height="400px" /></a>
+	<a href="$!_url/index.jhtml"> <img  alt="ä¸œèŽžå¸‚å¦‚é‡‘è‡ªåŠ¨åŒ–è®¾å¤‡ç§‘æŠ€æœ‰é™å…¬å¸" src="/static/img/rotation/sample2.jpg" border="0" width="100%" height="400px"  /></a>
+	<a href="$!_url/index.jhtml"> <img  alt="ä¸œèŽžå¸‚å¦‚é‡‘è‡ªåŠ¨åŒ–è®¾å¤‡ç§‘æŠ€æœ‰é™å…¬å¸" src="/static/img/rotation/sample3.jpg" border="0" width="100%" height="400px"  /></a>
 	</div>
 </div>
