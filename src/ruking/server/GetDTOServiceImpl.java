@@ -24,7 +24,7 @@ import net.sf.json.JSONObject;
 public class GetDTOServiceImpl extends HttpServlet {
 	   @Override
 	    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		   String s = req.getParameter("category");
+	        String s = req.getParameter("category");
 	        if(s == null || s.equals(""))
 	        	s="0";
 	        JSONArray ja = null;
@@ -39,28 +39,32 @@ public class GetDTOServiceImpl extends HttpServlet {
 	   
 	   private JSONArray getJA(String category) throws SQLException, IOException{
 	        Conf conf=new Conf();
-	    	ProductDAO paDAO = new ProductDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
+	        ProductDAO paDAO = new ProductDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
+
 	       JSONArray ret = new JSONArray();
 		   List<Map> result=null;
-		   if(NumberUtils.isDigits(category)){
+		   if(NumberUtils.isDigits(category)){ 
 		        Integer globalcat = Integer.parseInt(category);
-		        switch(globalcat){
-		        case 0:{
-			  	result = paDAO.getAllProducts();
-			  	break;
-		        }
-		        default:{
-		        	result = paDAO.getGlobalCatProducts(globalcat);
-		        }
-		    }}else{
-		    	result = paDAO.getCatProducts(category);
-		    }   
+		        if(globalcat <10){
+		        	switch(globalcat){
+		        	case 0:{
+		        		result = paDAO.getAllProducts();
+		        		break;
+		        	}
+		        	default:{
+		        		result = paDAO.getGlobalCatProducts(globalcat);
+		        	}
+		        	}
+		        }else{
+		    	result = paDAO.getCatProductsByCatID(globalcat.toString());
+		    }  
 			if(result.size()>0){
 				for(Map m:result){
 					JSONObject jo = JSONObject.fromObject(m);
 					ret.add(jo);
 				}
 			}
+		  } 
 		   return ret;
 	   }
 //		private JSONObject formatJO(JSONObject jo,Map map){
