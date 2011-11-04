@@ -1,23 +1,22 @@
 package ruking.dto;
 
 public class ArticleDTO {
-	private Integer id;
-	private Integer type;
-	private String header;
-	private String content;
-	private String author;
-	private String updatedTime;
+	private String id;
+	private String type = "";
+	private String header = "";;
+	private String content = "";
+	private String author = "";
 	
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
-	public Integer getType() {
+	public String getType() {
 		return type;
 	}
-	public void setType(Integer type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	public String getHeader() {
@@ -37,11 +36,7 @@ public class ArticleDTO {
 	}
 	public void setAuthor(String author) {
 		this.author = author;
-	}
-	public String getUpdatedTime() {
-		return updatedTime;
-	}
-	public void setUpdatedTime(String updatedTime) {
-		this.updatedTime = updatedTime;
-	}
+	};
+
 }
+
