@@ -6,13 +6,11 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang.math.NumberUtils;
 import org.apache.velocity.VelocityContext;
 
 import ruking.ba.GlobalVariablesBA;
 import ruking.controller.BaseController;
 import ruking.dao.ArticleDAO;
-import ruking.utils.Util;
 import ruking.velocity.VelocityParserFactory;
 
 public class ListArticlesController extends BaseController {
@@ -20,15 +18,15 @@ public class ListArticlesController extends BaseController {
 		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
     	ArticleDAO aDAO = new ArticleDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
-		String act= Util.getNoNull(request.getParameter("act"));
-		if(act.equals("del")){
-			String id = Util.getNoNull(request.getParameter("id"));
-			if(NumberUtils.isDigits(id) && aDAO.getArticleByID(id)!=null){
-				aDAO.deleteArticle(id);
-			}
-			response.sendRedirect("/listarticles.jhtml");
-			return;
-		}
+//		String act= Util.getNoNull(request.getParameter("act"));
+//		if(act.equals("del")){
+//			String id = Util.getNoNull(request.getParameter("id"));
+//			if(NumberUtils.isDigits(id) && aDAO.getArticleByID(id)!=null){
+//				aDAO.deleteArticle(id);
+//			}
+//			response.sendRedirect("/listarticles.jhtml");
+//			return;
+//		}
    		vc.put("currentTab", "article");
    		List<Map> articles = aDAO.getAllArticles();
    		vc.put("articles", articles);
