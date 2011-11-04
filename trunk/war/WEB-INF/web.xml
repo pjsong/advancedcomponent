@@ -35,6 +35,16 @@
   	<servlet-name>getCategoryService</servlet-name>
   	<url-pattern>/static/js/gwt/getCategoryService</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>getArticleService</servlet-name>
+  	<servlet-class>ruking.server.GetArticleServiceImpl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>getArticleService</servlet-name>
+  	<url-pattern>/static/js/editor/getArticleService</url-pattern>
+  </servlet-mapping>
+  
   <welcome-file-list>
     <welcome-file>/index.html</welcome-file>
   </welcome-file-list>

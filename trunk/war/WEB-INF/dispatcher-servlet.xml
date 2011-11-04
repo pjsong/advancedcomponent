@@ -13,12 +13,13 @@
     <bean id="solutionsController"   class="ruking.controller.SolutionsController" ></bean>
     <bean id="manageController"   class="ruking.controller.manage.ManageController" ></bean>
     <bean id="listUsersController"   class="ruking.controller.manage.ListUsersController" ></bean>
-    <bean id="listArticlesController"   class="ruking.controller.manage.ListArticlesController" ></bean>
+    <bean id="listArticlesController"   class="ruking.controller.manage.ListArticlesController" ></bean> 
+    <!--     <bean id="editArticleController"   class="ruking.controller.manage.EditArticleController" ></bean>
+    -->
     <bean id="listProductsController"   class="ruking.controller.manage.ListProductsController" ></bean>
     <bean id="listAttributesController"   class="ruking.controller.manage.ListAttributesController" ></bean>
     <bean id="listGlobalCatsController"   class="ruking.controller.manage.ListGlobalCatsController" ></bean>
     <bean id="editUserController"   class="ruking.controller.manage.EditUserController" ></bean>
-    <bean id="editArticleController"   class="ruking.controller.manage.EditArticleController" ></bean>
     <bean id="editProductController"   class="ruking.controller.manage.EditProductController" ></bean>
     <bean id="editAttributeController"   class="ruking.controller.manage.EditAttributeController" ></bean>
     <bean id="editGlobalCatController"   class="ruking.controller.manage.EditGlobalCatController" ></bean>
@@ -62,12 +63,12 @@
             <prop key="/listusers.jhtml">listUsersController</prop>
             <prop key="/listproducts.jhtml">listProductsController</prop>
             <prop key="/listattributes.jhtml">listAttributesController</prop>
-            <prop key="/listarticles.jhtml">listArticlesController</prop>
+             <prop key="/listarticles.jhtml">listArticlesController</prop>
+            <!-- <prop key="/editarticle.jhtml">editArticleController</prop>-->
             <prop key="/listglobalcats.jhtml">listGlobalCatsController</prop>
             <prop key="/edituser.jhtml">editUserController</prop>
             <prop key="/editproduct.jhtml">editProductController</prop>
             <prop key="/editattribute.jhtml">editAttributeController</prop>
-            <prop key="/editarticle.jhtml">editArticleController</prop>
             <prop key="/editglobalcat.jhtml">editGlobalCatController</prop>
         </props>
     </property>
