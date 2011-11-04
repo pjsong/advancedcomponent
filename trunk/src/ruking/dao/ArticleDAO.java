@@ -50,7 +50,7 @@ public class ArticleDAO {
 		if(m==null)return null;
 		else{
 			u.setId(((Integer)m.get("ID")).toString());
-			u.setType((Integer)m.get("Type"));
+			u.setType(((Integer)m.get("Type")).toString());
 			u.setHeader((String)m.get("Header"));
 			u.setContent((String)m.get("Content"));
 		}
