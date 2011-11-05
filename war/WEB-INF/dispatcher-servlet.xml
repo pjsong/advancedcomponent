@@ -14,8 +14,6 @@
     <bean id="manageController"   class="ruking.controller.manage.ManageController" ></bean>
     <bean id="listUsersController"   class="ruking.controller.manage.ListUsersController" ></bean>
     <bean id="listArticlesController"   class="ruking.controller.manage.ListArticlesController" ></bean> 
-    <!--     <bean id="editArticleController"   class="ruking.controller.manage.EditArticleController" ></bean>
-    -->
     <bean id="listProductsController"   class="ruking.controller.manage.ListProductsController" ></bean>
     <bean id="listAttributesController"   class="ruking.controller.manage.ListAttributesController" ></bean>
     <bean id="listGlobalCatsController"   class="ruking.controller.manage.ListGlobalCatsController" ></bean>
@@ -23,7 +21,27 @@
     <bean id="editProductController"   class="ruking.controller.manage.EditProductController" ></bean>
     <bean id="editAttributeController"   class="ruking.controller.manage.EditAttributeController" ></bean>
     <bean id="editGlobalCatController"   class="ruking.controller.manage.EditGlobalCatController" ></bean>
-
+<!--  -->
+    <bean id="indexEngController"   class="ruking.controller.eng.IndexController" ></bean>
+    <bean id="regEngController"   class="ruking.controller.eng.RegController" ></bean>
+    <bean id="logoutEngController"   class="ruking.controller.eng.LogOutController" ></bean>
+    <bean id="loginEngController"   class="ruking.controller.eng.LoginController" ></bean>
+    <bean id="aboutEngController"   class="ruking.controller.eng.AboutController" ></bean>
+    <bean id="productsEngController"   class="ruking.controller.eng.ProductsController" ></bean>  
+    <bean id="itemEngController"   class="ruking.controller.eng.ItemController" ></bean>  
+    <bean id="newsEngController"   class="ruking.controller.eng.NewsController" ></bean>    
+    <bean id="solutionsEngController"   class="ruking.controller.eng.SolutionsController" ></bean>
+    <bean id="indexBigController"   class="ruking.controller.big.IndexController" ></bean>
+    <bean id="regBigController"   class="ruking.controller.big.RegController" ></bean>
+    <bean id="logoutBigController"   class="ruking.controller.big.LogOutController" ></bean>
+    <bean id="loginBigController"   class="ruking.controller.big.LoginController" ></bean>
+    <bean id="aboutBigController"   class="ruking.controller.big.AboutController" ></bean>
+    <bean id="productsBigController"   class="ruking.controller.big.ProductsController" ></bean>  
+    <bean id="itemBigController"   class="ruking.controller.big.ItemController" ></bean>  
+    <bean id="newsBigController"   class="ruking.controller.big.NewsController" ></bean>    
+    <bean id="solutionsBigController"   class="ruking.controller.big.SolutionsController" ></bean>
+    
+    
 	<bean id="sessionInterceptor" class="ruking.interceptor.SessionInterceptor"></bean>
 	<bean id="manageInterceptor" class="ruking.interceptor.ManageInterceptor"></bean>
 
