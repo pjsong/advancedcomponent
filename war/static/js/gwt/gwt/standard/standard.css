@@ -11,9 +11,12 @@
  *      property: rule applies to all versions of IE
  *    }
  */
-
+.product-title{
+	color:black;
+   font-size:12px;
+}
 body, table td, select {
-  font-family: Arial Unicode MS, Arial, sans-serif;
+  font-family: "微软雅黑";
   font-size: small;
 }
 pre {
@@ -716,7 +719,7 @@ a:hover {
 
 .gwt-DecoratedStackPanel .stackItemMiddleCenter {
   font-weight: bold;
-  font-size: 1.3em;
+  font-size: 1.0em;
   background: #fed802 url(images/hborder.png) repeat-x 0px -989px;
 }
 
