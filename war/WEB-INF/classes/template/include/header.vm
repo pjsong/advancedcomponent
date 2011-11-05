@@ -10,9 +10,9 @@
     <script type="text/javascript">
       $(function() {
         $('#slideshow').cycle({
-          fx:     'fade',//turnDown,fade,curtainX,scrollRight (click),zoom,shuffle
-          speed:  'fast',
-          timeout: 8000,
+          fx:     'scrollRight',//fade,turnDown,fade,curtainX,scrollRight (click),zoom,shuffle
+          speed:  'slow',//fast
+          timeout: 6000,
           pager:  '#nav',
           slideExpr: 'img',
           pagerEvent: 'mouseover',
@@ -47,8 +47,8 @@
               </tbody></table>
             </td>
           </tr><tr><td align="left" colspan=8 style="padding-top:12px;"><div id="menu">
-		<a href="$_url/about/aboutus.jhtml">&nbsp;&nbsp;关于如金&nbsp;</a> <span class="seperator"> | </span><a href="$_url/products.jhtml">&nbsp;产品浏览&nbsp;</a>&nbsp;<span class="seperator"> | </span><a href="$_url/solutions.jhtml">&nbsp;解决方案&nbsp;</a>&nbsp;<span class="seperator"> | </span>
-		<a href="$_url/news.jhtml">&nbsp;产业资讯</a>&nbsp;<span class="seperator"> | </span><a href="$_url/about/customerservice.jhtml">&nbsp;客服中心&nbsp;&nbsp;</a></div><td>      </tr>
+		<a href="$_url/index.jhtml">&nbsp;&nbsp;首页&nbsp;</a> <span class="seperator"> | <a href="$_url/about/aboutus.jhtml">&nbsp;&nbsp;关于如金&nbsp;</a> <span class="seperator"> | </span><a href="$_url/products.jhtml">&nbsp;产品浏览&nbsp;</a>&nbsp;<span class="seperator"> | </span><a href="$_url/solutions.jhtml">&nbsp;解决方案&nbsp;</a>&nbsp;<span class="seperator"> | </span>
+		<a href="$_url/news.jhtml">&nbsp;产业资讯</a>&nbsp;<span class="seperator"> | </span><a href="$_url/about/customerservice.jhtml">&nbsp;客服中心&nbsp;&nbsp;</a><span class="seperator"> | </span><a href="$_url/about/recruit.jhtml">&nbsp;人才招聘&nbsp;&nbsp;</a></div><td>      </tr>
         </tbody></table>
     </td>
 	<td style="width:300px;"></td>
