@@ -53,6 +53,7 @@ public class UserSignUpDAO {
 			u.setMobile((String)m.get("Mobile"));
 			u.setId((Integer)m.get("ID"));
 			u.setAuthority((Integer)m.get("Authority"));
+			u.setNewsLetter(Boolean.parseBoolean((String)m.get("NewsLetter")));
 		}
 		return u;
 	}
@@ -78,6 +79,7 @@ public class UserSignUpDAO {
 			u.setMobile((String)m.get("Mobile"));
 			u.setId((Integer)m.get("ID"));
 			u.setAuthority((Integer)m.get("Authority"));
+			u.setNewsLetter(Boolean.parseBoolean((String)m.get("NewsLetter")));
 		}
 		return u;
 	}
