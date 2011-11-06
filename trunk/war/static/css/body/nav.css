@@ -3,20 +3,20 @@
 	font-family:"Microsoft YaHei",微软雅黑,arial;
 	font-size:18;
 	font-weight:bold;
-	background-color:#ebebeb;
+	background-color:#804040;
 	height:20px;
 	width:200px;
 	text-indent:20px;
 	align:center;
 }
 .nav a{
-	color:#444444;
-	background-color:#ebebeb;
-	height:20px;
-	font-size:16px;
+	color:#ffff00;
+/*	background-color:#ebebeb;*/
+	height:24px;
+	font-size:20px;
 }
 .nav a:hover{
-	background-color:#f8eb12;
+	background-color:#0000ff;
 }
 .bodyheader{
 	background:url('/static/img/body/about_header.jpg'); 
