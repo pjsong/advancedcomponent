@@ -36,6 +36,6 @@ public class ItemController extends BaseController {
         List<Map> attrs = aDAO.getAttributesByProductId(id);
         vc.put("pDTO", pDTO);
         vc.put("attrs", attrs);
-       	VelocityParserFactory.getVP().render("item", vc, request, response);
+       	VelocityParserFactory.getVP().render("item_eng", vc, request, response);
 	}
 }
