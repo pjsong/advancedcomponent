@@ -1,6 +1,6 @@
-			#parse("include/header.vm")
-			<div style="background:url('/static/img/body/background.jpg') repeat-x fixed top center; height:700px;">
-			#parse("include/breadcrum.vm")
-			#parse("include/aboutus.vm")
-			</div>
-			#parse("include/footer.vm")
+#parse("include/header.vm")
+<div style="background:url('/static/img/body/background.jpg') repeat-x fixed top center; height:800px;">
+#parse("include/breadcrum.vm")
+#parse("include/aboutus.vm")
+</div>
+#parse("include/footer.vm")
