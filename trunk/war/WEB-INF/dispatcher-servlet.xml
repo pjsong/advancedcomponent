@@ -23,14 +23,10 @@
     <bean id="editGlobalCatController"   class="ruking.controller.manage.EditGlobalCatController" ></bean>
 <!--  -->
     <bean id="indexEngController"   class="ruking.controller.eng.IndexController" ></bean>
-    <bean id="regEngController"   class="ruking.controller.eng.RegController" ></bean>
-    <bean id="logoutEngController"   class="ruking.controller.eng.LogOutController" ></bean>
-    <bean id="loginEngController"   class="ruking.controller.eng.LoginController" ></bean>
     <bean id="aboutEngController"   class="ruking.controller.eng.AboutController" ></bean>
     <bean id="productsEngController"   class="ruking.controller.eng.ProductsController" ></bean>  
     <bean id="itemEngController"   class="ruking.controller.eng.ItemController" ></bean>  
-    <bean id="newsEngController"   class="ruking.controller.eng.NewsController" ></bean>    
-    <bean id="solutionsEngController"   class="ruking.controller.eng.SolutionsController" ></bean>
+    
     <bean id="indexBigController"   class="ruking.controller.big.IndexController" ></bean>
     <bean id="regBigController"   class="ruking.controller.big.RegController" ></bean>
     <bean id="logoutBigController"   class="ruking.controller.big.LogOutController" ></bean>
@@ -64,6 +60,11 @@
             <prop key="/logout.jhtml">logoutController</prop>
             <prop key="/login.jhtml">loginController</prop>
             <prop key="/about/*.jhtml">aboutController</prop>
+            
+            <prop key="/index_eng.jhtml">indexEngController</prop>
+            <prop key="/products_eng.jhtml">productsEngController</prop>           
+            <prop key="/item_eng.jhtml">itemEngController</prop>      
+            <prop key="/about_eng/*.jhtml">aboutEngController</prop>
         </props>
     </property>
     </bean>
