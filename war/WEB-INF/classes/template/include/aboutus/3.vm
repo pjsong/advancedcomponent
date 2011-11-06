@@ -1,21 +1,25 @@
-﻿#parse("include/aboutus/common.vm")
-
+﻿			#parse("include/header.vm")
+			<div style="background:url('/static/img/body/background.jpg') repeat-x scroll top center; height:1020px;">
+			#parse("include/breadcrum.vm")
+#parse("include/aboutus/common.vm")
 <td align=left>
-<h1 align="center" style ="font-size:32px;color: #606060;padding-bottom:0px;margin-bottom:15px">	如金公司简介</h1>
 <table width="800" border="0" align="center"><tr><td width="100%">
+	<p class="aboutHeader">引入理念</p>
+	<p class="aboutDetail">自动化设备引入3E理念，凝集了三类工程师的控制思维，帮助企业有效控制成本。</p>
+	<div style="padding-left:100px;"><img src="/static/img/about/idea.jpg" width="500px" height="200px" align="center" alt="价值观"/></div>
+	<hr / style="color:#ebebeb;height:2px;">
+	<p class="aboutHeader">产品定位</p>
+	<p class="aboutDetail">立足先进制造业，致力于自动化生产设备和自动化测试设备的研发生产，实现机器取代人手、微电脑取代测试仪器和网络协助管理，推动低成本自动化生产和高速检测。</p>
+	<div style="padding-left:100px;"><img src="/static/img/about/targetproduct.jpg" width="500px" height="200px" align="center" alt="价值观"/></div>
+	<p class="aboutDetail">电池设备<br />
+	涉及圆柱、聚合物和动力电池三大系列产品的制造设备。<br />
+	测试设备<br />
+	涉及电子装配制造行业（电脑周边产品、家电产品和玩具等行业）和电子元器件制造行业（马达、电池、开关、电位器等行业）的测试设备，涵盖工程部门测试设备、品质部门测试设备和生产部门测试设备。<br />
+	产线看板<br />
+	建立网络平台系统，通过数据采集器，自动收集生产线的准确数据（如：设备运行状况、坏机率、生产数量和平衡率等），通过网络反映在现场（电子看板或者电脑上），通过网络知会相关责任人，处理状况通过网络随时知会相关管理者，方便管理者进行有效指挥和监督。<br />
+	非标设备<br />
+	涉及电子装配制造行业和电子元器件制造行业（非电池行业）的制造设备，专为客户授权研发的非标设备，以客户的需求为首任，持续创新研发。<br />
 
-<p>
-	<b  style="font-size:14px;">如金价值观</b> ----  公司核心价值观是扎根于我们内心深处的核心信念，是公司的内在动力，更是我们面向未来的共同承诺。由此持续不断地为客户创造价值，进而形成感恩共赢文化!
-我们追求：</p>	<div style="text-indent:3em;"><strong>1) </strong>成就客户:一切为了客户，客户需求是如金公司发展的原动力。我们坚持以客户为中心，快速响应客户需求，持续为客户创造长期价值进而成就客户。为客户提供有效服务，是我们工作的方向和价值评价的标尺，成就客户就是成就我们自己。
-	</div><div style="text-indent:3em;"><strong>2)</strong>&nbsp;&nbsp;集思广益:象风暴一样把客户的意见，团队成员的灵感、思维和想法统统收集，然后从中寻找先进的技术、产品、解决方案和业务管理。
-	</div><div style="text-indent:3em;"><strong>3)</strong>&nbsp;&nbsp;激情创新:创造企业氛围，形成激情团队，开放进取，达至锲而不舍的创新追求！。
-	</div><div style="text-indent:3em;"><strong>4)</strong>&nbsp;&nbsp;感恩共赢:如金是所有利益相关者的如金，主要包括员工、客户、股东。只有员工、用户和股东持续共赢，如金才有可能实现永续经营。
-	</div>
-	<div style="padding-left:80px;"><img src="/static/img/about/value.jpg" width="300px" height="200px" align="center" alt="价值观"/></div>
-	
-	</td></tr>
-</table>
-<br /><br /><br /><br />
 </td>
 </tr></table>
 
