@@ -1,7 +1,4 @@
-﻿#parse("include/header.vm")
-<div style="background:url('/static/img/body/background.jpg') repeat-x scroll top center; height:1000px;">
-#parse("include/breadcrum.vm")
-#parse("include/aboutus/common.vm")
+﻿#parse("include/aboutcommon.vm")
 
 <td align=left>
 <table width="800" border="0" align="center"><tr><td width="100%">
@@ -13,7 +10,7 @@
 	<hr / style="color:#ebebeb;height:2px;">
 	<p class="aboutHeader">如金价值观</p>
 	<p class="aboutDetail">公司核心价值观是扎根于我们内心深处的核心信念，是公司的内在动力，更是我们面向未来的共同承诺。由此持续不断地为客户创造价值，进而形成感恩共赢文化。</p>
-	<div style="padding-left:100px;"><img src="/static/img/about/value.jpg" width="400px" height="266px" align="center" alt="价值观"/></div>
+	<div style="padding-left:100px;"><img src="$_url/static/img/about/value.jpg" width="400px" height="266px" align="center" alt="价值观"/></div>
 	<p class="aboutDetail">成就客户<br />
 	一切为了客户，客户需求是如金公司发展的原动力。我们坚持以客户为中心，快速响应客户需求，持续为客户创造长期价值进而成就客户。为客户提供有效服务，是我们工作的方向和价值评价的标尺，成就客户就是成就我们自己。
 	</p>
@@ -28,7 +25,6 @@
 	</p>	
 	<br /><br /><br /><br /><br /><br />
 </td>
+</tr></table></td>
 </tr></table>
-
-			</div>
-			#parse("include/footer.vm")
+</div>
