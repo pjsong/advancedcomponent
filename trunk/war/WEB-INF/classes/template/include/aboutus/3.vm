@@ -1,6 +1,6 @@
-﻿			#parse("include/header.vm")
-			<div style="background:url('/static/img/body/background.jpg') repeat-x scroll top center; height:1020px;">
-			#parse("include/breadcrum.vm")
+﻿#parse("include/header.vm")
+<div style="background:url('/static/img/body/background.jpg') repeat-x scroll top center; height:1020px;">
+#parse("include/breadcrum.vm")
 #parse("include/aboutus/common.vm")
 <td align=left>
 <table width="800" border="0" align="center"><tr><td width="100%">
