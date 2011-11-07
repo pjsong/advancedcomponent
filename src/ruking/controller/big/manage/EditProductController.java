@@ -36,7 +36,7 @@ public class EditProductController extends BaseController {
         if(act.equals("edit")){
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "update");
-            String id= Util.getNoNull(request.getParameter("id"));
+            String id= Util.getNoNull(request.getParameter("pid"));
 	    	ProductDTO pDTO = pDAO.getProductByID(id);
         	vc.put("product", pDTO);
             VelocityParserFactory.getVP().render("editproduct_big", vc, request, response);
@@ -63,14 +63,14 @@ public class EditProductController extends BaseController {
 			VelocityParserFactory.getVP().render("editproduct_big", vc, request, response);
 			return;
 		}else{
-			product = pDAO.insertProduct(product);
+			product = pDAO.insertProduct_big(product);
 	    	response.sendRedirect("/listproducts_big.jhtml");
 		}
 	}
 	private void update(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-        String id= Util.getNoNull(request.getParameter("id"));
+        String id= Util.getNoNull(request.getParameter("pid"));
     	ProductDAO pDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
     	ProductDTO product = pDAO.getProductByID(id);
     	String oldName = product.getTitle();
@@ -84,15 +84,17 @@ public class EditProductController extends BaseController {
 			VelocityParserFactory.getVP().render("editproduct_big", vc, request, response);
 			return;
 		}else{
-	    	pDAO.updateProduct(product);
+	    	pDAO.updateProduct_big(product);
 	    	response.sendRedirect("/listproducts_big.jhtml");
 		}
 	}
 	
 	private Map<String,String> check(ProductDTO p,ProductDAO pDAO) throws SQLException{
 		Map<String,String> error = new HashMap<String,String>();
+		String pid = Util.getNoNull(p.getId()).trim();
+		if(!NumberUtils.isDigits(pid))error.put("idValueError", "ID必须为数字");
 		if(Util.getNoNull(p.getTitle()).length()<1)error.put("titleEmptyError", "输入产品名称");
-		if(pDAO.productTitleExits(p.getTitle()))error.put("titleValueError", "产品名称已存在");
+		if(pDAO.productTitleExits_big(p.getTitle()))error.put("titleValueError", "产品名称已存在");
 		if(p.getTitle().length()>98)error.put("titleLengthError", "产品名称太长");
 		if(Util.getNoNull(p.getCategory()).length()<1)error.put("categoryLengthError", "输入类别名称");
 		if(p.getCategory().length()>98)error.put("categoryLengthError", "类别太长");
@@ -101,6 +103,8 @@ public class EditProductController extends BaseController {
 	}
 	private Map<String,String> updateCheck(ProductDTO p,ProductDAO pDAO,String oldName) throws SQLException{
 		Map<String,String> error = new HashMap<String,String>();
+		String pid = Util.getNoNull(p.getId()).trim();
+		if(!NumberUtils.isDigits(pid))error.put("idValueError", "ID必须为数字");
 		if(Util.getNoNull(p.getTitle()).length()<1)error.put("titleEmptyError", "输入产品名称");
 		if(!p.getTitle().equals(oldName) && pDAO.productTitleExits(p.getTitle()))error.put("titleValueError", "产品名称已存在");
 		if(p.getTitle().length()>98)error.put("titleLengthError", "产品名称太长");
