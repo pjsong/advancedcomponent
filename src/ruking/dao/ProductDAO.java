@@ -162,4 +162,27 @@ public class ProductDAO {
 		String sql = "SELECT * FROM product_eng";
 		return runner.query(sql);
 	}
+	public  ProductDTO insertProduct_big(ProductDTO p) throws SQLException{
+		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql="insert into product_big(ID,Title,Description,Category,SubCategory,CatID";
+		sql = sql+") values ("+DbUtil.escSql(p.getId().trim())+","+DbUtil.escSql(p.getTitle().trim())+","+DbUtil.escSql(p.getDescription().trim())+","+DbUtil.escSql(p.getCategory())+","+DbUtil.escSql(p.getSubcategory())+","+DbUtil.escSql(p.getCatID());
+		sql=sql+");";
+		runner.update(sql);
+		return p;
+	}
+	public  void updateProduct_big(ProductDTO p) throws SQLException{
+		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql="update product_big set Title="+DbUtil.escSql(p.getTitle())+",Description="+DbUtil.escSql(p.getDescription());
+		sql+=",Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory())+",CatID="+DbUtil.escSql(p.getCatID())+" where ID="+DbUtil.escSql(p.getId());
+		runner.update(sql);
+	}
+
+	public boolean productTitleExits_big(String title) throws SQLException {
+		ProductDTO u=new ProductDTO();
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM product_big WHERE Title = " + DbUtil.escSql(title);
+		Map m=runner.queryForMap(sql);
+		if(m==null)return false;
+		return true;
+	}
 }
