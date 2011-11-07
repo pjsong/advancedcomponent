@@ -4,11 +4,11 @@
 <table width="800" border="0" align="center"><tr><td width="100%">
 	<p class="aboutHeader">引入理念</p>
 	<p class="aboutDetail">自動化設備引入3E理念，凝集了三類工程師的控制思維，幫助企業有效控制成本。</p>
-	<div style="padding-left:100px;"><img src="$_url/static/img/about/idea.jpg" width="500px" height="200px" align="center" alt="3E理念"/></div>
+	<div style="padding-left:100px;"><img src="$_url/static/img/about/idea_big.jpg" width="500px" height="200px" align="center" alt="3E理念"/></div>
 	<hr / style="color:#ebebeb;height:2px;">
 	<p class="aboutHeader">產品定位</p>
 	<p class="aboutDetail">立足先進製造業，致力於自動化生產設備和自動化測試設備的研發生產，實現機器取代人手、微電腦取代測試儀器和網絡協助管理，推動低成本自動化生產和高速檢測。</p>
-	<div style="padding-left:100px;"><img src="$_url/static/img/about/targetproduct.jpg" width="500px" height="200px" align="center" alt="價值觀"/></div>
+	<div style="padding-left:100px;"><img src="$_url/static/img/about/targetproduct_big.jpg" width="500px" height="200px" align="center" alt="價值觀"/></div>
 	<p class="aboutDetail">電池設備<br />
 	涉及圓柱、聚合物和動力電池三大系列產品的製造設備。<br />
 	測試設備<br />
