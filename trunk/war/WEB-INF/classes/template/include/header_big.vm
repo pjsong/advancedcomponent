@@ -1,0 +1,56 @@
+﻿<html>  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>東莞市如金自動化設備科技有限公司</title>
+	<link href="/static/css/rotation.css" type="text/css" rel="stylesheet">
+	<link href="/static/css/header/header.css" type="text/css" rel="stylesheet">
+	<link href="/static/css/homepage.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cycle.all.2.72.js"></script>
+	<script type="text/javascript" src="/static/js/register.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $('#slideshow').cycle({
+          fx:     'scrollRight',//fade,turnDown,fade,curtainX,scrollRight (click),zoom,shuffle
+          speed:  'slow',//fast
+          timeout: 6000,
+          pager:  '#nav',
+          slideExpr: 'img',
+          pagerEvent: 'mouseover',
+          pauseOnPagerHover: true
+        });
+      });
+    </script>
+</head><body  style="background-color: #fafafa;">
+<table style="background-color: #8a8a8a;/*h160,b120*/" align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tbody><tr>
+    <td rowspan=2 height="120" width="380" valign="top" align="right"><a href="$_url/"><img height="90" width="160" alt="東莞市如金自動化設備科技有限公司" src="$_url/static/img/logo1-1.jpg" style=""></a></td>
+	<td valign="bottom" align="center" style="width:700px;">
+        <table width="600px" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
+          <tbody>
+          <tr>
+			<td valign="bottom" style="padding-bottom:0px;width:200px;"><span class="headerlanguage">
+			<a href="$_url/index.jhtml"> 简体 </a>|<a href="$_url/index_eng.jhtml"> ENGLISH </a></span></td>
+            <td align="right" colspan=7 valign="bottom">
+				<table cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;"><tr><td  colspan=3 align="right" >
+				#if($customer)
+				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="$_url/logout.jhtml">退出登錄</a> #if($administrator) | <a href="$_url/manage.jhtml">管理产品</a> #end</td>
+				#else
+				<a href="$_url/reg.jhtml">新用戶註冊</a> | <a href="$_url/searchpass.jhtml">忘記密碼</a>
+				</td></tr>
+                <tbody>
+				  <form onsubmit="return checkformlogin()" name="formlogin" id="formlogin" action="$_url/login.jhtml" method="post">
+				  <tr style="padding-bottom:5px;">
+                  <td width="210" align="left"><span class="headerlabel">用戶名：</span><input class="headerinputbox" type="text" size="15" id="loginName" name="loginName"></td>
+                  <td width="190" align="left"><span class="headerlabel">密碼：</span><input class="headerinputbox" type="password" size="15" id="loginPassword" name="loginPassword"></td>
+                  <td width="30" align="center"><input type="image" src="$_url/static/img/header/login.jpg" name="Submit"></td>
+                </tr></form>#end
+              </tbody></table>
+            </td>
+          </tr><tr><td align="left" colspan=8 style="padding-top:12px;"><div id="menu">
+		<a href="$_url/index_big.jhtml">&nbsp;&nbsp;首頁&nbsp;</a> <span class="seperator"> | <a href="$_url/about/aboutus_big.jhtml">&nbsp;&nbsp;關於如金&nbsp;</a> <span class="seperator"> | </span><a href="$_url/products_big.jhtml">&nbsp;產品瀏覽&nbsp;</a>&nbsp;<span class="seperator"> | </span><a href="$_url/solutions_big.jhtml">&nbsp;經典案例&nbsp;</a>&nbsp;<span class="seperator"> | </span>
+		<a href="$_url/news_big.jhtml">&nbsp;產業資訊</a>&nbsp;<span class="seperator"> | </span><a href="$_url/about/customerservice_big.jhtml">&nbsp;客服中心&nbsp;&nbsp;</a><span class="seperator"> | </span><a href="$_url/about/recruit_big.jhtml">&nbsp;人才招聘&nbsp;&nbsp;</a></div><td>      </tr>
+        </tbody></table>
+    </td>
+	<td style="width:300px;"></td>
+  </tr>
+</tbody></table>
