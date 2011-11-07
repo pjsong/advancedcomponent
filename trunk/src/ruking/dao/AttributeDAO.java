@@ -93,4 +93,11 @@ public class AttributeDAO {
 		String sql = "delete FROM attributes WHERE ID = " + DbUtil.escSql(id);
 		runner.update(sql);
 	}
+
+	public List<Map> getAllAttributes_big() throws SQLException {
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(
+				hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM attributes_big";
+		return runner.query(sql);
+	}
 }

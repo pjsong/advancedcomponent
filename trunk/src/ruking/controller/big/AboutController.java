@@ -16,22 +16,15 @@ public class AboutController extends BaseController{
 			throws Exception {
         VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-        VelocityParserFactory.getVP().render(urlTemplate(request), vc, request, response);
+        VelocityParserFactory.getVP().render(urlTemplate(request,vc), vc, request, response);
 		
 	}
-    private String urlTemplate(HttpServletRequest request)
+    private String urlTemplate(HttpServletRequest request, VelocityContext vc)
     {
 		String relativeURL = request.getRequestURI();
-    	String id =  request.getParameter("id");
-    	if(!Util.getNoNull(id).equals("") && relativeURL.indexOf("aboutus")!=-1){
-    		return "include/aboutus_big/"+id;
-    	}
-    	if(!Util.getNoNull(id).equals("") && relativeURL.indexOf("customerservice")!=-1){
-    		return "include/customerservice_big/"+id;
-    	}
-    	else{
-        	int startpos = relativeURL.lastIndexOf("about_big/")+10;
-        	return relativeURL.substring(startpos, relativeURL.length()-6);
-    	}
+    	String id =  Util.getNoNull(request.getParameter("id"));
+    	vc.put("id", id);
+        int startpos = relativeURL.lastIndexOf("about_big/")+10;
+        return relativeURL.substring(startpos, relativeURL.length()-6);
     }
 }
