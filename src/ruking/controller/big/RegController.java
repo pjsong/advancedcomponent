@@ -118,37 +118,37 @@ public class RegController extends BaseController {
 	private Map<String,String> check(UserSignUpDTO u,UserSignUpDAO uDAO) throws SQLException{
 		Map<String,String> ret = new HashMap<String,String>();
 		String loginName = Util.getNoNull(u.getLoginName()).trim();
-		if(loginName.equals(""))ret.put("loginNameError", "input login name");
-		if(!loginName.equals("") && uDAO.loginNameExists(loginName))ret.put("loginNameExistsError", loginName+" occupied，try another one please");
-		if(Util.getNoNull(u.getPassword()).trim().equals(""))ret.put("passwordError", "input password");
-		if(Util.getNoNull(u.getPassword()).trim().length()<6)ret.put("passwordLenthError", "password length less than 6 bits");
-		if(Util.getNoNull(u.getPasswordV()).trim().equals(""))ret.put("passwordVError", "please verify your password");
-		if(!Util.getNoNull(u.getPassword()).equals(Util.getNoNull(u.getPasswordV())))ret.put("passwordAndVError", "passwords not consistent");
-		if(Util.getNoNull(u.getQuestion()).trim().equals("-1"))ret.put("questionError", "choose question that used for password recovery");
-		if(Util.getNoNull(u.getLoginName()).trim().equals(""))ret.put("answerError", "input answer for question");
-		if(Util.getNoNull(u.getQuestion()).trim().equals("birthdayOfMom") && !Util.getNoNull(u.getAnswer()).matches("\\d\\d\\d\\d-\\d\\d-\\d\\d"))ret.put("birthdayError", "birthday malformatted");
-		if(Util.getNoNull(u.getEmail()).trim().equals(""))ret.put("emailEmptyError", "input email address");
-		if(!Util.getNoNull(u.getEmail()).trim().matches(RegExp.emailRegExp))ret.put("emailFormatError", "malformed email address");
-		if(Util.getNoNull(u.getCompanyaddress()).trim().equals(""))ret.put("companyAddressError", "please input contact address");
-		if(Util.getNoNull(u.getMobile()).trim().equals(""))ret.put("mobileError", "please input mobile number");
+		if(loginName.equals(""))ret.put("loginNameError", "請填寫登錄名");
+		if(!loginName.equals("") && uDAO.loginNameExists(loginName))ret.put("loginNameExistsError", loginName+"已被佔用，請另外填寫登錄名");
+		if(Util.getNoNull(u.getPassword()).trim().equals(""))ret.put("passwordError", "請填寫密碼");
+		if(Util.getNoNull(u.getPassword()).trim().length()<6)ret.put("passwordLenthError", "密碼需要大於6位");
+		if(Util.getNoNull(u.getPasswordV()).trim().equals(""))ret.put("passwordVError", "請填寫確認密碼");
+		if(!Util.getNoNull(u.getPassword()).equals(Util.getNoNull(u.getPasswordV())))ret.put("passwordAndVError", "密碼確認有誤，請重新填寫密碼並確認");
+		if(Util.getNoNull(u.getQuestion()).trim().equals("-1"))ret.put("questionError", "請選擇用於找回密碼的提示問題");
+		if(Util.getNoNull(u.getLoginName()).trim().equals(""))ret.put("answerError", "請填寫問題答案");
+		if(Util.getNoNull(u.getQuestion()).trim().equals("birthdayOfMom") && !Util.getNoNull(u.getAnswer()).matches("\\d\\d\\d\\d-\\d\\d-\\d\\d"))ret.put("birthdayError", "生日輸入格式有誤");
+		if(Util.getNoNull(u.getEmail()).trim().equals(""))ret.put("emailEmptyError", "請填寫郵箱");
+		if(!Util.getNoNull(u.getEmail()).trim().matches(RegExp.emailRegExp))ret.put("emailFormatError", "請填寫郵箱正確格式");
+		if(Util.getNoNull(u.getCompanyaddress()).trim().equals(""))ret.put("companyAddressError", "請填寫聯系地址");
+		if(Util.getNoNull(u.getMobile()).trim().equals(""))ret.put("mobileError", "請填寫聯系電話");
 		return ret;
 	}
 	private Map<String,String> updateCheck(UserSignUpDTO u,UserSignUpDAO uDAO,String oldLoginName) throws SQLException{
 		Map<String,String> ret = new HashMap<String,String>();
 		String loginName = Util.getNoNull(u.getLoginName()).trim();
-		if(loginName.equals(""))ret.put("loginNameError", "请填写登录名");
-		if(!loginName.equals(oldLoginName) && uDAO.loginNameExists(loginName))ret.put("loginNameExistsError", loginName+" occupied，try another one please");
-		if(Util.getNoNull(u.getPassword()).trim().equals(""))ret.put("passwordError", "input password");
-		if(Util.getNoNull(u.getPassword()).trim().length()<6)ret.put("passwordLenthError", "password length less than 6 bits");
-		if(Util.getNoNull(u.getPasswordV()).trim().equals(""))ret.put("passwordVError", "please verify your password");
-		if(!Util.getNoNull(u.getPassword()).equals(Util.getNoNull(u.getPasswordV())))ret.put("passwordAndVError", "passwords not consistent");
-		if(Util.getNoNull(u.getQuestion()).trim().equals("-1"))ret.put("questionError", "choose question that used for password recovery");
-		if(Util.getNoNull(u.getLoginName()).trim().equals(""))ret.put("answerError", "input answer for question");
-		if(Util.getNoNull(u.getQuestion()).trim().equals("birthdayOfMom") && !Util.getNoNull(u.getAnswer()).matches("\\d\\d\\d\\d-\\d\\d-\\d\\d"))ret.put("birthdayError", "birthday malformatted");
-		if(Util.getNoNull(u.getEmail()).trim().equals(""))ret.put("emailEmptyError", "input email address");
-		if(!Util.getNoNull(u.getEmail()).trim().matches(RegExp.emailRegExp))ret.put("emailFormatError", "malformed email address");
-		if(Util.getNoNull(u.getCompanyaddress()).trim().equals(""))ret.put("companyAddressError", "please input contact address");
-		if(Util.getNoNull(u.getMobile()).trim().equals(""))ret.put("mobileError", "please input mobile number");
+		if(loginName.equals(""))ret.put("loginNameError", "請填寫登錄名");
+		if(!loginName.equals(oldLoginName) && uDAO.loginNameExists(loginName))ret.put("loginNameExistsError", loginName+"已被佔用，請另外填寫登錄名");
+		if(Util.getNoNull(u.getPassword()).trim().equals(""))ret.put("passwordError", "請填寫密碼");
+		if(Util.getNoNull(u.getPassword()).trim().length()<6)ret.put("passwordLenthError", "密碼需要大於6位");
+		if(Util.getNoNull(u.getPasswordV()).trim().equals(""))ret.put("passwordVError", "請填寫確認密碼");
+		if(!Util.getNoNull(u.getPassword()).equals(Util.getNoNull(u.getPasswordV())))ret.put("passwordAndVError", "密碼確認有誤，請重新填寫密碼並確認");
+		if(Util.getNoNull(u.getQuestion()).trim().equals("-1"))ret.put("questionError", "請選擇用於找回密碼的提示問題");
+		if(Util.getNoNull(u.getLoginName()).trim().equals(""))ret.put("answerError", "請填寫問題答案");
+		if(Util.getNoNull(u.getQuestion()).trim().equals("birthdayOfMom") && !Util.getNoNull(u.getAnswer()).matches("\\d\\d\\d\\d-\\d\\d-\\d\\d"))ret.put("birthdayError", "生日輸入格式有誤");
+		if(Util.getNoNull(u.getEmail()).trim().equals(""))ret.put("emailEmptyError", "請填寫郵箱");
+		if(!Util.getNoNull(u.getEmail()).trim().matches(RegExp.emailRegExp))ret.put("emailFormatError", "請填寫郵箱正確格式");
+		if(Util.getNoNull(u.getCompanyaddress()).trim().equals(""))ret.put("companyAddressError", "請填寫聯系地址");
+		if(Util.getNoNull(u.getMobile()).trim().equals(""))ret.put("mobileError", "請填寫聯系電話");
 		return ret;
 	}
 }

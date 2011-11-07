@@ -15,7 +15,7 @@ public class IndexController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-        VelocityParserFactory.getVP().render("index", vc, request, response);
+        VelocityParserFactory.getVP().render("index_big", vc, request, response);
 	}
 
 }

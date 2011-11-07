@@ -152,4 +152,14 @@ public class ProductDAO {
 		return ret;
 	}
 
+	public List<Map> getAllProducts_big() throws SQLException {
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM product_big";
+		return runner.query(sql);
+	}
+	public List<Map> getAllProducts_eng() throws SQLException {
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM product_eng";
+		return runner.query(sql);
+	}
 }

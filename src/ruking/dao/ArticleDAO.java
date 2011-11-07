@@ -83,4 +83,11 @@ public class ArticleDAO {
 		String sql = "delete FROM articles WHERE ID = " + DbUtil.escSql(id);
 		runner.update(sql);
 	}
+
+
+	public List<Map> getAllArticles_big() throws SQLException {
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM articles_big";
+		return runner.query(sql);
+	}
 }

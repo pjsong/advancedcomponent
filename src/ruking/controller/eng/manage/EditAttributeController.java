@@ -1,4 +1,4 @@
-package ruking.controller.manage;
+package ruking.controller.eng.manage;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -27,7 +27,7 @@ public class EditAttributeController extends BaseController {
        if(act.equals("")){
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "add");
-            VelocityParserFactory.getVP().render("editattribute", vc, request, response);
+            VelocityParserFactory.getVP().render("editattribute_eng", vc, request, response);
             return;
         }
         if(act.equals("add")){
@@ -40,7 +40,7 @@ public class EditAttributeController extends BaseController {
             String id= Util.getNoNull(request.getParameter("id"));
 	    	AttributeDTO attribute = pDAO.getAttributeByID(id);
         	vc.put("attribute", attribute);
-            VelocityParserFactory.getVP().render("editattribute", vc, request, response);
+            VelocityParserFactory.getVP().render("editattribute_eng", vc, request, response);
             return;
         }
         if(act.equals("update")){
@@ -62,11 +62,11 @@ public class EditAttributeController extends BaseController {
 			vc.put("error", error);
 			vc.put("act", "add");
 			vc.put("attribute", attribute);
-			VelocityParserFactory.getVP().render("editattribute", vc, request, response);
+			VelocityParserFactory.getVP().render("editattribute_eng", vc, request, response);
 			return;
 		}else{
 			attribute = aDAO.insertProduct(attribute);
-	    	response.sendRedirect("/listattributes.jhtml");
+	    	response.sendRedirect("/listattributes_eng.jhtml");
 		}
 	}
 	private void update(HttpServletRequest request, HttpServletResponse response) throws Exception{
@@ -83,11 +83,11 @@ public class EditAttributeController extends BaseController {
 			vc.put("error", error);
 			vc.put("act", "update");
 			vc.put("attribute", attribute);
-			VelocityParserFactory.getVP().render("editattribute", vc, request, response);
+			VelocityParserFactory.getVP().render("editattribute_eng", vc, request, response);
 			return;
 		}else{
 	    	aDAO.updateAttribute(attribute);
-	    	response.sendRedirect("/listattributes.jhtml");
+	    	response.sendRedirect("/listattributes_eng.jhtml");
 		}
 	}
 	
@@ -98,7 +98,7 @@ public class EditAttributeController extends BaseController {
 		if(productDAO.getProductByID(p.getProductId())==null)error.put("productIdNotExistsError", "产品ID不存在");
 		if(Util.getNoNull(p.getAttrName()).length()<1)error.put("attrNameEmptyError", "输入属性名称");
 		if(p.getAttrValue().length()<1)error.put("attrValueEmptyError", "输入属性值");
-		if(p.getDisplayOrder().length()<1)error.put("attrDisplayOrderError", "输入显示序值");
+		if(p.getDisplayOrder().length()<1)error.put("attrDisplayOrderError", "输入属性值");
 		if(!NumberUtils.isDigits(Util.getNoNull(p.getDisplayOrder())))error.put("attrDisplayOrderError", "显示序值只能是数字");
 		return error;
 	}
