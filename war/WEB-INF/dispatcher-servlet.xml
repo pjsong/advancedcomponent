@@ -65,6 +65,11 @@
             <prop key="/products_eng.jhtml">productsEngController</prop>           
             <prop key="/item_eng.jhtml">itemEngController</prop>      
             <prop key="/about_eng/*.jhtml">aboutEngController</prop>
+            
+            <prop key="/index_big.jhtml">indexBigController</prop>
+            <prop key="/products_big.jhtml">productsBigController</prop>           
+            <prop key="/item_big.jhtml">itemBigController</prop>      
+            <prop key="/about_big/*.jhtml">aboutBigController</prop>
         </props>
     </property>
     </bean>
