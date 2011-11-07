@@ -3,6 +3,8 @@ http://www.net.cn/service/faq/xuni/zjgl/200810/3516.html
 
 homepage of VM
 http://www.net.cn/client/host/Detail/4201110117899585
+zkm0m1 
+k7x8d7u9
 
 control panel
 http://cp.hichina.com/
