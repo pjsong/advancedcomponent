@@ -27,3 +27,5 @@ body:606060 background fefefe
 language:b8fefe
 
 http://www.sse.com.cn/sseportal/webapp/datapresent/SSEQueryFirstSSENewAct
+
+http://tdc.putonghuaonline.com/tools3.html
