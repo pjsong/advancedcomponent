@@ -11,6 +11,7 @@
     <bean id="itemController"   class="ruking.controller.ItemController" ></bean>  
     <bean id="newsController"   class="ruking.controller.NewsController" ></bean>    
     <bean id="solutionsController"   class="ruking.controller.SolutionsController" ></bean>
+  
     <bean id="manageController"   class="ruking.controller.manage.ManageController" ></bean>
     <bean id="listUsersController"   class="ruking.controller.manage.ListUsersController" ></bean>
     <bean id="listArticlesController"   class="ruking.controller.manage.ListArticlesController" ></bean> 
@@ -21,6 +22,18 @@
     <bean id="editProductController"   class="ruking.controller.manage.EditProductController" ></bean>
     <bean id="editAttributeController"   class="ruking.controller.manage.EditAttributeController" ></bean>
     <bean id="editGlobalCatController"   class="ruking.controller.manage.EditGlobalCatController" ></bean>
+
+    <bean id="listArticlesBigController"   class="ruking.controller.big.manage.ListArticlesController" ></bean> 
+    <bean id="listProductsBigController"   class="ruking.controller.big.manage.ListProductsController" ></bean>
+    <bean id="listAttributesBigController"   class="ruking.controller.big.manage.ListAttributesController" ></bean>
+    <bean id="editProductBigController"   class="ruking.controller.big.manage.EditProductController" ></bean>
+    <bean id="editAttributeBigController"   class="ruking.controller.big.manage.EditAttributeController" ></bean>
+   
+    <bean id="listProductsEngController"   class="ruking.controller.eng.manage.ListProductsController" ></bean>
+    <bean id="listAttributesEngController"   class="ruking.controller.eng.manage.ListAttributesController" ></bean>
+    <bean id="editProductEngController"   class="ruking.controller.eng.manage.EditProductController" ></bean>
+    <bean id="editAttributeEngController"   class="ruking.controller.eng.manage.EditAttributeController" ></bean>
+
 <!--  -->
     <bean id="indexEngController"   class="ruking.controller.eng.IndexController" ></bean>
     <bean id="aboutEngController"   class="ruking.controller.eng.AboutController" ></bean>
@@ -94,6 +107,17 @@
             <prop key="/editproduct.jhtml">editProductController</prop>
             <prop key="/editattribute.jhtml">editAttributeController</prop>
             <prop key="/editglobalcat.jhtml">editGlobalCatController</prop>
+            
+            <prop key="/listproducts_big.jhtml">listProductsBigController</prop>
+            <prop key="/listattributes_big.jhtml">listAttributesBigController</prop>
+             <prop key="/listarticles_big.jhtml">listArticlesBigController</prop>
+            <prop key="/editproduct_big.jhtml">editProductBigController</prop>
+            <prop key="/editattribute_big.jhtml">editAttributeBigController</prop>
+            
+            <prop key="/listproducts_eng.jhtml">listProductsEngController</prop>
+            <prop key="/listattributes_eng.jhtml">listAttributesEngController</prop>
+            <prop key="/editproduct_eng.jhtml">editProductEngController</prop>
+            <prop key="/editattribute_eng.jhtml">editAttributeEngController</prop>
         </props>
     </property>
     </bean>
