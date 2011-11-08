@@ -1,0 +1,1 @@
+﻿	<link type="text/css" rel="stylesheet" href="static/css/body/category.css">    <script type="text/javascript" language="javascript" src="static/js/category_big/category_big.nocache.js"></script>	<table width="900px" align=center><tr><td valign="top" width="150px"><div id="category"></div></td>		<td width="750px"><div id="productlist"></div></td></tr>	</table>
