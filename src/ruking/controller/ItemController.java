@@ -32,7 +32,7 @@ public class ItemController extends BaseController {
         	return;
        	}
        	AttributeDAO aDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
-        List<Map> attrs = aDAO.getAttributesByProductId(id);
+        List<Map> attrs = aDAO.getAttributesByProductId(id,"");
         vc.put("pDTO", pDTO);
         vc.put("attrs", attrs);
        	VelocityParserFactory.getVP().render("item", vc, request, response);
