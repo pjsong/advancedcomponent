@@ -38,8 +38,8 @@ public class GetDTOServiceImpl extends HttpServlet {
 	    }
 	   
 	   private JSONArray getJA(String category,String lang) throws SQLException, IOException{
-	        Conf conf=new Conf();
-	        ProductDAO paDAO = new ProductDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
+			 Conf conf=new Conf();
+			 ProductDAO paDAO = new ProductDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
 	       JSONArray ret = new JSONArray();
 		   List<Map> result=null;
 		   if(NumberUtils.isDigits(category)){
@@ -67,19 +67,8 @@ public class GetDTOServiceImpl extends HttpServlet {
 		   return ret;
 	   }
 	   private String getLang(HttpServletRequest req){
-	        String uri = req.getRequestURI();
+	        String uri = req.getParameter("lang");
 	        if(uri == null) uri= "";
-	        String lang = "";
-	        if(uri.endsWith("_eng.jhtml"))lang = "eng";
-	        if(uri.endsWith("_big.jhtml"))lang = "big";
-	        return lang;
+	        return uri;
 	   }
-//		private JSONObject formatJO(JSONObject jo,Map map){
-//			if(jo.containsKey("ProductID")){
-//				jo.remove("ProductID");
-//				String id = ((Integer)map.get("ProductID")).toString();
-//				jo.element("ProductID", id);
-//			}
-//			return jo;
-//		}
 }

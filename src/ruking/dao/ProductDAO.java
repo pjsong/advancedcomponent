@@ -174,9 +174,18 @@ public class ProductDAO {
 		String sql = "SELECT distinct CatID, SubCategory FROM product where Category="+DbUtil.escSql(category);
 		return runner.query(sql);
 	}
-	public Map<String,List<Map>> getAllCats() throws SQLException{
+	
+	private List<Map> getAllCategories(String lang)throws SQLException{
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT distinct Category FROM product";
+		if("eng".equals(lang))sql+="_eng";
+		if("big".equals(lang))sql+="_big";
+		return runner.query(sql);
+	}
+
+	public Map<String,List<Map>> getAllCats(String lang) throws SQLException{
 		Map<String,List<Map>> ret = new HashMap<String,List<Map>>();
-		List<Map> cats = getAllCategories();
+		List<Map> cats = getAllCategories(lang);
 		for(Map m:cats){
 			String catName = (String)m.get("Category");
 			List<Map> subcats = getSubCategories(catName);

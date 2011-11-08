@@ -23,20 +23,20 @@ public class GetCategoryServiceImpl extends HttpServlet {
 	    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	        JSONArray ja = null;
 			try {
-				ja = getJA();
+				ja = getJA(getLang(req));
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+			
 	        resp.setCharacterEncoding("utf-8");
 	        resp.getWriter().write(ja==null?"":ja.toString());
 	    }
 	   
-	   private JSONArray getJA() throws SQLException, IOException{
-	        Conf conf=new Conf();
-	        ProductDAO paDAO = new ProductDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
-
+	   private JSONArray getJA(String lang) throws SQLException, IOException{
+		 Conf conf=new Conf();
+		 ProductDAO paDAO = new ProductDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
 	       JSONArray ret = new JSONArray();
-	       Map<String,List<Map>> result = paDAO.getAllCats();
+	       Map<String,List<Map>> result = paDAO.getAllCats(lang);
 			if(result.size()>0){
 				int pos=0;
 				for(String m:result.keySet()){
@@ -56,4 +56,13 @@ public class GetCategoryServiceImpl extends HttpServlet {
 				}
 		   return ret;
 	   }
+	   
+	   private String getLang(HttpServletRequest req){
+	        String uri = req.getParameter("lang");
+	        if(uri == null) uri= "";
+	        return uri;
+	   }
+	   
 }
+
+
