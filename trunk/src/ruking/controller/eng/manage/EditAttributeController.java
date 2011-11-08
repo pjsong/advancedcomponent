@@ -23,6 +23,7 @@ public class EditAttributeController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         String act= Util.getNoNull(request.getParameter("act"));
 		VelocityContext vc=new VelocityContext();
+   		vc.put("currentTab", "attribute_eng");
     	AttributeDAO pDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
        if(act.equals("")){
             new GlobalVariablesBA().setCommonVariables(request, vc);
@@ -38,7 +39,7 @@ public class EditAttributeController extends BaseController {
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "update");
             String id= Util.getNoNull(request.getParameter("id"));
-	    	AttributeDTO attribute = pDAO.getAttributeByID(id);
+	    	AttributeDTO attribute = pDAO.getAttributeByID_eng(id);
         	vc.put("attribute", attribute);
             VelocityParserFactory.getVP().render("editattribute_eng", vc, request, response);
             return;
@@ -65,7 +66,7 @@ public class EditAttributeController extends BaseController {
 			VelocityParserFactory.getVP().render("editattribute_eng", vc, request, response);
 			return;
 		}else{
-			attribute = aDAO.insertProduct(attribute);
+			attribute = aDAO.insertProduct_eng(attribute);
 	    	response.sendRedirect("/listattributes_eng.jhtml");
 		}
 	}
@@ -86,7 +87,7 @@ public class EditAttributeController extends BaseController {
 			VelocityParserFactory.getVP().render("editattribute_eng", vc, request, response);
 			return;
 		}else{
-	    	aDAO.updateAttribute(attribute);
+	    	aDAO.updateAttribute_eng(attribute);
 	    	response.sendRedirect("/listattributes_eng.jhtml");
 		}
 	}
@@ -95,7 +96,7 @@ public class EditAttributeController extends BaseController {
 		Map<String,String> error = new HashMap<String,String>();
 		if(Util.getNoNull(p.getProductId()).length()<1)error.put("productIdEmptyError", "输入产品名称");
 		if(!NumberUtils.isDigits(Util.getNoNull(p.getProductId())))error.put("productIdFormatError", "产品ID只能是数字");
-		if(productDAO.getProductByID(p.getProductId())==null)error.put("productIdNotExistsError", "产品ID不存在");
+		if(productDAO.getProductByID_eng(p.getProductId())==null)error.put("productIdNotExistsError", "产品ID不存在");
 		if(Util.getNoNull(p.getAttrName()).length()<1)error.put("attrNameEmptyError", "输入属性名称");
 		if(p.getAttrValue().length()<1)error.put("attrValueEmptyError", "输入属性值");
 		if(p.getDisplayOrder().length()<1)error.put("attrDisplayOrderError", "输入属性值");

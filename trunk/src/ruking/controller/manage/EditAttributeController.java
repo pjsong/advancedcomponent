@@ -23,7 +23,8 @@ public class EditAttributeController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         String act= Util.getNoNull(request.getParameter("act"));
 		VelocityContext vc=new VelocityContext();
-    	AttributeDAO pDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+   		vc.put("currentTab", "attribute");
+   		AttributeDAO pDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
        if(act.equals("")){
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "add");

@@ -22,6 +22,7 @@ public class EditProductController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         String act= Util.getNoNull(request.getParameter("act"));
 		VelocityContext vc=new VelocityContext();
+   		vc.put("currentTab", "product_big");
     	ProductDAO pDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
        if(act.equals("")){
             new GlobalVariablesBA().setCommonVariables(request, vc);
@@ -51,7 +52,8 @@ public class EditProductController extends BaseController {
 	private void add(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-    	ProductDTO product = new ProductDTO();  
+   		vc.put("currentTab", "product_big");
+   		ProductDTO product = new ProductDTO();  
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(product, "product");
 		binder.bind(request);
     	ProductDAO pDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
@@ -72,7 +74,7 @@ public class EditProductController extends BaseController {
         new GlobalVariablesBA().setCommonVariables(request, vc);
         String id= Util.getNoNull(request.getParameter("pid"));
     	ProductDAO pDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
-    	ProductDTO product = pDAO.getProductByID(id);
+    	ProductDTO product = pDAO.getProductByID_big(id);
     	String oldName = product.getTitle();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(product, "product");
 		binder.bind(request);
