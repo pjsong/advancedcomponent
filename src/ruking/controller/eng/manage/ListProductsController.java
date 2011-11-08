@@ -29,11 +29,11 @@ public class ListProductsController extends BaseController {
 			if(NumberUtils.isDigits(id) && pDAO.getProductByID(id)!=null){
 				pDAO.deleteProduct(id);
 			}
-			response.sendRedirect("/listproducts_big.jhtml");
+			response.sendRedirect("/listproducts_eng.jhtml");
 			return;
 		}
    		vc.put("currentTab", "product_eng");
-   		List<Map> products = pDAO.getAllProducts_big();
+   		List<Map> products = pDAO.getAllProducts_eng();
    		vc.put("products", products);
    		VelocityParserFactory.getVP().render("listproducts_eng", vc, request, response);
 	}

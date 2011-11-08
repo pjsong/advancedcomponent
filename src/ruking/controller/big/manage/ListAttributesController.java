@@ -18,24 +18,25 @@ import ruking.velocity.VelocityParserFactory;
 public class ListAttributesController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
-        new GlobalVariablesBA().setCommonVariables(request, vc);
+   		vc.put("currentTab", "attribute_big");
+   		new GlobalVariablesBA().setCommonVariables(request, vc);
     	AttributeDAO aDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
 		String act= Util.getNoNull(request.getParameter("act"));
 		if(act.equals("del")){
 			String id = Util.getNoNull(request.getParameter("id"));
-			if(NumberUtils.isDigits(id) && aDAO.getAttributeByID(id)!=null){
+			if(NumberUtils.isDigits(id) && aDAO.getAttributeByID_big(id)!=null){
 				aDAO.deleteProduct(id);
 			}
 			response.sendRedirect("/listattributes_big.jhtml");
 			return;
 		}
-   		vc.put("currentTab", "attribute_big");
+
    		List<Map> attributes = null;
    		String pid = Util.getNoNull(request.getParameter("pid"));
    		if(pid.equals("")){
    			attributes = aDAO.getAllAttributes_big();
    		}else{
-   			attributes = aDAO.getAttributesByProductId(pid);
+   			attributes = aDAO.getAttributesByProductId_big(pid);
    		}
    		vc.put("attributes", attributes);
    		VelocityParserFactory.getVP().render("listattributes_big", vc, request, response);

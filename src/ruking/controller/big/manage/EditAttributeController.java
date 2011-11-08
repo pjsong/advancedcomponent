@@ -23,7 +23,8 @@ public class EditAttributeController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         String act= Util.getNoNull(request.getParameter("act"));
 		VelocityContext vc=new VelocityContext();
-    	AttributeDAO pDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+   		vc.put("currentTab", "attribute_big");
+   		AttributeDAO pDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
        if(act.equals("")){
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "add");
@@ -38,7 +39,7 @@ public class EditAttributeController extends BaseController {
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "update");
             String id= Util.getNoNull(request.getParameter("id"));
-	    	AttributeDTO attribute = pDAO.getAttributeByID(id);
+	    	AttributeDTO attribute = pDAO.getAttributeByID_big(id);
         	vc.put("attribute", attribute);
             VelocityParserFactory.getVP().render("editattribute_big", vc, request, response);
             return;
@@ -65,7 +66,7 @@ public class EditAttributeController extends BaseController {
 			VelocityParserFactory.getVP().render("editattribute_big", vc, request, response);
 			return;
 		}else{
-			attribute = aDAO.insertProduct(attribute);
+			attribute = aDAO.insertProduct_big(attribute);
 	    	response.sendRedirect("/listattributes_big.jhtml");
 		}
 	}
@@ -75,7 +76,7 @@ public class EditAttributeController extends BaseController {
         String id= Util.getNoNull(request.getParameter("id"));
     	AttributeDAO aDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
     	ProductDAO productDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
-    	AttributeDTO attribute = aDAO.getAttributeByID(id);
+    	AttributeDTO attribute = aDAO.getAttributeByID_big(id);
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(attribute, "product");
 		binder.bind(request);
 		Map<String,String> error = check(attribute,aDAO,productDAO);
@@ -86,7 +87,7 @@ public class EditAttributeController extends BaseController {
 			VelocityParserFactory.getVP().render("editattribute_big", vc, request, response);
 			return;
 		}else{
-	    	aDAO.updateAttribute(attribute);
+	    	aDAO.updateAttribute_big(attribute);
 	    	response.sendRedirect("/listattributes_big.jhtml");
 		}
 	}
@@ -95,7 +96,7 @@ public class EditAttributeController extends BaseController {
 		Map<String,String> error = new HashMap<String,String>();
 		if(Util.getNoNull(p.getProductId()).length()<1)error.put("productIdEmptyError", "輸入產品名稱");
 		if(!NumberUtils.isDigits(Util.getNoNull(p.getProductId())))error.put("productIdFormatError", "產品ID只能是數字");
-		if(productDAO.getProductByID(p.getProductId())==null)error.put("productIdNotExistsError", "產品ID不存在");
+		if(productDAO.getProductByID_big(p.getProductId())==null)error.put("productIdNotExistsError", "產品ID不存在");
 		if(Util.getNoNull(p.getAttrName()).length()<1)error.put("attrNameEmptyError", "輸入屬性名稱");
 		if(p.getAttrValue().length()<1)error.put("attrValueEmptyError", "輸入屬性值");
 		if(p.getDisplayOrder().length()<1)error.put("attrDisplayOrderError", "輸入顯示序值");

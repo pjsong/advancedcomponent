@@ -18,6 +18,7 @@ import ruking.velocity.VelocityParserFactory;
 public class ListAttributesController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
+   		vc.put("currentTab", "attribute_eng");
         new GlobalVariablesBA().setCommonVariables(request, vc);
     	AttributeDAO aDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
 		String act= Util.getNoNull(request.getParameter("act"));
@@ -26,18 +27,17 @@ public class ListAttributesController extends BaseController {
 			if(NumberUtils.isDigits(id) && aDAO.getAttributeByID(id)!=null){
 				aDAO.deleteProduct(id);
 			}
-			response.sendRedirect("/listattributes_big.jhtml");
+			response.sendRedirect("/listattributes_eng.jhtml");
 			return;
 		}
-   		vc.put("currentTab", "attribute_big");
    		List<Map> attributes = null;
    		String pid = Util.getNoNull(request.getParameter("pid"));
    		if(pid.equals("")){
-   			attributes = aDAO.getAllAttributes_big();
+   			attributes = aDAO.getAllAttributes_eng();
    		}else{
    			attributes = aDAO.getAttributesByProductId(pid);
    		}
    		vc.put("attributes", attributes);
-   		VelocityParserFactory.getVP().render("listattributes_big", vc, request, response);
+   		VelocityParserFactory.getVP().render("listattributes_eng", vc, request, response);
 	}
 }
