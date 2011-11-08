@@ -49,7 +49,7 @@
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>getCategoryService</servlet-name>
-  	<url-pattern>/static/js/cat/getCategoryService</url-pattern>
+  	<url-pattern>/static/js/category_eng/getCategoryService</url-pattern>
   </servlet-mapping>
   
   
