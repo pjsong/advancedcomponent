@@ -81,14 +81,14 @@ public class AttributeDAO {
 		
 		if("eng".equals(lang)){
 			sql = "insert into attributes_eng(ID,ProductID,AttrName,AttrValue,DisplayOrder";
-			sql = sql + ") values (" + DbUtil.escSql(p.getId().trim()) + DbUtil.escSql(p.getProductId().trim()) + ","
+			sql = sql + ") values (" + DbUtil.escSql(p.getId().trim()) +","+ DbUtil.escSql(p.getProductId().trim()) + ","
 					+ DbUtil.escSql(p.getAttrName().trim()) + ","
 					+ DbUtil.escSql(p.getAttrValue())+","+DbUtil.escSql(p.getDisplayOrder());
 			sql = sql + ");";
 		}
 		if("big".equals(lang)){
 			sql = "insert into attributes_big(ID,ProductID,AttrName,AttrValue,DisplayOrder";
-			sql = sql + ") values (" + DbUtil.escSql(p.getId().trim()) + DbUtil.escSql(p.getProductId().trim()) + ","
+			sql = sql + ") values (" + DbUtil.escSql(p.getId().trim()) +","+ DbUtil.escSql(p.getProductId().trim()) + ","
 					+ DbUtil.escSql(p.getAttrName().trim()) + ","
 					+ DbUtil.escSql(p.getAttrValue())+","+DbUtil.escSql(p.getDisplayOrder());
 			sql = sql + ");";
