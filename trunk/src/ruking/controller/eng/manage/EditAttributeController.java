@@ -38,7 +38,7 @@ public class EditAttributeController extends BaseController {
         if(act.equals("edit")){
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "update");
-            String id= Util.getNoNull(request.getParameter("id"));
+            String id= Util.getNoNull(request.getParameter("pid"));
 	    	AttributeDTO attribute = pDAO.getAttributeByID(id,"eng");
         	vc.put("attribute", attribute);
             VelocityParserFactory.getVP().render("editattribute_eng", vc, request, response);
@@ -73,7 +73,7 @@ public class EditAttributeController extends BaseController {
 	private void update(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-        String id= Util.getNoNull(request.getParameter("id"));
+        String id= Util.getNoNull(request.getParameter("pid"));
     	AttributeDAO aDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
     	ProductDAO productDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
     	AttributeDTO attribute = aDAO.getAttributeByID(id,"eng");
