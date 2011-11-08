@@ -25,18 +25,32 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>getDTOService</servlet-name>
-  	<url-pattern>/static/js/cat/getDTOService,/static/js/category_big/getDTOService,/static/js/category_eng/getDTOService</url-pattern>
+  	<url-pattern>/static/js/cat/getDTOService</url-pattern>
   </servlet-mapping>
-  
+    <servlet-mapping>
+  	<servlet-name>getDTOService</servlet-name>
+  	<url-pattern>/static/js/category_big/getDTOService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>getDTOService</servlet-name>
+  	<url-pattern>/static/js/category_eng/getDTOService</url-pattern>
+  </servlet-mapping>
     <servlet>
   	<servlet-name>getCategoryService</servlet-name>
   	<servlet-class>ruking.server.GetCategoryServiceImpl</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>getCategoryService</servlet-name>
-  	<url-pattern>/static/js/cat/getCategoryService,/static/js/category_big/getCategoryService,/static/js/category_eng/getCategoryService</url-pattern>
+  	<url-pattern>/static/js/cat/getCategoryService</url-pattern>
   </servlet-mapping>
-  
+    <servlet-mapping>
+  	<servlet-name>getCategoryService</servlet-name>
+  	<url-pattern>/static/js/category_big/getCategoryService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>getCategoryService</servlet-name>
+  	<url-pattern>/static/js/cat/getCategoryService</url-pattern>
+  </servlet-mapping>
   
   
   <servlet>
