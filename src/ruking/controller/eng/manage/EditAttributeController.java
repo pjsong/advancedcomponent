@@ -96,7 +96,7 @@ public class EditAttributeController extends BaseController {
 		Map<String,String> error = new HashMap<String,String>();
 		if(Util.getNoNull(p.getProductId()).length()<1)error.put("productIdEmptyError", "输入产品名称");
 		if(!NumberUtils.isDigits(Util.getNoNull(p.getProductId())))error.put("productIdFormatError", "产品ID只能是数字");
-		if(productDAO.getProductByID_eng(p.getProductId())==null)error.put("productIdNotExistsError", "产品ID不存在");
+		if(productDAO.getProductByID(p.getProductId(),"eng")==null)error.put("productIdNotExistsError", "产品ID不存在");
 		if(Util.getNoNull(p.getAttrName()).length()<1)error.put("attrNameEmptyError", "输入属性名称");
 		if(p.getAttrValue().length()<1)error.put("attrValueEmptyError", "输入属性值");
 		if(p.getDisplayOrder().length()<1)error.put("attrDisplayOrderError", "输入属性值");
