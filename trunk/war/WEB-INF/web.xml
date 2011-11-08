@@ -18,13 +18,14 @@
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>*.jhtml</url-pattern>
 	</servlet-mapping>
+	
   <servlet>
   	<servlet-name>getDTOService</servlet-name>
   	<servlet-class>ruking.server.GetDTOServiceImpl</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>getDTOService</servlet-name>
-  	<url-pattern>/static/js/gwt/getDTOService</url-pattern>
+  	<url-pattern>/static/js/category/getDTOService,/static/js/category_big/getDTOService,/static/js/category_eng/getDTOService</url-pattern>
   </servlet-mapping>
   
     <servlet>
@@ -33,8 +34,10 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>getCategoryService</servlet-name>
-  	<url-pattern>/static/js/gwt/getCategoryService</url-pattern>
+  	<url-pattern>/static/js/category/getCategoryService,/static/js/category_big/getCategoryService,/static/js/category_eng/getCategoryService</url-pattern>
   </servlet-mapping>
+  
+  
   
   <servlet>
   	<servlet-name>getArticleService</servlet-name>
