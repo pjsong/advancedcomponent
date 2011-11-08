@@ -25,7 +25,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>getDTOService</servlet-name>
-  	<url-pattern>/static/js/category/getDTOService,/static/js/category_big/getDTOService,/static/js/category_eng/getDTOService</url-pattern>
+  	<url-pattern>/static/js/cat/getDTOService,/static/js/category_big/getDTOService,/static/js/category_eng/getDTOService</url-pattern>
   </servlet-mapping>
   
     <servlet>
@@ -34,7 +34,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>getCategoryService</servlet-name>
-  	<url-pattern>/static/js/category/getCategoryService,/static/js/category_big/getCategoryService,/static/js/category_eng/getCategoryService</url-pattern>
+  	<url-pattern>/static/js/cat/getCategoryService,/static/js/category_big/getCategoryService,/static/js/category_eng/getCategoryService</url-pattern>
   </servlet-mapping>
   
   
