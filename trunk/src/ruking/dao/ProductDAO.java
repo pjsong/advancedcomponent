@@ -29,7 +29,7 @@ public class ProductDAO {
 		this.password = password;
 	}
 	
-	public List<Map> getGlobalCatProducts(int id)throws SQLException{
+	public List<Map> getGlobalCatProducts(int id,String lang)throws SQLException{
 		List<Map> ret = new ArrayList<Map>();
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT ProductIDs FROM globalcat where ID="+DbUtil.escSql(id);
@@ -39,7 +39,7 @@ public class ProductDAO {
 		if(str==null || str.equals(""))return null;
 		String[] ids = str.split(",");
 		for(String pid:ids){
-			Map p = getMapByID(pid);
+			Map p = getMapByID(pid,lang);
 			ret.add(p);
 		}
 		return ret;
@@ -50,16 +50,20 @@ public class ProductDAO {
 		List<Map> ret = runner.query(sql);
 		return ret;
 	}
-	public List<Map> getCatProductsByCatID(String id)throws SQLException{
+	public List<Map> getCatProductsByCatID(String id,String lang)throws SQLException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM product where CatID ="+DbUtil.escSql(id);
+		if("eng".equals(lang))sql="SELECT * FROM product_eng where CatID ="+DbUtil.escSql(id);
+		if("big".equals(lang))sql="SELECT * FROM product_big where CatID ="+DbUtil.escSql(id);
 		List<Map> ret = runner.query(sql);
 		return ret;
 	}
 	
-	public List<Map> getAllProducts()throws SQLException{
+	public List<Map> getAllProducts(String lang)throws SQLException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM product";
+		if("eng".equals(lang))sql = "SELECT * FROM product_eng";
+		if("big".equals(lang))sql = "SELECT * FROM product_big";
 		return runner.query(sql);
 	}
 	public  ProductDTO getProductByTitle(String title) throws SQLException{
@@ -77,34 +81,22 @@ public class ProductDAO {
 		}
 		return u;
 	}
-	public  boolean productTitleExits(String title) throws SQLException{
+	public  boolean productTitleExits(String title,String lang) throws SQLException{
 		ProductDTO u=new ProductDTO();
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM product WHERE Title = " + DbUtil.escSql(title);
-		Map m=runner.queryForMap(sql);
-		if(m==null)return false;
-		return true;
-	}
-	public boolean productTitleExits_eng(String title) throws SQLException {
-		ProductDTO u=new ProductDTO();
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM product_eng WHERE Title = " + DbUtil.escSql(title);
+		if("eng".equals(lang))
+			sql = "SELECT * FROM product_eng WHERE Title = " + DbUtil.escSql(title);
+		if("big".equals(lang))
+			sql = "SELECT * FROM product_big WHERE Title = " + DbUtil.escSql(title);
 		Map m=runner.queryForMap(sql);
 		if(m==null)return false;
 		return true;
 	}
 
-	public boolean productTitleExits_big(String title) throws SQLException {
+	public  ProductDTO getProductByID(String id,String lang) throws SQLException{
 		ProductDTO u=new ProductDTO();
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM product_big WHERE Title = " + DbUtil.escSql(title);
-		Map m=runner.queryForMap(sql);
-		if(m==null)return false;
-		return true;
-	}
-	public  ProductDTO getProductByID(String id) throws SQLException{
-		ProductDTO u=new ProductDTO();
-		Map m=getMapByID(id);
+		Map m=getMapByID(id,lang);
 		if(m==null)return null;
 		else{
 			u.setId(((Integer)m.get("ID")).toString());
@@ -112,101 +104,54 @@ public class ProductDAO {
 			u.setDescription((String)m.get("Description"));
 			u.setCategory((String)m.get("Category"));
 			u.setSubcategory((String)m.get("SubCategory"));
+			u.setCatID(((Integer)m.get("CatID")).toString());
 		}
 		return u;
 	}
 	
-	public ProductDTO getProductByID_eng(String id) throws SQLException {
-		ProductDTO u=new ProductDTO();
-		Map m=getMapByID_eng(id);
-		if(m==null)return null;
-		else{
-			u.setId(((Integer)m.get("ID")).toString());
-			u.setTitle((String)m.get("Title"));
-			u.setDescription((String)m.get("Description"));
-			u.setCategory((String)m.get("Category"));
-			u.setSubcategory((String)m.get("SubCategory"));
-		}
-		return u;
-	}
-
-	public ProductDTO getProductByID_big(String id) throws SQLException {
-		ProductDTO u=new ProductDTO();
-		Map m=getMapByID_big(id);
-		if(m==null)return null;
-		else{
-			u.setId(((Integer)m.get("ID")).toString());
-			u.setTitle((String)m.get("Title"));
-			u.setDescription((String)m.get("Description"));
-			u.setCategory((String)m.get("Category"));
-			u.setSubcategory((String)m.get("SubCategory"));
-		}
-		return u;
-	}
-	public  Map getMapByID(String id) throws SQLException{
+	public  Map getMapByID(String id,String lang) throws SQLException{
 		ProductDTO u=new ProductDTO();
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM product WHERE ID = " + DbUtil.escSql(id);
+		if("eng".equals(lang))
+			sql = "SELECT * FROM product_eng WHERE ID = " + DbUtil.escSql(id);
+		if("big".equals(lang))
+			sql = "SELECT * FROM product_big WHERE ID = " + DbUtil.escSql(id);
 		return runner.queryForMap(sql);
 	}
-	private Map getMapByID_eng(String id) throws SQLException {
-		ProductDTO u=new ProductDTO();
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM product_eng WHERE ID = " + DbUtil.escSql(id);
-		return runner.queryForMap(sql);
-	}
-	private Map getMapByID_big(String id) throws SQLException {
-		ProductDTO u=new ProductDTO();
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM product_big WHERE ID = " + DbUtil.escSql(id);
-		return runner.queryForMap(sql);
-	}
-	public  ProductDTO insertProduct(ProductDTO p) throws SQLException{
+	public  ProductDTO insertProduct(ProductDTO p,String lang) throws SQLException{
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql="insert into product(Title,Description,Category,SubCategory,CatID";
 		sql = sql+") values ("+DbUtil.escSql(p.getTitle().trim())+","+DbUtil.escSql(p.getDescription().trim())+","+DbUtil.escSql(p.getCategory())+","+DbUtil.escSql(p.getSubcategory())+","+DbUtil.escSql(p.getCatID());
 		sql=sql+");";
+		if("eng".equals(lang)){
+			sql="insert into product_eng(ID,Title,Description,Category,SubCategory,CatID";
+			sql = sql+") values ("+DbUtil.escSql(p.getId().trim())+","+DbUtil.escSql(p.getTitle().trim())+","+DbUtil.escSql(p.getDescription().trim())+","+DbUtil.escSql(p.getCategory())+","+DbUtil.escSql(p.getSubcategory())+","+DbUtil.escSql(p.getCatID());
+			sql=sql+");";
+		}
+		if("big".equals(lang)){
+			sql="insert into product_big(ID,Title,Description,Category,SubCategory,CatID";
+			sql = sql+") values ("+DbUtil.escSql(p.getId().trim())+","+DbUtil.escSql(p.getTitle().trim())+","+DbUtil.escSql(p.getDescription().trim())+","+DbUtil.escSql(p.getCategory())+","+DbUtil.escSql(p.getSubcategory())+","+DbUtil.escSql(p.getCatID());
+			sql=sql+");";
+		}
 		runner.update(sql);
 		Map m= runner.queryForMap("select ID from product where Title="+DbUtil.escSql(p.getTitle()));
 		p.setId(((Integer)m.get("ID")).toString());
 		return p;
 	}
-	public  ProductDTO insertProduct_big(ProductDTO p) throws SQLException{
-		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql="insert into product_big(ID,Title,Description,Category,SubCategory,CatID";
-		sql = sql+") values ("+DbUtil.escSql(p.getId().trim())+","+DbUtil.escSql(p.getTitle().trim())+","+DbUtil.escSql(p.getDescription().trim())+","+DbUtil.escSql(p.getCategory())+","+DbUtil.escSql(p.getSubcategory())+","+DbUtil.escSql(p.getCatID());
-		sql=sql+");";
-		runner.update(sql);
-		return p;
-	}
-	public  ProductDTO insertProduct_eng(ProductDTO p) throws SQLException{
-		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql="insert into product_eng(ID,Title,Description,Category,SubCategory,CatID";
-		sql = sql+") values ("+DbUtil.escSql(p.getId().trim())+","+DbUtil.escSql(p.getTitle().trim())+","+DbUtil.escSql(p.getDescription().trim())+","+DbUtil.escSql(p.getCategory())+","+DbUtil.escSql(p.getSubcategory())+","+DbUtil.escSql(p.getCatID());
-		sql=sql+");";
-		runner.update(sql);
 
-		return p;
-	}
-	public  void updateProduct(ProductDTO p) throws SQLException{
+	public  void updateProduct(ProductDTO p,String id,String lang) throws SQLException{
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql="update product set Title="+DbUtil.escSql(p.getTitle())+",Description="+DbUtil.escSql(p.getDescription());
 		sql+=",Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory())+",CatID="+DbUtil.escSql(p.getCatID())+" where ID="+DbUtil.escSql(p.getId());
-		runner.update(sql);
-	}
-	
-
-	public  void updateProduct_big(ProductDTO p) throws SQLException{
-		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql="update product_big set Title="+DbUtil.escSql(p.getTitle())+",Description="+DbUtil.escSql(p.getDescription());
-		sql+=",Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory())+",CatID="+DbUtil.escSql(p.getCatID())+" where ID="+DbUtil.escSql(p.getId());
-		runner.update(sql);
-	}
-
-	public  void updateProduct_eng(ProductDTO p) throws SQLException{
-		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql="update product_eng set Title="+DbUtil.escSql(p.getTitle())+",Description="+DbUtil.escSql(p.getDescription());
-		sql+=",Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory())+",CatID="+DbUtil.escSql(p.getCatID())+" where ID="+DbUtil.escSql(p.getId());
+		if("eng".equals(lang)){
+			sql="update product_eng set ID="+DbUtil.escSql(p.getId())+", Title="+DbUtil.escSql(p.getTitle())+",Description="+DbUtil.escSql(p.getDescription());
+			sql+=",Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory())+",CatID="+DbUtil.escSql(p.getCatID())+" where ID="+DbUtil.escSql(id);
+		}
+		if("big".equals(lang)){
+			sql="update product_big set ID="+DbUtil.escSql(p.getId())+", Title="+DbUtil.escSql(p.getTitle())+",Description="+DbUtil.escSql(p.getDescription());
+			sql+=",Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory())+",CatID="+DbUtil.escSql(p.getCatID())+" where ID="+DbUtil.escSql(id);
+		}
 		runner.update(sql);
 	}
 	
@@ -239,17 +184,5 @@ public class ProductDAO {
 		}
 		return ret;
 	}
-
-	public List<Map> getAllProducts_big() throws SQLException {
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM product_big";
-		return runner.query(sql);
-	}
-	public List<Map> getAllProducts_eng() throws SQLException {
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM product_eng";
-		return runner.query(sql);
-	}
-
 
 }

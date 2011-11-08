@@ -102,7 +102,7 @@ public class EditGlobalCatController extends BaseController {
 		else{
 			String[] pids = productIDs.split(",");
 			for(String id:pids){
-				if(paDAO.getProductByID(id)==null){
+				if(paDAO.getProductByID(id,"")==null){
 					error.put("productIDNotExistsEmptyError", "产品ID:"+id+"不存在");
 				}
 			}

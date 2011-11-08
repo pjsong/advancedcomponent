@@ -29,7 +29,7 @@ public class GetDTOServiceImpl extends HttpServlet {
 	        	s="0";
 	        JSONArray ja = null;
 			try {
-				ja = getJA(s);
+				ja = getJA(s,getLang(req));
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -37,26 +37,25 @@ public class GetDTOServiceImpl extends HttpServlet {
 	        resp.getWriter().write(ja==null?"":ja.toString());
 	    }
 	   
-	   private JSONArray getJA(String category) throws SQLException, IOException{
+	   private JSONArray getJA(String category,String lang) throws SQLException, IOException{
 	        Conf conf=new Conf();
 	        ProductDAO paDAO = new ProductDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
-
 	       JSONArray ret = new JSONArray();
 		   List<Map> result=null;
-		   if(NumberUtils.isDigits(category)){ 
+		   if(NumberUtils.isDigits(category)){
 		        Integer globalcat = Integer.parseInt(category);
 		        if(globalcat <10){
 		        	switch(globalcat){
 		        	case 0:{
-		        		result = paDAO.getAllProducts();
+		        		result = paDAO.getAllProducts(lang);
 		        		break;
 		        	}
 		        	default:{
-		        		result = paDAO.getGlobalCatProducts(globalcat);
+		        		result = paDAO.getGlobalCatProducts(globalcat,lang);
 		        	}
 		        	}
 		        }else{
-		    	result = paDAO.getCatProductsByCatID(globalcat.toString());
+		    	result = paDAO.getCatProductsByCatID(globalcat.toString(),lang);
 		    }  
 			if(result.size()>0){
 				for(Map m:result){
@@ -66,6 +65,14 @@ public class GetDTOServiceImpl extends HttpServlet {
 			}
 		  } 
 		   return ret;
+	   }
+	   private String getLang(HttpServletRequest req){
+	        String uri = req.getRequestURI();
+	        if(uri == null) uri= "";
+	        String lang = "";
+	        if(uri.endsWith("_eng.jhtml"))lang = "eng";
+	        if(uri.endsWith("_big.jhtml"))lang = "big";
+	        return lang;
 	   }
 //		private JSONObject formatJO(JSONObject jo,Map map){
 //			if(jo.containsKey("ProductID")){

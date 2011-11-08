@@ -27,13 +27,13 @@ public class ListProductsController extends BaseController {
 		String act= Util.getNoNull(request.getParameter("act"));
 		if(act.equals("del")){
 			String id = Util.getNoNull(request.getParameter("id"));
-			if(NumberUtils.isDigits(id) && pDAO.getProductByID_big(id)!=null){
+			if(NumberUtils.isDigits(id) && pDAO.getProductByID(id,"big")!=null){
 				pDAO.deleteProduct(id);
 			}
 			response.sendRedirect("/listproducts_big.jhtml");
 			return;
 		}
-   		List<Map> products = pDAO.getAllProducts_big();
+   		List<Map> products = pDAO.getAllProducts("big");
    		vc.put("products", products);
    		VelocityParserFactory.getVP().render("listproducts_big", vc, request, response);
 	}

@@ -26,14 +26,14 @@ public class ListProductsController extends BaseController {
 		String act= Util.getNoNull(request.getParameter("act"));
 		if(act.equals("del")){
 			String id = Util.getNoNull(request.getParameter("id"));
-			if(NumberUtils.isDigits(id) && pDAO.getProductByID(id)!=null){
+			if(NumberUtils.isDigits(id) && pDAO.getProductByID(id,"")!=null){
 				pDAO.deleteProduct(id);
 			}
 			response.sendRedirect("/listproducts.jhtml");
 			return;
 		}
    		vc.put("currentTab", "product");
-   		List<Map> products = pDAO.getAllProducts();
+   		List<Map> products = pDAO.getAllProducts("");
    		vc.put("products", products);
    		VelocityParserFactory.getVP().render("listproducts", vc, request, response);
 	}
