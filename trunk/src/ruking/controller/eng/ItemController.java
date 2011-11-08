@@ -27,13 +27,13 @@ public class ItemController extends BaseController {
         }
        	vc.put("id", id);
        	ProductDAO productDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
-       	ProductDTO pDTO = productDAO.getProductByID(id,"");
+       	ProductDTO pDTO = productDAO.getProductByID(id,"eng");
        	if(pDTO == null){
         	response.sendRedirect("/products_eng.jhtml");
         	return;
        	}
        	AttributeDAO aDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
-        List<Map> attrs = aDAO.getAttributesByProductId(id);
+        List<Map> attrs = aDAO.getAttributesByProductId(id,"eng");
         vc.put("pDTO", pDTO);
         vc.put("attrs", attrs);
        	VelocityParserFactory.getVP().render("item_eng", vc, request, response);

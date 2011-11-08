@@ -39,7 +39,7 @@ public class EditAttributeController extends BaseController {
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "update");
             String id= Util.getNoNull(request.getParameter("id"));
-	    	AttributeDTO attribute = pDAO.getAttributeByID_eng(id);
+	    	AttributeDTO attribute = pDAO.getAttributeByID(id,"eng");
         	vc.put("attribute", attribute);
             VelocityParserFactory.getVP().render("editattribute_eng", vc, request, response);
             return;
@@ -66,7 +66,7 @@ public class EditAttributeController extends BaseController {
 			VelocityParserFactory.getVP().render("editattribute_eng", vc, request, response);
 			return;
 		}else{
-			attribute = aDAO.insertProduct_eng(attribute);
+			attribute = aDAO.insertProduct(attribute,"eng");
 	    	response.sendRedirect("/listattributes_eng.jhtml");
 		}
 	}
@@ -76,7 +76,7 @@ public class EditAttributeController extends BaseController {
         String id= Util.getNoNull(request.getParameter("id"));
     	AttributeDAO aDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
     	ProductDAO productDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
-    	AttributeDTO attribute = aDAO.getAttributeByID(id);
+    	AttributeDTO attribute = aDAO.getAttributeByID(id,"eng");
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(attribute, "product");
 		binder.bind(request);
 		Map<String,String> error = check(attribute,aDAO,productDAO);

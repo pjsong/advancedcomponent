@@ -24,7 +24,7 @@ public class ListAttributesController extends BaseController {
 		String act= Util.getNoNull(request.getParameter("act"));
 		if(act.equals("del")){
 			String id = Util.getNoNull(request.getParameter("id"));
-			if(NumberUtils.isDigits(id) && aDAO.getAttributeByID_big(id)!=null){
+			if(NumberUtils.isDigits(id) && aDAO.getAttributeByID(id,"big")!=null){
 				aDAO.deleteProduct(id);
 			}
 			response.sendRedirect("/listattributes_big.jhtml");
@@ -36,7 +36,7 @@ public class ListAttributesController extends BaseController {
    		if(pid.equals("")){
    			attributes = aDAO.getAllAttributes_big();
    		}else{
-   			attributes = aDAO.getAttributesByProductId_big(pid);
+   			attributes = aDAO.getAttributesByProductId(pid,"big");
    		}
    		vc.put("attributes", attributes);
    		VelocityParserFactory.getVP().render("listattributes_big", vc, request, response);

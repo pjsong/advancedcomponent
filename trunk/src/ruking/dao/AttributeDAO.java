@@ -28,48 +28,34 @@ public class AttributeDAO {
 		this.password = password;
 	}
 
-	public List<Map> getAllAttributes() throws SQLException {
+	public List<Map> getAllAttributes(String lang) throws SQLException {
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(
 				hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM attributes";
+		if("eng".equals(lang))sql = "SELECT * FROM attributes_eng";
+		if("big".equals(lang))sql = "SELECT * FROM attributes_big";
 		return runner.query(sql);
 	}
 
-	public List<Map> getAttributesByProductId(String id)
+	public List<Map> getAttributesByProductId(String id,String lang)
 			throws SQLException {
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(
 				hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM attributes WHERE productID = "+ DbUtil.escSql(id) + " order by ProductID,DisplayOrder";
+		if("eng".equals(lang))sql = "SELECT * FROM attributes_eng WHERE productID = "+ DbUtil.escSql(id) + " order by ProductID,DisplayOrder";
+		if("big".equals(lang))sql = "SELECT * FROM attributes_big WHERE productID = "+ DbUtil.escSql(id) + " order by ProductID,DisplayOrder";
 		List<Map> m = runner.query(sql);
 		if (m == null || m.size() == 0)
 			return null;
 		return m;
 	}
 
-	public List<Map> getAttributesByProductId_big(String pid) throws SQLException {
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(
-				hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM attributes_big WHERE productID = "+ DbUtil.escSql(pid) + " order by ProductID,DisplayOrder";
-		List<Map> m = runner.query(sql);
-		if (m == null || m.size() == 0)
-			return null;
-		return m;
-	}
-	
-	public List<Map> getAttributesByProductId_eng(String pid) throws SQLException {
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(
-				hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM attributes_eng WHERE productID = "+ DbUtil.escSql(pid) + " order by ProductID,DisplayOrder";
-		List<Map> m = runner.query(sql);
-		if (m == null || m.size() == 0)
-			return null;
-		return m;
-	}
-	
-	public AttributeDTO getAttributeByID(String id) throws SQLException {
+	public AttributeDTO getAttributeByID(String id,String lang) throws SQLException {
 		AttributeDTO u = new AttributeDTO();
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM attributes WHERE ID = " + DbUtil.escSql(id);
+		if("eng".equals(lang))sql = "SELECT * FROM attributes_eng WHERE ID = " + DbUtil.escSql(id);
+		if("big".equals(lang))sql = "SELECT * FROM attributes_big WHERE ID = " + DbUtil.escSql(id);
 		Map m = runner.queryForMap(sql);
 		if (m == null)
 			return null;
@@ -84,40 +70,7 @@ public class AttributeDAO {
 	}
 	
 
-	public AttributeDTO getAttributeByID_big(String id) throws SQLException {
-		AttributeDTO u = new AttributeDTO();
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM attributes_big WHERE ID = " + DbUtil.escSql(id);
-		Map m = runner.queryForMap(sql);
-		if (m == null)
-			return null;
-		else {
-			u.setId(((Integer) m.get("ID")).toString());
-			u.setProductId((String) m.get("ProductID"));
-			u.setAttrName((String) m.get("AttrName"));
-			u.setAttrValue((String) m.get("AttrValue"));
-			u.setDisplayOrder(((Integer)m.get("DisplayOrder")).toString());
-		}
-		return u;
-	}
-	public AttributeDTO getAttributeByID_eng(String id) throws SQLException {
-		AttributeDTO u = new AttributeDTO();
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM attributes_eng WHERE ID = " + DbUtil.escSql(id);
-		Map m = runner.queryForMap(sql);
-		if (m == null)
-			return null;
-		else {
-			u.setId(((Integer) m.get("ID")).toString());
-			u.setProductId((String) m.get("ProductID"));
-			u.setAttrName((String) m.get("AttrName"));
-			u.setAttrValue((String) m.get("AttrValue"));
-			u.setDisplayOrder(((Integer)m.get("DisplayOrder")).toString());
-		}
-		return u;
-	}
-
-	public AttributeDTO insertProduct(AttributeDTO p) throws SQLException {
+	public AttributeDTO insertProduct(AttributeDTO p,String lang) throws SQLException {
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(
 				hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
 		String sql = "insert into attributes(ProductID,AttrName,AttrValue,DisplayOrder";
@@ -125,6 +78,22 @@ public class AttributeDAO {
 				+ DbUtil.escSql(p.getAttrName().trim()) + ","
 				+ DbUtil.escSql(p.getAttrValue())+","+DbUtil.escSql(p.getDisplayOrder());
 		sql = sql + ");";
+		
+		if("eng".equals(lang)){
+			sql = "insert into attributes_eng(ID,ProductID,AttrName,AttrValue,DisplayOrder";
+			sql = sql + ") values (" + DbUtil.escSql(p.getId().trim()) + DbUtil.escSql(p.getProductId().trim()) + ","
+					+ DbUtil.escSql(p.getAttrName().trim()) + ","
+					+ DbUtil.escSql(p.getAttrValue())+","+DbUtil.escSql(p.getDisplayOrder());
+			sql = sql + ");";
+		}
+		if("big".equals(lang)){
+			sql = "insert into attributes_big(ID,ProductID,AttrName,AttrValue,DisplayOrder";
+			sql = sql + ") values (" + DbUtil.escSql(p.getId().trim()) + DbUtil.escSql(p.getProductId().trim()) + ","
+					+ DbUtil.escSql(p.getAttrName().trim()) + ","
+					+ DbUtil.escSql(p.getAttrValue())+","+DbUtil.escSql(p.getDisplayOrder());
+			sql = sql + ");";
+		}
+
 		runner.update(sql);
 		Map m = runner.queryForMap("select ID from attributes where ProductID="
 				+ DbUtil.escSql(p.getProductId()));
@@ -179,29 +148,6 @@ public class AttributeDAO {
 		sql += ",AttrValue=" + DbUtil.escSql(p.getAttrValue())+",DisplayOrder="+DbUtil.escSql(p.getDisplayOrder())+ " where ID="+DbUtil.escSql(p.getId());
 		runner.update(sql);
 		
-	}
-
-	public AttributeDTO insertProduct_big(AttributeDTO p) throws SQLException {
-		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(
-				hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
-		String sql = "insert into attributes_big(ProductID,AttrName,AttrValue,DisplayOrder";
-		sql = sql + ") values (" + DbUtil.escSql(p.getProductId().trim()) + ","
-				+ DbUtil.escSql(p.getAttrName().trim()) + ","
-				+ DbUtil.escSql(p.getAttrValue())+","+DbUtil.escSql(p.getDisplayOrder());
-		sql = sql + ");";
-		runner.update(sql);
-		return p;
-	}
-	public AttributeDTO insertProduct_eng(AttributeDTO p) throws SQLException {
-		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(
-				hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
-		String sql = "insert into attributes_eng(ProductID,AttrName,AttrValue,DisplayOrder";
-		sql = sql + ") values (" + DbUtil.escSql(p.getProductId().trim()) + ","
-				+ DbUtil.escSql(p.getAttrName().trim()) + ","
-				+ DbUtil.escSql(p.getAttrValue())+","+DbUtil.escSql(p.getDisplayOrder());
-		sql = sql + ");";
-		runner.update(sql);
-		return p;
 	}
 
 }

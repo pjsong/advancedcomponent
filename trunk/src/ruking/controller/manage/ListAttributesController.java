@@ -23,7 +23,7 @@ public class ListAttributesController extends BaseController {
 		String act= Util.getNoNull(request.getParameter("act"));
 		if(act.equals("del")){
 			String id = Util.getNoNull(request.getParameter("id"));
-			if(NumberUtils.isDigits(id) && aDAO.getAttributeByID(id)!=null){
+			if(NumberUtils.isDigits(id) && aDAO.getAttributeByID(id,"")!=null){
 				aDAO.deleteProduct(id);
 			}
 			response.sendRedirect("/listattributes.jhtml");
@@ -33,9 +33,9 @@ public class ListAttributesController extends BaseController {
    		List<Map> attributes = null;
    		String pid = Util.getNoNull(request.getParameter("pid"));
    		if(pid.equals("")){
-   			attributes = aDAO.getAllAttributes();
+   			attributes = aDAO.getAllAttributes("");
    		}else{
-   			attributes = aDAO.getAttributesByProductId(pid);
+   			attributes = aDAO.getAttributesByProductId(pid,"");
    		}
    		vc.put("attributes", attributes);
    		VelocityParserFactory.getVP().render("listattributes", vc, request, response);
