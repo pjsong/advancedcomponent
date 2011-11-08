@@ -136,7 +136,7 @@ public class ProductDAO {
 		}
 		runner.update(sql);
 		Map m= runner.queryForMap("select ID from product where Title="+DbUtil.escSql(p.getTitle()));
-		p.setId(((Integer)m.get("ID")).toString());
+		if(m!=null)p.setId(((Integer)m.get("ID")).toString());
 		return p;
 	}
 
@@ -169,9 +169,13 @@ public class ProductDAO {
 		return runner.query(sql);
 	}
 	
-	private List<Map> getSubCategories(String category)throws SQLException{
+	private List<Map> getSubCategories(String category,String lang)throws SQLException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT distinct CatID, SubCategory FROM product where Category="+DbUtil.escSql(category);
+		if("eng".equals(lang))
+			sql="SELECT distinct CatID, SubCategory FROM product_eng where Category="+DbUtil.escSql(category);
+		if("big".equals(lang))
+			sql="SELECT distinct CatID, SubCategory FROM product_big where Category="+DbUtil.escSql(category);
 		return runner.query(sql);
 	}
 	
@@ -188,7 +192,7 @@ public class ProductDAO {
 		List<Map> cats = getAllCategories(lang);
 		for(Map m:cats){
 			String catName = (String)m.get("Category");
-			List<Map> subcats = getSubCategories(catName);
+			List<Map> subcats = getSubCategories(catName,lang);
 			ret.put(catName, subcats);
 		}
 		return ret;
