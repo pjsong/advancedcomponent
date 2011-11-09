@@ -34,5 +34,18 @@ public class Conf {
 		   }
 	   public String getDbPassword() throws IOException{
 		   if(prp==null)checkAndLoadPrp();
-		   return prp.getProperty("dbpassword");}
+		   return prp.getProperty("dbpassword");
+		   }
+	   public String getSmtpHost() throws IOException{
+		   if(prp==null)checkAndLoadPrp();
+		   return prp.getProperty("smtpHost");
+		   }
+	   public String getSmtpUser() throws IOException{
+		   if(prp==null)checkAndLoadPrp();
+		   return prp.getProperty("smtpUser");
+		   }
+	   public String getSmtpPassword() throws IOException{
+		   if(prp==null)checkAndLoadPrp();
+		   return prp.getProperty("smtpPassword");
+		   }
 }
