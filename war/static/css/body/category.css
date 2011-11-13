@@ -31,7 +31,42 @@ body {
 	border:4px;
 
 }
-
+.pageAnchor .gwt-Anchor {
+    border-width: 1px;
+    border-color: #aaaaaa;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    font-weight: normal;
+    padding-bottom: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+    margin-right: 4px;
+    padding-top: 3px;
+    text-decoration: none;
+    color: #0033B3;
+    font-size: 14px;
+}
+.pageAnchor .gwt-Anchor:hover {
+	padding-bottom: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+    margin-right: 4px;
+    padding-top: 3px;
+    border-width: 0px;
+    font-size: 14px;
+    color: red;
+}
+.pageLabel{
+	padding-bottom: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
+    margin-right: 4px;
+    padding-top: 3px;
+    border-width: 0px;
+    font-size: 14px;
+    color: red;
+}
 .gwt-VerticalPanel-page{
 
 }
