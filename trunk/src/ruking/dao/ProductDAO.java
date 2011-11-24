@@ -12,8 +12,6 @@ import ruking.db.MDTMySQLRowMapper;
 import ruking.db.QueryRunner;
 import ruking.db.TransRunner;
 import ruking.dto.ProductDTO;
-import ruking.dto.ProductDTO;
-import ruking.utils.Util;
 
 public class ProductDAO {
 	public String hostName;
@@ -42,21 +40,20 @@ public class ProductDAO {
 			Map p = getMapByID(pid,lang);
 			ret.add(p);
 		}
-		return ret;
+		return formatProductMap(ret,lang);
 	}
-	public List<Map> getCatProducts(String cat)throws SQLException{
-		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM product where SubCategory ="+DbUtil.escSql(cat);
-		List<Map> ret = runner.query(sql);
-		return ret;
-	}
+//	public List<Map> getCatProducts(String cat)throws SQLException{
+//		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+//		String sql = "SELECT * FROM product where SubCategory ="+DbUtil.escSql(cat);
+//		List<Map> ret = runner.query(sql);
+//		return ret;
+//	}
 	public List<Map> getCatProductsByCatID(String id,String lang)throws SQLException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM product where CatID ="+DbUtil.escSql(id);
 		if("eng".equals(lang))sql="SELECT * FROM product_eng where CatID ="+DbUtil.escSql(id);
 		if("big".equals(lang))sql="SELECT * FROM product_big where CatID ="+DbUtil.escSql(id);
-		List<Map> ret = runner.query(sql);
-		return ret;
+		return formatProductMap(runner.query(sql),lang);
 	}
 	
 	public List<Map> getAllProducts(String lang)throws SQLException{
@@ -64,7 +61,7 @@ public class ProductDAO {
 		String sql = "SELECT * FROM product";
 		if("eng".equals(lang))sql = "SELECT * FROM product_eng";
 		if("big".equals(lang))sql = "SELECT * FROM product_big";
-		return runner.query(sql);
+		return formatProductMap(runner.query(sql),lang);
 	}
 	public  ProductDTO getProductByTitle(String title) throws SQLException{
 		ProductDTO u=new ProductDTO();
@@ -109,7 +106,7 @@ public class ProductDAO {
 		return u;
 	}
 	
-	public  Map getMapByID(String id,String lang) throws SQLException{
+	private  Map getMapByID(String id,String lang) throws SQLException{
 		ProductDTO u=new ProductDTO();
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM product WHERE ID = " + DbUtil.escSql(id);
@@ -119,6 +116,7 @@ public class ProductDAO {
 			sql = "SELECT * FROM product_big WHERE ID = " + DbUtil.escSql(id);
 		return runner.queryForMap(sql);
 	}
+	
 	public  ProductDTO insertProduct(ProductDTO p,String lang) throws SQLException{
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql="insert into product(Title,Description,Category,SubCategory,CatID";
@@ -197,5 +195,14 @@ public class ProductDAO {
 		}
 		return ret;
 	}
-
+	private List<Map> formatProductMap(List<Map> lm,String lang) throws SQLException{
+		for(Map m:lm){
+			Integer id = (Integer)m.get("ID");
+			AttributeDAO attrDAO = new AttributeDAO(hostName,dbName,dbUser,password);
+			String value = attrDAO.addModelNameToTitleByProductId(id.toString(),lang);
+			if(value!=null && value.length() > 1)
+			m.put("Title", ((String)m.get("Title")+"_"+value));
+		}
+		return lm;
+	}
 }

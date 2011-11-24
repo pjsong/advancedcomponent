@@ -149,5 +149,19 @@ public class AttributeDAO {
 		runner.update(sql);
 		
 	}
-
+	public String addModelNameToTitleByProductId(String id,String lang) throws SQLException {
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql = "SELECT * FROM attributes WHERE productID = "
+				+ DbUtil.escSql(id) + " and AttrName="+DbUtil.escSql("型号")+" order by ProductID,DisplayOrder";
+		if ("eng".equals(lang))
+			sql = "SELECT * FROM attributes_eng WHERE productID = "
+					+ DbUtil.escSql(id) + " and AttrName="+DbUtil.escSql("ModelNumber")+" order by ProductID,DisplayOrder";
+		if ("big".equals(lang))
+			sql = "SELECT * FROM attributes_big WHERE productID = "
+					+ DbUtil.escSql(id) + "  and AttrName="+DbUtil.escSql("型號")+" order by ProductID,DisplayOrder";
+		Map m = runner.queryForMap(sql);
+		if (m == null || m.size() == 0)
+			return null;
+		return (String)m.get("AttrValue");
+	}
 }
