@@ -16,7 +16,8 @@ public class AboutController extends BaseController{
 			throws Exception {
         VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-        VelocityParserFactory.getVP().render(urlTemplate(request,vc), vc, request, response);
+        String templateName = urlTemplate(request,vc);
+        VelocityParserFactory.getVP().render(templateName, vc, request, response);
 		
 	}
     private String urlTemplate(HttpServletRequest request, VelocityContext vc)
