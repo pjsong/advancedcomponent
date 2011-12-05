@@ -10,7 +10,7 @@
 	<tbody>
 	<tr>
 	<td><a href=$!_url/geo.html>大地图全屏查看</a></td></tr><tr>
-	<td ><img border="0" width="100%" height="100%" src="$!_url/static/img/body/geo.jpg"></td>
+	<td><img border="0" width="754px" height="340px" src="$!_url/static/img/body/geo.jpg"></td>
 	</tr></tbody></table><p></p>
              </td>
               </tr>
