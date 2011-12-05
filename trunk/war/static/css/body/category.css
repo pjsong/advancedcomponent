@@ -31,6 +31,10 @@ body {
 	border:4px;
 	width:400px;
 }
+.gwt-Grid-rightcol{
+	width:100%;
+	align:left;
+}
 .pageAnchor .gwt-Anchor {
     border-width: 1px;
     border-color: #aaaaaa;
