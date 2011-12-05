@@ -201,7 +201,7 @@ public class ProductDAO {
 			AttributeDAO attrDAO = new AttributeDAO(hostName,dbName,dbUser,password);
 			String value = attrDAO.addModelNameToTitleByProductId(id.toString(),lang);
 			if(value!=null && value.length() > 1)
-			m.put("Model", (value));
+			m.put("Title", (value+(String)m.get("Title")));
 		}
 		return lm;
 	}
