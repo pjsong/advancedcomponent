@@ -28,8 +28,8 @@ body {
 .gwt-Grid-cell{
 	cellspacing:5px;
 	cellpadding:10px;	
-	border:4px;
 	width:400px;
+	background:url('/static/img/products/productlist-background.gif')
 }
 .gwt-Grid-rightcol{
 	width:100%;
