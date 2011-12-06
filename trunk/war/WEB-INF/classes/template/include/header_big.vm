@@ -48,7 +48,7 @@
             </td>
           </tr><tr><td align="left" colspan=8 style="padding-top:12px;"><div id="menu">
 		<a href="$_url/index_big.jhtml">&nbsp;&nbsp;首頁&nbsp;</a> <span class="seperator"> | <a href="$_url/about/aboutus_big.jhtml">&nbsp;&nbsp;關於如金&nbsp;</a> <span class="seperator"> | </span><a href="$_url/products_big.jhtml">&nbsp;產品瀏覽&nbsp;</a>&nbsp;<span class="seperator"> | </span><a href="$_url/solutions_big.jhtml">&nbsp;經典案例&nbsp;</a>&nbsp;<span class="seperator"> | </span>
-		<a href="$_url/news_big.jhtml">&nbsp;產業資訊</a>&nbsp;<span class="seperator"> | </span><a href="$_url/customerservice_big.jhtml">&nbsp;客服中心&nbsp;&nbsp;</a><span class="seperator"> | </span><a href="$_url/about/recruit_big.jhtml">&nbsp;人才招聘&nbsp;&nbsp;</a></div><td>      </tr>
+		<a href="$_url/news_big.jhtml">&nbsp;產業資訊</a>&nbsp;<span class="seperator"> | </span><a href="$_url/customerservice_big.jhtml">&nbsp;聯繫我們&nbsp;&nbsp;</a><span class="seperator"> | </span><a href="$_url/about/recruit_big.jhtml">&nbsp;人才招聘&nbsp;&nbsp;</a></div><td>      </tr>
         </tbody></table>
     </td>
 	<td style="width:300px;"></td>
