@@ -35,6 +35,7 @@
   	<servlet-name>getDTOService</servlet-name>
   	<url-pattern>/static/js/category_eng/getDTOService</url-pattern>
   </servlet-mapping>
+  
     <servlet>
   	<servlet-name>getCategoryService</servlet-name>
   	<servlet-class>ruking.server.GetCategoryServiceImpl</servlet-class>
@@ -50,6 +51,23 @@
   <servlet-mapping>
   	<servlet-name>getCategoryService</servlet-name>
   	<url-pattern>/static/js/category_eng/getCategoryService</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+  	<servlet-name>getDetailService</servlet-name>
+  	<servlet-class>ruking.server.GetDetailServiceImpl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>getDetailService</servlet-name>
+  	<url-pattern>/static/js/cat/getDetailService</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+  	<servlet-name>getDetailService</servlet-name>
+  	<url-pattern>/static/js/category_big/getDetailService</url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+  	<servlet-name>getDetailService</servlet-name>
+  	<url-pattern>/static/js/category_eng/getDetailService</url-pattern>
   </servlet-mapping>
   
   
