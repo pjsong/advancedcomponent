@@ -31,7 +31,11 @@
 			<td valign="bottom" style="padding-bottom:0px;width:200px;"><span class="headerlanguage">
 			<a href="$_url/index_big.jhtml"> 繁體 </a>|<a href="$_url/index_eng.jhtml"> ENGLISH </a></span></td>
             <td align="right" colspan=7 valign="bottom">
-				<table cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;"><tr><td  colspan=3 align="right" >
+				<table cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
+				<tr><td  colspan=3 align="right" >
+				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value">
+					<option value="index.jhtml">简体中文</option><option value="index_big.jhtml">繁體中文</option><option value="index_eng.jhtml">English</option>
+				</select>
 				#if($customer)
 				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="$_url/logout.jhtml">退出登录</a> #if($administrator) | <a href="$_url/manage.jhtml">管理产品</a> #end</td>
 				#else
