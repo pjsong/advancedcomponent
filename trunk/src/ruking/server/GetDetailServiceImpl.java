@@ -56,7 +56,7 @@ public class GetDetailServiceImpl extends HttpServlet {
 		    	result.add(map);
 		    	Map map1 = new HashMap();
 		    	String description = "描述";
-		    	if("eng".equals(description))description = "Description";
+		    	if("eng".equals(lang))description = "Description";
 		    	map1.put("AttrName", description);
 		    	map1.put("AttrValue",pDTO.getDescription());
 		    	result.add(map1);
