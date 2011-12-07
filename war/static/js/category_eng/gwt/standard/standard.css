@@ -699,6 +699,7 @@ a:hover {
   background: #fed802;
   font-family:"Microsoft YaHei",微软雅黑,arial;
   border-right: 1px solid #fed802;
+  font-size:15;
 }
 .gwt-DecoratedStackPanel .stackItemMiddleLeftInner,
 .gwt-DecoratedStackPanel .stackItemMiddleRightInner {
