@@ -8,10 +8,18 @@ body {
 
 .gwt-Anchor {	
 	color: black;
-	font-size:14px;
+	font-size:16px;
 	font-weight:bold;
 }
-
+.selectedCat{
+	color:red;
+}
+.gwt-StackPanelContent .gwt-Anchor:visited{
+	color:red;
+}
+.catAnchor:visited{
+	color: red;
+}
 .gwt-Anchor:visited {	
 	color: #111111; 
 }
@@ -19,17 +27,14 @@ body {
 	text-decoration:none;
 }
 .gwt-Grid-list{
-	cellspacing:0px;
-	cellpadding:0px;	
-	border:0px none;
+	cellspacing:5px;
+	cellpadding:10px;	
 	height:250px;
-	width:800px;
 
 }
 .gwt-Grid-cell{
 	cellspacing:5px;
 	cellpadding:10px;	
-	width:400px;
 	background:url('/static/img/products/productlist-background.gif')
 }
 .gwt-Grid-rightcol{
@@ -76,17 +81,15 @@ body {
 
 }
 .categoryPanel{
-		width:220px;
+
 }
 #productlist{
-	width: 800px;
 	background:#ffffff;
-/*	height: 500px;*/
 }
 #productlist table tr td{
 	cellspacing:5px;
 	cellpadding:10px;	
-	border:0px none;
+	border:4px;
 }
 
 .gwt-DialogBox {
