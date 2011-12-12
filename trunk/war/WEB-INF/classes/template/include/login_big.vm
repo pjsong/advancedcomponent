@@ -28,15 +28,15 @@ a.registbtn {
 			<tbody><tr><td><img src="$_url/static/img/body/loginpic.jpg"></td><td>
 				  <form name="formlogin" id="formlogin" action="$_url/login.jhtml" method="post">
 				 <table border=0 style="padding-top:30px;">
-				 <tr width="350px"><td colspan=3><p align=center style="height:34px;line-height:26px;text-align:center;color: #565555;font-size:12px;font-family: arial,Helvetica,sans-serif,Verdana;">如果您已经注册个人会员，请您先登录！</p></td></tr>
-                  <tr><td><span class="headerlabel">用户名：</span></td><td colspan=2><input class="headerinputbox" type="text" id="loginName" name="loginName"></td>
-                  </tr><tr><td><span class="headerlabel">密码：</span></td><td width="100px"><input class="headerinputbox" type="password" id="loginPassword" name="loginPassword"></td>
-                  <td align="right"><input type="submit" class="loginbtn" value="登 录" id="doit" name="doit">
+				 <tr width="350px"><td colspan=3><p align=center style="height:34px;line-height:26px;text-align:center;color: #565555;font-size:12px;font-family: arial,Helvetica,sans-serif,Verdana;">如果您已經註冊個人會員，請您先登錄！</p></td></tr>
+                  <tr><td><span class="headerlabel">用戶名：</span></td><td colspan=2><input class="headerinputbox" type="text" id="loginName" name="loginName"></td>
+                  </tr><tr><td><span class="headerlabel">密碼：</span></td><td width="100px"><input class="headerinputbox" type="password" id="loginPassword" name="loginPassword"></td>
+                  <td align="right"><input type="submit" class="loginbtn" value="登 錄" id="doit" name="doit">
 				  ##<input type="image" src="$_url/static/img/header/login.jpg" name="Submit">
 				  </td>
                 </tr>
-				<tr><td  colspan=2  align=center style="height:34px;padding-right:20px;line-height:26px;text-align:left;color: #565555;font-size:12px;font-family: arial,Helvetica,sans-serif,Verdana;">还没有注册？马上注册 ！</td>
-				<td align=right><a class="registbtn" title="注册" href="reg.jhtml">注册</a></td></tr>
+				<tr><td  colspan=2  align=center style="height:34px;padding-right:20px;line-height:26px;text-align:left;color: #565555;font-size:12px;font-family: arial,Helvetica,sans-serif,Verdana;">還沒有註冊？馬上註冊！</td>
+				<td align=right><a class="registbtn" title="註冊" href="reg.jhtml">註冊</a></td></tr>
 </form>
               </tbody></table>
 			  </td></tr></table>
