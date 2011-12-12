@@ -28,6 +28,7 @@
     <bean id="listAttributesBigController"   class="ruking.controller.big.manage.ListAttributesController" ></bean>
     <bean id="editProductBigController"   class="ruking.controller.big.manage.EditProductController" ></bean>
     <bean id="editAttributeBigController"   class="ruking.controller.big.manage.EditAttributeController" ></bean>
+    <bean id="loginBigController"   class="ruking.controller.big.LoginController" ></bean>
    
     <bean id="listProductsEngController"   class="ruking.controller.eng.manage.ListProductsController" ></bean>
     <bean id="listAttributesEngController"   class="ruking.controller.eng.manage.ListAttributesController" ></bean>
@@ -43,7 +44,6 @@
     <bean id="indexBigController"   class="ruking.controller.big.IndexController" ></bean>
     <bean id="regBigController"   class="ruking.controller.big.RegController" ></bean>
     <bean id="logoutBigController"   class="ruking.controller.big.LogOutController" ></bean>
-    <bean id="loginBigController"   class="ruking.controller.big.LoginController" ></bean>
     <bean id="aboutBigController"   class="ruking.controller.big.AboutController" ></bean>
     <bean id="productsBigController"   class="ruking.controller.big.ProductsController" ></bean>  
     <bean id="itemBigController"   class="ruking.controller.big.ItemController" ></bean>  
@@ -80,6 +80,7 @@
             <prop key="/about_eng/*.jhtml">aboutEngController</prop>
             
             <prop key="/index_big.jhtml">indexBigController</prop>
+            <prop key="/login_big.jhtml">loginBigController</prop>
             <prop key="/products_big.jhtml">productsBigController</prop>           
             <prop key="/item_big.jhtml">itemBigController</prop>      
             <prop key="/about_big/*.jhtml">aboutBigController</prop>
