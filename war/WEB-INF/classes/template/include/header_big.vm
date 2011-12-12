@@ -32,13 +32,13 @@
 			<a href="$_url/index.jhtml"> 简体 </a>|<a href="$_url/index_eng.jhtml"> ENGLISH </a></span></td>
             <td align="right" colspan=7 valign="bottom">
 				<table cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;"><tr><td  colspan=3 align="right" >
-				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value">
+				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value"  style="font-size:12px;">
 					<option value="index.jhtml">简体中文</option><option selected value="index_big.jhtml">繁體中文</option><option value="index_eng.jhtml">English</option>
 				</select>
 				#if($customer)
 				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="$_url/logout.jhtml">退出登錄</a> #if($administrator) | <a href="$_url/manage.jhtml">管理产品</a> #end</td>
 				#else
-				<a href="$_url/reg.jhtml">新用戶註冊</a> | <a href="$_url/searchpass.jhtml">忘記密碼</a>
+				<a href="$_url/login.jhtml">用戶登錄</a> | <a href="$_url/reg.jhtml">新用戶註冊</a> | <a href="$_url/searchpass.jhtml">忘記密碼</a>
 				</td></tr>
                 <tbody>
 				  <form onsubmit="return checkformlogin()" name="formlogin" id="formlogin" action="$_url/login.jhtml" method="post">
