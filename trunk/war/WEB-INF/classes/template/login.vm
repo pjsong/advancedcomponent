@@ -1,0 +1,22 @@
+﻿<style type="text/css">
+.loginbtn {
+    background: none repeat scroll 0 0 #D42415;
+    border: medium none;
+    color: #DBDBDB;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    height: 20px;
+    width: 62px;
+}</style>               
+			<table><tbody>
+				  <form onsubmit="return checkformlogin()" name="formlogin" id="formlogin" action="$_url/login.jhtml" method="post">
+				  <tr style="padding-bottom:5px;">
+                  <td width="210" align="left"><span class="headerlabel">用戶名：</span><input class="headerinputbox" type="text" size="15" id="loginName" name="loginName"></td>
+                  <td width="190" align="left"><span class="headerlabel">密碼：</span><input class="headerinputbox" type="password" size="15" id="loginPassword" name="loginPassword"></td>
+                  <td width="30" align="center"><input type="submit" class="loginbtn" value="登 录" id="button" name="button">
+				  ##<input type="image" src="$_url/static/img/header/login.jpg" name="Submit">
+				  </td>
+                </tr></form>
+              </tbody></table>
+##			  <input type="submit" class="loginbtn" value="登 录" id="button" name="button">
