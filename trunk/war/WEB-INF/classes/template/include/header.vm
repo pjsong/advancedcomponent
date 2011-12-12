@@ -28,9 +28,9 @@
         <table width="600px" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
           <tbody>
           <tr>
-			<td valign="bottom" style="padding-bottom:0px;width:200px;"><span class="headerlanguage">
-			<a href="$_url/index_big.jhtml"> 繁體 </a>|<a href="$_url/index_eng.jhtml"> ENGLISH </a></span></td>
-            <td align="right" colspan=7 valign="bottom">
+			##<td valign="bottom" style="padding-bottom:0px;width:200px;"><span class="headerlanguage">
+			##<a href="$_url/index_big.jhtml"> 繁體 </a>|<a href="$_url/index_eng.jhtml"> ENGLISH </a></span></td>
+            <td align="right" style="height:70px;" colspan=7 valign="top">
 				<table cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
 				<tr><td  colspan=3 align="right" >
 				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value" style="font-size:12px;">
@@ -42,12 +42,14 @@
 				<a href="$_url/login.jhtml">用户登录</a> | <a href="$_url/reg.jhtml">新用户注册</a> | <a href="$_url/searchpass.jhtml">忘记密码</a>
 				</td></tr>
                 <tbody>
-				  <form onsubmit="return checkformlogin()" name="formlogin" id="formlogin" action="$_url/login.jhtml" method="post">
-				  <tr style="padding-bottom:5px;">
-                  <td width="210" align="left"><span class="headerlabel">用户名：</span><input class="headerinputbox" type="text" size="15" id="loginName" name="loginName"></td>
-                  <td width="190" align="left"><span class="headerlabel">密码：</span><input class="headerinputbox" type="password" size="15" id="loginPassword" name="loginPassword"></td>
-                  <td width="30" align="center"><input type="image" src="$_url/static/img/header/login.jpg" name="Submit"></td>
-                </tr></form>#end
+				  ##<form onsubmit="return checkformlogin()" name="formlogin" id="formlogin" action="$_url/login.jhtml" method="post">
+				  ##<tr style="padding-bottom:5px;">
+                  ##<td width="210" align="left"><span class="headerlabel">用户名：</span><input class="headerinputbox" type="text" size="15" id="loginName" name="loginName"></td>
+                  ##<td width="190" align="left"><span class="headerlabel">密码：</span><input class="headerinputbox" type="password" size="15" id="loginPassword" name="loginPassword"></td>
+                  ##<td width="30" align="center"><input type="image" src="$_url/static/img/header/login.jpg" name="Submit"></td>
+                ##</tr>
+				##</form>
+				#end
               </tbody></table>
             </td>
           </tr><tr><td align="left" colspan=8 style="padding-top:12px;"><div id="menu">
