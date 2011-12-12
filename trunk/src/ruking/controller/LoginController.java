@@ -22,6 +22,17 @@ import javax.servlet.http.HttpServletResponse;
 
 public class LoginController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		String doit = request.getParameter("doit");
+		if(doit == null){
+	        VelocityContext vc=new VelocityContext();
+	    	new GlobalVariablesBA().setCommonVariables(request, vc);
+	        VelocityParserFactory.getVP().render("login", vc, request, response);
+		}else{
+			submit(request,response);
+		}
+	}
+	
+	protected void submit(HttpServletRequest request, HttpServletResponse response) throws Exception{
         VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
         String username = request.getParameter("loginName");
