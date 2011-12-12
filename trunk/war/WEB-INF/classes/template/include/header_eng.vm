@@ -21,7 +21,7 @@
       });
     </script>
 </head><body  style="background-color: #fafafa;">
-				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value">
+				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value" style="font-size:12px">
 					<option value="index.jhtml">简体中文</option><option value="index_big.jhtml">繁體中文</option><option selected value="index_eng.jhtml">English</option>
 				</select>
 <table style="background-color: #8a8a8a;/*h160,b120*/" align="center" width="100%" cellspacing="0" cellpadding="0" border="0">

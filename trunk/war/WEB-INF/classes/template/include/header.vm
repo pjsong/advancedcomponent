@@ -33,13 +33,13 @@
             <td align="right" colspan=7 valign="bottom">
 				<table cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
 				<tr><td  colspan=3 align="right" >
-				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value">
+				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value" style="font-size:12px;">
 					<option value="index.jhtml">简体中文</option><option value="index_big.jhtml">繁體中文</option><option value="index_eng.jhtml">English</option>
 				</select>
 				#if($customer)
 				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="$_url/logout.jhtml">退出登录</a> #if($administrator) | <a href="$_url/manage.jhtml">管理产品</a> #end</td>
 				#else
-				<a href="$_url/reg.jhtml">新用户注册</a> | <a href="$_url/searchpass.jhtml">忘记密码</a>
+				<a href="$_url/login.jhtml">用户登录</a> | <a href="$_url/reg.jhtml">新用户注册</a> | <a href="$_url/searchpass.jhtml">忘记密码</a>
 				</td></tr>
                 <tbody>
 				  <form onsubmit="return checkformlogin()" name="formlogin" id="formlogin" action="$_url/login.jhtml" method="post">
