@@ -20,6 +20,18 @@
         });
       });
     </script>
+	<script>
+function checkInput()
+{
+if (document.searchform.searchword.value.trim().indexOf('產品搜索...')!=-1 || document.searchform.searchword.value.trim()==''){
+document.searchform.searchword.value='';
+document.searchform.searchword.focus();
+return false;
+}
+else{
+return true;
+}
+} </script>
 </head><body  style="background-color: #fafafa;">
 <table style="background-color: #8a8a8a;/*h160,b120*/" align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
   <tbody><tr>
@@ -31,22 +43,19 @@
 			##<td valign="bottom" style="padding-bottom:0px;width:200px;"><span class="headerlanguage">
 			##<a href="$_url/index.jhtml"> 简体 </a>|<a href="$_url/index_eng.jhtml"> ENGLISH </a></span></td>
             <td align="right" style="height:70px;" colspan=7 valign="top">
-				<table cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;"><tr><td  colspan=3 align="right" >
-				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value"  style="font-size:12px;">
+			<form onsubmit="return checkInput();" name="searchform" id="searchform" action="$_url/searchproducts_big.jhtml">
+				<table width="500px" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
+				<tr><td>
+				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value"  style="font-size:12px;background-color: #C9C9C9;">
 					<option value="index.jhtml">简体中文</option><option selected value="index_big.jhtml">繁體中文</option><option value="index_eng.jhtml">English</option>
 				</select>
 				#if($customer)
 				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="$_url/logout.jhtml">退出登錄</a> #if($administrator) | <a href="$_url/manage.jhtml">管理产品</a> #end</td>
 				#else
 				<a href="$_url/login_big.jhtml">用戶登錄</a> | <a href="$_url/reg.jhtml">新用戶註冊</a> | <a href="$_url/searchpass.jhtml">忘記密碼</a>
+				<input type="text" style="background-color: #C9C9C9;" id="searchword" name="searchword" value="產品搜索..." onclick="checkInput()"><img style="cursor: pointer;position:relative;left:-25px;top:6px;" src="$!_url/static/img/header/searchBg.gif" onclick="javascript:if(checkInput()) searchform.submit();">
 				</td></tr>
                 <tbody>
-				  ##<form onsubmit="return checkformlogin()" name="formlogin" id="formlogin" action="$_url/login.jhtml" method="post">
-				  ##<tr style="padding-bottom:5px;">
-                  ##<td width="210" align="left"><span class="headerlabel">用戶名：</span><input class="headerinputbox" type="text" size="15" id="loginName" name="loginName"></td>
-                  ##<td width="190" align="left"><span class="headerlabel">密碼：</span><input class="headerinputbox" type="password" size="15" id="loginPassword" name="loginPassword"></td>
-                  ##<td width="30" align="center"><input type="image" src="$_url/static/img/header/login.jpg" name="Submit"></td>
-                ##</tr></form>
 				#end
               </tbody></table>
             </td>

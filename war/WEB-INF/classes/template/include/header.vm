@@ -20,6 +20,18 @@
         });
       });
     </script>
+<script>
+function checkInput()
+{
+if (document.searchform.searchword.value.trim().indexOf('产品搜索...')!=-1 || document.searchform.searchword.value.trim()==''){
+document.searchform.searchword.value='';
+document.searchform.searchword.focus();
+return false;
+}
+else{
+return true;
+}
+} </script>
 </head><body  style="background-color: #fafafa;">
 <table style="background-color: #8a8a8a;/*h160,b120*/" align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
   <tbody><tr>
@@ -31,26 +43,23 @@
 			##<td valign="bottom" style="padding-bottom:0px;width:200px;"><span class="headerlanguage">
 			##<a href="$_url/index_big.jhtml"> 繁體 </a>|<a href="$_url/index_eng.jhtml"> ENGLISH </a></span></td>
             <td align="right" style="height:70px;" colspan=7 valign="top">
-				<table cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
-				<tr><td  colspan=3 align="right" >
-				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value" style="font-size:12px;">
+			<form onsubmit="return checkInput();" name="searchform" id="searchform" action="$_url/searchproducts.jhtml">
+				<table width="500px" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
+				<tr><td>
+				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value" style="font-size:12px;background-color: #C9C9C9;">
 					<option value="index.jhtml">简体中文</option><option value="index_big.jhtml">繁體中文</option><option value="index_eng.jhtml">English</option>
 				</select>
 				#if($customer)
 				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="$_url/logout.jhtml">退出登录</a> #if($administrator) | <a href="$_url/manage.jhtml">管理产品</a> #end</td>
 				#else
-				<a href="$_url/login.jhtml">用户登录</a> | <a href="$_url/reg.jhtml">新用户注册</a> | <a href="$_url/searchpass.jhtml">忘记密码</a>
+				<a href="$_url/login.jhtml">用户登录</a> | <a href="$_url/reg.jhtml">新用户注册</a> | <a href="$_url/searchpass.jhtml">忘记密码</a> | 
+				<input type="text" style="background-color: #C9C9C9;" id="searchword" name="searchword" value="产品搜索..." onclick="checkInput()"><img style="cursor: pointer;position:relative;left:-25px;top:6px;" src="$!_url/static/img/header/searchBg.gif" onclick="javascript:if(checkInput()) searchform.submit();">
+               
 				</td></tr>
                 <tbody>
-				  ##<form onsubmit="return checkformlogin()" name="formlogin" id="formlogin" action="$_url/login.jhtml" method="post">
-				  ##<tr style="padding-bottom:5px;">
-                  ##<td width="210" align="left"><span class="headerlabel">用户名：</span><input class="headerinputbox" type="text" size="15" id="loginName" name="loginName"></td>
-                  ##<td width="190" align="left"><span class="headerlabel">密码：</span><input class="headerinputbox" type="password" size="15" id="loginPassword" name="loginPassword"></td>
-                  ##<td width="30" align="center"><input type="image" src="$_url/static/img/header/login.jpg" name="Submit"></td>
-                ##</tr>
-				##</form>
 				#end
               </tbody></table>
+			  </form>
             </td>
           </tr><tr><td align="left" colspan=8 style="padding-top:12px;"><div id="menu">
 		<a href="$_url/index.jhtml">&nbsp;&nbsp;首页&nbsp;</a> <span class="seperator"> | <a href="$_url/about/aboutus.jhtml">&nbsp;&nbsp;关于如金&nbsp;</a> <span class="seperator"> | </span><a href="$_url/products.jhtml">&nbsp;产品浏览&nbsp;</a>&nbsp;<span class="seperator"> | </span><a href="$_url/solutions.jhtml">&nbsp;经典案例&nbsp;</a>&nbsp;<span class="seperator"> | </span>
@@ -60,3 +69,4 @@
 	<td style="width:300px;"></td>
   </tr>
 </tbody></table>
+
