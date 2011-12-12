@@ -37,6 +37,7 @@ img{
 }
 .headerinputbox{
 	background-color:#c9c9c9;/*h160,b190*/
+	width:150px;
 }
 .headerlabel{
 	color:#f2eb62;/*h160,b190*/
