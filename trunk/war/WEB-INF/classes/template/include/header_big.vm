@@ -38,7 +38,7 @@
 				#if($customer)
 				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="$_url/logout.jhtml">退出登錄</a> #if($administrator) | <a href="$_url/manage.jhtml">管理产品</a> #end</td>
 				#else
-				<a href="$_url/login.jhtml">用戶登錄</a> | <a href="$_url/reg.jhtml">新用戶註冊</a> | <a href="$_url/searchpass.jhtml">忘記密碼</a>
+				<a href="$_url/login_big.jhtml">用戶登錄</a> | <a href="$_url/reg.jhtml">新用戶註冊</a> | <a href="$_url/searchpass.jhtml">忘記密碼</a>
 				</td></tr>
                 <tbody>
 				  ##<form onsubmit="return checkformlogin()" name="formlogin" id="formlogin" action="$_url/login.jhtml" method="post">
