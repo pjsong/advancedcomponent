@@ -8,6 +8,7 @@
     <bean id="loginController"   class="ruking.controller.LoginController" ></bean>
     <bean id="aboutController"   class="ruking.controller.AboutController" ></bean>
     <bean id="productsController"   class="ruking.controller.ProductsController" ></bean>  
+    <bean id="searchController"   class="ruking.controller.SearchController" ></bean>  
     <bean id="itemController"   class="ruking.controller.ItemController" ></bean>  
     <bean id="newsController"   class="ruking.controller.NewsController" ></bean>    
     <bean id="solutionsController"   class="ruking.controller.SolutionsController" ></bean>
@@ -39,6 +40,7 @@
     <bean id="indexEngController"   class="ruking.controller.eng.IndexController" ></bean>
     <bean id="aboutEngController"   class="ruking.controller.eng.AboutController" ></bean>
     <bean id="productsEngController"   class="ruking.controller.eng.ProductsController" ></bean>  
+    <bean id="searchEngController"   class="ruking.controller.eng.SearchController" ></bean>  
     <bean id="itemEngController"   class="ruking.controller.eng.ItemController" ></bean>  
     
     <bean id="indexBigController"   class="ruking.controller.big.IndexController" ></bean>
@@ -46,6 +48,7 @@
     <bean id="logoutBigController"   class="ruking.controller.big.LogOutController" ></bean>
     <bean id="aboutBigController"   class="ruking.controller.big.AboutController" ></bean>
     <bean id="productsBigController"   class="ruking.controller.big.ProductsController" ></bean>  
+    <bean id="searchBigController"   class="ruking.controller.big.SearchController" ></bean>  
     <bean id="itemBigController"   class="ruking.controller.big.ItemController" ></bean>  
     <bean id="newsBigController"   class="ruking.controller.big.NewsController" ></bean>    
     <bean id="solutionsBigController"   class="ruking.controller.big.SolutionsController" ></bean>
@@ -66,6 +69,7 @@
         	<prop key="/">indexController</prop>
             <prop key="/index.jhtml">indexController</prop>
             <prop key="/products.jhtml">productsController</prop>           
+            <prop key="/searchproducts.jhtml">searchController</prop>       
             <prop key="/item.jhtml">itemController</prop>      
             <prop key="/news.jhtml">newsController</prop>            
             <prop key="/solutions.jhtml">solutionsController</prop>            
@@ -75,13 +79,16 @@
             <prop key="/about/*.jhtml">aboutController</prop>
             
             <prop key="/index_eng.jhtml">indexEngController</prop>
-            <prop key="/products_eng.jhtml">productsEngController</prop>           
+            <prop key="/products_eng.jhtml">productsEngController</prop>     
+            <prop key="/searchproducts_eng.jhtml">searchEngController</prop>       
             <prop key="/item_eng.jhtml">itemEngController</prop>      
             <prop key="/about_eng/*.jhtml">aboutEngController</prop>
             
             <prop key="/index_big.jhtml">indexBigController</prop>
             <prop key="/login_big.jhtml">loginBigController</prop>
             <prop key="/products_big.jhtml">productsBigController</prop>           
+            <prop key="/searchproducts_big.jhtml">searchBigController</prop>       
+
             <prop key="/item_big.jhtml">itemBigController</prop>      
             <prop key="/about_big/*.jhtml">aboutBigController</prop>
         </props>
