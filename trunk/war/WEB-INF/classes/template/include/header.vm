@@ -53,7 +53,7 @@ return true;
 				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="$_url/logout.jhtml">退出登录</a> #if($administrator) | <a href="$_url/manage.jhtml">管理产品</a> #end</td>
 				#else
 				<a href="$_url/login.jhtml">用户登录</a> | <a href="$_url/reg.jhtml">新用户注册</a> | <a href="$_url/searchpass.jhtml">忘记密码</a> | 
-				<input type="text" style="background-color: #C9C9C9;" id="searchword" name="searchword" value="产品搜索..." onclick="checkInput()"><img style="cursor: pointer;position:relative;left:-25px;top:6px;" src="$!_url/static/img/header/searchBg.gif" onclick="javascript:if(checkInput()) searchform.submit();">
+				<input type="text" style="background-color: #C9C9C9;" id="searchword" name="searchword" value="产品搜索..." onclick="checkInput()"><img style="cursor: pointer;position:relative;left:-19px;top:6px;" src="$!_url/static/img/header/searchBg.gif" onclick="javascript:if(checkInput()) searchform.submit();">
                
 				</td></tr>
                 <tbody>
