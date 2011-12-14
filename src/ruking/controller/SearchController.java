@@ -24,7 +24,7 @@ public class SearchController extends BaseController {
         VelocityContext vc=new VelocityContext();
         String searchKeyword = Util.getNoNull(request.getParameter("searchword"));
         if(!searchKeyword.equals("")){
-        	
+        	vc.put("searchResult", getJA(vc,searchKeyword,""));
         }
         new GlobalVariablesBA().setCommonVariables(request, vc);
         VelocityParserFactory.getVP().render("search", vc, request, response);
