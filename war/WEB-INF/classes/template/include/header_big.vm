@@ -43,7 +43,7 @@ return true;
 			##<td valign="bottom" style="padding-bottom:0px;width:200px;"><span class="headerlanguage">
 			##<a href="$_url/index.jhtml"> 简体 </a>|<a href="$_url/index_eng.jhtml"> ENGLISH </a></span></td>
             <td align="right" style="height:70px;" colspan=7 valign="top">
-			<form onsubmit="return checkInput();" name="searchform" id="searchform" action="$_url/searchproducts_big.jhtml">
+			<form method="post" name="searchform" id="searchform" action="$_url/searchproducts_big.jhtml">
 				<table width="500px" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
 				<tr><td>
 				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value"  style="font-size:12px;background-color: #C9C9C9;">
