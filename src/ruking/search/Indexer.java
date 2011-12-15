@@ -89,7 +89,7 @@ public class Indexer {
 	  List<Map> ret = new ArrayList<Map>();
 	  	if(!lang.equals(""))lang="_"+lang;
 		String sql = "select * from product"+lang;
-        TransRunner runner = new TransRunner(DataSourceFactory.getDataSource("localhost","zkm0m1_db","root", "ChinacaT"), new MDTMySQLRowMapper());
+        TransRunner runner = new TransRunner(DataSourceFactory.getDataSource("localhost","zkm0m1_db","root", "pjsong"), new MDTMySQLRowMapper());
 		List<Map> row = runner.query(sql);
 		if(row==null || row.size()==0)return null;
 		StringBuffer sb = new StringBuffer();
@@ -102,14 +102,16 @@ public class Indexer {
 			Integer pid = (Integer)map.get("ID");
 			String sql1 = "select * from attributes"+lang+" where ProductID="+DbUtil.escSql(pid);
 			Map attrMap = runner.queryForMap(sql1);
-			Iterator it = map.entrySet().iterator();
-			while (it.hasNext())
-			{
-			    Map.Entry entry = (Map.Entry) it.next();
-			    String name = (String) entry.getKey();
-			    Object value = entry.getValue();
-			    sb.append(value+" ");
-		   }
+			if(attrMap!=null && attrMap.size()>0){
+				Iterator it = attrMap.entrySet().iterator();
+				while (it.hasNext())
+				{
+					Map.Entry entry = (Map.Entry) it.next();
+					String name = (String) entry.getKey();
+					Object value = entry.getValue();
+					sb.append(value+" ");
+				}
+			}
 			element.put("content", sb.toString());
 			element.put("id", pid.toString());
 			element.put("Title", (String)map.get("Title"));
