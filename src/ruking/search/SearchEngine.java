@@ -32,10 +32,14 @@ import org.apache.lucene.util.Version;
 public class SearchEngine {
     private IndexSearcher searcher = null;
     private QueryParser parser = null;
-    
+    private String lang="";
     /** Creates a new instance of SearchEngine */
-    public SearchEngine() throws IOException {
-        searcher = new IndexSearcher(FSDirectory.open(new File("ruking-index")));
+    public SearchEngine(String language) throws IOException {
+    	lang = language;
+    	String fileName="ruking-index";
+    	if(!lang.equals(""))
+    		fileName = fileName+"_"+lang;
+        searcher = new IndexSearcher(FSDirectory.open(new File(fileName)));
         parser = new QueryParser(Version.LUCENE_34,"content", new StandardAnalyzer(Version.LUCENE_34));
     }
     
