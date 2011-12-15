@@ -29,7 +29,8 @@ public class SearchController extends BaseController {
         String searchKeyword = Util.getNoNull(request.getParameter("searchword"));
         if(!searchKeyword.equals("")){
         	String ja = getJA(vc,searchKeyword,"eng");
-        	vc.put("searchResult", ja);
+        	if(!ja.equals(""))vc.put("searchResult", ja);
+        	else vc.put("noResultFound", "Sorry, No match product found, Please change your search keyword, or choose the category on the left.");
         	vc.put("searchKeyword", searchKeyword);
         }
         new GlobalVariablesBA().setCommonVariables(request, vc);
@@ -44,7 +45,8 @@ public class SearchController extends BaseController {
 					JSONObject jo = JSONObject.fromObject(m);
 					ret.add(jo);
 				}
+				return ret.toString();
 			}
-		   return ret.toString();
+			else return "";
 	   }
 }
