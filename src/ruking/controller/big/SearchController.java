@@ -29,7 +29,8 @@ public class SearchController extends BaseController {
         String searchKeyword = Util.getNoNull(request.getParameter("searchword"));
         if(!searchKeyword.equals("")){
         	String ja = getJA(vc,searchKeyword,"big");
-        	vc.put("searchResult", ja);
+        	if(!ja.equals(""))vc.put("searchResult", ja);
+        	else vc.put("noResultFound", "抱歉，沒有找到匹配的產品，你可以修改關鍵詞，或者選擇左側的產品類別瀏覽");
         	vc.put("searchKeyword", searchKeyword);
         }
         new GlobalVariablesBA().setCommonVariables(request, vc);
@@ -44,8 +45,9 @@ public class SearchController extends BaseController {
 					JSONObject jo = JSONObject.fromObject(m);
 					ret.add(jo);
 				}
+				return ret.toString();
 			}
-		   return ret.toString();
+			else return "";
 	   }
 
 }
