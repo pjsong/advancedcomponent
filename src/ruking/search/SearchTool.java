@@ -30,7 +30,7 @@ public class SearchTool {
         System.out.println("Exception caught.\n");
       }
     }
-    public static List<Map> getResultLM(String queryStr,String lang) throws CorruptIndexException, IOException, ParseException{
+	public static List<Map> getResultLM(String queryStr,String lang) throws CorruptIndexException, IOException, ParseException{
         SearchEngine instance = new SearchEngine(lang);
         TopDocs hits = instance.performSearch_Collector(queryStr);
     	List<Map> searchResult = new ArrayList<Map>();
@@ -38,9 +38,9 @@ public class SearchTool {
         	if(sd.score>0.2)
         	{
         	Document doc = instance.getSearcher().doc(sd.doc);
-        	HashMap map = new HashMap<String,String>();
+        	HashMap map = new HashMap<String,Object>();
         	map.put("Title", doc.get("title"));
-        	map.put("ID", doc.get("id"));
+        	map.put("ID", Integer.parseInt(doc.get("id")));
             System.out.println(doc.get("id")
                                + " -- " + doc.get("title")
                                + " (" + sd.score + ")");
