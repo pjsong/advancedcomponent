@@ -39,7 +39,7 @@ public class SearchEngine {
     	String fileName="ruking-index";
     	if(!lang.equals(""))
     		fileName = fileName+"_"+lang;
-        searcher = new IndexSearcher(FSDirectory.open(new File(fileName)));
+        searcher = new IndexSearcher(FSDirectory.open(new File(getClass().getResource("/"+fileName).getPath())));
         parser = new QueryParser(Version.LUCENE_34,"content", new StandardAnalyzer(Version.LUCENE_34));
     }
     
