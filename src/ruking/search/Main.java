@@ -24,7 +24,7 @@ public class Main {
     public static void main(String[] args) {
       try {
         Indexer.main(null);
-        SearchEngine instance = new SearchEngine();
+        SearchEngine instance = new SearchEngine("");
         TopDocs hits = instance.performSearch_Collector("焊底");
         getResultLM(hits,instance);
         System.out.println("performSearch done");
