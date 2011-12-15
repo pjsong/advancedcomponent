@@ -1,12 +1,3 @@
-/*
- * Indexer.java
- *
- * Created on 6 March 2006, 13:05
- *
- * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
- */
-
 package ruking.search;
 
 import java.io.File;
@@ -33,17 +24,18 @@ import ruking.db.DataSourceFactory;
 import ruking.db.DbUtil;
 import ruking.db.MDTMySQLRowMapper;
 import ruking.db.TransRunner;
- 
+
+
 public class Indexer {
     public Indexer() {
     }
     private IndexWriter indexWriter = null;
     
-    public IndexWriter getIndexWriter(boolean create) throws IOException {
+    public IndexWriter getIndexWriter(String fileDir,boolean create) throws IOException {
         if (indexWriter == null) {
             StandardAnalyzer analyzer = new StandardAnalyzer(Version.LUCENE_34);
             IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_34, analyzer);
-            File indexDir = new File("ruking-index");
+            File indexDir = new File(fileDir);
             if(indexDir.exists())
             {
             	File[] files = indexDir.listFiles();
@@ -60,6 +52,7 @@ public class Indexer {
     public void closeIndexWriter() throws IOException {
         if (indexWriter != null) {
             indexWriter.close();
+            indexWriter = null;
         }
    }
     
@@ -68,7 +61,7 @@ public class Indexer {
     	String title = map.get("Title");
     	String content = map.get("content");
         System.out.println("Indexing Products: " + pid);
-        IndexWriter writer = getIndexWriter(false);
+        IndexWriter writer = getIndexWriter("ruking-index",false);
         Document doc = new Document();
         doc.add(new Field("id", pid, Field.Store.YES, Field.Index.NO));
         doc.add(new Field("title", title, Field.Store.YES, Field.Index.NO));
@@ -79,7 +72,11 @@ public class Indexer {
     public void rebuildIndexes(String lang) throws IOException, SQLException {
           //
           // Erase existing index
-          getIndexWriter(true);
+    	 String fileName = "ruking-index";
+    	 if(!lang.equals("")){
+    		fileName = fileName +"_"+lang;
+    	 }
+          getIndexWriter(fileName, true);
           // Index all Accommodation entries
           List<Map> products = getAllProducts(lang);
           for(Map map : products) {
@@ -91,8 +88,8 @@ public class Indexer {
   private List<Map> getAllProducts(String lang) throws SQLException{
 	  List<Map> ret = new ArrayList<Map>();
 	  	if(!lang.equals(""))lang="_"+lang;
-		String sql = "select * from product";
-        TransRunner runner = new TransRunner(DataSourceFactory.getDataSource("localhost","zkm0m1_db", "root","ChinacaT"), new MDTMySQLRowMapper());
+		String sql = "select * from product"+lang;
+        TransRunner runner = new TransRunner(DataSourceFactory.getDataSource("localhost","zkm0m1_db","root", "ChinacaT"), new MDTMySQLRowMapper());
 		List<Map> row = runner.query(sql);
 		if(row==null || row.size()==0)return null;
 		StringBuffer sb = new StringBuffer();
@@ -125,7 +122,12 @@ public class Indexer {
     public static void main(String[] args) throws IOException, SQLException{
         Indexer  indexer = new Indexer();
         indexer.rebuildIndexes("");
-        System.out.println("rebuildIndexes done");
+        System.out.println("rebuild Indexes done");
+        indexer.rebuildIndexes("big");
+        System.out.println("rebuild big done");
+        indexer.rebuildIndexes("eng");
+        System.out.println("rebuild eng done");
+        indexer.closeIndexWriter();
     }
     
 }
