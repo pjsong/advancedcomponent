@@ -1,6 +1,6 @@
 ﻿<link href="/static/css/body/nav.css" type="text/css" rel="stylesheet">
 <table width="100%" align="center" border="0" style="margin-top:-20px;"><tr><td valign="top" align="right" width="380px">
-	<table class="nav" border="0" width="200px" align="right">
+	<table class="nav" border="0" width="160px" align="right">
 		<tr><td align="center"><a href="$_url/about/customerservice.jhtml?id=1" style = #if($id=='1')color:#00ffff;#else color:#ffff00;#end">联系我们</a></td></tr>
 		<tr><td align="center"><a href="$_url/about/customerservice.jhtml?id=2" style = #if($id=='2')color:#00ffff;#else color:#ffff00;#end">路线地图</a></td></tr>
 		<tr><td align="center"><a href="$_url/about/customerservice.jhtml?id=3" style = #if($id=='3')color:#00ffff;#else color:#ffff00;#end">销售中心</a></td></tr>
