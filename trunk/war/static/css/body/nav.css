@@ -1,11 +1,11 @@
-﻿.nav td{
+.nav td{
 	align:center;
 	font-family:"Microsoft YaHei",微软雅黑,arial;
 	font-size:18;
 	font-weight:bold;
 	background-color:#804040;
 	height:20px;
-	width:200px;
+	width:160px;
 	text-indent:20px;
 	align:center;
 }
@@ -13,7 +13,7 @@
 	color:#ffff00;
 /*	background-color:#ebebeb;*/
 	height:24px;
-	font-size:20px;
+	font-size:14px;
 }
 .nav a:hover{
 	background-color:#0000ff;
