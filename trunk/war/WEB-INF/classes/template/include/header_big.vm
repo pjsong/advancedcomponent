@@ -7,6 +7,43 @@
 	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery.cycle.all.2.72.js"></script>
 	<script type="text/javascript" src="/static/js/register.js"></script>
+		<style>
+.s-form {
+    background: url("$!_url/static/img/header/searchBg.gif") no-repeat scroll 0 0 transparent;
+    height: 20px;
+    position: relative;
+    right: -300px;
+    top: -20px;
+    width: 178px;
+}
+.s-form .s-input {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    height: 19px;
+    left: 0;
+    line-height: 19px;
+    padding-left: 2px;
+    position: absolute;
+    top: 0;
+    width: 155px;
+}
+.s-form label.header_search_kw {
+    color: #CCCCCC;
+    left: 10px;
+    position: relative;
+    top: 2px;
+}
+.s-form .s-Btn {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    height: 23px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 23px;
+}
+</style>
     <script type="text/javascript">
       $(function() {
         $('#slideshow').cycle({
@@ -53,7 +90,11 @@ return true;
 				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="$_url/logout.jhtml">退出登錄</a> #if($administrator) | <a href="$_url/manage.jhtml">管理产品</a> #end</td>
 				#else
 				<a href="$_url/login_big.jhtml">用戶登錄</a> | <a href="$_url/reg.jhtml">新用戶註冊</a> | <a href="$_url/searchpass.jhtml">忘記密碼</a>
-				<input type="text" style="background-color: #C9C9C9;" id="searchword" name="searchword" value="#if($searchKeyword)$!searchKeyword #else 產品搜索...#end" onclick="checkInput()"><img style="cursor: pointer;position:relative;left:-19px;top:2px;" src="$!_url/static/img/header/searchBg.gif" onclick="javascript:searchform.submit();">
+##				<input type="text" style="background-color: #C9C9C9;" id="searchword" name="searchword" value= "#if($searchKeyword)$!searchKeyword #else 產品搜索...#end"  onclick="javascript:checkInput()"><img style="cursor: pointer;position:relative;left:-19px;top:2px;" src="$!_url/static/img/header/searchBg.gif" onclick="javascript:searchform.submit();">
+             <div class="s-form" onclick="javascript:checkInput()">
+            	<input type="text" class="s-input" id="searchword" name="searchword" #if($searchKeyword)value="$!searchKeyword" #else value="產品搜索..."#end">
+				  <input type="submit" value="&nbsp;" class="s-Btn">
+            </div>              
 				</td></tr>
                 <tbody>
 				#end
