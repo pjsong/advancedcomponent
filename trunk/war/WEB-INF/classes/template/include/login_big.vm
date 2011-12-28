@@ -35,8 +35,8 @@ a.registbtn {
 				  ##<input type="image" src="$_url/static/img/header/login.jpg" name="Submit">
 				  </td>
                 </tr>
-				<tr><td  colspan=2  align=center style="height:34px;padding-right:20px;line-height:26px;text-align:left;color: #565555;font-size:12px;font-family: arial,Helvetica,sans-serif,Verdana;">還沒有註冊？馬上註冊！</td>
-				<td align=right><a class="registbtn" title="註冊" href="reg.jhtml">註冊</a></td></tr>
+				<tr><td  colspan=3  align=center style="height:34px;padding-right:20px;line-height:26px;text-align:left;color: #565555;font-size:12px;font-family: arial,Helvetica,sans-serif,Verdana;">還沒有註冊？馬上註冊！
+				<a class="registbtn" title="註冊" href="reg.jhtml">註冊</a></td></tr>
 </form>
               </tbody></table>
 			  </td></tr></table>
