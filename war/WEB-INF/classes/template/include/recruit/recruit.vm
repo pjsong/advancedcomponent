@@ -1,0 +1,4 @@
+﻿#parse("include/recruitcommon.vm")
+##if($!id=="")#parse("include/recruit/recruit.vm")#end
+##if($id=="1")#parse("include/recruit/1.vm")#end
+##if($id=="2")#parse("include/recruit/2.vm")#end

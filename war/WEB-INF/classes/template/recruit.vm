@@ -1,0 +1,7 @@
+#parse("include/header.vm")
+<div style="background:url('/static/img/body/background.jpg') repeat-x fixed top center; #if($!id=="" || $!id=="1")height:800px; #else height:1080px #end">
+#parse("include/breadcrum.vm")
+#parse("include/recruit/recruit.vm")
+</div>
+#parse("include/footer.vm")
+http://www.sanygroup.com/jobs/career/346_for_richangzhaopin_text_content.htm
