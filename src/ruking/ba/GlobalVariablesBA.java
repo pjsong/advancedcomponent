@@ -80,14 +80,17 @@ public class GlobalVariablesBA {
 			return "<a href = '/index.jhtml'>首页</a> > <a href='solution.jhtml' > 解决方案</a>";
 		if("news.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='news.jhtml' > 产业资讯</a>";
-
+		if("recruit.jhtml".equals(uri))
+			return "<a href = '/index.jhtml'>首页</a> > <a href='news.jhtml' > 人才招聘</a>";
+		
 		if("about/aboutus_big.jhtml".equals(uri))
 			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='/about/aboutus_big.jhtml' > 關於如金</a>";
 		if("about/customerservice_big.jhtml".equals(uri))
 			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='customerservice_big.jhtml' > 客服中心</a>";
 		if("products_big.jhtml".equals(uri) || "item_big.jhtml".equals(uri))
 			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='products._big.jhtml' > 產品瀏覽</a>";
-
+		if("recruit_big.jhtml".equals(uri))
+			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='products._big.jhtml' > 人才招聘</a>";
 		
 		if("about/aboutus_eng.jhtml".equals(uri))
 			return "<a href = '/index_eng.jhtml'>HomePage</a> > <a href='/about/aboutus_eng.jhtml'> About Ruking</a>";
@@ -95,7 +98,8 @@ public class GlobalVariablesBA {
 			return "<a href = '/index_eng.jhtml'>HomePage</a> > <a href='customerservice_eng.jhtml' > Customer Center</a>";
 		if("products_eng.jhtml".equals(uri) || "item_eng.jhtml".equals(uri))
 			return "<a href = '/index_eng.jhtml'>HomePage</a> > <a href='products_eng.jhtml' > Products</a>";
-
+		if("recruit_eng.jhtml".equals(uri))
+			return "<a href = '/index_eng.jhtml'>HomePage</a> > <a href='products_eng.jhtml' > Recruit</a>";
 		
 		
 		return "<a href = '/index.jhtml'>首页</a>";
