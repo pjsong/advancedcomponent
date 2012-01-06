@@ -76,11 +76,11 @@ public class GlobalVariablesBA {
 			return "<a href = '/index.jhtml'>首页</a> > <a href='customerservice.jhtml' > 客服中心</a>";
 		if("products.jhtml".equals(uri) || "item.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='products.jhtml' > 产品浏览</a>";
-		if("solution.jhtml".equals(uri))
+		if("about/solution.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='solution.jhtml' > 解决方案</a>";
-		if("news.jhtml".equals(uri))
+		if("about/news.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='news.jhtml' > 产业资讯</a>";
-		if("recruit.jhtml".equals(uri))
+		if("about/recruit.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='news.jhtml' > 人才招聘</a>";
 		
 		if("about/aboutus_big.jhtml".equals(uri))
