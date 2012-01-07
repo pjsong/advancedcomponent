@@ -41,7 +41,7 @@
 		<tr><td align="right"><a href="$_url/about/recruit.jhtml?id=2" style ="font-size:12px; #if($id=='2')color:#ffff00;#else color:#eeee33;#end">结构设计工程师</a></td></tr>
 	</table></td>
 		<td valign="top">
-			<table width="768" cellspacing="0" cellpadding="0" border="1" align="left" valign="top" style="padding-left:20px;padding-top:-15px;">
+			<table width="768" cellspacing="0" cellpadding="0" border="0" align="left" valign="top" style="padding-left:20px;padding-top:-15px;">
             <tbody>
             <tr>
               <td valign="top" height="600" align="left" style="font-size:12px;" colspan="2">
