@@ -1,13 +1,11 @@
 .nav td{
-	align:center;
 	font-family:"Microsoft YaHei",微软雅黑,arial;
-	font-size:18;
 	font-weight:bold;
 	background-color:#804040;
 	height:20px;
 	width:160px;
 	text-indent:20px;
-	align:center;
+	padding-top:5px;
 }
 .nav a{
 	color:#ffff00;
