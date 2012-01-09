@@ -73,7 +73,7 @@ return true;
 </head><body  style="background-color: #fafafa;">
 <table style="background-color: #8a8a8a;/*h160,b120*/" align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
   <tbody><tr>
-    <td rowspan=2 height="120" width="380" valign="top" align="right"><a href="$_url/"><img height="90" width="160" alt="东莞如金自动化设备科技有限公司" src="$_url/static/img/logo1-1.jpg" style=""></a></td>
+    <td rowspan=2 height="120" width="380" valign="bottom" align="right"><a href="$_url/"><img height="79" width="200" alt="东莞如金自动化设备科技有限公司" src="$_url/static/img/logo1-1.jpg" style=""></a></td>
 	<td valign="bottom" align="center" style="width:700px;">
         <table width="600px" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
           <tbody>
