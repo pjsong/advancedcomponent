@@ -7,7 +7,4 @@
 		<tr><td align="center"><a href="$_url/about/customerservice.jhtml?id=2" style = #if($id=='2')color:#00ffff;#else color:#ffff00;#end">路线地图</a></td></tr>
 		<tr><td align="center"><a href="$_url/about/customerservice.jhtml?id=3" style = #if($id=='3')color:#00ffff;#else color:#ffff00;#end">销售中心</a></td></tr>
 	</table></td>
-		<td valign="top">
-			<table width="100%" cellspacing="0" cellpadding="0" border="0">
-              <tbody>
-            </tbody></table>
+		<td valign="top" style="padding-left:25px;">
