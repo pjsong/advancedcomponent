@@ -55,7 +55,7 @@ public class Email
 		{
 			email.setTextMsg(param.getText());
 		}
-	
+		email.setFrom(param.getFrom());
 		// send the email
 		email.send();
 	}
