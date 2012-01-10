@@ -1,5 +1,9 @@
 wK3Zv4kZ9Dz2
-r9b6f5y4
+
+http://mail.ruking-cn.com/login.htm
+postmaster r9b6f5y4
+customer_service RUKING0769
+
 example program
 http://www.net.cn/service/faq/xuni/zjgl/200810/3516.html
 
