@@ -39,5 +39,6 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/gwt-maps.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/lucene-core-3.4.0.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/mysql-connector-java-3.0.14-production-bin.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-email-1.2.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
