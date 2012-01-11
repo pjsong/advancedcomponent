@@ -1,7 +1,5 @@
-#parse("include/header.vm")
+﻿#parse("include/header.vm")
 <div style="background:url('/static/img/body/background.jpg') repeat-x scroll bottom center;">
-#if($id=="1" || $!id=="")#parse("include/news/1.vm") xxxxx#end
-#if($id=="2")#parse("include/news/2.vm")#end
-ccccc
+#parse("include/news/news.vm")
 </div>
 #parse("include/footer.vm")
