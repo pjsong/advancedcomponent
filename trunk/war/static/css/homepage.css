@@ -29,3 +29,6 @@
 a.all:link {
     color: #606060;
 }
+a.all:hover {
+    color: #ee1111;
+}
