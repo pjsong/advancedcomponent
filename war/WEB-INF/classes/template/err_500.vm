@@ -4,5 +4,6 @@
     <p>
       Please report any errors to postmaster@ruking-cn.com
     </p>
+	$stackTrace
   </body>
 </html>
