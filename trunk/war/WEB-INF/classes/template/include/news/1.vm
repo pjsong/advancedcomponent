@@ -1,37 +1,10 @@
-﻿<style type="text/css">
-.zhaopin{
-font-weight:bold;
-font-family:"Microsoft YaHei",微软雅黑,arial;
-height:24px;
-font-size:14px;
-padding-top:5px;
-}
-</style>
-<link href="/static/css/body/nav.css" type="text/css" rel="stylesheet">
-<table width="100%" border="0">
-<tr><td colspan=2>
-</td></tr><tr><td valign="top" width="320px">
-	<table border="0" width="240px" align="right" style="background-color:#804040;">
-		<tr><td align="left" class="zhaopin"><a href="$_url/about/news.jhtml" style="color:#ffff00">新闻资讯...</a></td></tr>
-		<tr><td align="left"><a href="$_url/about/news.jhtml?id=1" style ="padding-left:25px;white-space:nowrap;font-size:12px; #if($id=='1')color:#00ffff;#else color:#ffff00;#end">锂电池在电动自行车中的机遇分析</a></td></tr>
-		<tr><td align="left"><a href="$_url/about/news.jhtml?id=2" style ="padding-left:25px;font-size:12px; #if($id=='2')color:#00ffff;#else color:#ffff00;#end">聚焦2011工博会，产业升级精彩起步</a></td></tr>
-		<tr><td align="left"><a href="$_url/about/news.jhtml?id=3" style ="padding-left:25px;font-size:12px; #if($id=='3')color:#00ffff;#else color:#ffff00;#end">锂电隔膜技术与产业化将成发展重点</a></td></tr>
-		<tr><td align="left"><a href="$_url/about/news.jhtml?id=4" style ="padding-left:25px;font-size:12px; #if($id=='4')color:#00ffff;#else color:#ffff00;#end">锂电隔膜技术与产业化将成发展重点</a></td></tr>
-		<tr><td align="left"><a href="$_url/about/news.jhtml?id=5" style ="padding-left:25px;font-size:12px; #if($id=='5')color:#00ffff;#else color:#ffff00;#end">锂电隔膜技术与产业化将成发展重点</a></td></tr>
-		<tr><td align="left"><a href="$_url/about/news.jhtml?id=6" style ="padding-left:25px;font-size:12px; #if($id=='6')color:#00ffff;#else color:#ffff00;#end">锂电隔膜技术与产业化将成发展重点</a></td></tr>
-	</table></td>
-		<td valign="top">
-			<table width="768" cellspacing="0" cellpadding="0" border="0" align="left" valign="top" style="padding-left:20px;padding-top:-15px;">
-            <tbody>
-            <tr>
-              <td valign="top" height="600" align="center" style="font-size:12px;" colspan="2">
-						<h1 style="text-align: center;">
-			锂电池在电动自行车中的机遇分析</h1>
-			<style>p
+﻿			<style>p
 			{
 				text-align:left;
 			}
 			</style>
+<h1 style="text-align: center;">
+			锂电池在电动自行车中的机遇分析</h1>
 		<p style="align:left;">
 			&nbsp;&nbsp;&nbsp; 电动汽车的发展速度并不如行业人士预期的那么快，相应地电动汽车用锂电池的销售仍处于较小规模。但我国电动自行车保有量和年产量都非常庞大，2010年我国电动自行车产量2954万辆，同比增长33%，而电动自行车社会保有量超过一亿二千万辆。由于具有成本优势，铅酸电池占据电动自行车用电池市场的主要份额，锂电池不足4%。</p>
 		<p>
@@ -66,8 +39,6 @@ padding-top:5px;
 			&nbsp;&nbsp;&nbsp; 前述研发人员表示，电动车要控制在40公斤以下的话，其电池最多只能10多公斤重。从上述经济性比较就可看出锂电池的重量优势，在相同重量下锂电池也表现出较好的工作性能。</p>
 		<p>
 			总的来说，锂电池代表了未来先进二次电池的发展方向，在环保、续航力和功率方面相比铅酸电池都具有优势。在环保要求越来越严格的趋势下，铅酸电池的产能将进一步缩小；而相关部门对电动车重量的新标准，也将限制铅酸电池在电动自行车的进一步应用。随着锂电池成本的逐年下降，可以预期未来将在电动自行车电池领域占据更大的市场份额。</p>
-</div>
-             </td>
-              </tr>
-          </tbody></table>
-</td></tr></table>
+
+		<p style="text-align: right;">
+			<span style="font-size: 12px;">来源：中国工控网</span></p>
