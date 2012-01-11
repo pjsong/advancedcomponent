@@ -14,7 +14,7 @@
 }
 #xwgg dl dt a:hover {
     background: url('/static/img/footer/hover01.jpg') no-repeat scroll left center transparent;
-    color: #969696;
+    color: #ee1111;
 }
 #xwgg dl dt a:active {
     background: url('/static/img/footer/click01.gif') no-repeat scroll left center transparent;
