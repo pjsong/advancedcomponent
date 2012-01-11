@@ -7,12 +7,12 @@
 <div><a href="$_url/news.jhtml"><img src="/static/img/footer/industrytrend.gif"></a></div><br />
 <div id="xwgg">
             <dl>
-                <dt><a title="2011年家电满意度报告出炉 用户对厨电服务最满意" href="./about/article2.html">2011年家电满意度报告出炉 用户对厨电服...</a></dt>
-                <dt><a title="2011年家电满意度报告出炉 用户对厨电服务最满意" href="./about/article2.html">2011年家电满意度报告出炉 用户对厨电服...</a></dt>
-                <dt><a title="2011年家电满意度报告出炉 用户对厨电服务最满意" href="./about/article2.html">2011年家电满意度报告出炉 用户对厨电服...</a></dt>
-                <dt><a title="2011年家电满意度报告出炉 用户对厨电服务最满意" href="./about/article2.html">2011年家电满意度报告出炉 用户对厨电服...</a></dt>
+                <dt><a title="锂电池在电动自行车中的机遇分析" href="./about/news.jhtml?id=1">锂电池在电动自行车中的机遇分析</a></dt>
+                <dt><a title="聚焦2011工博会，产业升级精彩起步" href="./about/news.jhtml?id=2">聚焦2011工博会，产业升级精彩起步</a></dt>
+                <dt><a title="锂电隔膜技术与产业化将成发展重点" href="./about/news.jhtml?id=3">锂电隔膜技术与产业化将成发展重点</a></dt>
+                <dt><a title="中国锂电池行业有过度投资风险" href="./about/news.jhtml?id=4">中国锂电池行业有过度投资风险</a></dt>
             </dl>
-            <a class="all" href="$_url/news.jhtml">[查看更多内容]</a>
+            <a class="all" href="$_url/about/news.jhtml">[查看更多内容]</a>
         </div>
 </td>
 </td>
