@@ -89,6 +89,8 @@ public class GlobalVariablesBA {
 			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='customerservice_big.jhtml' > 聯繫我們</a>";
 		if("products_big.jhtml".equals(uri) || "item_big.jhtml".equals(uri))
 			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='products._big.jhtml' > 產品瀏覽</a>";
+		if("about/news_big.jhtml".equals(uri))
+			return "<a href = '/index.jhtml'>首頁</a> > <a href='news.jhtml' > 產業資訊</a>";
 		if("about/recruit_big.jhtml".equals(uri))
 			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='products._big.jhtml' > 人才招聘</a>";
 		
