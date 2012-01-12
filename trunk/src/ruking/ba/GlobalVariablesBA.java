@@ -73,7 +73,7 @@ public class GlobalVariablesBA {
 		if("about/aboutus.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='/about/aboutus.jhtml' > 关于如金</a>";
 		if("about/customerservice.jhtml".equals(uri))
-			return "<a href = '/index.jhtml'>首页</a> > <a href='customerservice.jhtml' > 客服中心</a>";
+			return "<a href = '/index.jhtml'>首页</a> > <a href='customerservice.jhtml' > 联系我们</a>";
 		if("products.jhtml".equals(uri) || "item.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='products.jhtml' > 产品浏览</a>";
 		if("about/solution.jhtml".equals(uri))
@@ -86,7 +86,7 @@ public class GlobalVariablesBA {
 		if("about/aboutus_big.jhtml".equals(uri))
 			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='/about/aboutus_big.jhtml' > 關於如金</a>";
 		if("about/customerservice_big.jhtml".equals(uri))
-			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='customerservice_big.jhtml' > 客服中心</a>";
+			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='customerservice_big.jhtml' > 聯繫我們</a>";
 		if("products_big.jhtml".equals(uri) || "item_big.jhtml".equals(uri))
 			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='products._big.jhtml' > 產品瀏覽</a>";
 		if("about/recruit_big.jhtml".equals(uri))
