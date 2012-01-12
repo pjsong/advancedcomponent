@@ -1,5 +1,5 @@
 ﻿#parse("include/header_big.vm")
-<div style="background:url('/static/img/body/background.jpg') repeat-x scroll bottom center;">
+<div style="background:url('/static/img/body/background.jpg') repeat-x fixed top center; height:650px;">
 #parse("include/breadcrum_big.vm")
 #parse("include/news/news_big.vm")
 </div>
