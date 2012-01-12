@@ -1,0 +1,7 @@
+﻿#parse("include/news/news_header_big.vm")
+#if($id==""|| $id=="1") #parse("include/news/1_big.vm") #end
+#if($id=="2") #parse("include/news/2_big.vm") #end
+#if($id=="3") #parse("include/news/3_big.vm") #end
+#if($id=="4") #parse("include/news/4_big.vm") #end
+#if($id=="5") #parse("include/news/5_big.vm") #end
+#parse("include/news/news_footer_big.vm")
