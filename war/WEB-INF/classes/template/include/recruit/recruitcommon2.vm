@@ -42,10 +42,9 @@ padding-top:5px;
 <table width="100%" border="0">
 <tr><td colspan=2>
 </td></tr><tr><td valign="top" width="320px">
-	<table border="0" width="160px" align="right" style="background-color:#804040;">
-		<tr><td align="center" class="zhaopin"><a href="$_url/about/recruit.jhtml" style="color:#ffff00">招聘岗位</a></td></tr>
-		<tr><td align="right"><a href="$_url/about/recruit.jhtml?id=1" style ="font-size:12px; #if($id=='1')color:#00ffff;#else color:#ffff00;#end">电气自动化工程师</a></td></tr>
-		<tr><td align="right"><a href="$_url/about/recruit.jhtml?id=2" style ="font-size:12px; #if($id=='2')color:#00ffff;#else color:#ffff00;#end">结构设计工程师</a></td></tr>
+	<table class="nav" border="0" width="190px" align="right">
+		<tr><td align="center"><a href="$_url/about/recruit.jhtml?id=1" style = #if($id=='1')color:#00ffff;#else color:#ffff00;#end">电气自动化工程师</a></td></tr>
+		<tr><td align="center"><a href="$_url/about/recruit.jhtml?id=2" style = #if($id=='2')color:#00ffff;#else color:#ffff00;#end">结构设计工程师</a></td></tr>
 	</table></td>
 	<td valign="top">
 			<table width="768" cellspacing="0" cellpadding="0" border="0" align="left" valign="top" style="padding-left:20px;padding-top:-15px;">
