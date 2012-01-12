@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.velocity.VelocityContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
+import ruking.db.Logger;
 import ruking.velocity.VelocityParserFactory;
 
 
@@ -26,6 +27,8 @@ public class TheDispatcherServlet extends DispatcherServlet
 			}			
 			VelocityContext ctx = new VelocityContext();
 			response.setStatus(500);
+			ctx.put("stackTrace",e.getMessage());
+			Logger.error(e.getMessage());
 			VelocityParserFactory.getVP().render("err_500", ctx, request, response);
 		}
     }
