@@ -40,3 +40,9 @@ https://www.arvixe.com/
 https://bar.meebo.com/setup/1/
 
 http://www.quackit.com/html/online-html-editor/
+
+download installer from:
+http://dl.google.com/android/installer_r16-windows.exe
+
+Installing the ADT Plugin
+https://dl-ssl.google.com/android/eclipse/
