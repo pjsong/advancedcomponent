@@ -1,5 +1,5 @@
 #parse("include/header.vm")
-<div style="background:url('/static/img/body/background.jpg') repeat-x fixed top center; height:650px;">
+<div style="background:url('/static/img/body/background.jpg') repeat-x fixed top center; height:500px;">
 #parse("include/breadcrum.vm")
 #parse("include/customerservice/customerservice.vm")
 </div>
