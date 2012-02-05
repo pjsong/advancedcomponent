@@ -2,14 +2,10 @@
 .article{
     line-height: 25px;
     text-indent: 2em;
+	font-size:12px;
 	}</style>
-<table width="768" cellspacing="0" cellpadding="0" border="0" align="left">
-            <tbody>
-            <tr>
-              <td valign="top" align="left" style="font-size:12px;" colspan="2">
-<div class="article">
-    <p><strong>東莞如金自動化設備科技有限公司</strong>
-    </p>
+<span class="article">
+    <strong>&nbsp;&nbsp;東莞如金自動化設備科技有限公司</strong>
     <p>地址：廣東省東莞市萬江區上甲社區書院路85號 </p>
     <p>電話：+86-0769-28639587</p>
     <p>傳真：+86-769-23151645</p>
@@ -18,7 +14,7 @@
 	<p>手機：13712349386      </p>
     <p>郵件：sales@ruking-cn.com      </p>
     <p>技術支援：support@ruking-cn.com</p>
-  </div>
+  </span>
   </td></tr></table>
              </td>
               </tr>
