@@ -35,7 +35,7 @@ body:606060 background fefefe
 language:b8fefe
 
 http://www.sse.com.cn/sseportal/webapp/datapresent/SSEQueryFirstSSENewAct
-
+ 
 https://www.arvixe.com/
 https://bar.meebo.com/setup/1/
 
@@ -46,3 +46,6 @@ http://dl.google.com/android/installer_r16-windows.exe
 
 Installing the ADT Plugin
 https://dl-ssl.google.com/android/eclipse/
+
+http://www.javaperformancetuning.com/tips/synchronization.shtml#REF1
+http://www.linfo.org
