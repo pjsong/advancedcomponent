@@ -3,5 +3,7 @@
 #parse("include/breadcrum_big.vm")
 #if($!id=="" || $!id=="1")#parse("include/news1/company_news_list_big.vm")#end
 #if($!id=="2")#parse("include/news1/industry_news_list_big.vm")#end
+#if($!id=="3")#parse("include/news1/company_news_list/3_big.vm")#end
+#if($!id=="4")#parse("include/news1/industry_news_list/4_big.vm")#end
 </div>
 #parse("include/footer_big.vm")
