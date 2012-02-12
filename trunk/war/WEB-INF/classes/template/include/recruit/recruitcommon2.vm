@@ -16,7 +16,7 @@
     display: block;
     float: left;
     padding-left: 15px;
-    width: 100px;
+    width: 120px;
 }
 .jdd ul li {
     border-bottom: 1px solid #EEEEEE;
