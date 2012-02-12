@@ -60,7 +60,7 @@
 <script>
 function checkInput()
 {
-if (document.searchform.searchword.value.indexOf('产品搜索...')!=-1 || document.searchform.searchword.value.trim()==''){
+if (document.searchform.searchword.value.indexOf('Search Products...')!=-1 || document.searchform.searchword.value.trim()==''){
 document.searchform.searchword.value='';
 document.searchform.searchword.focus();
 return false;
