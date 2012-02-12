@@ -103,7 +103,7 @@ return true;
 			  </form>
             </td>
           </tr><tr><td align="left" colspan=8 style="padding-top:12px;"><div id="menu">
-		<a href="$_url/index.jhtml">&nbsp;&nbsp;首页&nbsp;</a> <span class="seperator"> | <a href="$_url/about/aboutus.jhtml">&nbsp;&nbsp;关于如金&nbsp;</a> <span class="seperator"> | </span><a href="$_url/products.jhtml">&nbsp;产品浏览&nbsp;</a>&nbsp;<span class="seperator"> | <a href="$_url/about/news.jhtml">&nbsp;新闻资讯</a>&nbsp;<span class="seperator"> | </span><a href="$_url/about/solutions.jhtml">&nbsp;经典案例&nbsp;</a>&nbsp;<span class="seperator"> | </span>
+		<a href="$_url/index.jhtml">&nbsp;&nbsp;首页&nbsp;</a> <span class="seperator"> | <a href="$_url/about/aboutus.jhtml">&nbsp;&nbsp;关于如金&nbsp;</a> <span class="seperator"> | <a href="$_url/about/news.jhtml">&nbsp;新闻资讯</a>&nbsp;<span class="seperator"> | </span><a href="$_url/products.jhtml">&nbsp;产品浏览&nbsp;</a>&nbsp;<span class="seperator"> | </span><a href="$_url/about/solutions.jhtml">&nbsp;经典案例&nbsp;</a>&nbsp;<span class="seperator"> | </span>
 		</span><a href="$_url/about/recruit.jhtml">&nbsp;人才招聘&nbsp;&nbsp;</a><span class="seperator"> | </span><a href="$_url/about/customerservice.jhtml">&nbsp;联系我们&nbsp;&nbsp;</a></div><td>      </tr>
         </tbody></table>
     </td>
