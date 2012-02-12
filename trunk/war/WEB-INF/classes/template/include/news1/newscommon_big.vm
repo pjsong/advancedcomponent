@@ -18,6 +18,6 @@
 <tr><td colspan=2>
 </td></tr><tr><td valign="top" width="320px">
 	<table align="right" class="nav" border="0" width="200px">
-		<tr><td align="center"><a href="$_url/about/aboutus_big.jhtml?id=1">公司新聞</a></td></tr>
-		<tr><td align="center"><a href="$_url/about/aboutus_big.jhtml?id=2">行業資訊</a></td></tr>
+		<tr><td align="center"><a href="$_url/about/news1_big.jhtml?id=1">公司新聞</a></td></tr>
+		<tr><td align="center"><a href="$_url/about/news1_big.jhtml?id=2">行業資訊</a></td></tr>
 		</table></td>
