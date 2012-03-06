@@ -10,8 +10,6 @@
     <bean id="productsController"   class="ruking.controller.ProductsController" ></bean>  
     <bean id="searchController"   class="ruking.controller.SearchController" ></bean>  
     <bean id="itemController"   class="ruking.controller.ItemController" ></bean>  
-    <!-- bean id="newsController"   class="ruking.controller.NewsController" ></bean >    
-    <bean id="solutionsController"   class="ruking.controller.SolutionsController" ></bean -->
   
     <bean id="manageController"   class="ruking.controller.manage.ManageController" ></bean>
     <bean id="listUsersController"   class="ruking.controller.manage.ListUsersController" ></bean>
@@ -36,11 +34,6 @@
     <bean id="editProductEngController"   class="ruking.controller.eng.manage.EditProductController" ></bean>
     <bean id="editAttributeEngController"   class="ruking.controller.eng.manage.EditAttributeController" ></bean>
 
-<!--  
-    <bean id="newsBigController"   class="ruking.controller.big.NewsController" ></bean>    
-    <bean id="solutionsBigController"   class="ruking.controller.big.SolutionsController" ></bean>
-
--->
     <bean id="indexEngController"   class="ruking.controller.eng.IndexController" ></bean>
     <bean id="aboutEngController"   class="ruking.controller.eng.AboutController" ></bean>
     <bean id="productsEngController"   class="ruking.controller.eng.ProductsController" ></bean>  
@@ -73,10 +66,6 @@
             <prop key="/products.jhtml">productsController</prop>           
             <prop key="/searchproducts.jhtml">searchController</prop>       
             <prop key="/item.jhtml">itemController</prop>      
-            <!-- 
-            prop key="/news.jhtml">newsController</prop>            
-            <prop key="/solutions.jhtml">solutionsController</prop>      
-             -->      
             <prop key="/reg.jhtml">regController</prop>
             <prop key="/logout.jhtml">logoutController</prop>
             <prop key="/login.jhtml">loginController</prop>
