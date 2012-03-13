@@ -22,6 +22,7 @@ zkm0m1.chinaw3.com
 
 cuteftp
 http://www.net.cn/service/Soft/ShowSoftDown.asp?UrlID=1&SoftID=7
+ftp password:ruking0769
 
 reset tomcat
 http://cp.hichina.com/ResetTomcat.aspx?tr=resettomcat#
