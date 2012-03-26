@@ -19,12 +19,14 @@ import org.apache.lucene.search.Collector;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 
+import ruking.search.SearchEngine;
+
 
 public class Main {
     public static void main(String[] args) {
       try {
         Indexer.main(null);
-        SearchEngine instance = new SearchEngine();
+        SearchEngine instance = new SearchEngine("");
         TopDocs hits = instance.performSearch_Collector("焊底");
         getResultLM(hits,instance);
         System.out.println("performSearch done");
