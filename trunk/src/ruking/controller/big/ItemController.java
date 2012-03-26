@@ -32,7 +32,7 @@ public class ItemController extends BaseController {
         	response.sendRedirect("/products_big.jhtml");
         	return;
        	}
-       	AttributeDAO aDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+       	AttributeDAO aDAO = new AttributeDAO();
         List<Map> attrs = aDAO.getAttributesByProductId(id,"big");
         vc.put("pDTO", pDTO);
         vc.put("attrs", attrs);

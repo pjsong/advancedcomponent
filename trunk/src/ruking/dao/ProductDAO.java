@@ -1,5 +1,6 @@
 package ruking.dao;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class ProductDAO {
 		this.password = password;
 	}
 	
-	public List<Map> getGlobalCatProducts(int id,String lang)throws SQLException{
+	public List<Map> getGlobalCatProducts(int id,String lang)throws SQLException, IOException{
 		List<Map> ret = new ArrayList<Map>();
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT ProductIDs FROM globalcat where ID="+DbUtil.escSql(id);
@@ -48,7 +49,7 @@ public class ProductDAO {
 //		List<Map> ret = runner.query(sql);
 //		return ret;
 //	}
-	public List<Map> getCatProductsByCatID(String id,String lang)throws SQLException{
+	public List<Map> getCatProductsByCatID(String id,String lang)throws SQLException, IOException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM product where CatID ="+DbUtil.escSql(id);
 		if("eng".equals(lang))sql="SELECT * FROM product_eng where CatID ="+DbUtil.escSql(id);
@@ -56,7 +57,7 @@ public class ProductDAO {
 		return formatProductMap(runner.query(sql),lang);
 	}
 	
-	public List<Map> getAllProducts(String lang)throws SQLException{
+	public List<Map> getAllProducts(String lang)throws SQLException, IOException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM product";
 		if("eng".equals(lang))sql = "SELECT * FROM product_eng";
@@ -195,10 +196,10 @@ public class ProductDAO {
 		}
 		return ret;
 	}
-	private List<Map> formatProductMap(List<Map> lm,String lang) throws SQLException{
+	private List<Map> formatProductMap(List<Map> lm,String lang) throws SQLException, IOException{
 		for(Map m:lm){
 			Integer id = (Integer)m.get("ID");
-			AttributeDAO attrDAO = new AttributeDAO(hostName,dbName,dbUser,password);
+			AttributeDAO attrDAO = new AttributeDAO();
 			String value = attrDAO.addModelNameToTitleByProductId(id.toString(),lang);
 			if(value!=null && value.length() > 1)
 			m.put("Title", ((String)m.get("Title"))+"_"+value);

@@ -11,18 +11,15 @@ package ruking.index;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.StringReader;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.Document;
-import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
@@ -30,7 +27,9 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
 import ruking.db.DataSourceFactory;
-import ruking.db.TransRunner;
+import ruking.db.DbUtil;
+import ruking.db.MDTMySQLRowMapper;
+import ruking.db.QueryRunner;
 import ruking.utils.Conf;
 
 
@@ -39,8 +38,12 @@ public class Indexer {
 	public String dbName;// = "zkm0m1_db";
 	public String password;// = "pjsong";
 	public String dbUser;
-    public Indexer() {
-    	
+    public Indexer() throws IOException {
+		Conf conf=new Conf();
+		this.hostName = conf.getHostName();
+		this.dbName = conf.getDbName();
+		this.dbUser = conf.getDbUser();
+		this.password = conf.getDbPassword();
     }
     private IndexWriter indexWriter = null;
     
@@ -83,7 +86,6 @@ public class Indexer {
     }   
     
     public void rebuildIndexes(String lang) throws IOException, SQLException {
-          //
           // Erase existing index
     	String fileName = "ruking-index";
     	if(!lang.equals("")){
@@ -103,7 +105,7 @@ public class Indexer {
 	  List<Map> ret = new ArrayList<Map>();
 	  	if(!lang.equals(""))lang="_"+lang;
 		String sql = "select * from product"+lang;
-        TransRunner runner = new TransRunner(DataSourceFactory.getDataSource("zkm0m1_db", conf.getDbPassword()), new MDTMySQLRowMapper());
+		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		List<Map> row = runner.query(sql);
 		if(row==null || row.size()==0)return null;
 		StringBuffer sb = new StringBuffer();

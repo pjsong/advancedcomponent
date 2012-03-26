@@ -19,7 +19,7 @@ public class ListAttributesController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-    	AttributeDAO aDAO = new AttributeDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+    	AttributeDAO aDAO = new AttributeDAO();
 		String act= Util.getNoNull(request.getParameter("act"));
 		if(act.equals("del")){
 			String id = Util.getNoNull(request.getParameter("id"));
