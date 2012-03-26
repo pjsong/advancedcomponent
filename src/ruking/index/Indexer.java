@@ -86,7 +86,7 @@ public class Indexer {
     
     public void rebuildIndexes(String lang) throws IOException, SQLException {
           // Erase existing index
-    	String fileName = "ruking-index";
+    	String fileName = "./htdocs/WEB-INF/classes/ruking-index";
     	if(!lang.equals("")){
     		fileName = fileName +"_"+lang;
     	}
