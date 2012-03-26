@@ -22,7 +22,7 @@ public class SolutionsController extends BaseController {
         VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
         String id = request.getParameter("id");
-        ArticleDAO adao = new ArticleDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+        ArticleDAO adao = new ArticleDAO();
         List<Map> articles = adao.getArticlesByType("2");
         Map selectedArticle = null;
         if(Util.getNoNull(id).equals("") && articles.size()>0)
