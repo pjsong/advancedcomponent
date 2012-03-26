@@ -1,5 +1,6 @@
 package ruking.dao;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,6 +13,7 @@ import ruking.db.MDTMySQLRowMapper;
 import ruking.db.QueryRunner;
 import ruking.db.TransRunner;
 import ruking.dto.ArticleDTO;
+import ruking.utils.Conf;
 import ruking.utils.Util;
 
 public class ArticleDAO {
@@ -20,13 +22,13 @@ public class ArticleDAO {
 	public String password;// = "pjsong";
 	public String dbUser;
 
-	public ArticleDAO(String hostName, String dbName, String dbUser,
-			String password) {
+	public ArticleDAO() throws IOException {
 		super();
-		this.hostName = hostName;
-		this.dbName = dbName;
-		this.dbUser = dbUser;
-		this.password = password;
+		Conf conf=new Conf();
+		this.hostName = conf.getHostName();
+		this.dbName = conf.getDbName();
+		this.dbUser = conf.getDbUser();
+		this.password = conf.getDbPassword();
 	}
 
 

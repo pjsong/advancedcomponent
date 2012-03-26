@@ -17,7 +17,7 @@ public class ListArticlesController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-    	ArticleDAO aDAO = new ArticleDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+    	ArticleDAO aDAO = new ArticleDAO();
    		vc.put("currentTab", "article_big");
    		List<Map> articles = aDAO.getAllArticles_big();
    		vc.put("articles", articles);

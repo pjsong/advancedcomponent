@@ -50,7 +50,7 @@ public class GetArticleServiceImpl extends HttpServlet {
 		a.setHeader(p.get("header").toString());
 		a.setAuthor(p.get("author").toString());
 		Conf conf=new Conf();
-		ArticleDAO sd = new ArticleDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
+		ArticleDAO sd = new ArticleDAO();
 		String act = req.getParameter("act");
 		if("update".equals(act)){
 			a.setId(p.get("id").toString());
@@ -76,8 +76,7 @@ public class GetArticleServiceImpl extends HttpServlet {
 	}
 	   
 	   private JSONArray getJA(String id) throws SQLException, IOException{
-		   Conf conf=new Conf();
-	       ArticleDAO articleDAO = new ArticleDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
+	       ArticleDAO articleDAO = new ArticleDAO();
 	       JSONArray ret = new JSONArray();
 		   List<Map> result=null;
 		   if(NumberUtils.isDigits(id)){
