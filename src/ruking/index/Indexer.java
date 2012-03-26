@@ -145,5 +145,16 @@ public class Indexer {
         System.out.println("rebuild eng done");
         indexer.closeIndexWriter();
     }
-    
+    public static int startIndexBuilding() {
+        try{
+        	Indexer  indexer = new Indexer();
+			indexer.rebuildIndexes("");
+			indexer.rebuildIndexes("big");
+			indexer.rebuildIndexes("eng");
+			indexer.closeIndexWriter();
+        }catch(Exception e){
+        	return 0;
+        }
+        return 1;
+    }
 }
