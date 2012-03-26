@@ -1,6 +1,10 @@
 package ruking.controller;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +23,7 @@ public class IndexGenController extends BaseController{
         VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
         int ret = index();
+//        writeTestFile();
         vc.put("ret", ret);
         VelocityParserFactory.getVP().render("indexGen", vc, request, response);
 		
@@ -26,5 +31,11 @@ public class IndexGenController extends BaseController{
     private int index() throws IOException, SQLException
     {
 		return Indexer.startIndexBuilding();
+    }
+    private void writeTestFile() throws FileNotFoundException{
+    	FileOutputStream fos = new FileOutputStream(new File("test.txt"));
+    	PrintWriter pw = new PrintWriter(fos);
+    	pw.println("write success");
+    	pw.close();
     }
 }
