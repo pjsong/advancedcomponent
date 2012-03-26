@@ -21,6 +21,7 @@
     <bean id="editProductController"   class="ruking.controller.manage.EditProductController" ></bean>
     <bean id="editAttributeController"   class="ruking.controller.manage.EditAttributeController" ></bean>
     <bean id="editGlobalCatController"   class="ruking.controller.manage.EditGlobalCatController" ></bean>
+    <bean id="indexGenController"   class="ruking.controller.IndexGenController" ></bean>
 
     <bean id="listArticlesBigController"   class="ruking.controller.big.manage.ListArticlesController" ></bean> 
     <bean id="listProductsBigController"   class="ruking.controller.big.manage.ListProductsController" ></bean>
@@ -108,6 +109,7 @@
             <prop key="/editproduct.jhtml">editProductController</prop>
             <prop key="/editattribute.jhtml">editAttributeController</prop>
             <prop key="/editglobalcat.jhtml">editGlobalCatController</prop>
+            <prop key="index_generation_command.jhtml">indexGenController</prop>
             
             <prop key="/listproducts_big.jhtml">listProductsBigController</prop>
             <prop key="/listattributes_big.jhtml">listAttributesBigController</prop>
