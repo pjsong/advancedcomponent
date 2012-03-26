@@ -76,7 +76,6 @@ public class Indexer {
     	String pid = map.get("id");
     	String title = map.get("Title");
     	String content = map.get("content");
-        System.out.println("Indexing Products: " + pid);
         IndexWriter writer = getIndexWriter("ruking-index",false);
         Document doc = new Document();
         doc.add(new Field("id", pid, Field.Store.YES, Field.Index.NO));
