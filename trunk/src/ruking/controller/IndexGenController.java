@@ -10,7 +10,6 @@ import org.apache.velocity.VelocityContext;
 
 import ruking.ba.GlobalVariablesBA;
 import ruking.index.Indexer;
-import ruking.utils.Util;
 import ruking.velocity.VelocityParserFactory;
 
 public class IndexGenController extends BaseController{
