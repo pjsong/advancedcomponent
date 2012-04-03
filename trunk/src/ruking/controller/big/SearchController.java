@@ -37,7 +37,7 @@ public class SearchController extends BaseController {
         VelocityParserFactory.getVP().render("search_big", vc, request, response);
 	}
 	   private String getJA(VelocityContext vc,String keywords,String lang) throws SQLException, CorruptIndexException, IOException, ParseException{
-	       ProductDAO productDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+	       ProductDAO productDAO = new ProductDAO();
 	       JSONArray ret = new JSONArray();
 		   List<Map> result= SearchTool.getResultLM(keywords,lang);
 			if(result.size()>0){

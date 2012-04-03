@@ -34,7 +34,7 @@ public class GetCategoryServiceImpl extends HttpServlet {
 	   
 	   private JSONArray getJA(String lang) throws SQLException, IOException{
 		 Conf conf=new Conf();
-		 ProductDAO paDAO = new ProductDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
+		 ProductDAO paDAO = new ProductDAO();
 	       JSONArray ret = new JSONArray();
 	       Map<String,List<Map>> result = paDAO.getAllCats(lang);
 			if(result.size()>0){

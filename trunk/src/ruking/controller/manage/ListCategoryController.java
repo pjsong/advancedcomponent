@@ -1,4 +1,4 @@
-package ruking.controller.big.manage;
+package ruking.controller.manage;
 
 import java.util.List;
 import java.util.Map;
@@ -11,30 +11,28 @@ import org.apache.velocity.VelocityContext;
 
 import ruking.ba.GlobalVariablesBA;
 import ruking.controller.BaseController;
-import ruking.dao.ProductDAO;
-import ruking.db.DataSourceFactory;
-import ruking.db.MDTMySQLRowMapper;
-import ruking.session.SessionUtil;
+import ruking.dao.CategoryDAO;
 import ruking.utils.Util;
 import ruking.velocity.VelocityParserFactory;
 
-public class ListProductsController extends BaseController {
+public class ListCategoryController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
-   		vc.put("currentTab", "product_big");
         new GlobalVariablesBA().setCommonVariables(request, vc);
-    	ProductDAO pDAO = new ProductDAO();
+    	CategoryDAO cDAO = new CategoryDAO();
 		String act= Util.getNoNull(request.getParameter("act"));
 		if(act.equals("del")){
 			String id = Util.getNoNull(request.getParameter("id"));
-			if(NumberUtils.isDigits(id) && pDAO.getProductByID(id,"big")!=null){
-				pDAO.deleteProduct(id);
+			if(NumberUtils.isDigits(id) && cDAO.getCategoryByID(id,"")!=null){
+				cDAO.deleteCategory(id);
 			}
-			response.sendRedirect("/listproducts_big.jhtml");
+			response.sendRedirect("/listcategory.jhtml");
 			return;
 		}
-   		List<Map> products = pDAO.getAllProducts("big");
-   		vc.put("products", products);
-   		VelocityParserFactory.getVP().render("listproducts_big", vc, request, response);
+   		vc.put("currentTab", "product");
+   		List<Map> categories = cDAO.getAllCategories("");
+   		vc.put("categories", categories);
+   		VelocityParserFactory.getVP().render("listcategories", vc, request, response);
 	}
 }
+

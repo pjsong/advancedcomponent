@@ -39,7 +39,7 @@ public class LoginController extends BaseController {
         new GlobalVariablesBA().setCommonVariables(request, vc);
         String username = request.getParameter("loginName");
         String password = request.getParameter("loginPassword");
-        UserSignUpDAO uDAO = new UserSignUpDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+        UserSignUpDAO uDAO = new UserSignUpDAO();
         UserSignUpDTO u = uDAO.login(username, password);
         if(u==null){
         	vc.put("loginError", "用户名/密码错误");

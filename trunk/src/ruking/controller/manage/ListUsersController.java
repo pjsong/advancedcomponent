@@ -23,7 +23,7 @@ public class ListUsersController extends BaseController {
 		SessionUtil sessUtil = new SessionUtil(DataSourceFactory.getDataSource((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbName"),(String)vc.get("dbPWD")), new MDTMySQLRowMapper());
     	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
     	vc.put("currentTab", "user");
-    	List<Map> users = new UserSignUpDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD")).getAllUsers();
+    	List<Map> users = new UserSignUpDAO().getAllUsers();
     	vc.put("users", users);
     	VelocityParserFactory.getVP().render("listusers", vc, request, response);
 	}

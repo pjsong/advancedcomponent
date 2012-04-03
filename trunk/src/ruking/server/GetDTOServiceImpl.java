@@ -39,7 +39,7 @@ public class GetDTOServiceImpl extends HttpServlet {
 	   
 	   private JSONArray getJA(String category,String lang) throws SQLException, IOException{
 			 Conf conf=new Conf();
-			 ProductDAO paDAO = new ProductDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
+			 ProductDAO paDAO = new ProductDAO();
 	       JSONArray ret = new JSONArray();
 		   List<Map> result=null;
 		   if(NumberUtils.isDigits(category)){

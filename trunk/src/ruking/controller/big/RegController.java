@@ -59,7 +59,7 @@ public class RegController extends BaseController {
 		UserSignUpDTO userSignUpDTO = new UserSignUpDTO();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(userSignUpDTO, "userSignUpDTO");
 		binder.bind(request);
-		UserSignUpDAO uDAO = new UserSignUpDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+		UserSignUpDAO uDAO = new UserSignUpDAO();
 		Map<String,String> error=check(userSignUpDTO,uDAO);
 		if(error.size()>0){
 			vc.put("error", error);
@@ -97,7 +97,7 @@ public class RegController extends BaseController {
 		String oldLoginName = userSignUpDTO.getLoginName();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(userSignUpDTO, "userSignUpDTO");
 		binder.bind(request);
-		UserSignUpDAO uDAO = new UserSignUpDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+		UserSignUpDAO uDAO = new UserSignUpDAO();
 		Map<String,String> error=updateCheck(userSignUpDTO,uDAO,oldLoginName);
 		if(error.size()>0){
 			vc.put("error", error);
