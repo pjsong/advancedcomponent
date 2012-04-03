@@ -36,7 +36,7 @@ public class EditCategoryController extends BaseController {
         if(act.equals("edit")){
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "update");
-            String id= Util.getNoNull(request.getParameter("id"));
+            String id= Util.getNoNull(request.getParameter("cid"));
 	    	CategoryDTO pDTO = pDAO.getCategoryByID(id,"");
         	vc.put("category", pDTO);
             VelocityParserFactory.getVP().render("editcategory", vc, request, response);
@@ -70,7 +70,7 @@ public class EditCategoryController extends BaseController {
 	private void update(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-        String id= Util.getNoNull(request.getParameter("id"));
+        String id= Util.getNoNull(request.getParameter("cid"));
     	CategoryDAO pDAO = new CategoryDAO();
     	CategoryDTO category = pDAO.getCategoryByID(id,"");
     	String oldName = category.getCategory();
