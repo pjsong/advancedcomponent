@@ -105,5 +105,18 @@ public class CategoryDAO {
 		if(m!=null)p.setId(((Integer)m.get("ID")).toString());
 		return p;
 	}
-
+	public  void updateCategory(CategoryDTO p,String id,String lang) throws SQLException{
+		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
+		String sql="update category set Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory());
+		sql+=" where ID="+DbUtil.escSql(p.getId());
+		if("eng".equals(lang)){
+			sql="update category_eng set Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory());
+			sql+=" where ID="+DbUtil.escSql(id);
+		}
+		if("big".equals(lang)){
+			sql="update category_big set Category="+DbUtil.escSql(p.getCategory())+", SubCategory="+DbUtil.escSql(p.getSubcategory());
+			sql+=" where ID="+DbUtil.escSql(id);
+		}
+		runner.update(sql);
+	}
 }

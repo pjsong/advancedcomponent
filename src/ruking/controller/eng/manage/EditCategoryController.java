@@ -1,4 +1,4 @@
-package ruking.controller.big.manage;
+package ruking.controller.eng.manage;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -21,12 +21,12 @@ public class EditCategoryController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         String act= Util.getNoNull(request.getParameter("act"));
 		VelocityContext vc=new VelocityContext();
-   		vc.put("currentTab", "category_big");
+   		vc.put("currentTab", "category_eng");
     	CategoryDAO pDAO = new CategoryDAO();
        if(act.equals("")){
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "add");
-            VelocityParserFactory.getVP().render("editcategory_big", vc, request, response);
+            VelocityParserFactory.getVP().render("editcategory_eng", vc, request, response);
             return;
         }
         if(act.equals("add")){
@@ -37,9 +37,9 @@ public class EditCategoryController extends BaseController {
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "update");
             String id= Util.getNoNull(request.getParameter("pid"));
-	    	CategoryDTO pDTO = pDAO.getCategoryByID(id,"big");
+	    	CategoryDTO pDTO = pDAO.getCategoryByID(id,"eng");
         	vc.put("category", pDTO);
-            VelocityParserFactory.getVP().render("editcategory_big", vc, request, response);
+            VelocityParserFactory.getVP().render("editcategory_eng", vc, request, response);
             return;
         }
         if(act.equals("update")){
@@ -51,7 +51,7 @@ public class EditCategoryController extends BaseController {
 	private void add(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-   		vc.put("currentTab", "category_big");
+   		vc.put("currentTab", "category_eng");
    		CategoryDTO category = new CategoryDTO();  
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(category, "category");
 		binder.bind(request);
@@ -61,11 +61,11 @@ public class EditCategoryController extends BaseController {
 			vc.put("error", error);
 			vc.put("act", "add");
 			vc.put("category", category);
-			VelocityParserFactory.getVP().render("editcategory_big", vc, request, response);
+			VelocityParserFactory.getVP().render("editcategory_eng", vc, request, response);
 			return;
 		}else{
-			category = cDAO.insertCategory(category,"big");
-	    	response.sendRedirect("/listcategories_big.jhtml");
+			category = cDAO.insertCategory(category,"eng");
+	    	response.sendRedirect("/listcategories_eng.jhtml");
 		}
 	}
 	private void update(HttpServletRequest request, HttpServletResponse response) throws Exception{
@@ -73,7 +73,7 @@ public class EditCategoryController extends BaseController {
         new GlobalVariablesBA().setCommonVariables(request, vc);
         String id= Util.getNoNull(request.getParameter("pid"));
     	CategoryDAO pDAO = new CategoryDAO();
-    	CategoryDTO category = pDAO.getCategoryByID(id,"big");
+    	CategoryDTO category = pDAO.getCategoryByID(id,"eng");
     	String oldName = category.getCategory();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(category, "category");
 		binder.bind(request);
@@ -82,11 +82,11 @@ public class EditCategoryController extends BaseController {
 			vc.put("error", error);
 			vc.put("act", "update");
 			vc.put("category", category);
-			VelocityParserFactory.getVP().render("editcategory_big", vc, request, response);
+			VelocityParserFactory.getVP().render("editcategory_eng", vc, request, response);
 			return;
 		}else{
-			pDAO.updateCategory(category,id,"big");
-	    	response.sendRedirect("/listcategories_big.jhtml");
+			pDAO.updateCategory(category,id,"eng");
+	    	response.sendRedirect("/listcategories_eng.jhtml");
 		}
 	}
 	
