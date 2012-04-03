@@ -3,6 +3,7 @@ package ruking.controller.manage;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -109,7 +110,15 @@ public class EditProductController extends BaseController {
 		if(p.getCategory().length()>98)error.put("categoryLengthError", "类别太长");
 		if(p.getSubcategory().length()>98)error.put("subcategoryLengthError", "子类太长");
 		if("".equals(p.getCatID()))error.put("catIDEmptyError", "输入类别ID");
-		if(!NumberUtils.isDigits(p.getCatID()))error.put("catIDFormatError", "类别ID必须为数字");
+//		if(!NumberUtils.isDigits(p.getCatID()))error.put("catIDFormatError", "类别ID必须为数字");
+		if(!Pattern.matches("(,[\\d]+){1,},", p.getCatID()))error.put("catIDFormatError", "类别ID格式必须为\",数字1,数字2,...\"");
 		return error;
+	}
+	private static void testPattern(String regex, String target){
+		System.out.println(Pattern.matches(regex,target));
+	}
+	public static void main(String[] args){
+		testPattern("(,[\\d]+){1,},", ",1,1,");
+		testPattern("(,[\\d]+){1,},", "1,1,22,32,");
 	}
 }
