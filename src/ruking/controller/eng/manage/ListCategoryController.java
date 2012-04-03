@@ -27,10 +27,10 @@ public class ListCategoryController extends BaseController {
 			if(NumberUtils.isDigits(id) && cDAO.getCategoryByID(id,"")!=null){
 				cDAO.deleteCategory(id);
 			}
-			response.sendRedirect("/listcategory.jhtml");
+			response.sendRedirect("/listcategories.jhtml");
 			return;
 		}
-   		vc.put("currentTab", "product");
+   		vc.put("currentTab", "category_eng");
    		List<Map> categories = cDAO.getAllCategories("eng");
    		vc.put("categories", categories);
    		VelocityParserFactory.getVP().render("listcategories", vc, request, response);
