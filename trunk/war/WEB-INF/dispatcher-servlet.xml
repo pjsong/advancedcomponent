@@ -15,8 +15,9 @@
     <bean id="listUsersController"   class="ruking.controller.manage.ListUsersController" ></bean>
     <bean id="listArticlesController"   class="ruking.controller.manage.ListArticlesController" ></bean> 
     <bean id="listProductsController"   class="ruking.controller.manage.ListProductsController" ></bean>
+    <bean id="listCategoryController"   class="ruking.controller.manage.ListCategoryController" ></bean>
     <bean id="listAttributesController"   class="ruking.controller.manage.ListAttributesController" ></bean>
-    <bean id="listGlobalCatsController"   class="ruking.controller.manage.ListGlobalCatsController" ></bean>
+    <!-- bean id="listGlobalCatsController"   class="ruking.controller.manage.ListGlobalCatsController" ></bean> -->
     <bean id="editUserController"   class="ruking.controller.manage.EditUserController" ></bean>
     <bean id="editProductController"   class="ruking.controller.manage.EditProductController" ></bean>
     <bean id="editAttributeController"   class="ruking.controller.manage.EditAttributeController" ></bean>
@@ -25,12 +26,14 @@
 
     <bean id="listArticlesBigController"   class="ruking.controller.big.manage.ListArticlesController" ></bean> 
     <bean id="listProductsBigController"   class="ruking.controller.big.manage.ListProductsController" ></bean>
+    <bean id="listCategoryBigController"   class="ruking.controller.big.manage.ListCategoryController" ></bean>
     <bean id="listAttributesBigController"   class="ruking.controller.big.manage.ListAttributesController" ></bean>
     <bean id="editProductBigController"   class="ruking.controller.big.manage.EditProductController" ></bean>
     <bean id="editAttributeBigController"   class="ruking.controller.big.manage.EditAttributeController" ></bean>
     <bean id="loginBigController"   class="ruking.controller.big.LoginController" ></bean>
    
     <bean id="listProductsEngController"   class="ruking.controller.eng.manage.ListProductsController" ></bean>
+    <bean id="listCategoryEngController"   class="ruking.controller.eng.manage.ListCategoryController" ></bean>
     <bean id="listAttributesEngController"   class="ruking.controller.eng.manage.ListAttributesController" ></bean>
     <bean id="editProductEngController"   class="ruking.controller.eng.manage.EditProductController" ></bean>
     <bean id="editAttributeEngController"   class="ruking.controller.eng.manage.EditAttributeController" ></bean>
@@ -103,21 +106,24 @@
             <prop key="/listproducts.jhtml">listProductsController</prop>
             <prop key="/listattributes.jhtml">listAttributesController</prop>
              <prop key="/listarticles.jhtml">listArticlesController</prop>
-            <!-- <prop key="/editarticle.jhtml">editArticleController</prop>-->
-            <prop key="/listglobalcats.jhtml">listGlobalCatsController</prop>
+            <!-- <prop key="/editarticle.jhtml">editArticleController</prop>
+            <prop key="/listglobalcats.jhtml">listGlobalCatsController</prop>-->
             <prop key="/edituser.jhtml">editUserController</prop>
             <prop key="/editproduct.jhtml">editProductController</prop>
+            <prop key="/editcategory.jhtml">editCategoryController</prop>
             <prop key="/editattribute.jhtml">editAttributeController</prop>
             <prop key="/editglobalcat.jhtml">editGlobalCatController</prop>
             <prop key="index_generation_command.jhtml">indexGenController</prop>
             
             <prop key="/listproducts_big.jhtml">listProductsBigController</prop>
+            <prop key="/listcategory_big.jhtml">listCategoryBigController</prop>
             <prop key="/listattributes_big.jhtml">listAttributesBigController</prop>
              <prop key="/listarticles_big.jhtml">listArticlesBigController</prop>
             <prop key="/editproduct_big.jhtml">editProductBigController</prop>
             <prop key="/editattribute_big.jhtml">editAttributeBigController</prop>
             
             <prop key="/listproducts_eng.jhtml">listProductsEngController</prop>
+            <prop key="/listcategory_eng.jhtml">listCategoryEngController</prop>
             <prop key="/listattributes_eng.jhtml">listAttributesEngController</prop>
             <prop key="/editproduct_eng.jhtml">editProductEngController</prop>
             <prop key="/editattribute_eng.jhtml">editAttributeEngController</prop>
