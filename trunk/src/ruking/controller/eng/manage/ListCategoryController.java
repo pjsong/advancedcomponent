@@ -33,6 +33,6 @@ public class ListCategoryController extends BaseController {
    		vc.put("currentTab", "category_eng");
    		List<Map> categories = cDAO.getAllCategories("eng");
    		vc.put("categories", categories);
-   		VelocityParserFactory.getVP().render("listcategories", vc, request, response);
+   		VelocityParserFactory.getVP().render("listcategories_eng", vc, request, response);
 	}
 }

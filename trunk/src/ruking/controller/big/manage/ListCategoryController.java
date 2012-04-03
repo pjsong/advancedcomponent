@@ -32,6 +32,6 @@ public class ListCategoryController extends BaseController {
    		vc.put("currentTab", "category_big");
    		List<Map> categories = cDAO.getAllCategories("big");
    		vc.put("categories", categories);
-   		VelocityParserFactory.getVP().render("listcategories", vc, request, response);
+   		VelocityParserFactory.getVP().render("listcategories_big", vc, request, response);
 	}
 }
