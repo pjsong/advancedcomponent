@@ -43,17 +43,12 @@ public class ProductDAO {
 		}
 		return formatProductMap(ret,lang);
 	}
-//	public List<Map> getCatProducts(String cat)throws SQLException{
-//		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-//		String sql = "SELECT * FROM product where SubCategory ="+DbUtil.escSql(cat);
-//		List<Map> ret = runner.query(sql);
-//		return ret;
-//	}
+
 	public List<Map> getCatProductsByCatID(String id,String lang)throws SQLException, IOException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql = "SELECT * FROM product where CatID ="+DbUtil.escSql(id);
-		if("eng".equals(lang))sql="SELECT * FROM product_eng where CatID ="+DbUtil.escSql(id);
-		if("big".equals(lang))sql="SELECT * FROM product_big where CatID ="+DbUtil.escSql(id);
+		if("eng".equals(lang))sql="SELECT * FROM product_eng where CatID like '%,"+id+",%'";
+		if("big".equals(lang))sql="SELECT * FROM product_big where CatID like '%,"+id+",%'";
 		return formatProductMap(runner.query(sql),lang);
 	}
 	
@@ -102,7 +97,7 @@ public class ProductDAO {
 			u.setDescription((String)m.get("Description"));
 			u.setCategory((String)m.get("Category"));
 			u.setSubcategory((String)m.get("SubCategory"));
-			u.setCatID(((Integer)m.get("CatID")).toString());
+			u.setCatID((String)m.get("CatID"));
 		}
 		return u;
 	}
