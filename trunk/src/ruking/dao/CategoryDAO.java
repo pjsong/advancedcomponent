@@ -92,12 +92,12 @@ public class CategoryDAO {
 		sql=sql+");";
 		if("eng".equals(lang)){
 			sql="insert into category_eng(Category,SubCategory";
-			sql = sql+") values ("+DbUtil.escSql(p.getId().trim())+","+DbUtil.escSql(p.getCategory().trim())+","+DbUtil.escSql(p.getSubcategory().trim());
+			sql = sql+") values ("+DbUtil.escSql(p.getCategory().trim())+","+DbUtil.escSql(p.getSubcategory().trim());
 			sql=sql+");";
 		}
 		if("big".equals(lang)){
 			sql="insert into category_big(Category,SubCategory";
-			sql = sql+") values ("+DbUtil.escSql(p.getId().trim())+","+DbUtil.escSql(p.getCategory().trim())+","+DbUtil.escSql(p.getSubcategory().trim());
+			sql = sql+") values ("+DbUtil.escSql(p.getCategory().trim())+","+DbUtil.escSql(p.getSubcategory().trim());
 			sql=sql+");";
 		}
 		runner.update(sql);

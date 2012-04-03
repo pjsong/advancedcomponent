@@ -22,9 +22,9 @@ public class EditCategoryController extends BaseController {
         String act= Util.getNoNull(request.getParameter("act"));
 		VelocityContext vc=new VelocityContext();
    		vc.put("currentTab", "category");
+        new GlobalVariablesBA().setCommonVariables(request, vc);
    		CategoryDAO pDAO = new CategoryDAO();
        if(act.equals("")){
-            new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "add");
             VelocityParserFactory.getVP().render("editcategory", vc, request, response);
             return;
