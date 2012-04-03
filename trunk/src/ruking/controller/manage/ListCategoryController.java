@@ -29,7 +29,7 @@ public class ListCategoryController extends BaseController {
 			response.sendRedirect("/listcategory.jhtml");
 			return;
 		}
-   		vc.put("currentTab", "product");
+   		vc.put("currentTab", "category");
    		List<Map> categories = cDAO.getAllCategories("");
    		vc.put("categories", categories);
    		VelocityParserFactory.getVP().render("listcategories", vc, request, response);
