@@ -80,7 +80,6 @@ return true;
 			##<td valign="bottom" style="padding-bottom:0px;width:200px;"><span class="headerlanguage">
 			##<a href="$_url/index.jhtml"> 简体 </a>|<a href="$_url/index_eng.jhtml"> ENGLISH </a></span></td>
             <td align="right" style="height:70px;" colspan=7 valign="top">
-			<form method="post" name="searchform" id="searchform" action="$_url/searchproducts_big.jhtml">
 				<table width="500px" cellspacing="0" cellpadding="0" border="0"  style="font-size:12px;">
 				<tr><td>
 				<select id="languageBox" name="languageBox" onchange="javascript:window.location.href=this.value"  style="font-size:12px;background-color: #C9C9C9;">
@@ -90,10 +89,11 @@ return true;
 				<a href="reg.jhtml?act=showact">$customer.loginName</a> | <a href="$_url/logout.jhtml">退出登錄</a> #if($administrator) | <a href="$_url/manage.jhtml">管理产品</a> #end</td>
 				#else
 				<a href="$_url/login_big.jhtml">用戶登錄</a> | <a href="$_url/reg.jhtml">新用戶註冊</a> | <a href="$_url/searchpass.jhtml">忘記密碼</a>
-##				<input type="text" style="background-color: #C9C9C9;" id="searchword" name="searchword" value= "#if($searchKeyword)$!searchKeyword #else 產品搜索...#end"  onclick="javascript:checkInput()"><img style="cursor: pointer;position:relative;left:-19px;top:2px;" src="$!_url/static/img/header/searchBg.gif" onclick="javascript:searchform.submit();">
              <div class="s-form" onclick="javascript:checkInput()">
+			<form method="post" name="searchform" id="searchform" action="$_url/searchproducts_big.jhtml">
             	<input type="text" class="s-input" id="searchword" name="searchword" #if($searchKeyword)value="$!searchKeyword" #else value="產品搜索..."#end">
-				  <input type="submit" value="&nbsp;" class="s-Btn">
+			</form>
+				 <input type="submit" value="&nbsp;" class="s-Btn">
             </div>              
 				</td></tr>
                 <tbody>
