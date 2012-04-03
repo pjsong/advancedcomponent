@@ -21,10 +21,10 @@ public class EditCategoryController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         String act= Util.getNoNull(request.getParameter("act"));
 		VelocityContext vc=new VelocityContext();
+        new GlobalVariablesBA().setCommonVariables(request, vc);
    		vc.put("currentTab", "category_eng");
     	CategoryDAO pDAO = new CategoryDAO();
        if(act.equals("")){
-            new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "add");
             VelocityParserFactory.getVP().render("editcategory_eng", vc, request, response);
             return;
@@ -50,8 +50,6 @@ public class EditCategoryController extends BaseController {
 	
 	private void add(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
-        new GlobalVariablesBA().setCommonVariables(request, vc);
-   		vc.put("currentTab", "category_eng");
    		CategoryDTO category = new CategoryDTO();  
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(category, "category");
 		binder.bind(request);
@@ -71,7 +69,7 @@ public class EditCategoryController extends BaseController {
 	private void update(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-        String id= Util.getNoNull(request.getParameter("pid"));
+        String id= Util.getNoNull(request.getParameter("cid"));
     	CategoryDAO pDAO = new CategoryDAO();
     	CategoryDTO category = pDAO.getCategoryByID(id,"eng");
     	String oldName = category.getCategory();

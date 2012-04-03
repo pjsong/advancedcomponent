@@ -26,7 +26,7 @@ public class ListCategoryController extends BaseController {
 			if(NumberUtils.isDigits(id) && cDAO.getCategoryByID(id,"")!=null){
 				cDAO.deleteCategory(id);
 			}
-			response.sendRedirect("/listcategory.jhtml");
+			response.sendRedirect("/listcategory_big.jhtml");
 			return;
 		}
    		vc.put("currentTab", "category_big");
