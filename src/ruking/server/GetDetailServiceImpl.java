@@ -42,7 +42,7 @@ public class GetDetailServiceImpl extends HttpServlet {
 	   
 	   private JSONArray getJA(String id,String lang) throws SQLException, IOException{
 		   Conf conf=new Conf();
-		   ProductDAO paDAO = new ProductDAO(conf.getHostName(),conf.getDbName(),conf.getDbUser(),conf.getDbPassword());
+		   ProductDAO paDAO = new ProductDAO();
 	       AttributeDAO attrDAO = new AttributeDAO();
 	       JSONArray ret = new JSONArray();
 		   List<Map> result=null;

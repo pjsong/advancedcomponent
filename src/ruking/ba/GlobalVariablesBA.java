@@ -34,13 +34,7 @@ public class GlobalVariablesBA {
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
 	    String currYear = sdf.format(new Date());
         ctx.put("currYear", currYear);
-        Conf conf=new Conf();
-        ctx.put("dbHost", conf.getHostName());
-        ctx.put("dbName", conf.getDbName());
-        ctx.put("dbUser", conf.getDbUser());
-        ctx.put("dbPWD", conf.getDbPassword());
-        
-		// get session
+	// get session
     	Map<String, Object> sessData = (Map<String, Object>) request.getAttribute(SessionUtil.SESS_DATA);
     	if(sessData!=null){
 		UserSignUpDTO sessionCustomerDTO = (UserSignUpDTO) sessData.get(SessionName.customerDTO);

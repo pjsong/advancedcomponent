@@ -1,5 +1,6 @@
 package ruking.dao;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ import ruking.db.MDTMySQLRowMapper;
 import ruking.db.QueryRunner;
 import ruking.db.TransRunner;
 import ruking.dto.UserSignUpDTO;
+import ruking.utils.Conf;
 import ruking.utils.Util;
 
 public class UserSignUpDAO {
@@ -19,12 +21,13 @@ public class UserSignUpDAO {
 	public String password ;//= "pjsong";
 	public String dbUser;
 
-	public UserSignUpDAO(String hostName,String dbName,String dbUser, String password) {
+	public UserSignUpDAO() throws IOException {
 		super();
-		this.hostName = hostName;
-		this.dbName = dbName;
-		this.dbUser = dbUser;
-		this.password = password;
+		Conf conf=new Conf();
+		this.hostName = conf.getHostName();
+		this.dbName = conf.getDbName();
+		this.dbUser = conf.getDbUser();
+		this.password = conf.getDbPassword();
 	}
 	
 	public List<Map> getAllUsers()throws SQLException{

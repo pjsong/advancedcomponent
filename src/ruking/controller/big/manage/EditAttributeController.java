@@ -57,7 +57,7 @@ public class EditAttributeController extends BaseController {
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(attribute, "attribute");
 		binder.bind(request);
     	AttributeDAO aDAO = new AttributeDAO();
-    	ProductDAO productDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+    	ProductDAO productDAO = new ProductDAO();
 		Map<String,String> error = check(attribute,aDAO,productDAO);
 		if(error.size()>0){
 			vc.put("error", error);
@@ -75,7 +75,7 @@ public class EditAttributeController extends BaseController {
         new GlobalVariablesBA().setCommonVariables(request, vc);
         String id= Util.getNoNull(request.getParameter("pid"));
     	AttributeDAO aDAO = new AttributeDAO();
-    	ProductDAO productDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+    	ProductDAO productDAO = new ProductDAO();
     	AttributeDTO attribute = aDAO.getAttributeByID(id,"big");
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(attribute, "product");
 		binder.bind(request);

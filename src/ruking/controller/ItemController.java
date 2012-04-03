@@ -25,7 +25,7 @@ public class ItemController extends BaseController {
         	return;
         }
        	vc.put("id", id);
-       	ProductDAO productDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+       	ProductDAO productDAO = new ProductDAO();
        	ProductDTO pDTO = productDAO.getProductByID(id,"");
        	if(pDTO == null){
         	response.sendRedirect("/products.jhtml");

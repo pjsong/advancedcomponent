@@ -23,7 +23,7 @@ public class EditProductController extends BaseController {
 	public void process(HttpServletRequest request, HttpServletResponse response) throws Exception{
         String act= Util.getNoNull(request.getParameter("act"));
 		VelocityContext vc=new VelocityContext();
-    	ProductDAO pDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+    	ProductDAO pDAO = new ProductDAO();
     	vc.put("currentTab", "product_eng");
     	if(act.equals("")){
             new GlobalVariablesBA().setCommonVariables(request, vc);
@@ -56,7 +56,7 @@ public class EditProductController extends BaseController {
     	ProductDTO product = new ProductDTO();  
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(product, "product");
 		binder.bind(request);
-    	ProductDAO pDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+    	ProductDAO pDAO = new ProductDAO();
 		Map<String,String> error = check(product,pDAO);
 		if(error.size()>0){
 			vc.put("error", error);
@@ -73,7 +73,7 @@ public class EditProductController extends BaseController {
 		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
         String id= Util.getNoNull(request.getParameter("id"));
-    	ProductDAO pDAO = new ProductDAO((String)vc.get("hostName"),(String)vc.get("dbName"),(String)vc.get("dbUser"),(String)vc.get("dbPWD"));
+    	ProductDAO pDAO = new ProductDAO();
     	ProductDTO product = pDAO.getProductByID(id,"eng");
     	String oldName = product.getTitle();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(product, "product");
