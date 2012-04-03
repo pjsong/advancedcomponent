@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ruking.dao.CategoryDAO;
 import ruking.dao.ProductDAO;
 import ruking.utils.Conf;
 
@@ -34,9 +35,9 @@ public class GetCategoryServiceImpl extends HttpServlet {
 	   
 	   private JSONArray getJA(String lang) throws SQLException, IOException{
 		 Conf conf=new Conf();
-		 ProductDAO paDAO = new ProductDAO();
+		 CategoryDAO caDAO = new CategoryDAO();
 	       JSONArray ret = new JSONArray();
-	       Map<String,List<Map>> result = paDAO.getAllCats(lang);
+	       Map<String,List<Map>> result = caDAO.getAllCats(lang);
 			if(result.size()>0){
 				int pos=0;
 				for(String m:result.keySet()){
