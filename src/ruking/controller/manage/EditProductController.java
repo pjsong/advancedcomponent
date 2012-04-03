@@ -96,9 +96,6 @@ public class EditProductController extends BaseController {
 		if(Util.getNoNull(p.getTitle()).length()<1)error.put("titleEmptyError", "输入产品名称");
 		if(pDAO.productTitleExits(p.getTitle(),""))error.put("titleValueError", "产品名称已存在");
 		if(p.getTitle().length()>98)error.put("titleLengthError", "产品名称太长");
-		if(Util.getNoNull(p.getCategory()).length()<1)error.put("categoryLengthError", "输入类别名称");
-		if(p.getCategory().length()>98)error.put("categoryLengthError", "类别太长");
-		if(p.getSubcategory().length()>98)error.put("subcategoryLengthError", "子类太长");
 		return error;
 	}
 	private Map<String,String> updateCheck(ProductDTO p,ProductDAO pDAO,String oldName) throws SQLException{
@@ -106,9 +103,6 @@ public class EditProductController extends BaseController {
 		if(Util.getNoNull(p.getTitle()).length()<1)error.put("titleEmptyError", "输入产品名称");
 		if(!p.getTitle().equals(oldName) && pDAO.productTitleExits(p.getTitle(),""))error.put("titleValueError", "产品名称已存在");
 		if(p.getTitle().length()>98)error.put("titleLengthError", "产品名称太长");
-		if(Util.getNoNull(p.getCategory()).length()<1)error.put("categoryLengthError", "输入类别名称");
-		if(p.getCategory().length()>98)error.put("categoryLengthError", "类别太长");
-		if(p.getSubcategory().length()>98)error.put("subcategoryLengthError", "子类太长");
 		if("".equals(p.getCatID()))error.put("catIDEmptyError", "输入类别ID");
 //		if(!NumberUtils.isDigits(p.getCatID()))error.put("catIDFormatError", "类别ID必须为数字");
 		if(!Pattern.matches("(,[\\d]+){1,},", p.getCatID()))error.put("catIDFormatError", "类别ID格式必须为\",数字1,数字2,...\"");

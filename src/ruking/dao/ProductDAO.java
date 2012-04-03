@@ -48,7 +48,7 @@ public class ProductDAO {
 
 	public List<Map> getCatProductsByCatID(String id,String lang)throws SQLException, IOException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT * FROM product where CatID ="+DbUtil.escSql(id);
+		String sql = "SELECT * FROM product where CatID like '%,"+id+",%'";
 		if("eng".equals(lang))sql="SELECT * FROM product_eng where CatID like '%,"+id+",%'";
 		if("big".equals(lang))sql="SELECT * FROM product_big where CatID like '%,"+id+",%'";
 		return formatProductMap(runner.query(sql),lang);
