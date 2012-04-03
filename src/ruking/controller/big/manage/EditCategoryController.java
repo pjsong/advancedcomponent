@@ -36,7 +36,7 @@ public class EditCategoryController extends BaseController {
         if(act.equals("edit")){
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "update");
-            String id= Util.getNoNull(request.getParameter("pid"));
+            String id= Util.getNoNull(request.getParameter("cid"));
 	    	CategoryDTO pDTO = pDAO.getCategoryByID(id,"big");
         	vc.put("category", pDTO);
             VelocityParserFactory.getVP().render("editcategory_big", vc, request, response);
