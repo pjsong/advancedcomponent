@@ -78,10 +78,9 @@ public class EditCategoryController extends BaseController {
         String id= Util.getNoNull(request.getParameter("cid"));
     	CategoryDAO pDAO = new CategoryDAO();
     	CategoryDTO category = pDAO.getCategoryByID(id,"big");
-    	String oldName = category.getCategory();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(category, "category");
 		binder.bind(request);
-		Map<String,String> error = updateCheck(category,pDAO,oldName);
+		Map<String,String> error = updateCheck(category,pDAO,id);
 		if(error.size()>0){
 			vc.put("error", error);
 			vc.put("act", "update");
@@ -108,10 +107,13 @@ public class EditCategoryController extends BaseController {
 		if(p.getSubcategory().length()>98)error.put("subcategoryLengthError", "子类太长");
 		return error;
 	}
-	private Map<String,String> updateCheck(CategoryDTO p,CategoryDAO pDAO,String oldName) throws SQLException{
+	private Map<String,String> updateCheck(CategoryDTO p,CategoryDAO pDAO,String oldId) throws SQLException{
 		Map<String,String> error = new HashMap<String,String>();
-		CategoryDTO cDTO = pDAO.getCategoryByID(p.getId(), "big");
-		if(cDTO!=null)error.put("idError", "id 错误");
+		if(!p.getId().equals(oldId))
+		{
+			CategoryDTO cDTO = pDAO.getCategoryByID(p.getId(), "big");
+			if(cDTO!=null)error.put("idError", "id 错误");
+		}
 		if(Util.getNoNull(p.getCategory()).length()<1)error.put("categoryLengthError", "输入类别名称");
 		if(p.getCategory().length()>98)error.put("categoryLengthError", "类别太长");
 		if(p.getSubcategory().length()>98)error.put("subcategoryLengthError", "子类太长");
