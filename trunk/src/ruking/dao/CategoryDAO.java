@@ -49,9 +49,12 @@ public class CategoryDAO {
 		}
 		return u;
 	}
-	public void deleteCategory(String id) throws SQLException{
+	public void deleteCategory(String id,String lang) throws SQLException{
+		if(lang!=null && !lang.equals("")){
+			lang = "_"+lang;
+		}
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "delete FROM Category WHERE ID = " + DbUtil.escSql(id);
+		String sql = "delete FROM Category"+lang+" WHERE ID = " + DbUtil.escSql(id);
 		runner.update(sql);
 	}
 	
@@ -60,6 +63,7 @@ public class CategoryDAO {
 		String sql = "SELECT * FROM category";
 		if("eng".equals(lang))sql = "SELECT * FROM category_eng";
 		if("big".equals(lang))sql = "SELECT * FROM category_big";
+		sql = sql + " order by DisplayOrder";
 		return runner.query(sql);
 	}
 	
@@ -71,6 +75,7 @@ public class CategoryDAO {
 			sql="SELECT SubCategory,ID as CatID FROM category_eng where Category="+DbUtil.escSql(category);
 		if("big".equals(lang))
 			sql="SELECT SubCategory,ID as CatID FROM category_big where Category="+DbUtil.escSql(category);
+		sql = sql + " order by DisplayOrder";
 		return runner.query(sql);
 	}
 	
@@ -86,35 +91,37 @@ public class CategoryDAO {
 		return ret;
 	}
 	public  CategoryDTO insertCategory(CategoryDTO p,String lang) throws SQLException{
+		if(lang!=null && !lang.equals(""))lang = "_"+lang;
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql="insert into category(Category,SubCategory";
-		sql = sql+") values ("+DbUtil.escSql(p.getCategory().trim())+","+DbUtil.escSql(p.getSubcategory().trim());
+		int maxid = runner.queryForInt("select max(ID) from category"+lang);
+		String sql="insert into category"+lang+"(ID,Category,SubCategory,DisplayOrder";
+		sql = sql+") values ("+DbUtil.escSql(maxid+1)+","+DbUtil.escSql(p.getCategory().trim())+","+DbUtil.escSql(p.getSubcategory().trim())+","+DbUtil.escSql(p.getDisplayorder().toString().trim());
 		sql=sql+");";
-		if("eng".equals(lang)){
-			sql="insert into category_eng(Category,SubCategory";
-			sql = sql+") values ("+DbUtil.escSql(p.getCategory().trim())+","+DbUtil.escSql(p.getSubcategory().trim());
-			sql=sql+");";
-		}
-		if("big".equals(lang)){
-			sql="insert into category_big(Category,SubCategory";
-			sql = sql+") values ("+DbUtil.escSql(p.getCategory().trim())+","+DbUtil.escSql(p.getSubcategory().trim());
-			sql=sql+");";
-		}
+//		if("eng".equals(lang)){
+//			sql="insert into category_eng(Category,SubCategory,DisplayOrder";
+//			sql = sql+") values ("+DbUtil.escSql(p.getCategory().trim())+","+DbUtil.escSql(p.getSubcategory().trim()+","+DbUtil.escSql(p.getDisplayorder()).trim());
+//			sql=sql+");";
+//		}
+//		if("big".equals(lang)){
+//			sql="insert into category_big(Category,SubCategory,DisplayOrder";
+//			sql = sql+") values ("+DbUtil.escSql(p.getCategory().trim())+","+DbUtil.escSql(p.getSubcategory().trim()+","+DbUtil.escSql(p.getDisplayorder()).trim());
+//			sql=sql+");";
+//		}
 		runner.update(sql);
-		Map m= runner.queryForMap("select ID from category where Category="+DbUtil.escSql(p.getCategory()));
-		if(m!=null)p.setId(((Integer)m.get("ID")).toString());
+//		Map m= runner.queryForMap("select ID from category where Category="+DbUtil.escSql(p.getCategory()));
+		p.setId(new Integer(maxid+1).toString());
 		return p;
 	}
 	public  void updateCategory(CategoryDTO p,String id,String lang) throws SQLException{
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql="update category set Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory());
+		String sql="update category set Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory())+",DisplayOrder="+DbUtil.escSql(p.getDisplayorder())+",ID="+DbUtil.escSql(p.getId());
 		sql+=" where ID="+DbUtil.escSql(p.getId());
 		if("eng".equals(lang)){
-			sql="update category_eng set Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory());
+			sql="update category_eng set Category="+DbUtil.escSql(p.getCategory())+",SubCategory="+DbUtil.escSql(p.getSubcategory())+",DisplayOrder="+DbUtil.escSql(p.getDisplayorder())+",ID="+DbUtil.escSql(p.getId());
 			sql+=" where ID="+DbUtil.escSql(id);
 		}
 		if("big".equals(lang)){
-			sql="update category_big set Category="+DbUtil.escSql(p.getCategory())+", SubCategory="+DbUtil.escSql(p.getSubcategory());
+			sql="update category_big set Category="+DbUtil.escSql(p.getCategory())+", SubCategory="+DbUtil.escSql(p.getSubcategory())+",DisplayOrder="+DbUtil.escSql(p.getDisplayorder())+",ID="+DbUtil.escSql(p.getId());
 			sql+=" where ID="+DbUtil.escSql(id);
 		}
 		runner.update(sql);
