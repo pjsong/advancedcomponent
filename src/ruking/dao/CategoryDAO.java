@@ -3,8 +3,11 @@ package ruking.dao;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.google.gwt.user.client.rpc.core.java.util.Collections;
 
 import ruking.db.DataSourceFactory;
 import ruking.db.DbUtil;
@@ -63,7 +66,7 @@ public class CategoryDAO {
 		String sql = "SELECT * FROM category";
 		if("eng".equals(lang))sql = "SELECT * FROM category_eng";
 		if("big".equals(lang))sql = "SELECT * FROM category_big";
-		sql = sql + " order by DisplayOrder";
+		sql = sql + " order by DisplayOrder asc";
 		return runner.query(sql);
 	}
 	
@@ -75,13 +78,13 @@ public class CategoryDAO {
 			sql="SELECT SubCategory,ID as CatID FROM category_eng where Category="+DbUtil.escSql(category);
 		if("big".equals(lang))
 			sql="SELECT SubCategory,ID as CatID FROM category_big where Category="+DbUtil.escSql(category);
-		sql = sql + " order by DisplayOrder";
+		sql = sql + " order by DisplayOrder asc";
 		return runner.query(sql);
 	}
 	
 
 	public Map<String,List<Map>> getAllCats(String lang) throws SQLException, IOException{
-		Map<String,List<Map>> ret = new HashMap<String,List<Map>>();
+		Map<String,List<Map>> ret = new LinkedHashMap<String,List<Map>>();
 		List<Map> cats = getAllCategories(lang);
 		for(Map m:cats){
 			String catName = (String)m.get("Category");
