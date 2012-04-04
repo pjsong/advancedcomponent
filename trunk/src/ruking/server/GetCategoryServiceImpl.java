@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import ruking.dao.CategoryDAO;
-import ruking.dao.ProductDAO;
-import ruking.utils.Conf;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -34,12 +32,10 @@ public class GetCategoryServiceImpl extends HttpServlet {
 	    }
 	   
 	   private JSONArray getJA(String lang) throws SQLException, IOException{
-		 Conf conf=new Conf();
 		 CategoryDAO caDAO = new CategoryDAO();
 	       JSONArray ret = new JSONArray();
 	       Map<String,List<Map>> result = caDAO.getAllCats(lang);
 			if(result.size()>0){
-				int pos=0;
 				for(String m:result.keySet()){
 					JSONObject jo = new JSONObject();
 					jo.put("CatName", m);
@@ -52,7 +48,6 @@ public class GetCategoryServiceImpl extends HttpServlet {
 					}
 					jo.put("CatArray", catArray);
 					ret.add(jo); //ret.add(formatJO(jo,m));
-					pos++;
 				}
 				}
 		   return ret;
