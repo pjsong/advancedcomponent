@@ -6,6 +6,7 @@ public class CategoryDTO  implements Serializable{
 	private String id;
 	private String category = "";;
 	private String subcategory = "";
+	private Integer displayorder;
 	public String getId() {
 		return id;
 	}
@@ -23,6 +24,12 @@ public class CategoryDTO  implements Serializable{
 	}
 	public void setSubcategory(String subcategory) {
 		this.subcategory = subcategory;
+	}
+	public Integer getDisplayorder() {
+		return displayorder;
+	}
+	public void setDisplayorder(Integer displayorder) {
+		this.displayorder = displayorder;
 	};
 
 }

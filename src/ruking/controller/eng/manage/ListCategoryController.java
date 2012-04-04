@@ -23,11 +23,11 @@ public class ListCategoryController extends BaseController {
     	CategoryDAO cDAO = new CategoryDAO();
 		String act= Util.getNoNull(request.getParameter("act"));
 		if(act.equals("del")){
-			String id = Util.getNoNull(request.getParameter("id"));
+			String id = Util.getNoNull(request.getParameter("cid"));
 			if(NumberUtils.isDigits(id) && cDAO.getCategoryByID(id,"")!=null){
-				cDAO.deleteCategory(id);
+				cDAO.deleteCategory(id,"eng");
 			}
-			response.sendRedirect("/listcategories.jhtml");
+			response.sendRedirect("/listcategories_eng.jhtml");
 			return;
 		}
    		vc.put("currentTab", "category_eng");

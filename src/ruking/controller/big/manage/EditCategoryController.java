@@ -46,6 +46,10 @@ public class EditCategoryController extends BaseController {
             update(request,response);
             return;
         }
+        if(act.equals("del")){
+            delete(request,response);
+            return;
+        }
 	}
 	
 	private void add(HttpServletRequest request, HttpServletResponse response) throws Exception{
@@ -89,7 +93,14 @@ public class EditCategoryController extends BaseController {
 	    	response.sendRedirect("/listcategories_big.jhtml");
 		}
 	}
-	
+	private void delete(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		VelocityContext vc=new VelocityContext();
+        new GlobalVariablesBA().setCommonVariables(request, vc);
+        String id= Util.getNoNull(request.getParameter("cid"));
+    	CategoryDAO pDAO = new CategoryDAO();
+    	pDAO.deleteCategory(id,"big");
+    	response.sendRedirect("/listcategories_big.jhtml");
+	}
 	private Map<String,String> check(CategoryDTO p,CategoryDAO pDAO) throws SQLException{
 		Map<String,String> error = new HashMap<String,String>();
 		if(Util.getNoNull(p.getCategory()).length()<1)error.put("categoryLengthError", "输入类别名称");
@@ -99,6 +110,8 @@ public class EditCategoryController extends BaseController {
 	}
 	private Map<String,String> updateCheck(CategoryDTO p,CategoryDAO pDAO,String oldName) throws SQLException{
 		Map<String,String> error = new HashMap<String,String>();
+		CategoryDTO cDTO = pDAO.getCategoryByID(p.getId(), "big");
+		if(cDTO!=null)error.put("idError", "id 错误");
 		if(Util.getNoNull(p.getCategory()).length()<1)error.put("categoryLengthError", "输入类别名称");
 		if(p.getCategory().length()>98)error.put("categoryLengthError", "类别太长");
 		if(p.getSubcategory().length()>98)error.put("subcategoryLengthError", "子类太长");
