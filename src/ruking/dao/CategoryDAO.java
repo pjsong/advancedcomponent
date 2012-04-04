@@ -66,11 +66,11 @@ public class CategoryDAO {
 	
 	private List<Map> getSubCategories(String category,String lang)throws SQLException{
 		QueryRunner runner = new QueryRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "SELECT SubCategory FROM category where Category="+DbUtil.escSql(category);
+		String sql = "SELECT SubCategory,ID as CatID FROM category where Category="+DbUtil.escSql(category);
 		if("eng".equals(lang))
-			sql="SELECT SubCategory FROM category_eng where Category="+DbUtil.escSql(category);
+			sql="SELECT SubCategory,ID as CatID FROM category_eng where Category="+DbUtil.escSql(category);
 		if("big".equals(lang))
-			sql="SELECT SubCategory FROM category_big where Category="+DbUtil.escSql(category);
+			sql="SELECT SubCategory,ID as CatID FROM category_big where Category="+DbUtil.escSql(category);
 		return runner.query(sql);
 	}
 	
