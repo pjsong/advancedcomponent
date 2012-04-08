@@ -1,5 +1,5 @@
 ﻿<link href="/static/css/body/nav.css" type="text/css" rel="stylesheet">
-<table width="100%" border="1">
+<table width="100%" border="0">
 <tr><td valign="top" width="320px">
 	<table class="nav" border="0" width="160px" align="right">
 		<tr><td align="center"><a href="$_url/about/customerservice.jhtml?id=1" style = #if($id=='1')color:#00ffff;#else color:#ffff00;#end">Contact Us</a></td></tr>
