@@ -52,7 +52,7 @@ padding-top:5px;
 }
 </style>
 <link href="/static/css/body/nav.css" type="text/css" rel="stylesheet">
-<table width="100%" border="1">
+<table width="100%" border="0">
 <tr><td valign="top" width="320px">
 	<table class="nav" border="0" width="150px" align="right">
 		<tr><td align="center"><a href="$_url/about/recruit.jhtml?id=1" style = #if($id=='1')color:#00ffff;#else color:#ffff00;#end">电气自动化工程师</a></td></tr>
