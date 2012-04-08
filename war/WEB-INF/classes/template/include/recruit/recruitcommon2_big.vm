@@ -37,21 +37,33 @@ height:24px;
 font-size:14px;
 padding-top:5px;
 }
+.aboutHeader{
+	color: #B60005;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 100%;
+    margin-bottom: 12px;
+    padding-top: 10px;
+}
+.aboutDetail {
+    line-height: 26px;
+	font-size: 14px;
+    margin-bottom: 10px;
+}
 </style>
 <link href="/static/css/body/nav.css" type="text/css" rel="stylesheet">
 <table width="100%" border="0">
-<tr><td colspan=2>
-</td></tr><tr><td valign="top" width="320px">
-	<table class="nav" border="0" width="190px" align="right">
-		<tr><td align="center"><a href="$_url/about/recruit.jhtml_big?id=1" style = #if($id=='1')color:#00ffff;#else color:#ffff00;#end">電氣自動化工程師</a></td></tr>
-		<tr><td align="center"><a href="$_url/about/recruit.jhtml_big?id=2" style = #if($id=='2')color:#00ffff;#else color:#ffff00;#end">結構設計工程師</a></td></tr>
+<tr><td valign="top" width="320px">
+	<table class="nav" border="0" width="150px" align="right">
+		<tr><td align="center"><a href="$_url/about/recruit_big.jhtml?id=1" style = #if($id=='1')color:#00ffff;#else color:#ffff00;#end">電氣自動化工程師</a></td></tr>
+		<tr><td align="center"><a href="$_url/about/recruit_big.jhtml?id=2" style = #if($id=='2')color:#00ffff;#else color:#ffff00;#end">結構設計工程師</a></td></tr>
 	</table></td>
 	<td valign="top">
-			<table width="768" cellspacing="0" cellpadding="0" border="0" align="left" valign="top" style="padding-left:20px;padding-top:-15px;">
+			<table width="800" cellspacing="0" cellpadding="0" border="0" align="center" valign="top">## style="padding-left:20px;padding-top:-15px;"
             <tbody>
             <tr>
               <td valign="top" height="600" align="left" style="font-size:12px;" colspan="2">
-				<h2 class="jdt"><div style="width:auto;float:left;">職位名稱：結構設計工程師</div></h2>
+				<p class="aboutHeader">職位名稱：結構設計工程師</p>
 				<table width="100%" cellspacing="2" cellpadding="3" bordercolor="#ffffff" border="0" bgcolor="#ffffff" align="center" style="WIDTH: 100%; BORDER-COLLAPSE: collapse; TEXT-ALIGN: center">
 				<tbody>
 				<tr>
@@ -74,4 +86,3 @@ padding-top:5px;
              </td>
               </tr>
           </tbody></table>
-</td></tr></table>
