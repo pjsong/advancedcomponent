@@ -14,7 +14,7 @@
 }
 </style>
 <link href="/static/css/body/nav.css" type="text/css" rel="stylesheet">
-<table width="100%" border="1">
+<table width="100%" border="0">
 <tr><td valign="top" width="320px">
 	<table align="right" class="nav" border="0" width="160px">
 		<tr><td align="center"><a href="$_url/about/aboutus_big.jhtml?id=1">公司簡介</a></td></tr>
