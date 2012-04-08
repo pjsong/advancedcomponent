@@ -1,29 +1,26 @@
 ﻿<style type="text/css">
-.jdt {
-    color: #D0231C;
-    font-size: 16px;
-    line-height: 26px;
-}
 .jdd {
     float: right;
     margin-bottom: 5px;
     width: 100%;
 	font-size: 12px;
 	text-align: left;
-	color: #565555;
+/*	color: #565555;*/
 }
 .jdd ul li span {
-    display: block;
+/*    display: block;*/
     float: left;
     padding-left: 15px;
     width: 120px;
 }
 .jdd ul li {
-    border-bottom: 1px solid #EEEEEE;
     float: left;
+/*    
+	border-bottom: 1px solid #EEEEEE;
     font-weight: bold;
+*/
     line-height: 26px;
-    padding: 2px 0;
+    padding: 2px 0px;
     width: 100%;
 }
 .jdd ul li div {
@@ -64,7 +61,7 @@ padding-top:5px;
             <tr>
               <td valign="top" height="600" align="left" style="font-size:12px;" colspan="2">
 				<p class="aboutHeader">職位名稱：結構設計工程師</p>
-				<table width="100%" cellspacing="2" cellpadding="3" bordercolor="#ffffff" border="0" bgcolor="#ffffff" align="center" style="WIDTH: 100%; BORDER-COLLAPSE: collapse; TEXT-ALIGN: center">
+				<table width="100%" cellspacing="2" cellpadding="3" bordercolor="#ffffff" border="0" align="center" style="WIDTH: 100%; BORDER-COLLAPSE: collapse; TEXT-ALIGN: center">
 				<tbody>
 				<tr>
 				<td><div class="jdd">
@@ -86,3 +83,4 @@ padding-top:5px;
              </td>
               </tr>
           </tbody></table>
+
