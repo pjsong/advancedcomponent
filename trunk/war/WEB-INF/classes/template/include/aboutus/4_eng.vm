@@ -1,0 +1,11 @@
+﻿#parse("include/aboutus/aboutcommon_eng.vm")
+
+<td align=left>
+<table width="800" border="0" align="center"><tr><td width="30%">
+<img alt="patents" src="$!_url/static/img/about/维护保养简单的电子测试装置.jpg">
+	</td></tr>
+</table>
+<br /><br /><br /><br />
+</td>
+</tr></table>
+</div>
