@@ -1,22 +1,15 @@
-﻿<script>
-function enlarge(var obj){
-	alert('xxx');
-	obj.style.width="400px";
-	obj.style.height="600px";
-}
-</script>
-<style>
+﻿<style>
 .myButtonLink {
 	display: block;
 	width: 204px;
 	height: 295px;
-	background: url('/static/img/about/维护保养简单的电子测试装置_small.jpg') bottom;
+	background: url('/static/img/about/patent1_small.jpg') bottom;
 }
 .myButtonLink:hover {
 	background-position: 0 0;
 	width: 493px;
 	height: 715px;
-	background: url('/static/img/about/维护保养简单的电子测试装置.jpg') bottom;
+	background: url('/static/img/about/patent1.jpg') bottom;
 }
 </style>
 #parse("include/aboutus/aboutcommon.vm")
