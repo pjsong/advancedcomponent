@@ -39,6 +39,7 @@ public class EditProductController extends BaseController {
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "update");
             String id= Util.getNoNull(request.getParameter("pid"));
+        	vc.put("id", id);
 	    	ProductDTO pDTO = pDAO.getProductByID(id,"eng");
         	vc.put("product", pDTO);
             VelocityParserFactory.getVP().render("editproduct_eng", vc, request, response);
@@ -78,10 +79,11 @@ public class EditProductController extends BaseController {
     	String oldName = product.getTitle();
 		ServletRequestDataBinder binder = new ServletRequestDataBinder(product, "product");
 		binder.bind(request);
-		Map<String,String> error = updateCheck(product,pDAO,oldName);
+		Map<String,String> error = updateCheck(product,pDAO,oldName,id);
 		if(error.size()>0){
 			vc.put("error", error);
 			vc.put("act", "update");
+			vc.put("id", id);
 			vc.put("product", product);
 			VelocityParserFactory.getVP().render("editproduct_eng", vc, request, response);
 			return;
@@ -98,8 +100,13 @@ public class EditProductController extends BaseController {
 		if(p.getTitle().length()>98)error.put("titleLengthError", "产品名称太长");
 		return error;
 	}
-	private Map<String,String> updateCheck(ProductDTO p,ProductDAO pDAO,String oldName) throws SQLException{
+	private Map<String,String> updateCheck(ProductDTO p,ProductDAO pDAO,String oldName,String oldId) throws SQLException{
 		Map<String,String> error = new HashMap<String,String>();
+		if(!p.getId().equals(oldId))
+		{
+			ProductDTO pDTO = pDAO.getProductByID(p.getId(), "eng");
+			if(pDTO!=null)error.put("idError", "id 错误");
+		}
 		if(Util.getNoNull(p.getTitle()).length()<1)error.put("titleEmptyError", "输入产品名称");
 		if(!p.getTitle().equals(oldName) && pDAO.productTitleExits(p.getTitle(),"eng"))error.put("titleValueError", "产品名称已存在");
 		if(p.getTitle().length()>98)error.put("titleLengthError", "产品名称太长");
