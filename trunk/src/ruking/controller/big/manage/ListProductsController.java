@@ -28,7 +28,7 @@ public class ListProductsController extends BaseController {
 		if(act.equals("del")){
 			String id = Util.getNoNull(request.getParameter("id"));
 			if(NumberUtils.isDigits(id) && pDAO.getProductByID(id,"big")!=null){
-				pDAO.deleteProduct(id);
+				pDAO.deleteProduct(id,"big");
 			}
 			response.sendRedirect("/listproducts_big.jhtml");
 			return;
