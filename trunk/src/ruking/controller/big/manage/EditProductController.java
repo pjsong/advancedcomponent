@@ -97,6 +97,8 @@ public class EditProductController extends BaseController {
 	private Map<String,String> check(ProductDTO p,ProductDAO pDAO) throws SQLException{
 		Map<String,String> error = new HashMap<String,String>();
 		String pid = Util.getNoNull(p.getId()).trim();
+		ProductDTO pDTO = pDAO.getProductByID(p.getId(), "big");
+		if(pDTO!=null)error.put("idError", "id 已存在");
 		if(!NumberUtils.isDigits(pid))error.put("idValueError", "ID必须为数字");
 		if(Util.getNoNull(p.getTitle()).length()<1)error.put("titleEmptyError", "输入产品名称");
 		if(pDAO.productTitleExits(p.getTitle(),"big"))error.put("titleValueError", "产品名称已存在");
@@ -111,7 +113,7 @@ public class EditProductController extends BaseController {
 		if(!p.getId().equals(oldId))
 		{
 			ProductDTO pDTO = pDAO.getProductByID(p.getId(), "big");
-			if(pDTO!=null)error.put("idError", "id 错误");
+			if(pDTO!=null)error.put("idError", "id 已存在");
 		}
 		String pid = Util.getNoNull(p.getId()).trim();
 		if(!NumberUtils.isDigits(pid))error.put("idValueError", "ID必须为数字");
