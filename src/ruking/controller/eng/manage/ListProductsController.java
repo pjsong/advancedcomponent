@@ -25,7 +25,7 @@ public class ListProductsController extends BaseController {
     	ProductDAO pDAO = new ProductDAO();
 		String act= Util.getNoNull(request.getParameter("act"));
 		if(act.equals("del")){
-			String id = Util.getNoNull(request.getParameter("id"));
+			String id = Util.getNoNull(request.getParameter("pid"));
 			if(NumberUtils.isDigits(id) && pDAO.getProductByID(id,"eng")!=null){
 				pDAO.deleteProduct(id,"eng");
 			}

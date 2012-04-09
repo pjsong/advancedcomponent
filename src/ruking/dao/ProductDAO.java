@@ -135,7 +135,7 @@ public class ProductDAO {
 	public  void updateProduct(ProductDTO p,String id,String lang) throws SQLException{
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
 		String sql="update product set ID="+DbUtil.escSql(p.getId())+", Title="+DbUtil.escSql(p.getTitle())+",Description="+DbUtil.escSql(p.getDescription());
-		sql+=",CatID="+DbUtil.escSql(p.getCatID())+" where ID="+DbUtil.escSql(p.getId());
+		sql+=",CatID="+DbUtil.escSql(p.getCatID())+" where ID="+DbUtil.escSql(id);
 		if("eng".equals(lang)){
 			sql="update product_eng set ID="+DbUtil.escSql(p.getId())+", Title="+DbUtil.escSql(p.getTitle())+",Description="+DbUtil.escSql(p.getDescription());
 			sql+=",CatID="+DbUtil.escSql(p.getCatID())+" where ID="+DbUtil.escSql(id);
