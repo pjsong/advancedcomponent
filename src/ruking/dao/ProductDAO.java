@@ -113,8 +113,8 @@ public class ProductDAO {
 	
 	public  ProductDTO insertProduct(ProductDTO p,String lang) throws SQLException{
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql="insert into product(Title,Description,CatID";
-		sql = sql+") values ("+DbUtil.escSql(p.getTitle().trim())+","+DbUtil.escSql(p.getDescription().trim())+"," +DbUtil.escSql(p.getCatID());
+		String sql="insert into product(ID,Title,Description,CatID";
+		sql = sql+") values ("+DbUtil.escSql(p.getId().trim())+","+DbUtil.escSql(p.getTitle().trim())+","+DbUtil.escSql(p.getDescription().trim())+"," +DbUtil.escSql(p.getCatID());
 		sql=sql+");";
 		if("eng".equals(lang)){
 			sql="insert into product_eng(ID,Title,Description,CatID";

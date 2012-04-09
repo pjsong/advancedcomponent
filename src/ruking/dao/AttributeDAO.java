@@ -75,8 +75,8 @@ public class AttributeDAO {
 	public AttributeDTO insertProduct(AttributeDTO p,String lang) throws SQLException {
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(
 				hostName, dbName, dbUser, password), new MDTMySQLRowMapper());
-		String sql = "insert into attributes(ProductID,AttrName,AttrValue,DisplayOrder";
-		sql = sql + ") values (" + DbUtil.escSql(p.getProductId().trim()) + ","
+		String sql = "insert into attributes(ID,ProductID,AttrName,AttrValue,DisplayOrder";
+		sql = sql + ") values (" + DbUtil.escSql(p.getId().trim()) +","+ DbUtil.escSql(p.getProductId().trim()) + ","
 				+ DbUtil.escSql(p.getAttrName().trim()) + ","
 				+ DbUtil.escSql(p.getAttrValue())+","+DbUtil.escSql(p.getDisplayOrder());
 		sql = sql + ");";
