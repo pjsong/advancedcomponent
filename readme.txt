@@ -1,5 +1,8 @@
 wK3Zv4kZ9Dz2
 
+http://www.google.com/intl/en_us/products/submit.html
+http://support.google.com/webmasters/bin/answer.py?hl=zh-Hans&answer=156184
+
 http://mail.ruking-cn.com/login.htm
 postmaster r9b6f5y4
 customer_service RUKING0769
