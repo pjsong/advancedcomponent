@@ -147,9 +147,12 @@ public class ProductDAO {
 		runner.update(sql);
 	}
 	
-	public void deleteProduct(String id) throws SQLException{
+	public void deleteProduct(String id,String lang) throws SQLException{
+		if(lang!=null && !lang.equals("")){
+			lang = "_"+ lang;
+		}
 		TransRunner runner = new TransRunner(DataSourceFactory.getDataSource(hostName,dbName,dbUser,password), new MDTMySQLRowMapper());
-		String sql = "delete FROM product WHERE ID = " + DbUtil.escSql(id);
+		String sql = "delete FROM product"+lang+" WHERE ID = " + DbUtil.escSql(id);
 		runner.update(sql);
 	}
 
