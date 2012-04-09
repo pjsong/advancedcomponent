@@ -38,7 +38,7 @@ public class EditProductController extends BaseController {
         if(act.equals("edit")){
             new GlobalVariablesBA().setCommonVariables(request, vc);
         	vc.put("act", "update");
-            String id= Util.getNoNull(request.getParameter("id"));
+            String id= Util.getNoNull(request.getParameter("pid"));
 	    	ProductDTO pDTO = pDAO.getProductByID(id,"");
         	vc.put("product", pDTO);
             VelocityParserFactory.getVP().render("editproduct", vc, request, response);
@@ -72,7 +72,7 @@ public class EditProductController extends BaseController {
 	private void update(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
-        String id= Util.getNoNull(request.getParameter("id"));
+        String id= Util.getNoNull(request.getParameter("pid"));
     	ProductDAO pDAO = new ProductDAO();
     	ProductDTO product = pDAO.getProductByID(id,"");
     	String oldName = product.getTitle();
