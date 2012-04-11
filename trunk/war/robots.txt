@@ -4,3 +4,22 @@ Sitemap: http://www.ruking-cn.com/sitemap.xml
 
 User-agent: *
 Disallow: /cgi-bin/
+
+Disallow: /manage.jhtml
+Disallow: /listusers.jhtml
+Disallow: /listproducts.jhtml
+Disallow: /listcategories.jhtml
+Disallow: /listattributes.jhtml
+
+Disallow: /listproducts_big.jhtml
+Disallow: /listcategories_big.jhtml
+Disallow: /listattributes_big.jhtml
+
+
+Disallow: /listproducts_eng.jhtml
+Disallow: /listcategories_eng.jhtml
+Disallow: /listattributes_eng.jhtml
+
+Disallow: /reg.jhtml
+Disallow: /logout.jhtml
+Disallow: /login.jhtml
