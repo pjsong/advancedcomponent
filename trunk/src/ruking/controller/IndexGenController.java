@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.velocity.VelocityContext;
 
 import ruking.ba.GlobalVariablesBA;
+import ruking.ba.SiteMapGen;
 import ruking.index.Indexer;
 import ruking.velocity.VelocityParserFactory;
 
@@ -27,6 +28,10 @@ public class IndexGenController extends BaseController{
         vc.put("ret", ret);
         VelocityParserFactory.getVP().render("indexGen", vc, request, response);
 		
+	}
+	private void siteMapGen() throws IOException, SQLException
+	{
+		SiteMapGen.main(null);
 	}
     private int index() throws IOException, SQLException
     {

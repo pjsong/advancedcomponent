@@ -1,3 +1,4 @@
+package ruking.ba;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -69,12 +70,12 @@ public class SiteMapGen {
 	}
 	
 	public static void main(String args[]) throws IOException, SQLException{
-		File f = new File("sitemap.xml");
+		File f = new File("./htdocs/sitemap.xml");
 		if(f.exists())
 		{
 			f.delete();
 		}
-		PrintWriter pw = new PrintWriter("sitemap.xml");
+		PrintWriter pw = new PrintWriter(f);
 		WriteFile(pw);
 		pw.close();
 	}
