@@ -24,15 +24,12 @@ public class IndexGenController extends BaseController{
         VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
         int ret = index();
-//        writeTestFile();
+        SiteMapGen.main(null);
         vc.put("ret", ret);
         VelocityParserFactory.getVP().render("indexGen", vc, request, response);
 		
 	}
-	private void siteMapGen() throws IOException, SQLException
-	{
-		SiteMapGen.main(null);
-	}
+
     private int index() throws IOException, SQLException
     {
 		return Indexer.startIndexBuilding();
