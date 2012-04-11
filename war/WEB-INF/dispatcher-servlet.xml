@@ -121,7 +121,7 @@
             <prop key="/editproduct.jhtml">editProductController</prop>
             <prop key="/editcategory.jhtml">editCategoryController</prop>
             <prop key="/editattribute.jhtml">editAttributeController</prop>
-            <prop key="index_generation_command.jhtml">indexGenController</prop>
+            <prop key="/index_generation_command.jhtml">indexGenController</prop>
             
             <prop key="/listproducts_big.jhtml">listProductsBigController</prop>
             <prop key="/listcategories_big.jhtml">listCategoryBigController</prop>
