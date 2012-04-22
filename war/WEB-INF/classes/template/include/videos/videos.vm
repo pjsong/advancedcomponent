@@ -81,24 +81,9 @@
 }
 	</style>
 	
-<table align=center cellspacing="0" cellpadding="0" class="pageAnchor" border="0" >
-<tbody><tr align=center>
-#if($lastPage)
-<td width="120" align="left" style="vertical-align: top;">
-<a class="gwt-Anchor" href="$_url/videos.jhtml?pageid=$lastPage">上一页 &gt;&gt;</a></td>
-#end
-#foreach ($i in [1..$totalPage])
-<td td width="20" align="left" style="vertical-align: top;">
-<a class="gwt-Anchor" href="$_url/videos.jhtml?pageid=$i">$!i</a></td>
-#end
-#if($nextPage)
-<td td width="120" align="left" style="vertical-align: top;">
-<a class="gwt-Anchor" href="$_url/videos.jhtml?pageid=$!nextPage">下一页 &gt;&gt;</a></td>
-#end</tr>
-</tbody></table>
 
 
-<table border=1 align=center width="1100px">
+<table border="0" align=center width="1100px">
 #set($count=0)
 #foreach($v in $videolist)
 #if($count%3==0)
@@ -117,7 +102,7 @@
 #end
 #end
 #set($count=0)
-
+</table>
 
 
 <table align=center cellspacing="0" cellpadding="0" class="pageAnchor" border="0" >
