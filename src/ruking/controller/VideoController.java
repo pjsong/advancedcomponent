@@ -27,21 +27,12 @@ public class VideoController extends BaseController {
         getCurrentPage(request,vc);
         VelocityParserFactory.getVP().render("videos", vc, request, response);
 	}
-	
-	private ArrayList<HashMap<String,String>> getListByPage(ArrayList<String> all,int id) throws IOException, SQLException{
-		ArrayList<String> temp = new ArrayList<String>();
-		if(id==0)id=1;
-		id=id-1;
-		int pageEndId = all.size() < (id + 1) * 6 ? all.size() : (id + 1) * 6;
-		for (int i = id * 6; i < pageEndId; i++) {
-			temp.add(all.get(i));
-		}
-		return getPVMap(temp);
-	}
+
 	
 	private void getCurrentPage(HttpServletRequest request,VelocityContext vc) throws IOException, SQLException{
 		ArrayList<String> vl = getVideoList();
 		int totalpage = getTotalPage(vl.size());
+		vc.put("size", vl.size());
         vc.put("totalPage", totalpage);
 		String id = request.getParameter("pageid");
 		int currPage = 1;
@@ -55,13 +46,23 @@ public class VideoController extends BaseController {
         if(currPage>1)vc.put("lastPage", currPage-1);
 	}
 	
+	private ArrayList<HashMap<String,String>> getListByPage(ArrayList<String> all,int id) throws IOException, SQLException{
+		ArrayList<String> temp = new ArrayList<String>();
+		if(id==0)id=1;
+		id=id-1;
+		int pageEndId = all.size() < (id + 1) * 6 ? all.size() : (id + 1) * 6;
+		for (int i = id * 6; i < pageEndId; i++) {
+			temp.add(all.get(i));
+		}
+		return getPVMap(temp);
+	}
 	private int getTotalPage(int size){
 		if(size%6==0)return size/6;
 		else return size/6+1;
 	}
 	private ArrayList<String> getVideoList(){
 		ArrayList<String> ret = new ArrayList<String>();
-		File dir = new File("static/video");
+		File dir = new File("./htdocs/static/video");
 //		if(dir.isDirectory())
 	    File[] files = dir.listFiles(new FileFilterT());//
 	    for (File f : files)
