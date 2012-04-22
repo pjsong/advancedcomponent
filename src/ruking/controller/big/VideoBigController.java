@@ -25,7 +25,7 @@ public class VideoBigController extends BaseController {
         VelocityContext vc=new VelocityContext();
         new GlobalVariablesBA().setCommonVariables(request, vc);
         getCurrentPage(request,vc);
-        VelocityParserFactory.getVP().render("videos", vc, request, response);
+        VelocityParserFactory.getVP().render("videos_big", vc, request, response);
 	}
 	
 	private ArrayList<HashMap<String,String>> getListByPage(ArrayList<String> all,int id) throws IOException, SQLException{
