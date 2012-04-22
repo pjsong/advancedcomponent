@@ -61,7 +61,7 @@ public class VideoBigController extends BaseController {
 	}
 	private ArrayList<String> getVideoList(){
 		ArrayList<String> ret = new ArrayList<String>();
-		File dir = new File("war/static/video");
+		File dir = new File("static/video");
 //		if(dir.isDirectory())
 	    File[] files = dir.listFiles(new FileFilterT());//
 	    for (File f : files)
