@@ -1,22 +1,12 @@
 ﻿<table width="1000px" align="center" border="0" cellpadding=5 style="margin-top: 10px;">
-<tr valign="top"><td align="left" width="34%" style="font-size:12px;color:#606060;padding-left:30px;padding-right:30px;">
+<tr valign="top"><td align="left" width="40%" style="font-size:12px;color:#606060;padding-left:30px;padding-right:30px;">
 <div><a href="$_url/about/aboutus.jhtml"><img src="/static/img/footer/aboutus.gif"></a></div><br />
 <div style="line-height:20px;">如金科技秉承“用心智造3E自动化”的企业使命，立足先进制造业，致力于自动化设备的研发生产，实现机器取代人手，电脑取代仪器和网络取代纸笔，推动低成本生产和高速检测，协助企业成功转型，提升中国制造业核心竞争力！</td>
 </td>
-<td align="left" width="33%" style="font-size:12px;color:#606060;padding-left:20px;padding-right:20px;">
-<div><a href="$_url/news.jhtml"><img src="/static/img/footer/industrytrend.gif"></a></div><br />
-<div id="xwgg">
-##            <dl>
-##                <dt><a title="锂电池在电动自行车中的机遇分析" href="./about/news.jhtml?id=1">锂电池在电动自行车中的机遇分析</a></dt>
-##                <dt><a title="聚焦2011工博会，产业升级精彩起步" href="./about/news.jhtml?id=2">聚焦2011工博会，产业升级精彩起步</a></dt>
-##                <dt><a title="锂电隔膜技术与产业化将成发展重点" href="./about/news.jhtml?id=3">锂电隔膜技术与产业化将成发展重点</a></dt>
-##                <dt><a title="中国锂电池行业有过度投资风险" href="./about/news.jhtml?id=4">中国锂电池行业有过度投资风险</a></dt>
-##            </dl>
-##            <a class="all" href="$_url/about/news.jhtml">[查看更多内容]</a>
-        </div>
+<td align="left" width="20%" style="font-size:12px;color:#606060;padding-left:20px;padding-right:20px;">
 </td>
 </td>
-<td align="left" width="33%" style="font-size:12px;color:#606060;padding-left:30px;padding-right:30px;">
+<td align="left" width="40%" style="font-size:12px;color:#606060;padding-left:30px;padding-right:30px;">
 <div><img src="/static/img/footer/friends.gif"></div><br />
 <table width="300px" border="0" Cellpadding="5px"><tr valign="bottom" style="height:55px"><td>
 <a href="http://www.fe123battery.com/"><img src="/static/img/footer/fengJiang.gif"></a></td><td><a href="http://www.delta.com.tw/"><img src="/static/img/footer/delta_logo.gif"></a>
