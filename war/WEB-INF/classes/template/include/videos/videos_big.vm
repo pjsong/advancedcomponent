@@ -85,7 +85,7 @@
 <tbody><tr align=center>
 #if($lastPage)
 <td width="120" align="left" style="vertical-align: top;">
-<a class="gwt-Anchor" href="$_url/videos.jhtml?pageid=$lastPage">上一页 &gt;&gt;</a></td>
+<a class="gwt-Anchor" href="$_url/videos.jhtml?pageid=$lastPage">上一頁 &gt;&gt;</a></td>
 #end
 #foreach ($i in [1..$totalPage])
 <td td width="20" align="left" style="vertical-align: top;">
@@ -93,7 +93,7 @@
 #end
 #if($nextPage)
 <td td width="120" align="left" style="vertical-align: top;">
-<a class="gwt-Anchor" href="$_url/videos.jhtml?pageid=$!nextPage">下一页 &gt;&gt;</a></td>
+<a class="gwt-Anchor" href="$_url/videos.jhtml?pageid=$!nextPage">下一頁 &gt;&gt;</a></td>
 #end</tr>
 </tbody></table>
 
