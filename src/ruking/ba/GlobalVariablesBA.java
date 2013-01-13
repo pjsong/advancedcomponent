@@ -70,7 +70,7 @@ public class GlobalVariablesBA {
 			return "<a href = '/index.jhtml'>首页</a> > <a href='customerservice.jhtml' > 联系我们</a>";
 		if("products.jhtml".equals(uri) || "item.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='products.jhtml' > 产品浏览</a>";
-		if("video.jhtml".equals(uri))
+		if("videos.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='video.jhtml' > 产品视频</a>";
 		if("about/solution.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首页</a> > <a href='solution.jhtml' > 解决方案</a>";
@@ -85,7 +85,7 @@ public class GlobalVariablesBA {
 			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='customerservice_big.jhtml' > 聯繫我們</a>";
 		if("products_big.jhtml".equals(uri) || "item_big.jhtml".equals(uri))
 			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='products._big.jhtml' > 產品瀏覽</a>";
-		if("video_big.jhtml".equals(uri))
+		if("videos_big.jhtml".equals(uri))
 			return "<a href = '/index.jhtml'>首頁</a> > <a href='video_big.jhtml' > 產品視頻</a>";
 		if("about/recruit_big.jhtml".equals(uri))
 			return "<a href = '/index_big.jhtml'>首頁</a> > <a href='products._big.jhtml' > 人才招聘</a>";
@@ -94,8 +94,6 @@ public class GlobalVariablesBA {
 			return "<a href = '/index_eng.jhtml'>HomePage</a> > <a href='/about/aboutus_eng.jhtml'> About Ruking</a>";
 		if("about/customerservice_eng.jhtml".equals(uri))
 			return "<a href = '/index_eng.jhtml'>HomePage</a> > <a href='customerservice_eng.jhtml' > Customer Center</a>";
-		if("video_eng.jhtml".equals(uri))
-			return "<a href = '/index.jhtml'>首頁</a> > <a href='video_eng.jhtml' > Product Videos</a>";
 		if("products_eng.jhtml".equals(uri) || "item_eng.jhtml".equals(uri))
 			return "<a href = '/index_eng.jhtml'>HomePage</a> > <a href='products_eng.jhtml' > Products</a>";
 		if("about/recruit_eng.jhtml".equals(uri))
