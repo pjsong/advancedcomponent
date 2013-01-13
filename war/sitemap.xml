@@ -13,6 +13,10 @@
   	<priority>0.7</priority>
 </url>
 <url>
+  	<loc>http://www.ruking-cn.com/item.jhtml</loc>
+  	<priority>0.7</priority>
+</url>
+<url>
   <loc>http://www.ruking-cn.com/login.jhtml</loc>
   <priority>0.2</priority>
 </url>
